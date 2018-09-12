@@ -8,31 +8,32 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            age: '',
-            name: 'name'
+            players: ''
         }
     }
+
+    handleChange = () => {
+        console.log('change');
+    };
+
     render() { 
         return (
             <aside className="sidebar">
                 <form className="form" autoComplete="off">
                 <FormControl fullWidth>
-                    <InputLabel htmlFor="age-simple">Age</InputLabel>
+                    <InputLabel htmlFor="filter-players">Players</InputLabel>
                     <Select
-                    value={this.state.age}
+                    value={this.state.players}
                     onChange={this.handleChange}
                     inputProps={{
                         name: 'age',
-                        id: 'age-simple',
+                        id: 'filter-players',
                     }}
                     autoWidth
                     >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
                     </Select>
                 </FormControl>
                 </form>
