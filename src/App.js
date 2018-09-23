@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.scss';
-// import { Route, Link, Switch } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
