@@ -7,9 +7,9 @@ class GameList extends React.Component {
     }
     render() { 
         return (
-            <div className="game-list">
+            <ul className="game-list">
                 <div className="game-list__item"></div>
-            </div>
+            </ul>
         );
     }
 }
