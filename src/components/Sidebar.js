@@ -23,17 +23,18 @@ class Sidebar extends React.Component {
                 <FormControl fullWidth>
                     <InputLabel htmlFor="filter-players">Players</InputLabel>
                     <Select
-                    value={this.state.players}
-                    onChange={this.handleChange}
-                    inputProps={{
-                        name: 'age',
-                        id: 'filter-players',
-                    }}
-                    autoWidth
+                        value={this.state.players}
+                        onChange={this.handleChange}
+                        inputProps={{
+                            name: 'age',
+                            id: 'filter-players',
+                        }}
+                        autoWidth
                     >
                     <MenuItem value={1}>1</MenuItem>
                     <MenuItem value={2}>2</MenuItem>
                     <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
                     </Select>
                 </FormControl>
                 </form>
