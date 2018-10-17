@@ -1,7 +1,7 @@
 import React from 'react';
 import GameListItem from '../GameListItem/GameListItem';
+import { connect } from 'react-redux';
 import './GameList.scss';
-// import store from '../../store/store';
 
 class GameList extends React.Component {
     constructor(props) {
@@ -39,4 +39,12 @@ class GameList extends React.Component {
     }
 }
 
-export default GameList;
+const mapStateToProps = store => {
+    console.log(store);
+    return {
+        games: store.games,
+    }
+}
+
+// export default GameList;
+export default connect(mapStateToProps)(GameList);
