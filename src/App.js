@@ -10,7 +10,7 @@ import store from './store';
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <div className="App">
           <Grid container>
             <Grid item xs={12}>
@@ -24,7 +24,7 @@ class App extends Component {
             </Grid>
           </Grid>
         </div>
-      </Provider>
+      // </Provider>
     );
   }
 }

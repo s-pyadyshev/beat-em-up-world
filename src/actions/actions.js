@@ -9,3 +9,22 @@ export const filterPlayers = players => {
         },
     }
 }
+
+export const fetchGamesRequest = () => {
+    return {
+      type: "FETCH_REQUEST"
+    }
+  }
+  
+  export const fetchGamesSuccess = payload => {
+    return {
+      type: "FETCH_SUCCESS",
+      payload
+    }
+  }
+  
+  export const fetchGamesError = () => {
+    return {
+      type: "FETCH_ERROR"
+    }
+  }
