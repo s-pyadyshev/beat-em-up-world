@@ -3,10 +3,21 @@ const fetchGames = (state = {}, action) => {
         case "FETCH_REQUEST":
           return state;
         case "FETCH_SUCCESS": 
-          return {...state, games: action.payload};
+          return {...state, posts: action.payload};
         default:
           return state;
       }
 };
 
 export default fetchGames;
+
+// const reducer = (state = {}, action) => {
+//   switch (action.type) {
+//     case "FETCH_REQUEST":
+//       return state;
+//     case "FETCH_SUCCESS": 
+//       return {...state, posts: action.payload};
+//     default:
+//       return state;
+//   }
+// } 
