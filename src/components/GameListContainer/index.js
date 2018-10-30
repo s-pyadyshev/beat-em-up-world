@@ -8,6 +8,7 @@ class GameList extends React.Component {
     this.state = {
       // If we set wrong state data type then it will be "Uncaught TypeError: this.state.data.map is not a function"
       games: [],
+      filteredGames: [],
       players: 1
     };
     this.filterByPlayers = this.filterByPlayers.bind(this);
@@ -18,12 +19,15 @@ class GameList extends React.Component {
     const URL = "https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json";
     fetch(URL)
       .then(response => response.json())
-      .then(json => this.setState({ games: json }))
+      .then(json => this.setState({
+        games: json,
+        filteredGames: json
+      }))
   }
 
   filterByPlayers(event) {
     this.setState({
-      // games: this.state.games.filter(item => item.players.toString() === event.target.value),
+      filteredGames: this.state.games.filter(item => item.players.toString() === event.target.value),
       players: event.target.value
     });
   }
@@ -40,7 +44,7 @@ class GameList extends React.Component {
             </select>
 
             <ul className="game-list">
-                {this.state.games.map((item, index) => {
+                {this.state.filteredGames.map((item, index) => {
                     return (
                       <li
                         className="game-list__item"
@@ -59,3 +63,4 @@ class GameList extends React.Component {
 }
 
 export default GameList;
+
