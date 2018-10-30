@@ -1,5 +1,5 @@
 import React from 'react';
-import './GameListItem.scss';
+// import './GameListItem.scss';
 
 class GameListItem extends React.Component {
     constructor(props) {
