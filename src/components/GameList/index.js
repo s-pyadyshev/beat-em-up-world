@@ -2,6 +2,7 @@ import React from 'react';
 import GameListItem from '../GameListItem';
 import './style.scss';
 
+// Presentational component
 class GameList extends React.Component {
 
     render() { 
