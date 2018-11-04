@@ -1,8 +1,8 @@
 import React from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-// import MenuItem from '@material-ui/core/MenuItem';
 import FormSelect from './Select';
+// import MenuItem from '@material-ui/core/MenuItem';
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -26,17 +26,17 @@ class Sidebar extends React.Component {
 
         return (
             <aside className="sidebar">
-                <form className="form" autoComplete="off">
-                <FormControl fullWidth>
-                    <InputLabel htmlFor="filter-players">Players</InputLabel>
-                    <FormSelect
-                        value={this.state.players}
-                        options={playersAmount}
-                        onChange={this.handleChange}
-                      >
-                    </FormSelect>
-                </FormControl>
-                </form>
+                {/* <form className="form" autoComplete="off">
+                    <FormControl fullWidth>
+                        <InputLabel htmlFor="filter-players">Players</InputLabel>
+                        <FormSelect
+                            value={this.state.players}
+                            options={playersAmount}
+                            onChange={this.handleChange}
+                        >
+                        </FormSelect>
+                    </FormControl>
+                </form> */}
             </aside>
         );
     }

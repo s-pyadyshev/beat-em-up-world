@@ -10,6 +10,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        {/* <FilterContainer> */}
           <Grid container>
             <Grid item xs={12}>
               <Header/>
@@ -21,6 +22,7 @@ class App extends Component {
               <GameListContainer/>
             </Grid>
           </Grid>
+        {/* </FilterContainer> */}
       </div>
     )
   }

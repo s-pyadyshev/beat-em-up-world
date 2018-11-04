@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FilterContainer = (WrappedComponent) => {
-    return (props) => <div><WrappedComponent/></div>;
+    return (props) => <WrappedComponent/>;
 }
 
 export default FilterContainer;
