@@ -7,10 +7,7 @@ class GameCard extends Component {
     }
     render() { 
         return (
-            <div className="game-card">
-                game card
-
-        </div> );
+            <div className="game-card">game card</div> );
     }
 }
  
