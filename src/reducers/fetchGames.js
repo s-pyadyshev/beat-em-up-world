@@ -1,9 +1,16 @@
-const fetchGames = (state = {}, action) => {
+const initialGames = () => {
+  const URL = "https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json";
+  return fetch(URL)
+    .then(response => response.json())
+    .then(games => games)
+}
+
+const fetchGames = (state = initialGames, action) => {
     switch (action.type) {
         case "FETCH_REQUEST":
           return state;
         case "FETCH_SUCCESS": 
-          return {...state, posts: action.payload};
+          return {...state, games: action.payload};
         default:
           return state;
       }

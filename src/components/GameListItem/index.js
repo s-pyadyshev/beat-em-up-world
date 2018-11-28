@@ -1,11 +1,7 @@
 import React from 'react';
-// import './GameListItem.scss';
+import './style.scss';
 
 class GameListItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
     render() {
         return (
             <a href="/">

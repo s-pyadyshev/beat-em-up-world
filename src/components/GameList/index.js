@@ -4,18 +4,18 @@ import './style.scss';
 
 // Presentational component
 class GameList extends React.Component {
-
     render() { 
         return (
             <ul className="game-list">
                 {this.props.games.map((item, index) => {
-                    return (
-                      <li
-                        className="game-list__item"
-                        key={index}>
-                        <GameListItem
-                            name={item.name}
-                        />
+                    (
+                        <li
+                            className="game-list__item"
+                            key={index}
+                        >
+                            <GameListItem
+                                name={item.name}
+                            />
                       </li>
                     )}
                 )}

@@ -26,7 +26,7 @@ class Sidebar extends React.Component {
 
         return (
             <aside className="sidebar">
-                {/* <form className="form" autoComplete="off">
+                <form className="form" autoComplete="off">
                     <FormControl fullWidth>
                         <InputLabel htmlFor="filter-players">Players</InputLabel>
                         <FormSelect
@@ -36,7 +36,7 @@ class Sidebar extends React.Component {
                         >
                         </FormSelect>
                     </FormControl>
-                </form> */}
+                </form>
             </aside>
         );
     }

@@ -1,7 +1,8 @@
 const filterPlayers = (state = {}, action) => {
     switch (action.type) {
       case 'FILTER_PLAYERS':
-        return state + 1;
+        console.log('filtered')
+        return state;
       default:
         return state;
     }
