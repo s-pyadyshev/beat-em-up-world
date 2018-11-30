@@ -1,6 +1,6 @@
 const initialGames = () => {
   const URL = "https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json";
-  return fetch(URL)
+  fetch(URL)
     .then(response => response.json())
     .then(games => games)
 }

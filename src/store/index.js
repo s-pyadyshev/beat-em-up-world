@@ -1,6 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducers from '../reducers';
-import ReduxThunk from 'redux-thunk';
+// import ReduxThunk from 'redux-thunk';
+import players from './players';
+import games from './games';
+import { combineReducers } from 'redux';
+
+const reducers = combineReducers({
+  players,
+  games
+});
 
 const store = createStore(
     reducers,
