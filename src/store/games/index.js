@@ -1,19 +1,90 @@
-const initialGames = () => {
-  const URL = "https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json";
-  fetch(URL)
-    .then(response => response.json())
-    .then(games => games)
-}
+// import { post, get } from '../../utils/api';
 
-const fetchGames = (state = initialGames, action) => {
-    switch (action.type) {
-        case "FETCH_REQUEST":
-          return state;
-        case "FETCH_SUCCESS": 
-          return {...state, games: action.payload};
-        default:
-          return state;
-      }
+export const types = {
+  GET_GAMES_START: 'GET_GAMES_START',
+  GET_GAMES_SUCCESS: 'GET_GAMES_SUCCESS',
+  GET_GAMES_FAILURE: 'GET_GAMES_FAILURE',
 };
 
-export default fetchGames;
+const initialState = {
+  games: [],
+  loaders: {
+    games: false
+  }
+};
+
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case types.GET_GAMES_START:
+      return {
+        ...state,
+        loaders: {
+          ...state.loaders,
+          games: true
+        }
+      };
+
+    case types.GET_GAMES_SUCCESS:
+      return {
+        ...state,
+        loaders: {
+          ...state.loaders,
+          games: false
+        }
+      };
+
+    case types.GET_GAMES_FAILURE:
+      return {
+        ...state,
+        loaders: {
+          ...state.loaders,
+          games: false
+        }
+      };
+
+    case types.CLEAR_GAMES_STORE:
+      return {
+        ...initialState
+      };
+
+    default:
+      return state;
+  }
+}
+
+export const getGames = () => (dispatch) => {
+  // const { games } = getState();
+
+  const data = {
+    ...games.params
+  };
+
+  dispatch(getGamesStart());
+  return post({
+    url: 'https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json',
+    data
+  })
+    .then(response => dispatch(getGamesSuccess(response)))
+    .catch(e => {
+      dispatch(getGamesFailure(e));
+    });
+};
+
+const getGamesStart = () => {
+  return {
+    type: types.GET_GAMES_START
+  };
+};
+
+const getGamesSuccess = response => {
+  return {
+    type: types.GET_GAMES_SUCCESS,
+    payload: response
+  };
+};
+
+const getGamesFailure = () => {
+  return {
+    type: types.GET_GAMES_START
+  };
+};
