@@ -6,6 +6,26 @@ export const types = {
   GET_GAMES_FAILURE: 'GET_GAMES_FAILURE',
 };
 
+export const getGamesStart = () => {
+  return {
+    type: types.GET_GAMES_START
+  };
+};
+
+export const getGamesSuccess = response => {
+  return {
+    type: types.GET_GAMES_SUCCESS,
+    payload: response
+  };
+};
+
+export const getGamesFailure = () => {
+  return {
+    type: types.GET_GAMES_START
+  };
+};
+
+
 const initialState = {
   games: [],
   loaders: {
@@ -52,39 +72,21 @@ export default function(state = initialState, action) {
   }
 }
 
-export const getGames = () => (dispatch) => {
-  // const { games } = getState();
+// export const getGames = () => (dispatch) => {
+//   // const { games } = getState();
 
-  const data = {
-    ...games.params
-  };
+//   // const data = {
+//   //   ...games.params
+//   // };
 
-  dispatch(getGamesStart());
-  return post({
-    url: 'https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json',
-    data
-  })
-    .then(response => dispatch(getGamesSuccess(response)))
-    .catch(e => {
-      dispatch(getGamesFailure(e));
-    });
-};
+//   dispatch(getGamesStart());
+//   return post({
+//     url: 'https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups.json',
+//     data
+//   })
+//     .then(response => dispatch(getGamesSuccess(response)))
+//     .catch(e => {
+//       dispatch(getGamesFailure(e));
+//     });
+// };
 
-const getGamesStart = () => {
-  return {
-    type: types.GET_GAMES_START
-  };
-};
-
-const getGamesSuccess = response => {
-  return {
-    type: types.GET_GAMES_SUCCESS,
-    payload: response
-  };
-};
-
-const getGamesFailure = () => {
-  return {
-    type: types.GET_GAMES_START
-  };
-};
