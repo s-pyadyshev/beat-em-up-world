@@ -1,6 +1,6 @@
-const filterPlayers = (state = {}, action) => {
+const filters = (state = {}, action) => {
     switch (action.type) {
-      case 'FILTER_PLAYERS':
+      case 'FILTER_DATA':
         console.log('filtered')
         return state;
       default:
@@ -8,4 +8,4 @@ const filterPlayers = (state = {}, action) => {
     }
 };
 
-export default filterPlayers;
+export default filters;

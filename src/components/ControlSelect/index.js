@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
-class FormSelect extends Component {
+class ControlSelect extends Component {
     render() { 
         return (
             <Select
@@ -18,4 +18,4 @@ class FormSelect extends Component {
     }
 }
  
-export default FormSelect;
+export default ControlSelect;
