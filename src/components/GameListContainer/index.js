@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import GameListItem from '../GameListItem';
@@ -136,5 +137,11 @@ class GameList extends React.Component {
   }
 }
 
-export default GameList;
+const mapStateToProps = state => {
+  const props = {
+    games: state.games,
+  }
+  return props;
+};
 
+export default connect(mapStateToProps)(GameList);
