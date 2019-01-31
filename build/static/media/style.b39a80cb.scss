@@ -1,0 +1,31 @@
+.game-list {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    text-align: left;
+}
+
+#section-home .hex-container {
+    max-width: 460px;
+}
+
+
+
+#section-home .hex-container .hex-row:first-child .hexagon {
+    transform: scale(1);
+}
+
+@media (min-width: 480px) {
+    #section-home .hex-container .hex-row:first-child .hexagon {
+        transform: scale(1.15);
+    }
+
+    #section-home .hex-container .hex-row:nth-child(2) {
+        display: flex;
+    }
+
+    #section-home .hex-row .hexagon {
+        margin: 40.41px 9px;
+    }
+}
