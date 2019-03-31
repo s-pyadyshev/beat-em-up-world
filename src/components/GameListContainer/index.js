@@ -88,7 +88,7 @@ class GameList extends React.Component {
     }
 
     if (isLoading) {
-      return <p>Loading ...</p>;
+      return <p>Loading...</p>;
     }
     const playersAmount = [
       {value: 1, valueName: 1},
@@ -108,16 +108,6 @@ class GameList extends React.Component {
             >
             </ControlSelect>
         </FormControl>
-
-        {/* <FormControl fullWidth>
-            <InputLabel htmlFor="filter-fighters">Fighters</InputLabel>
-            <ControlSelect
-                value={this.state.fighters}
-                options={fightersAmount}
-                onChange={this.filterByFighters}
-            >
-            </ControlSelect>
-        </FormControl> */}
 
         <ul className="game-list">
           {filteredGames.map((item, index) => {

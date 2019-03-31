@@ -2,7 +2,6 @@ import React from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import ControlSelect from './Select';
-// import MenuItem from '@material-ui/core/MenuItem';
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -12,10 +11,6 @@ class Sidebar extends React.Component {
             fighters: ''
         }
     }
-
-    handleChange = () => {
-        console.log('change');
-    };
 
     render() {
         const playersAmount = [
