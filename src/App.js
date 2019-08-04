@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.scss';
 import Grid from '@material-ui/core/Grid';
 import Header from './components/Header';
-import GameListContainer from './components/GameListContainer';
-import FilterContainer from './components/FilterContainer';
+import GameList from './components/GameList';
+import ApiService from './services/ApiService';
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
             <Grid item xs={3}>
             </Grid>
             <Grid item xs={9}>
-              <GameListContainer/>
+              {/* <GameList/> */}
             </Grid>
           </Grid>
       </div>
@@ -24,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default FilterContainer(App);
+export default App;
