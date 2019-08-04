@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './style.scss';
 import ApiService from '../../services/ApiService';
+import Spinner from '../../components/Spinner';
 
 export default class RandomGame extends Component {
 
   apiService = new ApiService();
 
   state = {
-    game: {}
+    game: {},
+    loading: true
   };
 
   constructor() {
@@ -16,7 +18,11 @@ export default class RandomGame extends Component {
   }
 
   onGameLoaded = (game) => {
-    this.setState({game})
+    this.setState({
+        game,
+        loading: false
+      },
+    )
   };
 
   updateGame() {
@@ -28,7 +34,17 @@ export default class RandomGame extends Component {
   }
 
   render() { 
-    const { game: { name, platform, cover } } = this.state; // destructuring
+    const {
+      game: {
+        name,
+        platform,
+        cover
+      },
+      loading } = this.state; // destructuring
+
+    if (loading) {
+      return <Spinner/>
+    }
 
     return (
       <div className="RandomGame">
