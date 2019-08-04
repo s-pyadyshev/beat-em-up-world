@@ -25,11 +25,23 @@ export default class ApiService {
 
   async getGames() {
     const result = await this.getResource(`/db.json`);
-    return result;
+    return result.map(this._transformGame);
   }
 
-  getGame(id) {
-    return this.getGames().then((games) => games[id]);
+  // getGame(id) {
+  //   return this.getGames().then((games) => games[id]);
+  // }
+  async getGame(id) {
+    const game = await this.getGames().then((games) => games[id]);
+    return this._transformGame(game);
+  }
+
+  _transformGame(game) {
+    return {
+      name: game.name,
+      platform: game.platform,
+      cover: game.cover
+    }
   }
 }
 

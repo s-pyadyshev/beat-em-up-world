@@ -7,9 +7,7 @@ export default class RandomGame extends Component {
   apiService = new ApiService();
 
   state = {
-    name: null,
-    platform: null,
-    cover: null
+    game: {}
   };
 
   constructor() {
@@ -17,24 +15,20 @@ export default class RandomGame extends Component {
     this.updateGame();
   }
 
-
+  onGameLoaded = (game) => {
+    this.setState({game})
+  };
 
   updateGame() {
     const id = Math.floor(Math.random() * 214);
 
     this.apiService
       .getGame(id)
-      .then((game) => {
-        this.setState({
-          name: game.name,
-          platform: game.platform,
-          cover: game.cover
-        });
-      });
+      .then(this.onGameLoaded);
   }
 
   render() { 
-    const { name, platform, cover } = this.state; // destructuring
+    const { game: { name, platform, cover } } = this.state; // destructuring
 
     return (
       <div className="RandomGame">
