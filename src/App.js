@@ -14,7 +14,9 @@ class App extends Component {
             </Grid>
             <Grid item xs={3}>
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={6}>
+            </Grid>
+            <Grid item xs={3}>
               <RandomGame/>
               {/* <GameList/> */}
             </Grid>
