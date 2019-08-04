@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.scss';
 import Grid from '@material-ui/core/Grid';
 import Header from './components/Header';
-import GameList from './components/GameList';
-import ApiService from './services/ApiService';
+// import GameList from './components/GameList';
+import RandomGame from './components/RandomGame';
 
 class App extends Component {
   render() {
@@ -16,6 +16,7 @@ class App extends Component {
             <Grid item xs={3}>
             </Grid>
             <Grid item xs={9}>
+              <RandomGame/>
               {/* <GameList/> */}
             </Grid>
           </Grid>

@@ -13,32 +13,31 @@ export default class ApiService {
     return await res.json();
   };
 
-  getFullGames() {
-    return this.getResource(`/db.json`);
-  }
+  // getFullGames() {
+  //   return this.getResource(`/db.json`);
+  // }
   // let's make it async
   // async getFullGames() {
   //   const res = await this.getResource(`/db.json`);
   //   return res.results;
   // }
 
-  getNames() {
-    return this.getResource(`/names.json`);
+  async getGames() {
+    const result = await this.getResource(`/db.json`);
+    return result;
   }
 
-  getName = (id) => {
-    beatemAPi.getNames().then((names) => {
-      console.log(names[id]);
-    });
+  getGame(id) {
+    return this.getGames().then((games) => games[id]);
   }
 }
 
-const beatemAPi = new ApiService();
+// const beatemAPi = new ApiService();
 
 // beatemAPi.getFullGames().then((body) => {
 //   console.log(body);
 // });
 
-beatemAPi.getName(1);
+// console.log(beatemAPi.getName(1));
 
 
