@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.scss';
 import Grid from '@material-ui/core/Grid';
 import Header from './components/Header';
-// import GameList from './components/GameList';
 import RandomGame from './components/RandomGame';
 
 class App extends Component {
