@@ -33,26 +33,30 @@ export default class RandomGame extends Component {
       .then(this.onGameLoaded);
   }
 
-  render() { 
-    const {
-      game: {
-        name,
-        platform,
-        cover
-      },
-      loading } = this.state; // destructuring
+  render() {
+    const { game, loading } = this.state;
 
-    if (loading) {
-      return <Spinner/>
-    }
+    const spinner = loading ? <Spinner /> : null;
+    const content = !loading ? <GameView game={game}/> : null;
 
     return (
-      <div className="RandomGame">
-        <h2>Random game</h2>
-        <h3>{name}</h3>
-        <p>{platform}</p>
-        <img src={cover} className="RandomGame__image" alt={name}/>
+      <div className="random-game">
+        {spinner}
+        {content}
       </div>
     );
   }
+}
+
+const GameView = ({game}) => {
+  const { name, platform, cover } = game;
+
+  return (
+    <React.Fragment>
+        <h2>Random game</h2>
+        <h3>{name}</h3>
+        <p>{platform}</p>
+        <img src={cover} className="random-game__image" alt={name}/>
+    </React.Fragment>
+  )
 }
