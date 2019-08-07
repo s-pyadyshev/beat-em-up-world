@@ -16,6 +16,11 @@ export default class RandomGame extends Component {
 
   constructor() {
     super();
+    // bad practice - side effect in constructor
+    // this.updateGame();
+  }
+
+  componentDidMount() {
     this.updateGame();
   }
 
