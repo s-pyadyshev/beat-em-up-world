@@ -3,7 +3,7 @@ import './style.scss';
 import ApiService from '../../services/ApiService';
 import Spinner from '../../components/Spinner';
 import ErrorIndicator from '../../components/ErrorIndicator';
-
+import Button from '@material-ui/core/Button';
 export default class RandomGame extends Component {
 
   apiService = new ApiService();
@@ -16,6 +16,7 @@ export default class RandomGame extends Component {
 
   constructor() {
     super();
+    this.updateGame = this.updateGame.bind(this);
     // bad practice - side effect in constructor
     // this.updateGame();
   }
@@ -62,6 +63,9 @@ export default class RandomGame extends Component {
         {errorMessage}
         {spinner}
         {content}
+        <div>
+          <Button variant="contained" color="primary" onClick={this.updateGame}>Refresh random game</Button>
+        </div>
       </div>
     );
   }

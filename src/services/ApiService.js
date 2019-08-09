@@ -14,11 +14,11 @@ export default class ApiService {
     return await res.json();
   };
 
-  // getFullGames() {
+  // getGames() {
   //   return this.getResource(`/db.json`);
   // }
   // let's make it async
-  // async getFullGames() {
+  // async getGames() {
   //   const res = await this.getResource(`/db.json`);
   //   return res.results;
   // }
