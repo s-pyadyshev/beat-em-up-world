@@ -18,14 +18,15 @@ export default class ApiService {
   //   return this.getResource(`/db.json`);
   // }
   // let's make it async
-  // async getGames() {
-  //   const res = await this.getResource(`/db.json`);
-  //   return res.results;
-  // }
-
   async getGames() {
     const result = await this.getResource(`/db.json`);
     return result.map(this._transformGame);
+  }
+  // the age of heroes - missing cover
+
+  async getNames() {
+    const result = await this.getResource(`/db.json`);
+    return result.map((game) => game.name);
   }
 
   // getGame(id) {
@@ -51,6 +52,4 @@ export default class ApiService {
 //   console.log(body);
 // });
 
-// console.log(beatemAPi.getName(1));
-
-
+// console.log(beatemAPi.getGames());

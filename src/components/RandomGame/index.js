@@ -24,11 +24,11 @@ export default class RandomGame extends Component {
 
   componentDidMount() {
     this.updateGame();
-    console.log('componentDidMount');
+    // console.log('componentDidMount');
   }
 
   componentDidUpdate() {
-    console.log('componentDidUpdate');
+    // console.log('componentDidUpdate');
   }
 
   onGameLoaded = (game) => {
@@ -57,7 +57,7 @@ export default class RandomGame extends Component {
 
   render() {
     const { game, loading, error } = this.state;
-    
+
     const hasData = !(loading || error);
 
     const errorMessage = error ? <ErrorIndicator/> : null;
@@ -65,7 +65,7 @@ export default class RandomGame extends Component {
     const content = hasData ? <GameView game={game}/> : null;
 
     return (
-      <div className="random-game" name={this.state.game.name}>
+      <div className="random-game">
         {errorMessage}
         {spinner}
         {content}
