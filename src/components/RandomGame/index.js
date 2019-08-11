@@ -5,6 +5,7 @@ import Spinner from '../../components/Spinner';
 import ErrorIndicator from '../../components/ErrorIndicator';
 import Button from '@material-ui/core/Button';
 import ErrorButton from '../../components/ErrorButton';
+
 export default class RandomGame extends Component {
 
   apiService = new ApiService();
@@ -24,11 +25,16 @@ export default class RandomGame extends Component {
 
   componentDidMount() {
     this.updateGame();
-    // console.log('componentDidMount');
   }
 
   componentDidUpdate() {
     // console.log('componentDidUpdate');
+  }
+
+  componentDidCatch() {
+    this.setState({
+      error: true
+    })
   }
 
   onGameLoaded = (game) => {
@@ -39,7 +45,7 @@ export default class RandomGame extends Component {
     )
   };
 
-  onError = (err) => {
+  onError = () => {
     this.setState({ 
       error: true,
       loading: false
@@ -50,12 +56,17 @@ export default class RandomGame extends Component {
     const id = Math.floor(Math.random() * 214);
 
     this.apiService
-      .getGame(id)
+      .getRandomGameCard(id)
       .then(this.onGameLoaded)
       .catch(this.onError);
   }
 
   render() {
+
+    if (this.state.error) {
+      return <ErrorIndicator/>;
+    }
+
     const { game, loading, error } = this.state;
 
     const hasData = !(loading || error);
@@ -83,10 +94,10 @@ const GameView = ({game}) => {
 
   return (
     <React.Fragment>
-        <h2>Random game</h2>
-        <h3>{name}</h3>
-        <p>{platform}</p>
-        <img src={cover} className="random-game__image" alt={name}/>
+      <h2>Random game</h2>
+      <h3>{name}</h3>
+      <p>{platform}</p>
+      <img src={cover} className="random-game__image" alt={name}/>
     </React.Fragment>
   )
 }

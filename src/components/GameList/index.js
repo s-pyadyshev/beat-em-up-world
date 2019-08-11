@@ -1,23 +1,33 @@
 import React from 'react';
-import GameListItem from '../GameListItem';
 import './style.scss';
 
 class GameList extends React.Component {
-  render() { 
+
+
+  constructor() {
+    super();
+    this.state = {
+      names: ['name1', 'name2', 'name3']
+    }
+  }
+
+  render() {
+
     return (
       <ul className="game-list">
-        {this.props.games.map((item, index) => {
+        <li>list item</li>
+        {/* {this.state.names.map((name, index) => {
           (
             <li
               className="game-list__item"
               key={index}
             >
-              <GameListItem
-                name={item.name}
-              />
+              <a href="/">
+                <span>{name}</span>
+              </a>
             </li>
           )}
-        )}
+        )} */}
       </ul>
     );
   }

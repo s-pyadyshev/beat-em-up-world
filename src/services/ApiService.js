@@ -14,11 +14,16 @@ export default class ApiService {
     return await res.json();
   };
 
+  async getGames() {
+    const result = await this.getResource(`/db.json`);
+    return result;
+  }
+
   // getGames() {
   //   return this.getResource(`/db.json`);
   // }
   // let's make it async
-  async getGames() {
+  async getRandomGame() {
     const result = await this.getResource(`/db.json`);
     return result.map(this._transformGame);
   }
@@ -30,11 +35,67 @@ export default class ApiService {
   }
 
   // getGame(id) {
-  //   return this.getGames().then((games) => games[id]);
+  //   return this.getRandomGame().then((games) => games[id]);
   // }
-  async getGame(id) {
+  async getRandomGameCard(id) {
+    const game = await this.getRandomGame().then((games) => games[id]);
+    return {
+      name: game.name,
+      platform: game.platform,
+      cover: game.cover
+    }
+  }
+
+  async getGameCard(id) {
     const game = await this.getGames().then((games) => games[id]);
-    return this._transformGame(game);
+    return {
+      name: game.name,
+      platform: game.platform,
+      about: game.about,
+      trivia: game.trivia,
+      developer: game.developer,
+      publisher: game.publisher,
+      releasedate: game.releasedate,
+      otherPlatforms: game.otherPlatforms,
+      series: game.series,
+      players: game.players,
+      structure: game.structure,
+      difficulty: game.difficulty,
+      gangsize: game.gangsize,
+      variety: game.variety,
+      playtime: game.playtime,
+      buttons: game.buttons,
+      combos: game.combos,
+      grabs: game.grabs,
+      dashing: game.dashing,
+      enemyHBars: game.enemyHBars,
+      itemPickup: game.itemPickup,
+      itemStay: game.itemStay,
+      weaponsStay: game.weaponsStay,
+      deathBlow: game.deathBlow,
+      friendlyFire: game.friendlyFire,
+      charSwitch: game.charSwitch,
+      groundHit: game.groundHit,
+      revive: game.revive,
+      restore: game.restore,
+      artStyle: game.artStyle,
+      sprites: game.sprites,
+      setting: game.setting,
+      focus: game.focus,
+      music: game.music,
+      tone: game.tone,
+      fighters: game.fighters,
+      stages: game.stages,
+      enemies: game.enemies,
+      bosses: game.bosses,
+      weapons: game.weapons,
+      lives: game.lives,
+      continues: game.continues,
+      extend: game.extend,
+      overallReview: game.overallReview,
+      cover: game.cover,
+      images: game.images
+    }
   }
 
   _transformGame(game) {
@@ -46,10 +107,10 @@ export default class ApiService {
   }
 }
 
-// const beatemAPi = new ApiService();
+const beatemAPi = new ApiService();
 
 // beatemAPi.getFullGames().then((body) => {
 //   console.log(body);
 // });
 
-// console.log(beatemAPi.getGames());
+console.log(beatemAPi.getGameCard(1));
