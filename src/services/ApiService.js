@@ -27,7 +27,7 @@ export default class ApiService {
     const result = await this.getResource(`/db.json`);
     return result.map(this._transformGame);
   }
-  // the age of heroes - missing cover
+  // the age of heroes, the crystal kings - missing cover
 
   async getNames() {
     const result = await this.getResource(`/db.json`);
@@ -107,10 +107,10 @@ export default class ApiService {
   }
 }
 
-const beatemAPi = new ApiService();
+// const beatemAPi = new ApiService();
 
 // beatemAPi.getFullGames().then((body) => {
 //   console.log(body);
 // });
 
-console.log(beatemAPi.getGameCard(1));
+// console.log(beatemAPi.getNames());

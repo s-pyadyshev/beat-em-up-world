@@ -15,11 +15,11 @@ class App extends Component {
               <Header/>
             </Grid>
 
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <GameList/>
             </Grid>
 
-            <Grid item xs={7}>
+            <Grid item xs={6}>
               <GameCard/>
             </Grid>
 

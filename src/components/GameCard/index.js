@@ -15,7 +15,7 @@ class GameCard extends Component {
   apiService = new ApiService();
 
   componentDidMount() {
-    this.updateGameCard(1);
+    this.updateGameCard();
   }
 
   updateGameCard() {
@@ -108,9 +108,9 @@ const GameView = ({game}) => {
   return (
     <React.Fragment>
       <div>
-        <img src={cover} className="random-game__image" alt={name}/>
         <h2>{name}</h2>
         <div>{platform}</div>
+        <img src={cover} className="random-game__image" alt={name}/>
         <p>about: {about}</p>
         <p>trivia: {trivia}</p>
 
