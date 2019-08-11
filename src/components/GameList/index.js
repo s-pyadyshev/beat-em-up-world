@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.scss';
-import ApiService from '../../services/ApiService';
 import ErrorIndicator from '../../components/ErrorIndicator';
 
 export default class GameList extends React.Component {
@@ -8,29 +7,23 @@ export default class GameList extends React.Component {
   constructor() {
     super();
     this.state = {
-      names: [],
+      itemList: [],
       loading: true,
       error: false
     }
   }
 
-  apiService = new ApiService();
-
   componentDidMount() {
-    this.updateGameList();
-    // console.log(this.state.names);
+    const { getData } = this.props;
+
+    getData()
+    .then(this.onGameListLoaded)
+    .catch(this.onError);
   }
 
-  updateGameList() {
-    this.apiService
-      .getNames()
-      .then(this.onGameListLoaded)
-      .catch(this.onError);
-  }
-
-  onGameListLoaded = (names) => {
+  onGameListLoaded = (itemList) => {
     this.setState({
-        names,
+        itemList,
         loading: false
       },
     )
@@ -52,7 +45,7 @@ export default class GameList extends React.Component {
 
     return (
       <ul className="game-list">
-        {this.state.names.map((name, index) => {
+        {this.state.itemList.map((name, index) => {
           return (
             <li
               className="game-list__item"

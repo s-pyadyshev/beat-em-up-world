@@ -3,6 +3,7 @@ import ApiService from '../../services/ApiService';
 import ErrorIndicator from '../../components/ErrorIndicator';
 
 class GameCard extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -102,7 +103,7 @@ const GameView = ({game}) => {
     extend,
     overallReview,
     cover,
-    // images
+    // images //TODO add slider
   } = game;
 
   return (
@@ -116,10 +117,10 @@ const GameView = ({game}) => {
 
         <ul>
           <li>
-            <p>developer: {developer}</p>
+            <span>developer: {developer}</span>
           </li>
           <li>
-            <p>publisher: {publisher}</p>
+            <span>publisher: {publisher}</span>
           </li>
           <li>
             <span>releasedate:</span><span>{releasedate}</span>

@@ -5,8 +5,12 @@ import Header from './components/Header';
 import RandomGame from './components/RandomGame';
 import GameList from './components/GameList';
 import GameCard from './components/GameCard';
+import ApiService from './services/ApiService';
 
-class App extends Component {
+export default class App extends Component {
+
+  apiService = new ApiService();
+
   render() {
     return (
       <div className="App">
@@ -16,7 +20,7 @@ class App extends Component {
             </Grid>
 
             <Grid item xs={3}>
-              <GameList/>
+              <GameList getData={this.apiService.getNames}/>
             </Grid>
 
             <Grid item xs={6}>
@@ -31,5 +35,3 @@ class App extends Component {
     )
   }
 }
-
-export default App;

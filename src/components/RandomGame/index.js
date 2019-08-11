@@ -10,14 +10,13 @@ export default class RandomGame extends Component {
 
   apiService = new ApiService();
 
-  state = {
-    game: {},
-    loading: true,
-    error: false
-  };
-
   constructor() {
     super();
+    this.state = {
+      game: {},
+      loading: true,
+      error: false
+    };
     this.updateGame = this.updateGame.bind(this);
     // bad practice - side effect in constructor
     // this.updateGame();

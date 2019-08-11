@@ -3,7 +3,7 @@ export default class ApiService {
   // underscore means private part
   _apiBase = 'https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master';
 
-  async getResource(url) {
+  getResource = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);
 
     if (!res.ok) {
@@ -14,7 +14,7 @@ export default class ApiService {
     return await res.json();
   };
 
-  async getGames() {
+  getGames = async () => {
     const result = await this.getResource(`/db.json`);
     return result;
   }
@@ -23,13 +23,14 @@ export default class ApiService {
   //   return this.getResource(`/db.json`);
   // }
   // let's make it async
-  async getRandomGame() {
+  getRandomGame = async () => {
     const result = await this.getResource(`/db.json`);
     return result.map(this._transformGame);
   }
   // the age of heroes, the crystal kings - missing cover
 
-  async getNames() {
+  // refactor async getNames() function to arrow function to keep "this" for getData passed as props
+  getNames = async () => {
     const result = await this.getResource(`/db.json`);
     return result.map((game) => game.name);
   }
@@ -37,7 +38,7 @@ export default class ApiService {
   // getGame(id) {
   //   return this.getRandomGame().then((games) => games[id]);
   // }
-  async getRandomGameCard(id) {
+  getRandomGameCard = async (id) => {
     const game = await this.getRandomGame().then((games) => games[id]);
     return {
       name: game.name,
@@ -46,7 +47,7 @@ export default class ApiService {
     }
   }
 
-  async getGameCard(id) {
+  getGameCard = async (id) => {
     const game = await this.getGames().then((games) => games[id]);
     return {
       name: game.name,
@@ -98,7 +99,7 @@ export default class ApiService {
     }
   }
 
-  _transformGame(game) {
+  _transformGame = async (game) => {
     return {
       name: game.name,
       platform: game.platform,
