@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ApiService from '../../services/ApiService';
 import ErrorIndicator from '../../components/ErrorIndicator';
+import { GameConsumer } from '../../components/GameContext';
 
 class GameCard extends Component {
 
