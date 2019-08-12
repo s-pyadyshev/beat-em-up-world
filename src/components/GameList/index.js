@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import Link from '@material-ui/core/Typography';
 import withData from '../hoc-helpers';
 import ApiService from '../../services/ApiService';
 import './style.scss';
+import { GameConsumer } from '../../components/GameContext';
+
 
 class GameList extends Component {
   constructor(props) {
@@ -24,17 +27,21 @@ class GameList extends Component {
           className="game-list__item"
           key={index}
         >
-          <div onClick={() => this.setGameCard(index)}>
-            <span>{name}</span>
-          </div>
+        <GameConsumer>
+          {(context) => (
+            <Link color="primary" onClick={() => {context.setGameCard(index)}}>
+              <span>{name}</span>
+            </Link>
+          )}
+        </GameConsumer>
         </li>
       )}
     )
 
     return (
       <ul className="game-list">
-      {items}
-    </ul>
+        {items}
+      </ul>
     );
   };
 }

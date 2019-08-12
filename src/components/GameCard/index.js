@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApiService from '../../services/ApiService';
 import ErrorIndicator from '../../components/ErrorIndicator';
-import { GameConsumer } from '../../components/GameContext';
+// import { GameConsumer } from '../../components/GameContext';
 
 class GameCard extends Component {
 
@@ -16,15 +16,15 @@ class GameCard extends Component {
 
   apiService = new ApiService();
 
-  componentDidMount() {
+  componentDidUpdate() {
     this.updateGameCard();
   }
 
   updateGameCard() {
     this.apiService
-      .getGameCard(6)
+      .getGameCard(this.props.gameIndex)
       .then(this.onGameLoaded)
-      .catch(this.onError);
+      .catch(this.onError)
   }
 
   onGameLoaded = (game) => {
@@ -112,7 +112,7 @@ const GameView = ({game}) => {
       <div>
         <h2>{name}</h2>
         <div>{platform}</div>
-        <img src={cover} className="random-game__image" alt={name}/>
+        <img src={cover} alt={name}/>
         <p>about: {about}</p>
         <p>trivia: {trivia}</p>
 

@@ -6,7 +6,8 @@ import RandomGame from './components/RandomGame';
 import GameList from './components/GameList';
 import GameCard from './components/GameCard';
 import ApiService from './services/ApiService';
-import { GameProvider } from './components/GameContext';
+import { GameProvider, GameConsumer } from './components/GameContext';
+
 
 export default class App extends Component {
   constructor(){
@@ -21,7 +22,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <GameProvider value={this.state}>
+        <GameProvider value={{state: this.state, setGameCard: (value) => this.setState({gameIndex: value})}}>
           <Grid container>
             <Grid item xs={12}>
               <Header/>
@@ -32,7 +33,9 @@ export default class App extends Component {
             </Grid>
 
             <Grid item xs={6}>
-              <GameCard/>
+              <GameConsumer>
+                {() => (<GameCard gameIndex={this.state.gameIndex}/>)}
+              </GameConsumer>
             </Grid>
 
             <Grid item xs={3}>
