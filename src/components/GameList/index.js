@@ -1,51 +1,26 @@
-import React, { Component } from 'react';
-import Link from '@material-ui/core/Typography';
-import withData from '../hoc-helpers';
-import ApiService from '../../services/ApiService';
-import './style.scss';
-import { GameConsumer } from '../../components/GameContext';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from "react-redux";
+import apiService from "../../apiService";
+import { getGamesRequest } from "../../redux";
 
+const GamesList = () => {
+  const [games, setGames] = useState([]);
+  const dispatch = useDispatch();
 
-class GameList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-    this.setGameCard = this.setGameCard.bind(this);
-  }
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/db.json")
+      .then(res => res.json())
+      .then(result => {
+        setGames(result);
+        dispatch(getGamesRequest(result));
+      });
+  }, [dispatch]);
 
-  setGameCard(index) {
-    this.setState({
-      gameIndex: index
-    })
-  }
-
-  render() {
-    const { data } = this.props;
-    const items = data.map((name, index) => {
-      return (
-        <li
-          className="game-list__item"
-          key={index}
-        >
-        <GameConsumer>
-          {(context) => (
-            <Link color="primary" onClick={() => {context.setGameCard(index)}}>
-              <span>{name}</span>
-            </Link>
-          )}
-        </GameConsumer>
-        </li>
-      )}
-    )
-
-    return (
-      <ul className="game-list">
-        {items}
-      </ul>
-    );
-  };
+  return (
+    <ul>
+      {games.map((game, index) => <li key={index}>{game.name} <span>[{game.platform}]</span></li>)}
+    </ul>
+  );
 }
 
-const { getNames } = new ApiService();
-
-export default withData(GameList, getNames);
+export default GamesList;
