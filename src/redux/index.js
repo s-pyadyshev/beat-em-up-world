@@ -13,18 +13,17 @@ const filter = (state = initialState, action) => {
   return state;
 }
 
-export const getGamesRequest = (action) => {
+export const getGamesRequest = (gamesList) => {
   return {
     type: GET_GAMES_REQUEST,
-    action
+    gamesList
   }
 }
 
 const gamesList = (state = [], action) => {
   switch(action.type) {
     case GET_GAMES_REQUEST:
-      const gamesList = apiService();
-      return { ...state, ...action.action };
+      return { ...state, gamesList: action.gamesList };
     default:
       return state;
   }
