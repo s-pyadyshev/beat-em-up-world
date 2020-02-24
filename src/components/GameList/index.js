@@ -6,6 +6,7 @@ import { getGamesRequest } from "../../redux";
 const GamesList = () => {
   // const [games, setGames] = useState([]);
   const gamesList = useSelector(state => state.gamesList.gamesList);
+  const filteredGamesList = useSelector(state => state.gamesList.filteredGames);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const GamesList = () => {
 
   return (
     <ul>
-      {gamesList && gamesList.map((game, index) => <li key={index}>{game.name} <span>[{game.platform}]</span></li>)}
+      {filteredGamesList && filteredGamesList.map((game, index) => <li key={index}>{game.name} <span>[{game.platform}]</span></li>)}
     </ul>
   );
 }
