@@ -27,9 +27,10 @@ export const getGamesRequest = (gamesList) => {
     gamesList
   }
 }
-export const filterGames = (option) => {
+export const filterGames = (filterName, option) => {
   return {
     type: FILTER_GAMES,
+    filterName,
     option
   }
 }
@@ -38,9 +39,10 @@ export const filterGames = (option) => {
 const gamesList = (state = [], action) => {
   switch(action.type) {
     case GET_GAMES_REQUEST:
-      return { ...state, gamesList: action.gamesList, filteredGames: action.gamesList };
+      return { ...state, gamesList: action.gamesList, filteredGames: action.gamesList, filterOptions: {} };
     case FILTER_GAMES:
-      return { ...state, filteredGames: [...state.gamesList.filter(game => game.players == action.option)]}
+      state.filterOptions[action.filterName] = action.option;
+      return { ...state, filterOptions: state.filterOptions };
     default:
       return state;
   }

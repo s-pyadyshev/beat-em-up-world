@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import GameList from "./components/GameList";
-import Select from "./components/Select";
+import Filter from "./components/Filter";
 
 function App() {
   return (
     <div className="App">
-      <Select/>
+      <Filter/>
       <GameList/>
     </div>
   );

@@ -20,7 +20,15 @@ const GamesList = () => {
 
   return (
     <ul>
-      {filteredGamesList && filteredGamesList.map((game, index) => <li key={index}>{game.name} <span>[{game.platform}]</span></li>)}
+      {filteredGamesList && filteredGamesList.map((game, index) => (
+        <li
+          key={index}>
+            {game.name} <span>
+              [{game.platform}]
+            </span>
+        </li>
+        )
+      )}
     </ul>
   );
 }
