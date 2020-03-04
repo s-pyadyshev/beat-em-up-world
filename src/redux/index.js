@@ -1,11 +1,10 @@
 import { createStore, combineReducers } from 'redux'
-import apiService from "../apiService";
 import { filter } from "lodash";
 
 const GET_GAMES_REQUEST = "GET_GAMES_REQUEST";
-const GET_GAMES_SUCCESS = "GET_GAMES_SUCCESS";
-const GET_GAMES_ERROR = "GET_GAMES_REQUEST";
-const SELECT_FILTER = "SELECT_FILTER";
+// const GET_GAMES_SUCCESS = "GET_GAMES_SUCCESS";
+// const GET_GAMES_ERROR = "GET_GAMES_REQUEST";
+// const SELECT_FILTER = "SELECT_FILTER";
 const FILTER_GAMES = "FILTER_GAMES";
 
 export const getGamesRequest = (gamesList) => {

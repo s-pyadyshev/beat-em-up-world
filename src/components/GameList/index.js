@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import apiService from "../../apiService";
 import { getGamesRequest } from "../../redux";
 
 const GamesList = () => {
   // const [games, setGames] = useState([]);
-  const gamesList = useSelector(state => state.gamesList.gamesList);
+  // const gamesList = useSelector(state => state.gamesList.gamesList);
   const filteredGamesList = useSelector(state => state.gamesList.filteredGames);
   const dispatch = useDispatch();
 

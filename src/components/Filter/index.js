@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Select from "../Select";
 
 const Filter = () => {
@@ -14,16 +14,13 @@ const Filter = () => {
       });
   }, [dispatch]);
 
-  const handleSelect = (event) => {
-    // dispatch(filterGames(event.target.value));
-  }
-
   return (
     <ul>
       {filters.map((filter, index) => (
         <li key={index}>
           <Select
             name={filter.name}
+            description={filter.description}
             options={filter.options}
           />
         </li>

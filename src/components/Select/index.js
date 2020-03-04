@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from "react-redux";
 import { filterGames } from "../../redux";
+import './style.css';
 
 
 const Select = (props) => {
@@ -16,7 +17,7 @@ const Select = (props) => {
   return (
     <div>
       <label>
-        <span>{props.name}</span>
+        <div>{props.name} <span title={props.description}>info</span></div>
         <select name={props.name} onChange={handleSelect}>
           {props.options.map((value, index) => (
             <option
