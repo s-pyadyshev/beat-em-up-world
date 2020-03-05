@@ -28,9 +28,6 @@ const gamesList = (state = [], action) => {
     case FILTER_GAMES:
       state.filterOptions[action.filterName] = action.option;
       const filteredList = filter(state.gamesList, state.filterOptions);
-      // const filteredList = state.gamesList.reduce((acc, game) => {
-
-      // });
       return {
         ...state,
         filterOptions: state.filterOptions,

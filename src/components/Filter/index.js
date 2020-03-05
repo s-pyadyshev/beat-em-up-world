@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import Select from "../Select";
+import "./style.scss";
 
 const Filter = () => {
   const [filters, setFilters] = useState([]);
@@ -15,7 +16,7 @@ const Filter = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className="filter">
       {filters.map((filter, index) => (
         <li key={index}>
           <Select

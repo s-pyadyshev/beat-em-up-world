@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
 
