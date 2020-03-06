@@ -9,7 +9,7 @@ const Select = (props) => {
 
   const handleSelect = (event) => {
     if (event.target.value === "") {
-      return;
+      dispatch(filterGames(props.name, event.target.value));
     } else if (event.target.value[0].match(/^["0123456789"]*$/g)) {
       dispatch(filterGames(props.name, +event.target.value));
     } else {

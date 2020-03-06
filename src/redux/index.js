@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux'
-import { filter } from "lodash";
+import { filter, omit } from "lodash";
 
 const GET_GAMES_REQUEST = "GET_GAMES_REQUEST";
 // const GET_GAMES_SUCCESS = "GET_GAMES_SUCCESS";
@@ -26,8 +26,19 @@ const gamesList = (state = [], action) => {
     case GET_GAMES_REQUEST:
       return { ...state, gamesList: action.gamesList, filteredGames: action.gamesList, filterOptions: {} };
     case FILTER_GAMES:
+      if (!action.option.length) {
+        state.filterOptions = omit(state.filterOptions, action.filterName);
+        const filteredList = filter(state.gamesList, state.filterOptions);
+
+        return {
+          ...state,
+          filterOptions: state.filterOptions,
+          filteredGames: filteredList
+        };
+      }
       state.filterOptions[action.filterName] = action.option;
       const filteredList = filter(state.gamesList, state.filterOptions);
+
       return {
         ...state,
         filterOptions: state.filterOptions,
