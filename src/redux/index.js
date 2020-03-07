@@ -26,7 +26,7 @@ const gamesList = (state = [], action) => {
     case GET_GAMES_REQUEST:
       return { ...state, gamesList: action.gamesList, filteredGames: action.gamesList, filterOptions: {} };
     case FILTER_GAMES:
-      if (!action.option.length) {
+      if (action.option === "") {
         state.filterOptions = omit(state.filterOptions, action.filterName);
         const filteredList = filter(state.gamesList, state.filterOptions);
 
