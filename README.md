@@ -10,24 +10,28 @@ API (JSON)
 
 ToDo:
 - Add more games to DB/API:
--- 99Vidas
--- Batman Arkham series
--- Captain America: Super Soldier
--- Charlie Murder
--- Fight'N Rage
--- Fighting Force
--- Jackie Chan Stuntmaster
--- Lugaru?
--- Mad Max
--- Middle Earth series?
--- Mother Russia Bleeds
--- Oni
--- Overgrowth?
--- Rage
--- The friends of Ringo Ishikawa
--- Yakuza series
+  - 99Vidas
+  - Batman Arkham series
+  - Captain America: Super Soldier
+  - Charlie Murder
+  - Fight'N Rage
+  - Fighting Force
+  - Jackie Chan Stuntmaster
+  - Lugaru?
+  - Mad Max
+  - Middle Earth series?
+  - Mother Russia Bleeds
+  - Oni
+  - Overgrowth?
+  - Rage
+  - The friends of Ringo Ishikawa
+  - Yakuza series
 
 - Add Routing for Game detail block
+- Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
+- Make gangsize param consistent
+- Change weapons info to weapons names instead of amount
+- Add new game params (filters), e.g. Gore
 - Make nice design
 
 Change log:
@@ -35,6 +39,7 @@ Change log:
 0.2
 - Functional components, Redux, hooks
 - Games List, Filter, Select
+- Fixed filter value names consistency and typos
 
 0.1.
 - Class components, local state
