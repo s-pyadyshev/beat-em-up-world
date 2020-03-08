@@ -32,6 +32,7 @@ ToDo:
   - Urban Reign
   - Yakuza series
 
+- Refactoring
 - Add Routing for Game card block
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
 - Make gangsize param consistent
@@ -43,6 +44,7 @@ ToDo:
 - Make nice design
 - Place screenshots and covers to repo?
 - Add ratings?
+- Add Travis CI
 
 Change log:
 

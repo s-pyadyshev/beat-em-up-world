@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { filterGames } from "../../redux";
-import './style.css';
+import './style.scss';
 
 
 const Select = (props) => {
