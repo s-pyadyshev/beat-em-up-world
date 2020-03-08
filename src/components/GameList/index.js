@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getGamesRequest } from "../../redux";
+import GamesListItem from "../GameListItem";
 
 const GamesList = () => {
   // const [games, setGames] = useState([]);
@@ -20,12 +21,11 @@ const GamesList = () => {
   return (
     <ul>
       {filteredGamesList && filteredGamesList.map((game, index) => (
-        <li
-          key={index}>
-            {game.name} <span>
-              [{game.platform}]
-            </span>
-        </li>
+        <GamesListItem
+          key={index}
+          name={game.name}
+          platform={game.platform}>
+        </GamesListItem>
         )
       )}
     </ul>

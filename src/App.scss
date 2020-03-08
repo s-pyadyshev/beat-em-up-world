@@ -2,4 +2,8 @@
   display: flex;
   max-width: 1400px;
   margin: 0 auto;
+
+  &__card {
+    max-width: 40%;
+  }
 }

@@ -6,25 +6,37 @@ const GET_GAMES_REQUEST = "GET_GAMES_REQUEST";
 // const GET_GAMES_ERROR = "GET_GAMES_REQUEST";
 // const SELECT_FILTER = "SELECT_FILTER";
 const FILTER_GAMES = "FILTER_GAMES";
+const GET_GAME_CARD_REQUEST = "GET_GAME_CARD_REQUEST";
 
 export const getGamesRequest = (gamesList) => {
   return {
     type: GET_GAMES_REQUEST,
     gamesList
   }
-}
+};
+
+export const getGameCardRequest = (uniqGameName) => {
+  return {
+    type: GET_GAME_CARD_REQUEST,
+    uniqGameName
+  }
+};
+
 export const filterGames = (filterName, option) => {
   return {
     type: FILTER_GAMES,
     filterName,
     option
   }
-}
+};
 
 const gamesList = (state = [], action) => {
   switch(action.type) {
     case GET_GAMES_REQUEST:
       return { ...state, gamesList: action.gamesList, filteredGames: action.gamesList, filterOptions: {} };
+    
+    case GET_GAME_CARD_REQUEST:
+      return { ...state}
     case FILTER_GAMES:
       if (action.option === "") {
         state.filterOptions = omit(state.filterOptions, action.filterName);
