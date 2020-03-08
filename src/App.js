@@ -23,9 +23,10 @@ function App() {
           <Route path="/about">
             <AboutPage />
           </Route>
-          <div className="App__card">
-            <Route path="/:id" children={<GameCard />}/>
-          </div>
+          <Route path="/:id"
+          children={
+            <div className="App__card"><GameCard /></div>
+          }/>
         </Switch>
       </div>
     </Router>
