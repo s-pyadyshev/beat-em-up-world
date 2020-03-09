@@ -1,0 +1,64 @@
+import {
+  GET_GAMES_REQUEST,
+  GET_GAME_CARD_REQUEST,
+  FILTER_GAMES,
+  GET_GAMES_SUCCESS,
+  GET_GAMES_ERROR
+} from "./constants";
+import { filter, omit } from "lodash";
+
+const gamesList = (state = [], action) => {
+  switch(action.type) {
+    case GET_GAMES_REQUEST:
+      return {
+        ...state,
+        gamesList: action.gamesList,
+        filteredGames: action.gamesList,
+        filterOptions: {},
+        loading: true,
+        error: null
+      };
+    case GET_GAMES_SUCCESS:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      }
+    case GET_GAMES_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      }
+    case GET_GAME_CARD_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      }
+    case FILTER_GAMES:
+      if (action.option === "") {
+        state.filterOptions = omit(state.filterOptions, action.filterName);
+        const filteredList = filter(state.gamesList, state.filterOptions);
+
+        return {
+          ...state,
+          filterOptions: state.filterOptions,
+          filteredGames: filteredList
+        };
+      }
+
+      state.filterOptions[action.filterName] = action.option; // { weapons: "value" }
+      const filteredList = filter(state.gamesList, state.filterOptions);
+
+      return {
+        ...state,
+        filterOptions: state.filterOptions,
+        filteredGames: filteredList
+      };
+    default:
+      return state;
+  }
+};
+
+export default gamesList;

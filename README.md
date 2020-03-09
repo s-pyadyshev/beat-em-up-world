@@ -23,17 +23,21 @@ ToDo:
   - Mad Max
   - Middle Earth series?
   - Mother Russia Bleeds
+  - Nekketsu Kōha Kunio-kun Special
   - Nekketsu Oyako
   - Oni
   - Overgrowth?
   - Rage
+  - River City: Tokyo Rumble
+  - River City Girls
   - River City Ransom Underground
+  - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
   - The friends of Ringo Ishikawa
+  - The TakeOver
   - Urban Reign
   - Yakuza series
 
 - Refactoring
-- Add Routing for Game card block
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
 - Make gangsize param consistent
 - Change weapons info to weapons names instead of amount
@@ -45,12 +49,18 @@ ToDo:
 - Place screenshots and covers to repo?
 - Add ratings?
 - Add Travis CI
+- Add SSR?
+- Add Typescript
+- Add beat'em up bingo? (http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html)
+- Add links to other relateds sites (https://kuniokun.fandom.com/wiki/Kunio-Kun_Wiki)
+- Add About info
+- Add summary info (games/platforms/focus total etc.)
 
 Change log:
 
 0.2
-- Functional components, Redux, hooks
-- Games List, Filter, Select
+- Functional components, Redux, react-router, hooks
+- Games List, Filter, Select, Game Card
 - Fixed filter value names consistency and typos
 
 0.1.

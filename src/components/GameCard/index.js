@@ -62,7 +62,7 @@ const GameCard = () => {
     extend,
     overallReview,
     cover,
-    // images //TODO add slider
+    images
   } = gameCardInfo;
 
 
@@ -195,6 +195,11 @@ const GameCard = () => {
         </li>
         <li>
           <span>overallReview: </span><span>{overallReview}</span>
+        </li>
+        <li>
+          <ul>
+            {images ? images.map((image, index) => <li key={index}><img src={image} alt="game screenshot"/></li>) : null}
+          </ul>
         </li>
       </ul>
     </div>

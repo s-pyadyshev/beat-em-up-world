@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { getGamesRequest } from "../../redux";
+import { getGamesRequest } from "../../redux/gamesList/actions";
 import GamesListItem from "../GameListItem";
 
 const GamesList = () => {
-  // const [games, setGames] = useState([]);
-  // const gamesList = useSelector(state => state.gamesList.gamesList);
   const filteredGamesList = useSelector(state => state.gamesList.filteredGames);
   const dispatch = useDispatch();
 
@@ -13,13 +11,13 @@ const GamesList = () => {
     fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/db.json")
       .then(res => res.json())
       .then(result => {
-        // setGames(result);
         dispatch(getGamesRequest(result));
       });
   }, [dispatch]);
 
   return (
     <ul>
+      {filteredGamesList && filteredGamesList.length === 0 ? <h2>Games not found</h2> : null}
       {filteredGamesList && filteredGamesList.map((game, index) => (
         <GamesListItem
           key={index}
