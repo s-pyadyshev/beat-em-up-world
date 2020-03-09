@@ -41,6 +41,7 @@ ToDo:
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
 - Make gangsize param consistent
 - Change weapons info to weapons names instead of amount
+- Change variety values from string to array of values like weapons
 - Add new game params (filters), e.g. Gore
 - Add links (wikipedia etc.) and reviews array (do not include into filter)
 - Add possibility to select multiple choice in one filter

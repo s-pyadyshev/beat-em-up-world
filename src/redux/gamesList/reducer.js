@@ -47,8 +47,13 @@ const gamesList = (state = [], action) => {
           filteredGames: filteredList
         };
       }
-
-      state.filterOptions[action.filterName] = action.option; // { weapons: "value" }
+      // hardcode solution for array values
+      if (action.filterName === "weapons") {
+        state.filterOptions[action.filterName] = [action.option];
+      } else {
+        state.filterOptions[action.filterName] = action.option;
+      }
+      
       const filteredList = filter(state.gamesList, state.filterOptions);
 
       return {
