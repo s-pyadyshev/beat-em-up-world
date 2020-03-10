@@ -12,7 +12,7 @@ const Select = (props) => {
     if (event.target.value === "") {
       dispatch(filterGames(props.name, event.target.value));
       setSelected(false);
-    } else if (event.target.value[0].match(/^["0123456789"]*$/g)) {
+    } else if (event.target.value.match(/^[0-9]+$/)) {
       dispatch(filterGames(props.name, +event.target.value));
       setSelected(true);
     } else {
