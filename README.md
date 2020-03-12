@@ -11,14 +11,19 @@ API (JSON)
 ToDo:
 - Add more games to DB/API:
   - 99Vidas
-  - Batman Arkham series
+  - Batman Arkham series?
+  - Beat Down: Fists of Vengeance
+  - Big Fight: Big Trouble in the Atlantic Ocean
   - Captain America: Super Soldier
   - Charlie Murder
+  - Comar Barbarian?
   - Crisis Beat
   - Crows - The Battle Action
   - Fight'N Rage
   - Fighting Force
   - Jackie Chan Stuntmaster
+  - Jet Li: Rise to Honor?
+  - Judge Dredd Arcade Game
   - Lugaru?
   - Mad Max
   - Middle Earth series?
@@ -31,11 +36,15 @@ ToDo:
   - River City: Tokyo Rumble
   - River City Girls
   - River City Ransom Underground
+  - Sleeping Dogs?
   - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
+  - Tekken 3 (Tekken Force mode)
+  - The Bouncer
   - The friends of Ringo Ishikawa
   - The TakeOver
   - Urban Reign
-  - Yakuza series
+  - Yakuza series?
+  - Zombie Revenge?
 
 - Refactoring
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
@@ -53,7 +62,7 @@ ToDo:
 - Add SSR?
 - Add Typescript
 - Add beat'em up bingo? (http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html)
-- Add links to other relateds sites (https://kuniokun.fandom.com/wiki/Kunio-Kun_Wiki)
+- Add links to other relateds sites (https://en.wikipedia.org/wiki/List_of_beat_'em_ups, https://kuniokun.fandom.com/wiki/Kunio-Kun_Wiki)
 - Add About info
 - Add summary info (games/platforms/focus total etc.)
 
