@@ -10,10 +10,10 @@ const GameCard = () => {
   const gamesList = useSelector(state => state.gamesList.gamesList);
 
   useEffect(() => {
-      const filteredGameCard = gamesList
-        ? gamesList.filter((game) => (game.name + "[" + game.platform + "]").replace(/\s/g,'').toLowerCase() === id)[0]
-        : null;
-      setGameCardInfo({...filteredGameCard});
+    const filteredGameCard = gamesList
+      ? gamesList.filter((game) => (game.name + "[" + game.platform + "]").replace(/\s/g,'').toLowerCase() === id)[0]
+      : null;
+    setGameCardInfo({...filteredGameCard});
   }, [id, gamesList]);
 
   const {
@@ -182,7 +182,8 @@ const GameCard = () => {
           <span>bosses: </span><span>{bosses}</span>
         </li>
         <li>
-          <span>weapons: </span><span>{weapons}</span>
+          <span>weapons: </span>
+          <ul>{weapons && weapons.map((weapon, index) => <li key={index}>{weapon}</li>)}</ul>
         </li>
         <li>
           <span>lives: </span><span>{lives}</span>

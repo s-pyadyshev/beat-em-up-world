@@ -87,8 +87,7 @@
   },
   "devDependencies": {
     "axios": "^0.19.2",
-    "lodash": "^4.17.15",
-    "react-final-form": "^6.3.5"
+    "lodash": "^4.17.15"
   },
   "jest": {
     "roots": [

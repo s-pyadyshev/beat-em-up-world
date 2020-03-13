@@ -37,6 +37,7 @@ ToDo:
   - River City Girls
   - River City Ransom Underground
   - Sleeping Dogs?
+  - SpikeOut
   - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
   - Tekken 3 (Tekken Force mode)
   - The Bouncer
