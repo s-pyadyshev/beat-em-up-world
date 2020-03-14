@@ -24,7 +24,7 @@ const Select = (props) => {
   return (
     <div className={isSelected ? "is-selected" : null}>
       <label>
-        <div><strong>{props.name}</strong> <span title={props.description}>&#x1F6C8;</span></div>
+        <div><strong>{props.filterName}</strong> <span title={props.description}>&#x1F6C8;</span></div>
         <select
           name={props.name}
           onChange={handleSelect}>

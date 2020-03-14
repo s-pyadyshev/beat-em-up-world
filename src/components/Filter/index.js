@@ -20,6 +20,7 @@ const Filter = () => {
       {filters.map((filter, index) => (
         <li key={index}>
           <Select
+            filterName={filter.filterName}
             name={filter.name}
             description={filter.description}
             options={filter.options}

@@ -77,125 +77,125 @@ const GameCard = () => {
 
       <ul>
         <li>
-          <span>developer: {developer}</span>
+          <span>Developer: {developer}</span>
         </li>
         <li>
-          <span>publisher: {publisher}</span>
+          <span>Publisher: {publisher}</span>
         </li>
         <li>
-          <span>releasedate: </span><span>{releasedate}</span>
+          <span>Release Date: </span><span>{releasedate}</span>
         </li>
         <li>
-          <span>otherPlatforms: </span><span>{otherPlatforms}</span>
+          <span>Other Platforms: </span><span>{otherPlatforms}</span>
         </li>
         <li>
-          <span>series: </span><span>{series}</span>
+          <span>Series: </span><span>{series}</span>
         </li>
         <li>
-          <span>players: </span><span>{players}</span>
+          <span>Players: </span><span>{players}</span>
         </li>
         <li>
-          <span>structure: </span><span>{structure}</span>
+          <span>Structure: </span><span>{structure}</span>
         </li>
         <li>
-          <span>difficulty: </span><span>{difficulty}</span>
+          <span>Difficulty: </span><span>{difficulty}</span>
         </li>
         <li>
-          <span>gangsize: </span><span>{gangsize}</span>
+          <span>Gang Size: </span><span>{gangsize}</span>
         </li>
         <li>
-          <span>variety: </span><span>{variety}</span>
+          <span>Variety: </span><span>{variety}</span>
         </li>
         <li>
-          <span>playtime: </span><span>{playtime}</span>
+          <span>Playtime: </span><span>{playtime}</span>
         </li>
         <li>
-          <span>buttons: </span><span>{buttons}</span>
+          <span>Buttons: </span><span>{buttons}</span>
         </li>
         <li>
-          <span>combos: </span><span>{combos}</span>
+          <span>Combos: </span><span>{combos}</span>
         </li>
         <li>
-          <span>grabs: </span><span>{grabs}</span>
+          <span>Grabs: </span><span>{grabs}</span>
         </li>
         <li>
-          <span>dashing: </span><span>{dashing}</span>
+          <span>Вashing: </span><span>{dashing}</span>
         </li>
         <li>
-          <span>enemyHBars: </span><span>{enemyHBars}</span>
+          <span>Enemy Health Bars: </span><span>{enemyHBars}</span>
         </li>
         <li>
-          <span>itemPickup: </span><span>{itemPickup}</span>
+          <span>Item Pickup: </span><span>{itemPickup}</span>
         </li>
         <li>
-          <span>itemStay: </span><span>{itemStay}</span>
+          <span>Item Stay: </span><span>{itemStay}</span>
         </li>
         <li>
-          <span>weaponsStay: </span><span>{weaponsStay}</span>
+          <span>Weapons Stay: </span><span>{weaponsStay}</span>
         </li>
         <li>
-          <span>deathBlow: </span><span>{deathBlow}</span>
+          <span>Death Blow: </span><span>{deathBlow}</span>
         </li>
         <li>
-          <span>friendlyFire: </span><span>{friendlyFire}</span>
+          <span>Friendly Fire: </span><span>{friendlyFire}</span>
         </li>
         <li>
-          <span>charSwitch: </span><span>{charSwitch}</span>
+          <span>Character Switch: </span><span>{charSwitch}</span>
         </li>
         <li>
-          <span>groundHit: </span><span>{groundHit}</span>
+          <span>Ground Hit: </span><span>{groundHit}</span>
         </li>
         <li>
-          <span>revive: </span><span>{revive}</span>
+          <span>Revive: </span><span>{revive}</span>
         </li>
         <li>
-          <span>restore: </span><span>{restore}</span>
+          <span>Restore: </span><span>{restore}</span>
         </li>
         <li>
-          <span>artStyle: </span><span>{artStyle}</span>
+          <span>Art Style: </span><span>{artStyle}</span>
         </li>
         <li>
-          <span>sprites: </span><span>{sprites}</span>
+          <span>Sprites: </span><span>{sprites}</span>
         </li>
         <li>
-          <span>setting: </span><span>{setting}</span>
+          <span>Setting: </span><span>{setting}</span>
         </li>
         <li>
-          <span>focus: </span><span>{focus}</span>
+          <span>Focus: </span><span>{focus}</span>
         </li>
         <li>
-          <span>music: </span><span>{music}</span>
+          <span>Music: </span><span>{music}</span>
         </li>
         <li>
-          <span>tone: </span><span>{tone}</span>
+          <span>Tone: </span><span>{tone}</span>
         </li>
         <li>
-          <span>fighters: </span><span>{fighters}</span>
+          <span>Fighters: </span><span>{fighters}</span>
         </li>
         <li>
-          <span>stages: </span><span>{stages}</span>
+          <span>Stages: </span><span>{stages}</span>
         </li>
         <li>
-          <span>enemies: </span><span>{enemies}</span>
+          <span>Enemies: </span><span>{enemies}</span>
         </li>
         <li>
-          <span>bosses: </span><span>{bosses}</span>
+          <span>Bosses: </span><span>{bosses}</span>
         </li>
         <li>
-          <span>weapons: </span>
+          <span>Weapons: </span>
           <ul>{weapons && weapons.map((weapon, index) => <li key={index}>{weapon}</li>)}</ul>
         </li>
         <li>
-          <span>lives: </span><span>{lives}</span>
+          <span>Lives: </span><span>{lives}</span>
         </li>
         <li>
-          <span>continues: </span><span>{continues}</span>
+          <span>Continues: </span><span>{continues}</span>
         </li>
         <li>
-          <span>extend: </span><span>{extend}</span>
+          <span>Extend: </span><span>{extend}</span>
         </li>
         <li>
-          <span>overallReview: </span><span>{overallReview}</span>
+          <span>Overall Review: </span><span>{overallReview}</span>
         </li>
         <li>
           <ul>
