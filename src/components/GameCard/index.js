@@ -104,7 +104,8 @@ const GameCard = () => {
           <span>Gang Size: </span><span>{gangsize}</span>
         </li>
         <li>
-          <span>Variety: </span><span>{variety}</span>
+          <span>Variety: </span>
+          <ul>{variety && variety.map((variety, index) => <li key={index}>{variety}</li>)}</ul>
         </li>
         <li>
           <span>Playtime: </span><span>{playtime}</span>
