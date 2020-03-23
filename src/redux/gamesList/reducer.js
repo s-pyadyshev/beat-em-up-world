@@ -1,9 +1,9 @@
 import {
   GET_GAMES_REQUEST,
-  GET_GAME_CARD_REQUEST,
-  FILTER_GAMES,
   GET_GAMES_SUCCESS,
-  GET_GAMES_ERROR
+  GET_GAMES_ERROR,
+  GET_GAME_CARD_REQUEST,
+  FILTER_GAMES
 } from "./constants";
 import { filter, omit } from "lodash";
 
@@ -12,16 +12,16 @@ const gamesList = (state = [], action) => {
     case GET_GAMES_REQUEST:
       return {
         ...state,
-        gamesList: action.gamesList,
-        filteredGames: action.gamesList,
-        filterOptions: {},
         loading: true,
         error: null
       };
     case GET_GAMES_SUCCESS:
       return {
         ...state,
-        loading: true,
+        gamesList: action.gamesList,
+        filteredGames: action.gamesList,
+        filterOptions: {},
+        loading: false,
         error: null
       }
     case GET_GAMES_ERROR:

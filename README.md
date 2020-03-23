@@ -1,6 +1,6 @@
 <a href="https://beat-em-up-world.herokuapp.com">https://beat-em-up-world.herokuapp.com</a>
 <br>
-Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>.
+Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
 Stack: React, Redux, creat-react-app, Scss.
 <br>
@@ -19,6 +19,7 @@ ToDo:
   - Comar Barbarian?
   - Crisis Beat
   - Crows - The Battle Action
+  - Double Dragon IV
   - Fight'N Rage
   - Fighting Force
   - Jackie Chan Stuntmaster
@@ -39,9 +40,11 @@ ToDo:
   - Sleeping Dogs?
   - SpikeOut
   - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
+  - Streets of Rage 4
   - Tekken 3 (Tekken Force mode)
   - The Bouncer
   - The friends of Ringo Ishikawa
+  - The Shadow (SNES Prototype)
   - The TakeOver
   - Urban Reign
   - Yakuza series?
@@ -59,7 +62,7 @@ ToDo:
 - Make nice design
 - Place screenshots and covers to repo?
 - Add ratings?
-- Add Travis CI
+- Add Travis CI?
 - Add SSR?
 - Add Typescript
 - Add beat'em up bingo? (http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html)

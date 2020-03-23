@@ -120,7 +120,7 @@ const GameCard = () => {
           <span>Grabs: </span><span>{grabs}</span>
         </li>
         <li>
-          <span>Вashing: </span><span>{dashing}</span>
+          <span>Dashing: </span><span>{dashing}</span>
         </li>
         <li>
           <span>Enemy Health Bars: </span><span>{enemyHBars}</span>
