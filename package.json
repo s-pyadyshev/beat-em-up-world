@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.8.4",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -50,6 +52,7 @@
     "react-dev-utils": "^10.2.0",
     "react-dom": "^16.12.0",
     "react-id-swiper": "^3.0.0",
+    "react-popper": "^1.3.7",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",

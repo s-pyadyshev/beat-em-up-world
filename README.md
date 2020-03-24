@@ -19,6 +19,7 @@ ToDo:
   - Comar Barbarian?
   - Crisis Beat
   - Crows - The Battle Action
+  - Dad 'n me (https://www.newgrounds.com/portal/view/254456)
   - Double Dragon IV
   - Fight'N Rage
   - Fighting Force
