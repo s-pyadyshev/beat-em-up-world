@@ -1,0 +1,12 @@
+.game-card {
+  color: #fff;
+
+  &__name {
+    font-family: 'capture-it', serif;
+    font-size: 2rem;
+  }
+
+  &__parameter-name {
+    font-family: 'capture-it', serif;
+  }
+}

@@ -1,9 +1,13 @@
 .App {
-  display: flex;
   max-width: 1400px;
   margin: 0 auto;
+
+  &__body {
+    display: flex;
+  }
 
   &__card {
     max-width: 40%;
   }
 }
+

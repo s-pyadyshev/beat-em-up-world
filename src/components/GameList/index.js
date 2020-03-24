@@ -4,6 +4,7 @@ import { getGamesRequest, getGamesSuccess } from "../../redux/gamesList/actions"
 import GamesListItem from "../GameListItem";
 import { Games } from "../../services/api";
 import Loading from "../Loading";
+import "./style.scss";
 
 const GamesList = () => {
   const filteredGamesList = useSelector(state => state.gamesList.filteredGames);

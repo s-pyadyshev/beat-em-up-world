@@ -3,9 +3,9 @@ import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import Header from "./components/Header";
 import AboutPage from "./pages/AboutPage";
 import StatsPage from "./pages/StatsPage";
 import GameCard from "./components/GameCard";
@@ -15,24 +15,24 @@ import Filter from "./components/Filter";
 function App() {
   return (
     <Router>
-      <Link to="/about">About</Link>
-      <br/>
-      <Link to="/stats">Stats</Link>
       <div className="App">
-        <Filter/>
-        <GameList/>
-        <Switch>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-          <Route path="/stats">
-            <StatsPage />
-          </Route>
-          <Route path="/:id"
-          children={
-            <div className="App__card"><GameCard /></div>
-          }/>
-        </Switch>
+        <Header/>
+        <div className="App__body">
+          <Filter/>
+          <GameList/>
+          <Switch>
+            <Route path="/about">
+              <AboutPage />
+            </Route>
+            <Route path="/stats">
+              <StatsPage />
+            </Route>
+            <Route path="/:id"
+            children={
+              <div className="App__card"><GameCard /></div>
+            }/>
+          </Switch>
+        </div>
       </div>
     </Router>
   );

@@ -18,19 +18,19 @@ const AboutPage = () => {
         Seems reasonable with few exceptions.
         <q>there is no real answer, it always depends on how the person you're asking "feels" (SUPERAWESOMEULTRAMAN)</q>
         Seems reasonable but feeling is not scientific argument.
-
-        Minimum requirements for a video game to be considered the beat'em up:
-        - Hand-to-hand focus
-        - Multiple opponents (at least more than 1)<br/>
-        - Variety matters (grabs!). More moves means more realistic combat. No grabs = mindless button masher. Actually variety can be applied to any genre.<br/> 
-
-        Is Golden Axe a beat'em up?<br/>
-        Yes, it has punches (kind of - by grip of the sword), kicks, throws, dashing attacks are not always made with weapon, so it feels like more non-weapon combat.
-
-        Is Comix Zone a beat'em up?<br/>
-        Yes, (it's combat has enough variety - throws, block, weapons, but multiple enemies is a rare thing here), but it is an Action Platformer as well, so it isn't typical representative of the genre, just a mixed type.
-
       </p>
+
+      Minimum requirements for a video game to be considered the beat'em up:<br/>
+      - Hand-to-hand focus<br/>
+      - Multiple opponents (at least more than 1)<br/>
+      - Variety matters (grabs!). More moves means more realistic combat. No grabs = mindless button masher. Actually variety can be applied to any genre.<br/> 
+      
+      <br/>
+      <strong>Is Golden Axe a beat'em up?</strong>
+      <p>Yes, it has punches (kind of - by grip of the sword), kicks, throws, dashing attacks are not always made with weapon, so it feels like more non-weapon combat.</p>
+
+      <strong>Is Comix Zone a beat'em up?</strong>
+      <p>Yes, (it's combat has enough variety - throws, block, weapons, but multiple enemies is a rare thing here), but it is an Action Platformer as well, so it isn't typical representative of the genre, just a mixed type.</p>
 
       <h2>Why should we care about beat'em ups?</h2>
       <p>It is one of video game genres that fits the nature of every living being - competition, fight for resources, a place under the Sun.
@@ -54,10 +54,10 @@ const AboutPage = () => {
           <a href="https://www.spriters-resource.com/genre/beat_em_up/" target="_blank" rel="noopener noreferrer">Beat_'em_up on The Spriters Resource</a>
         </li>
         <li>
-          <a href="https://store.steampowered.com/tags/en/Beat%20%27em%20up/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Steams</a>
+          <a href="https://store.steampowered.com/tags/en/Beat%20%27em%20up/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Steam</a>
         </li>
         <li>
-          <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/BeatEmUp/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Steams</a>
+          <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/BeatEmUp/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on TV Tropes</a>
         </li>
       </ul>
     </div>

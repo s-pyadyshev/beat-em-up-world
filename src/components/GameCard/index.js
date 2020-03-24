@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import {
   useParams
 } from "react-router-dom";
+import "./style.scss";
 
 const GameCard = () => {
   let { id } = useParams();
@@ -65,138 +66,136 @@ const GameCard = () => {
     images
   } = gameCardInfo;
 
-
-
   return (
-    <div>
-      <h2>{name}</h2>
+    <div className="game-card">
+      <h2 className="game-card__name">{name}</h2>
       <div>{platform}</div>
       <img src={cover} alt={name}/>
       <p>about: {about}</p>
       <p>trivia: {trivia}</p>
 
-      <ul>
+      <ul className="game-card__detail">
         <li>
-          <span>Developer: {developer}</span>
+          <span className="game-card__parameter-name">Developer: </span><span>{developer}</span>
         </li>
         <li>
-          <span>Publisher: {publisher}</span>
+          <span className="game-card__parameter-name">Publisher: </span><span>{publisher}</span>
         </li>
         <li>
-          <span>Release Date: </span><span>{releasedate}</span>
+          <span className="game-card__parameter-name">Release Date: </span><span>{releasedate}</span>
         </li>
         <li>
-          <span>Other Platforms: </span><span>{otherPlatforms}</span>
+          <span className="game-card__parameter-name">Other Platforms: </span><span>{otherPlatforms}</span>
         </li>
         <li>
-          <span>Series: </span><span>{series}</span>
+          <span className="game-card__parameter-name">Series: </span><span>{series}</span>
         </li>
         <li>
-          <span>Players: </span><span>{players}</span>
+          <span className="game-card__parameter-name">Players: </span><span>{players}</span>
         </li>
         <li>
-          <span>Structure: </span><span>{structure}</span>
+          <span className="game-card__parameter-name">Structure: </span><span>{structure}</span>
         </li>
         <li>
-          <span>Difficulty: </span><span>{difficulty}</span>
+          <span className="game-card__parameter-name">Difficulty: </span><span>{difficulty}</span>
         </li>
         <li>
-          <span>Gang Size: </span><span>{gangsize}</span>
+          <span className="game-card__parameter-name">Gang Size: </span><span>{gangsize}</span>
         </li>
         <li>
-          <span>Variety: </span>
+          <span className="game-card__parameter-name">Variety: </span>
           <ul>{variety && variety.map((variety, index) => <li key={index}>{variety}</li>)}</ul>
         </li>
         <li>
-          <span>Playtime: </span><span>{playtime}</span>
+          <span className="game-card__parameter-name">Playtime: </span><span>{playtime}</span>
         </li>
         <li>
-          <span>Buttons: </span><span>{buttons}</span>
+          <span className="game-card__parameter-name">Buttons: </span><span>{buttons}</span>
         </li>
         <li>
-          <span>Combos: </span><span>{combos}</span>
+          <span className="game-card__parameter-name">Combos: </span><span>{combos}</span>
         </li>
         <li>
-          <span>Grabs: </span><span>{grabs}</span>
+          <span className="game-card__parameter-name">Grabs: </span><span>{grabs}</span>
         </li>
         <li>
-          <span>Dashing: </span><span>{dashing}</span>
+          <span className="game-card__parameter-name">Dashing: </span><span>{dashing}</span>
         </li>
         <li>
-          <span>Enemy Health Bars: </span><span>{enemyHBars}</span>
+          <span className="game-card__parameter-name">Enemy Health Bars: </span><span>{enemyHBars}</span>
         </li>
         <li>
-          <span>Item Pickup: </span><span>{itemPickup}</span>
+          <span className="game-card__parameter-name">Item Pickup: </span><span>{itemPickup}</span>
         </li>
         <li>
-          <span>Item Stay: </span><span>{itemStay}</span>
+          <span className="game-card__parameter-name">Item Stay: </span><span>{itemStay}</span>
         </li>
         <li>
-          <span>Weapons Stay: </span><span>{weaponsStay}</span>
+          <span className="game-card__parameter-name">Weapons Stay: </span><span>{weaponsStay}</span>
         </li>
         <li>
-          <span>Death Blow: </span><span>{deathBlow}</span>
+          <span className="game-card__parameter-name">Death Blow: </span><span>{deathBlow}</span>
         </li>
         <li>
-          <span>Friendly Fire: </span><span>{friendlyFire}</span>
+          <span className="game-card__parameter-name">Friendly Fire: </span><span>{friendlyFire}</span>
         </li>
         <li>
-          <span>Character Switch: </span><span>{charSwitch}</span>
+          <span className="game-card__parameter-name">Character Switch: </span><span>{charSwitch}</span>
         </li>
         <li>
-          <span>Ground Hit: </span><span>{groundHit}</span>
+          <span className="game-card__parameter-name">Ground Hit: </span><span>{groundHit}</span>
         </li>
         <li>
-          <span>Revive: </span><span>{revive}</span>
+          <span className="game-card__parameter-name">Revive: </span><span>{revive}</span>
         </li>
         <li>
-          <span>Restore: </span><span>{restore}</span>
+          <span className="game-card__parameter-name">Restore: </span><span>{restore}</span>
         </li>
         <li>
-          <span>Art Style: </span><span>{artStyle}</span>
+          <span className="game-card__parameter-name">Art Style: </span><span>{artStyle}</span>
         </li>
         <li>
-          <span>Sprites: </span><span>{sprites}</span>
+          <span className="game-card__parameter-name">Sprites: </span><span>{sprites}</span>
         </li>
         <li>
-          <span>Setting: </span><span>{setting}</span>
+          <span className="game-card__parameter-name">Setting: </span><span>{setting}</span>
         </li>
         <li>
-          <span>Focus: </span><span>{focus}</span>
+          <span className="game-card__parameter-name">Focus: </span><span>{focus}</span>
         </li>
         <li>
-          <span>Music: </span><span>{music}</span>
+          <span className="game-card__parameter-name">Music: </span><span>{music}</span>
         </li>
         <li>
-          <span>Tone: </span><span>{tone}</span>
+          <span className="game-card__parameter-name">Tone: </span><span>{tone}</span>
         </li>
         <li>
-          <span>Fighters: </span><span>{fighters}</span>
+          <span className="game-card__parameter-name">Fighters: </span><span>{fighters}</span>
         </li>
         <li>
-          <span>Stages: </span><span>{stages}</span>
+          <span className="game-card__parameter-name">Stages: </span><span>{stages}</span>
         </li>
         <li>
-          <span>Enemies: </span><span>{enemies}</span>
+          <span className="game-card__parameter-name">Enemies: </span><span>{enemies}</span>
         </li>
         <li>
-          <span>Bosses: </span><span>{bosses}</span>
+          <span className="game-card__parameter-name">Bosses: </span><span>{bosses}</span>
         </li>
         <li>
-          <span>Weapons: </span>
+          <span className="game-card__parameter-name">Weapons: </span>
           <ul>{weapons && weapons.map((weapon, index) => <li key={index}>{weapon}</li>)}</ul>
         </li>
         <li>
-          <span>Lives: </span><span>{lives}</span>
+          <span className="game-card__parameter-name">Lives: </span><span>{lives}</span>
         </li>
         <li>
-          <span>Continues: </span><span>{continues}</span>
+          <span className="game-card__parameter-name">Continues: </span><span>{continues}</span>
         </li>
         <li>
-          <span>Extend: </span><span>{extend}</span>
+          <span className="game-card__parameter-name">Extend: </span><span>{extend}</span>
         </li>
         <li>
-          <span>Overall Review: </span><span>{overallReview}</span>
+          <span className="game-card__parameter-name">Overall Review: </span><span>{overallReview}</span>
         </li>
         <li>
           <ul>

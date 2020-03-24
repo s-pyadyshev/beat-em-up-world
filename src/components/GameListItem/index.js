@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Link
 } from "react-router-dom";
+import "./style.scss";
 
 const GameListItem = (props) => {
   const { index, name, platform } = props;
@@ -10,6 +11,7 @@ const GameListItem = (props) => {
 
   return (
     <li
+      className="gameslist-item"
       key={index}>
       <Link to={uniqGameNameId}>
         {name} <span> [{platform}]</span>

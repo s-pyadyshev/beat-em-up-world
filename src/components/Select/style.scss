@@ -1,3 +1,24 @@
+.select {
+
+  &__info-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'capture-it', serif;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
 .is-selected {
   background-color: green;
   color: white;
