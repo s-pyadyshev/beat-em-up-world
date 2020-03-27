@@ -26,11 +26,18 @@ const GamesList = () => {
       {loading ? <Loading/> : null}
       {filteredGamesList && filteredGamesList.length === 0 ? <h2>Games not found</h2> : null}
       {filteredGamesList && filteredGamesList.map((game, index) => (
-        <GamesListItem
-          key={index}
-          name={game.name}
-          platform={game.platform}>
-        </GamesListItem>
+        <>
+          {game.missing
+          ?
+            <li className="missing"><b>{game.name} (MISSING)</b></li>
+          :
+          <GamesListItem
+            key={index}
+            name={game.name}
+            platform={game.platform}>
+          </GamesListItem>
+          }
+        </>
         )
       )}
     </ul>

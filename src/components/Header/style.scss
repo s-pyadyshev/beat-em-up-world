@@ -1,0 +1,34 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  font-family: 'capture-it', serif;
+  font-size: 3rem;
+  background-image: url('../../assets/img/sor-city.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  &__link {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+}
+
+.dronami-logo {
+  img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+.punchpedia-logo {
+  img {
+    width: 120px;
+    height: auto;
+  }
+}

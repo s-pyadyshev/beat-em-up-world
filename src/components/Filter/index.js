@@ -17,7 +17,7 @@ const Filter = () => {
 
   return (
     <ul className="filter">
-      {filters.filter((filter) => filter.name !== "otherPlatforms").map((filter, index) => (
+      {filters.map((filter, index) => (
         <li key={index}>
           <Select
             filterName={filter.filterName}

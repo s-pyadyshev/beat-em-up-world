@@ -20,6 +20,7 @@ ToDo:
   - Crisis Beat
   - Crows - The Battle Action
   - Dad 'n me (https://www.newgrounds.com/portal/view/254456)
+  - Dark Judgement?
   - Double Dragon IV
   - Fight'N Rage
   - Fighting Force
@@ -42,6 +43,7 @@ ToDo:
   - SpikeOut
   - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
   - Streets of Rage 4
+  - SORR mods?
   - Tekken 3 (Tekken Force mode)
   - The Bouncer
   - The friends of Ringo Ishikawa
@@ -51,6 +53,8 @@ ToDo:
   - Yakuza series?
   - Zombie Revenge?
 
+- Add linters
+- Add svg-sprite-loader
 - Refactoring
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
 - Make gangsize param consistent
@@ -72,6 +76,9 @@ ToDo:
 - Add summary info (games/platforms/focus total etc.)
 
 Change log:
+
+0.3
+- Added tooltip
 
 0.2
 - Functional components, Redux, react-router, hooks
