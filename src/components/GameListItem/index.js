@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Link
 } from "react-router-dom";
-import Slider from "./../Slider";
+// import Slider from "./../Slider";
 import "./style.scss";
 
 const GameListItem = (props) => {

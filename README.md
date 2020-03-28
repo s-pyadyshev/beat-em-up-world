@@ -10,13 +10,14 @@ API (JSON)
 
 ToDo:
 - Add more games to DB/API:
-  - 99Vidas
   - Batman Arkham series?
+  - Batman: Rise of Sin Tzu
   - Beat Down: Fists of Vengeance
   - Big Fight: Big Trouble in the Atlantic Ocean
   - Captain America: Super Soldier
   - Charlie Murder
   - Comar Barbarian?
+  - Cowboy Bebop: Tsuioku no Serenade?
   - Crisis Beat
   - Crows - The Battle Action
   - Dad 'n me (https://www.newgrounds.com/portal/view/254456)
@@ -50,6 +51,8 @@ ToDo:
   - The Shadow (SNES Prototype)
   - The TakeOver
   - Urban Reign
+  - Watchmen: The End is Nigh
+  - Watchmen: The End is Nigh Part 2
   - Yakuza series?
   - Zombie Revenge?
 
@@ -78,7 +81,7 @@ ToDo:
 Change log:
 
 0.3
-- Added tooltip
+- Added tooltip, otherPlatforms links
 
 0.2
 - Functional components, Redux, react-router, hooks

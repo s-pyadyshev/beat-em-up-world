@@ -29,7 +29,7 @@ const GamesList = () => {
         <>
           {game.missing
           ?
-            <li className="missing"><b>{game.name} (MISSING)</b></li>
+            <li className="missing"><b>{game.name} (MISSING - ADD THE GAME HERE)</b></li>
           :
           <GamesListItem
             key={index}

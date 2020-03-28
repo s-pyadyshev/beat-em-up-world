@@ -67,7 +67,10 @@ const AboutPage = () => {
           <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/BeatEmUp/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on TV Tropes</a>
         </li>
         <li>
-          <a href="https://crappygames.miraheze.org/wiki/Category:Beat%27em_Up_Games" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Crappy Games</a>
+          <a href="https://crappygames.miraheze.org/wiki/Category:Beat%27em_Up_Games" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Crappy Games Wiki</a>
+        </li>
+        <li>
+          <a href="https://awesomegames.miraheze.org/wiki/Category:Beat%27em_up_Games" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Awesome Games Wiki</a>
         </li>
       </ul>
     </div>

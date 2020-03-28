@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import {
+  Link,
   useParams
 } from "react-router-dom";
 import "./style.scss";
@@ -85,7 +86,13 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Release Date: </span><span>{releasedate}</span>
         </li>
         <li>
-          <span className="game-card__parameter-name">Other Platforms: </span><span>{otherPlatforms}</span>
+          <span className="game-card__parameter-name">Other Platforms: </span><ul className="game-card__other-platforms">{otherPlatforms && otherPlatforms.map((platform, index) => (
+            <li>
+              <Link to={name.replace(/\s/g,'').toLowerCase() + "[" + platform.replace(/\s/g,'').toLowerCase() + "]" } key={index}>
+                <span>{platform}</span>
+              </Link>
+            </li>
+          ))}</ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Series: </span><span>{series}</span>

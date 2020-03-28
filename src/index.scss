@@ -24,6 +24,8 @@ ul {
 
 a {
   color: #fff;
+  transition-duration: 0.2s;
+  transition-property: color;
 
   &:visited {
     color: #ff00ff;
@@ -32,6 +34,8 @@ a {
   &:focus,
   &:hover {
     color: #00ff00cc;
+    transition-duration: 0.2s;
+    transition-property: color;
   }
 
   &:active {

@@ -5,4 +5,10 @@
   margin: 0;
   height: 100vh;
   overflow-y: auto;
+
+  > li {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
 }
