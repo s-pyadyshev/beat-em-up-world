@@ -12,6 +12,7 @@ const GamesList = () => {
   const dispatch = useDispatch();
 
    useEffect(() => {
+    dispatch(getGamesRequest());
     Games.get()
     .then(data => dispatch(getGamesSuccess(data)));
     // fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/db.json")

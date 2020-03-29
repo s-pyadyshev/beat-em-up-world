@@ -1,6 +1,11 @@
 .game-card {
   color: #fff;
 
+  &__about,
+  &__trivia {
+    font-family: 'capture-it', serif;
+  }
+
   &__name {
     font-family: 'capture-it', serif;
     font-weight: 400;

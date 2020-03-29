@@ -73,10 +73,16 @@ const GameCard = () => {
   return (
     <div className="game-card">
       <h2 className="game-card__name">{name}</h2>
-      <div>{platform}</div>
+      <h3>{platform}</h3>
       <img src={cover} alt={name}/>
-      <p>about: {about}</p>
-      <p>trivia: {trivia}</p>
+      <div>
+        <span className="game-card__about">about: </span>
+        <p>{about}</p>
+      </div>
+      <div>
+        <span className="game-card__trivia">trivia: </span>
+        <p>{trivia}</p>
+      </div>
 
       <ul className="game-card__detail">
         <li>
@@ -223,7 +229,7 @@ const GameCard = () => {
             ? <Slider>
                 {videos.map((video, index) => (
                   <div key={index}>
-                    <iframe width='100%' height='360' src={video} frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                    <iframe title={index} width='100%' height='360' src={video} frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                   </div>))}
               </Slider>
             : null}
