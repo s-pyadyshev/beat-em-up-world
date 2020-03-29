@@ -26,10 +26,13 @@
   }
 
   &__parameter-name {
+    display: inline-block;
+    min-width: 200px;
     font-family: 'capture-it', serif;
   }
 
-  &__screenshots {
+  &__screenshots,
+  &__videos {
     margin-top: 32px;
   }
 }

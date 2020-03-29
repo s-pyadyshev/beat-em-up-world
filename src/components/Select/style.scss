@@ -19,6 +19,19 @@
     }
   }
 
+  &__input {
+    width: 200px;
+  }
+
+  &__label-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 200px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
   &__name {
     display: inline-block;
     vertical-align: middle;
@@ -31,4 +44,8 @@
 .is-selected {
   background-color: green;
   color: white;
+}
+
+.trigger {
+  line-height: 1;
 }

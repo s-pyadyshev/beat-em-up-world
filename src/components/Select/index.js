@@ -24,7 +24,7 @@ const Select = (props) => {
   return (
     <div className={isSelected ? "is-selected" : null}>
       <label>
-        <div>
+        <div className="select__label-inner">
           <strong className="select__name">{props.filterName}</strong>
           <Tooltip placement="right" tooltip={props.description}>
             <span className="select__icon-info">
@@ -33,6 +33,7 @@ const Select = (props) => {
           </Tooltip>
         </div>
         <select
+          className="select__input"
           name={props.name}
           onChange={handleSelect}>
           <option value="">--Choose an option--</option>

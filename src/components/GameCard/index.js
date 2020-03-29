@@ -65,7 +65,9 @@ const GameCard = () => {
     extend,
     overallReview,
     cover,
-    images
+    links,
+    images,
+    videos
   } = gameCardInfo;
 
   return (
@@ -203,12 +205,26 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Extend: </span><span>{extend}</span>
         </li>
         <li>
-          <span className="game-card__parameter-name">Overall Review: </span><span>{overallReview}</span>
+          <span className="game-card__parameter-name">Overall Review: </span><p>{overallReview}</p>
+        </li>
+        <li>
+          <span className="game-card__parameter-name">Links: </span>
+          <ul>{links && links.map((link, index) => <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>)}</ul>
         </li>
         <li className="game-card__screenshots">
           {images
             ? <Slider>
                 {images.map((image, index) => <div key={index}><img src={image} alt="game screenshot"/></div>)}
+              </Slider>
+            : null}
+        </li>
+        <li className="game-card__videos">
+          {videos
+            ? <Slider>
+                {videos.map((video, index) => (
+                  <div key={index}>
+                    <iframe width='100%' height='360' src={video} frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                  </div>))}
               </Slider>
             : null}
         </li>
