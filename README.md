@@ -10,6 +10,7 @@ API (JSON)
 
 ToDo:
 - Add more games to DB/API:
+  - Battletoads (Amiga)
   - Batman Arkham series?
   - Batman: Rise of Sin Tzu
   - Beat Down: Fists of Vengeance
@@ -81,7 +82,7 @@ ToDo:
 Change log:
 
 0.3
-- Added tooltip, otherPlatforms links
+- Added tooltip, Screenshots Slider (Swiper), otherPlatforms links
 
 0.2
 - Functional components, Redux, react-router, hooks

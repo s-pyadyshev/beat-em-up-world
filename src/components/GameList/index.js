@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getGamesRequest, getGamesSuccess } from "../../redux/gamesList/actions";
 import GamesListItem from "../GameListItem";
@@ -26,10 +26,10 @@ const GamesList = () => {
       {loading ? <Loading/> : null}
       {filteredGamesList && filteredGamesList.length === 0 ? <h2>Games not found</h2> : null}
       {filteredGamesList && filteredGamesList.map((game, index) => (
-        <>
+        <Fragment key={index}>
           {game.missing
           ?
-            <li className="missing"><b>{game.name} (MISSING - ADD THE GAME HERE)</b></li>
+            <li className="missing" key={index}><b>{game.name} (MISSING - <a href="https://github.com/s-pyadyshev/beat-em-ups-api/blob/master/db.json">ADD THE GAME HERE</a>)</b></li>
           :
           <GamesListItem
             key={index}
@@ -37,7 +37,7 @@ const GamesList = () => {
             platform={game.platform}>
           </GamesListItem>
           }
-        </>
+        </Fragment>
         )
       )}
     </ul>

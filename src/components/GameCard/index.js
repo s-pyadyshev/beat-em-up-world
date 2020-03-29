@@ -4,6 +4,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import Slider from "../Slider";
 import "./style.scss";
 
 const GameCard = () => {
@@ -87,7 +88,7 @@ const GameCard = () => {
         </li>
         <li>
           <span className="game-card__parameter-name">Other Platforms: </span><ul className="game-card__other-platforms">{otherPlatforms && otherPlatforms.map((platform, index) => (
-            <li>
+            <li key={index}>
               <Link to={name.replace(/\s/g,'').toLowerCase() + "[" + platform.replace(/\s/g,'').toLowerCase() + "]" } key={index}>
                 <span>{platform}</span>
               </Link>
@@ -204,10 +205,12 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Overall Review: </span><span>{overallReview}</span>
         </li>
-        <li>
-          <ul>
-            {images ? images.map((image, index) => <li key={index}><img src={image} alt="game screenshot"/></li>) : null}
-          </ul>
+        <li className="game-card__screenshots">
+          {images
+            ? <Slider>
+                {images.map((image, index) => <div key={index}><img src={image} alt="game screenshot"/></div>)}
+              </Slider>
+            : null}
         </li>
       </ul>
     </div>
