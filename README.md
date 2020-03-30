@@ -19,6 +19,7 @@ ToDo:
   - Charlie Murder
   - Comar Barbarian?
   - Cowboy Bebop: Tsuioku no Serenade?
+  - Crimson Tears?
   - Crisis Beat
   - Crows - The Battle Action
   - Dad 'n me (https://www.newgrounds.com/portal/view/254456)
@@ -26,7 +27,10 @@ ToDo:
   - Double Dragon IV
   - Fight'N Rage
   - Fighting Force
+  - Final Fight: Streetwise?
+  - God Hand?
   - Jackie Chan Stuntmaster
+  - James Cameron's Dark Angel?
   - Jet Li: Rise to Honor?
   - Judge Dredd Arcade Game
   - Lugaru?

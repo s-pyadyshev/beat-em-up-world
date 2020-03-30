@@ -7,7 +7,7 @@ const AboutPage = () => {
       <h2>What is the purpose of this site?</h2>
       <p>This site is a disciple of <a href="http://www.punchpedia.com" target="_blank" rel="noopener noreferrer">PunchPedia</a>.
       My aim is to practice Frontend stuff currently and it keeps me motivated to go on. It's much more interesting than another ToDo List, isn't it?
-      Unfortunately I'm not fully interested in Backend so I'm not able to implement some features I really want to be.<br/>
+      Unfortunately I'm not fully interested in Backend currently so I'm not able to implement some features I really want to be.<br/>
       So here it is, Frontend-powered Beat'em Up World:<br/>
       Pros: no need for hosting, easy to contribute via Pull Requests.<br/>
       Cons: backend as JSON, no cool domain name.<br/>
@@ -37,6 +37,7 @@ const AboutPage = () => {
       Minimum requirements for a video game to be considered a beat'em up:<br/>
       - <strong>BEAT UP</strong> - Hand-to-hand focus<br/>
       - <strong>THEM</strong> - Multiple opponents (at least more than 1)<br/>
+      - <strong>Crowd Control</strong><br/>
       - Variety matters (grabs!). More moves means more realistic combat. No grabs = mindless button masher. Actually variety can be applied to any genre.<br/> 
 
       <br/>
