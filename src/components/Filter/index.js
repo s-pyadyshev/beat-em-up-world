@@ -8,7 +8,7 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/beatemups-filter.json")
+    fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/filter.json")
       .then(res => res.json())
       .then(result => {
         setFilters(result);

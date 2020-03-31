@@ -20,8 +20,8 @@ const AboutPage = () => {
       So there is no reason to make it wikia-like. 100% completed pages (fighters, enemies, stages, media) are super cool but this detailed content better suits for wikias.
       </p>
       
-      <p>Punchpedia is truly the #1 place on the internet for all information related to brawlers, so the aim of this site (the name sucks, you may offer another one) is to be like the aggregator.
-      - To be the #1 place to wandering on beat'em ups.<br/>
+      <p>Punchpedia is truly the #1 place on the internet for all information related to brawlers, so the aim of this site (the name sucks, you may offer another one) is to be like the aggregator.<br/>
+      - Gather complete info about ALL beat'em ups.<br/>
       - Let people contribute easier<br/>
       - Get people more interested in the genre<br/>
       </p>
@@ -37,8 +37,7 @@ const AboutPage = () => {
       Minimum requirements for a video game to be considered a beat'em up:<br/>
       - <strong>BEAT UP</strong> - Hand-to-hand focus<br/>
       - <strong>THEM</strong> - Multiple opponents (at least more than 1)<br/>
-      - <strong>Crowd Control</strong><br/>
-      - Variety matters (grabs!). More moves means more realistic combat. No grabs = mindless button masher. Actually variety can be applied to any genre.<br/> 
+        - Variety matters (grabs!). More moves means more realistic combat. No grabs = mindless button masher. Actually variety can be applied to any genre.<br/> 
 
       <br/>
       <strong>Is Golden Axe a beat'em up? They use swords!</strong>
@@ -54,36 +53,8 @@ const AboutPage = () => {
 
       <h2>How can I help?</h2>
       <p>You may help fill information about missing games to PunchPedia. 
-        Just GO! to <a href="https://github.com/s-pyadyshev/beat-em-ups-api" target="_blank" rel="noopener noreferrer">beat-em-ups-api</a>&nbsp;and add missing games into <strong>db.json</strong> and new parameters into <strong>beatemups-filter.json</strong> as Pull Request.
+        Just GO! to <a href="https://github.com/s-pyadyshev/beat-em-ups-api" target="_blank" rel="noopener noreferrer">beat-em-ups-api</a>&nbsp;and add missing games into <strong>db.json</strong> and new parameters into <strong>filter.json</strong> as Pull Request.
         </p>
-
-      <h2>Links</h2>
-      <ul>
-        <li>
-          <a href="http://www.punchpedia.com" target="_blank" rel="noopener noreferrer">PunchPedia</a>
-        </li>
-        <li>
-          <a href="https://en.wikipedia.org/wiki/Beat_'em_up" target="_blank" rel="noopener noreferrer">Beat_'em_up on Wikipedia</a>
-        </li>
-        <li>
-          <a href="https://www.spriters-resource.com/genre/beat_em_up/" target="_blank" rel="noopener noreferrer">Beat_'em_up on The Spriters Resource</a>
-        </li>
-        <li>
-          <a href="https://store.steampowered.com/tags/en/Beat%20%27em%20up/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Steam</a>
-        </li>
-        <li>
-          <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/BeatEmUp/" target="_blank" rel="noopener noreferrer">Beat_'em_ups on TV Tropes</a>
-        </li>
-        <li>
-          <a href="https://crappygames.miraheze.org/wiki/Category:Beat%27em_Up_Games" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Crappy Games Wiki</a>
-        </li>
-        <li>
-          <a href="https://awesomegames.miraheze.org/wiki/Category:Beat%27em_up_Games" target="_blank" rel="noopener noreferrer">Beat_'em_ups on Awesome Games Wiki</a>
-        </li>
-        <li>
-          <a href="https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up" target="_blank" rel="noopener noreferrer">https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up</a>
-        </li>
-      </ul>
     </div>
   );
 }

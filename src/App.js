@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 import AboutPage from "./pages/AboutPage";
-import StatsPage from "./pages/StatsPage";
+import LinksPage from "./pages/LinksPage";
 import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
@@ -24,8 +24,8 @@ function App() {
             <Route path="/about">
               <AboutPage />
             </Route>
-            <Route path="/stats">
-              <StatsPage />
+            <Route path="/links">
+              <LinksPage />
             </Route>
             <Route path="/:id"
             children={

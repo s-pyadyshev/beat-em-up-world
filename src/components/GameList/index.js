@@ -15,15 +15,10 @@ const GamesList = () => {
     dispatch(getGamesRequest());
     Games.get()
     .then(data => dispatch(getGamesSuccess(data)));
-    // fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/db.json")
-    //   .then(res => res.json())
-    //   .then(result => {
-    //     dispatch(getGamesRequest(result));
-    // });
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className="gameslist">
       {loading ? <Loading/> : null}
       {filteredGamesList && filteredGamesList.length === 0 ? <h2>Games not found</h2> : null}
       {filteredGamesList && filteredGamesList.map((game, index) => (
