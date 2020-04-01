@@ -29,6 +29,9 @@ const LinksPage = () => {
         <li>
           <a href="https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up" target="_blank" rel="noopener noreferrer">https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up</a>
         </li>
+        <li>
+          <a href="https://sorr.forumotion.net" target="_blank" rel="noopener noreferrer">Streets of Rage Remake Forum</a>
+        </li>
       </ul>
     </div>
   );

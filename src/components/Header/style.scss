@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -7,10 +6,20 @@
   margin-bottom: 32px;
   font-family: 'capture-it', serif;
   font-size: 3rem;
-  background-image: url('../../assets/img/sor-city.png');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
+
+  &:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100vw;
+    height: 140px;
+    background-image: url('../../assets/img/sor-city.png');
+    background-position: 50% 50%;
+    background-size: 50%;
+  }
 
   &__link {
     &:not(:last-child) {

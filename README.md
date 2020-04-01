@@ -24,15 +24,21 @@ ToDo:
   - Crows - The Battle Action
   - Dad 'n me (https://www.newgrounds.com/portal/view/254456)
   - Dark Judgement?
+  - Death by Degrees (PS2)?
+  - Die Hard Arcade?
   - Double Dragon IV
+  - Dynamite Cop
   - Fight'N Rage
   - Fighting Force
   - Final Fight: Streetwise?
   - God Hand?
+  - Golden Axe (PS2)?
   - Jackie Chan Stuntmaster
   - James Cameron's Dark Angel?
   - Jet Li: Rise to Honor?
   - Judge Dredd Arcade Game
+  - Kenka Bancho: Badass Rumble (PSP)?
+  - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Lugaru?
   - Mad Max
   - Middle Earth series?
@@ -61,9 +67,9 @@ ToDo:
   - Yakuza series?
   - Zombie Revenge?
 
+- Refactoring
 - Add linters
 - Add svg-sprite-loader
-- Refactoring
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
 - Make gangsize param consistent
 - Change weapons info to weapons names instead of amount

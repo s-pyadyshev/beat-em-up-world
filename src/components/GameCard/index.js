@@ -55,6 +55,7 @@ const GameCard = () => {
     focus,
     music,
     tone,
+    gore,
     fighters,
     stages,
     enemies,
@@ -95,7 +96,7 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Release Date: </span><span>{releasedate}</span>
         </li>
         <li>
-          <span className="game-card__parameter-name">Other Platforms: </span><ul className="game-card__other-platforms">{otherPlatforms && otherPlatforms.map((platform, index) => (
+          <span className="game-card__parameter-name">Other Platforms: </span><ul className="game-card__values-list">{otherPlatforms && otherPlatforms.map((platform, index) => (
             <li key={index}>
               <Link to={name.replace(/\s/g,'').toLowerCase() + "[" + platform.replace(/\s/g,'').toLowerCase() + "]" } key={index}>
                 <span>{platform}</span>
@@ -185,6 +186,14 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Tone: </span><span>{tone}</span>
         </li>
+        {gore
+          ? <li>
+              <span className="game-card__parameter-name">Gore: </span>
+                <ul className="game-card__values-list">{gore.map((item, index) => <li key={index}>{item}</li>)}
+                </ul>
+            </li>
+          : null
+        }
         <li>
           <span className="game-card__parameter-name">Fighters: </span><span>{fighters}</span>
         </li>

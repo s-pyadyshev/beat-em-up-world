@@ -9,8 +9,8 @@ const AboutPage = () => {
       My aim is to practice Frontend stuff currently and it keeps me motivated to go on. It's much more interesting than another ToDo List, isn't it?
       Unfortunately I'm not fully interested in Backend currently so I'm not able to implement some features I really want to be.<br/>
       So here it is, Frontend-powered Beat'em Up World:<br/>
-      Pros: no need for hosting, easy to contribute via Pull Requests.<br/>
-      Cons: backend as JSON, no cool domain name.<br/>
+      <strong>Pros</strong>: no need for hosting, easy to contribute via Pull Requests.<br/>
+      <strong>Cons</strong>: backend as JSON, no cool domain name.<br/>
 
       The most crucial feature PunchPedia lacks is a complete filter by game parameters (you can filter by platform, players, difficulty, length, name) 
       and it was the main reason why I wanted to create this site - to add this feature. 
@@ -26,7 +26,7 @@ const AboutPage = () => {
       - Get people more interested in the genre<br/>
       </p>
 
-      <h2>What is a true beat'em up / brawler?</h2>
+      <h2>What is a true beat'em up / brawler? Therefore which games should be included and which are not?</h2>
       <p>It's another endless holywar question - beat'em up VS hack'n'slash.
         <q>You don't beat people up with swords, you hack and slash people up with swords (Black_Knight_00)</q><br/>
         Seems reasonable with few exceptions.<br/>

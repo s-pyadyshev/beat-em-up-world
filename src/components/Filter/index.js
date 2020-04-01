@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Select from "../Select";
+import Loading from "../Loading";
 import "./style.scss";
 
 const Filter = () => {
   const [filters, setFilters] = useState([]);
+  const loading = useSelector(state => state.gamesList.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,6 +19,7 @@ const Filter = () => {
 
   return (
     <ul className="filter">
+      {loading ? <Loading/> : null}
       {filters.map((filter, index) => (
         <li key={index}>
           <Select
