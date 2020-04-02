@@ -22,6 +22,12 @@
   }
 
   &__link {
+    color: #fff;
+
+    &:visited {
+      color: #fff;
+    }
+
     &:not(:last-child) {
       margin-right: 32px;
     }

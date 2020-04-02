@@ -96,13 +96,16 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Release Date: </span><span>{releasedate}</span>
         </li>
         <li>
-          <span className="game-card__parameter-name">Other Platforms: </span><ul className="game-card__values-list">{otherPlatforms && otherPlatforms.map((platform, index) => (
+          <span className="game-card__parameter-name">Other Platforms: </span>
+          <ul className="game-card__values-list">
+            {otherPlatforms && otherPlatforms.map((platform, index) => (
             <li key={index}>
               <Link to={name.replace(/\s/g,'').toLowerCase() + "[" + platform.replace(/\s/g,'').toLowerCase() + "]" } key={index}>
                 <span>{platform}</span>
               </Link>
             </li>
-          ))}</ul>
+            ))}
+          </ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Series: </span><span>{series}</span>
@@ -121,7 +124,7 @@ const GameCard = () => {
         </li>
         <li>
           <span className="game-card__parameter-name">Variety: </span>
-          <ul>{variety && variety.map((variety, index) => <li key={index}>{variety}</li>)}</ul>
+          <ul className="game-card__values-list">{variety && variety.map((variety, index) => <li key={index}>{variety}</li>)}</ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Playtime: </span><span>{playtime}</span>
@@ -208,7 +211,7 @@ const GameCard = () => {
         </li>
         <li>
           <span className="game-card__parameter-name">Weapons: </span>
-          <ul>{weapons && weapons.map((weapon, index) => <li key={index}>{weapon}</li>)}</ul>
+          <ul className="game-card__values-list">{weapons && weapons.map((weapon, index) => <li key={index}>{weapon}</li>)}</ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Lives: </span><span>{lives}</span>

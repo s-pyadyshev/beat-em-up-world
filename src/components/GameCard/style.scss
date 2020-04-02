@@ -45,4 +45,13 @@
   &__videos {
     margin-top: 32px;
   }
+
+  &__screenshots {
+    .swiper-slide {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
 }

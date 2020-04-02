@@ -44,12 +44,6 @@ ToDo:
   - SORR mods?
   - Tekken 3 (Tekken Force mode)
   - The Bouncer
-  - The friends of Ringo Ishikawa
-  - The Shadow (SNES Prototype)
-  - The TakeOver
-  - Watchmen: The End is Nigh
-  - Watchmen: The End is Nigh Part 2
-  - Yakuza series?
   - Zombie Revenge?
 
 - Refactoring
