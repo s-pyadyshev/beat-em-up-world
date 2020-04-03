@@ -11,17 +11,10 @@ API (JSON)
 ToDo:
 - Add more games to DB/API:
   - Battletoads (Amiga)
-  - Batman Arkham series?
-  - Batman: Rise of Sin Tzu
-  - Beat Down: Fists of Vengeance
   - Bruce Lee: Quest of the Dragon?
-  - Captain America: Super Soldier
-  - Charlie Murder
   - Comar Barbarian?
   - Cowboy Bebop: Tsuioku no Serenade?
   - Crimson Tears?
-  - Crisis Beat
-  - Crows - The Battle Action
   - Dark Judgement?
   - Death by Degrees (PS2)?
   - Die Hard Arcade?
@@ -29,9 +22,6 @@ ToDo:
   - Final Fight: Streetwise?
   - God Hand?
   - Golden Axe (PS2)?
-  - James Cameron's Dark Angel?
-  - Jet Li: Rise to Honor?
-  - Judge Dredd Arcade Game
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Lugaru?
@@ -50,16 +40,14 @@ ToDo:
 - Add linters
 - Add svg-sprite-loader
 - Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
-- Make gangsize param consistent
+- Make gangsize param consistent?
 - Change weapons info to weapons names instead of amount
-- Change variety values from string to array of values like weapons
-- Add new game params (filters), e.g. Gore, Breakable objects, must have mods/hacks
-- Add links (wikipedia etc.) and reviews array (do not include into filter)
+- Change variety values from string to array of values like weapons, variety
+- Add new game params (filters), e.g. Gore, Breakable objects
+- Add links (wikipedia, wikia etc.) and reviews array (do not include into filter)
 - Add possibility to select multiple choice in one filter
 - Fix filter to filter by array.includes(value)
-- Make nice design
-- Place screenshots and covers to repo?
-- Add ratings?
+- Make nice design, add icons for filters
 - Add Travis CI?
 - Add SSR?
 - Add Typescript
@@ -71,7 +59,8 @@ ToDo:
 Change log:
 
 0.3
-- Added tooltip, Screenshots Slider (Swiper), otherPlatforms links
+- Added tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links
+- Added missing games
 
 0.2
 - Functional components, Redux, react-router, hooks
