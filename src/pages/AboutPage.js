@@ -9,7 +9,7 @@ const AboutPage = () => {
       My aim is to practice Frontend stuff currently and it keeps me motivated to go on. It's much more interesting than another ToDo List, isn't it?
       Unfortunately I'm not fully interested in Backend currently so I'm not able to implement some features I really want to be.<br/>
       So here it is, Frontend-powered Beat'em Up World:<br/>
-      <strong>Pros</strong>: no need for hosting, easy to contribute via Pull Requests.<br/>
+      <strong>Pros</strong>: no need for hosting, easy to contribute via Pull Requests, "API".<br/>
       <strong>Cons</strong>: backend as JSON, no cool domain name.<br/>
 
       The most crucial feature PunchPedia lacks is a complete filter by game parameters (you can filter by platform, players, difficulty, length, name) 

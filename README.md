@@ -10,12 +10,10 @@ API (JSON)
 
 ToDo:
 - Add more games to DB/API:
-  - Battletoads (Amiga)
-  - Bruce Lee: Quest of the Dragon?
+  - Battletoads (Amiga)?
   - Comar Barbarian?
   - Cowboy Bebop: Tsuioku no Serenade?
   - Crimson Tears?
-  - Dark Judgement?
   - Death by Degrees (PS2)?
   - Die Hard Arcade?
   - Dynamite Cop
@@ -29,10 +27,9 @@ ToDo:
   - Middle Earth series?
   - Overgrowth?
   - Sleeping Dogs?
-  - SpikeOut
   - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
   - SORR mods?
-  - Tekken 3 (Tekken Force mode)
+  - Tekken 3-4 (Tekken Force mode)
   - The Bouncer
   - Zombie Revenge?
 
