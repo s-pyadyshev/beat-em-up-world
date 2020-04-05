@@ -1,4 +1,5 @@
-@import "fonts";
+@import "./fonts.scss";
+@import "./media.scss";
 
 body {
   margin: 0;
@@ -7,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/img/mff-bg.png');
+  background-image: url('../img/mff-bg.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-attachment: fixed;

@@ -1,3 +1,5 @@
+@import "../../assets/styles/media.scss";
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -5,7 +7,11 @@
   flex-wrap: wrap;
   margin-bottom: 32px;
   font-family: 'capture-it', serif;
-  font-size: 3rem;
+  font-size: 2rem;
+
+  @include desktop {
+    font-size: 3rem;
+  }
 
   &:before {
     content: "";
@@ -15,10 +21,20 @@
     left: 0;
     max-width: 100%;
     width: 100vw;
-    height: 140px;
+    height: 120px;
     background-image: url('../../assets/img/sor-city.png');
     background-position: 50% 50%;
     background-size: 50%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background-image: linear-gradient(to bottom, #000000 0%, #000000 25%, transparent 100%);
   }
 
   &__link {
@@ -40,6 +56,7 @@
 
 .dronami-logo {
   img {
+    display: block;
     width: 300px;
     height: auto;
   }
@@ -47,6 +64,7 @@
 
 .punchpedia-logo {
   img {
+    display: block;
     width: 120px;
     height: auto;
   }
