@@ -35,6 +35,9 @@ const LinksPage = () => {
         <li>
           <a href="https://sorr.forumotion.net" target="_blank" rel="noopener noreferrer">Streets of Rage Remake Forum</a>
         </li>
+        <li>
+          <a href="http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html" target="_blank" rel="noopener noreferrer">Beat'em up Bingo</a>
+        </li>
       </ul>
     </div>
   );

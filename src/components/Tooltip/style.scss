@@ -1,5 +1,11 @@
+@import "./../../assets/styles/media.scss";
+
 .tooltip-container {
   max-width: 320px;
   padding: 16px;
   color: #000;
+
+  @include tablet {
+    max-width: 420px;
+  }
 }
