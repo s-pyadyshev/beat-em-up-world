@@ -8,61 +8,67 @@ API (JSON)
 <a href="https://github.com/s-pyadyshev/beat-em-ups-api">https://github.com/s-pyadyshev/beat-em-ups-api</a>
 <br>
 
-ToDo:
-- Add more games to DB/API:
+Tasks<br>
+Major (MVP release):<br>
+- Add svg-sprite-loader to add icons (at least for the most important filters)
+- Finish About page info
+- Finalize MVP design on desktop and tablet
+- Add responsive styles (toggle filters and list on mobiles or make it swipeable)
+- Add release year filter
+- Make gangsize param consistent?
+- Fill otherPlatforms and series data in JSON
+- Add summary info (total amount of games, missing games etc.)
+
+Minor:<br>
+- Refactoring
+- Add linters
+- Add Typescript
+- Add Travis CI / Github Actions?
+- Add SSR?
+- Change playtime select to range?
+- Add new game params (filters), e.g. Breakable objects etc.
+- Update design
+- Add possibility to select multiple choice in one filter
+- Add more games to JSON:
   - Battletoads (Amiga)?
-  - Comar Barbarian?
   - Cowboy Bebop: Tsuioku no Serenade?
   - Crimson Tears?
   - Death by Degrees (PS2)?
-  - Die Hard Arcade?
+  - Die Hard Arcade
   - Dynamite Cop
   - Final Fight: Streetwise?
   - God Hand?
-  - Golden Axe (PS2)?
+  - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Lugaru?
   - Mad Max
   - Middle Earth series?
-  - Overgrowth?
+  - Mighty Morphin Power Rangers (SNES)?
+  - Overgrowth
   - Sleeping Dogs?
   - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
-  - SORR mods?
-  - Tekken 3-4 (Tekken Force mode)
+  - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
   - The Bouncer
   - Zombie Revenge?
+  - The best SORR mods, OpenBOR/MUGEN games?
 
-- Refactoring
-- Add linters
-- Add svg-sprite-loader
-- Fix release date (datepicker?), otherPlatforms, series, playtime (range?)
-- Make gangsize param consistent?
-- Change weapons info to weapons names instead of amount
-- Change variety values from string to array of values like weapons, variety
-- Add new game params (filters), e.g. Gore, Breakable objects
-- Add links (wikipedia, wikia etc.) and reviews array (do not include into filter)
-- Add possibility to select multiple choice in one filter
-- Fix filter to filter by array.includes(value)
-- Make nice design, add icons for filters
-- Add Travis CI?
-- Add SSR?
-- Add Typescript
-- Add beat'em up bingo? (http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html)
-- Add links to other relateds sites (https://en.wikipedia.org/wiki/List_of_beat_'em_ups, https://kuniokun.fandom.com/wiki/Kunio-Kun_Wiki)
-- Add About info
-- Add summary info (games/platforms/focus total etc.)
 
-Change log:
 
+CHANGE LOG:<br>
 0.3
-- Added tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links
-- Added missing games
+- Added Links page, tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links, new header
+- Added some missing games
+- Added beat'em up bingo
+- Added Gore parameter to several games
+- Changed variety and weapons values from string to array
+- Added links (wikipedia, wikia etc.) and reviews array (do not include into filter)
 
 0.2
 - Functional components, Redux, react-router, hooks
 - Games List, Filter, Select, Game Card
 - Fixed filter value names consistency and typos
+- Fixed some filters to filter by array.includes(value)
 
 0.1.
 - Class components, local state

@@ -25,7 +25,7 @@ const GamesList = () => {
         <Fragment key={index}>
           {game.missing
           ?
-            <li className="missing" key={index}><b>{game.name} (MISSING - <a href="https://github.com/s-pyadyshev/beat-em-ups-api/blob/master/db.json">ADD THE GAME HERE</a>)</b></li>
+            <li className="missing" key={index}><b>{game.name} [{game.platform}] (MISSING - <a href="https://github.com/s-pyadyshev/beat-em-ups-api/blob/master/db.json">ADD THE GAME HERE</a>)</b></li>
           :
           <GamesListItem
             key={index}
