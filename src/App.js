@@ -28,9 +28,9 @@ function App() {
               <LinksPage />
             </Route>
             <Route path="/:id"
-            children={
-              <div className="App__card"><GameCard /></div>
-            }/>
+              children={
+                <div className="App__card"><GameCard /></div>
+              }/>
           </Switch>
         </div>
       </div>

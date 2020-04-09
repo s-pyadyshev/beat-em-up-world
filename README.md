@@ -28,6 +28,7 @@ Minor:<br>
 - Change playtime select to range?
 - Add new game params (filters), e.g. Breakable objects etc.
 - Update design
+- Add dark/light theme (change on system settings)
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?

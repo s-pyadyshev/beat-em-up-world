@@ -26,7 +26,6 @@ export const getGamesError = (error) => {
   }
 };
 
-
 export const getGameCardRequest = (uniqGameName) => {
   return {
     type: GET_GAME_CARD_REQUEST,
