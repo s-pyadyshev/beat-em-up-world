@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { filterGames } from "../../redux/gamesList/actions";
 import Tooltip from "../Tooltip";
+// import platformIcon from '../../assets/img/icons';
 import './style.scss';
 
 const Select = (props) => {

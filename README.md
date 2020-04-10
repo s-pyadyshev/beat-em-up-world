@@ -18,17 +18,18 @@ Major (MVP release):<br>
 - Make gangsize param consistent?
 - Fill otherPlatforms and series data in JSON
 - Add summary info (total amount of games, missing games etc.)
-
-Minor:<br>
 - Refactoring
 - Add linters
 - Add Typescript
+
+Minor:<br>
 - Add Travis CI / Github Actions?
 - Add SSR?
 - Change playtime select to range?
 - Add new game params (filters), e.g. Breakable objects etc.
 - Update design
 - Add dark/light theme (change on system settings)
+- Search game by name?
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?
