@@ -27,9 +27,6 @@ const LinksPage = () => {
           <a href="https://awesomegames.miraheze.org/wiki/Category:Beat%27em_up_Games" target="_blank" rel="noopener noreferrer">Beat'em ups on Awesome Games Wiki</a>
         </li>
         <li>
-          <a href="https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up" target="_blank" rel="noopener noreferrer">https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up</a>
-        </li>
-        <li>
           <a href="https://www.spriters-resource.com/genre/beat_em_up/" target="_blank" rel="noopener noreferrer">Beat'em ups on The Spriters Resource</a>
         </li>
         <li>
@@ -37,6 +34,12 @@ const LinksPage = () => {
         </li>
         <li>
           <a href="http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html" target="_blank" rel="noopener noreferrer">Beat'em up Bingo</a>
+        </li>
+        <li>
+          <a href="https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up" target="_blank" rel="noopener noreferrer">https://stayskeptic.wordpress.com/2017/04/22/what-makes-a-beat-em-up</a>
+        </li>
+        <li>
+          <a href="http://www.racketboy.com/retro/beatem-ups-101-all-you-need-to-know-about-brawlers" target="_blank" rel="noopener noreferrer">http://www.racketboy.com/retro/beatem-ups-101-all-you-need-to-know-about-brawlers</a>
         </li>
       </ul>
     </div>

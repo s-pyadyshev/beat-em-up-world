@@ -3,7 +3,7 @@ import "./style.scss";
 
 const AboutPage = () => {
   return (
-    <div className="about">
+    <article className="about">
       <h2>What is the purpose of this site?</h2>
       <p>This site is a disciple of <a href="http://www.punchpedia.com" target="_blank" rel="noopener noreferrer">PunchPedia</a> and it is approved by its creator.
       The most crucial feature PunchPedia lacks is a complete filter by game parameters (you can filter by platform, players, difficulty, length, name) 
@@ -26,11 +26,18 @@ const AboutPage = () => {
       - Get people more interested in the genre<br/>
       </p>
 
-      <h2>What is a true beat'em up / brawler? Therefore which games should be included and which are not?</h2>
-      Simple way: is a game similar to Streets of Rage? The it is beat'em up. Otherwise it is not.
+      <h2>What is a true beat'em up / brawler? Therefore which games should be added here and which are not?</h2>
+      <p>It's another endless holywar question - beat'em up VS hack'n'slash.<br/>
+      Simple way:<br/>
+      Is this game a beat'em up?
+      Which perspective view does the game have?
+      2D - is this game similar to Comix Zone? - Yes
+      2D (4-way movement) - is this game similar to Streets of Rage? - Yes
+      3D - Does the game look like Fighting Force? - Yes
+      </p>
 
       Complex way:<br/>
-      <p>It's another endless holywar question - beat'em up VS hack'n'slash.<br/>
+      <p>
         <q>You don't beat people up with swords, you hack and slash people up with swords (Black_Knight_00)</q><br/>
         Seems reasonable with few exceptions.<br/>
         <q>there is no real answer, it always depends on how the person you're asking "feels" (SUPERAWESOMEULTRAMAN)</q><br/>
@@ -38,14 +45,14 @@ const AboutPage = () => {
       </p>
 
       Minimum requirements for a video game to be considered a beat'em up:<br/>
-      - <strong>BEAT UP</strong> - Hand-to-hand and close combat focus (with some exceptions)<br/>
+      - <strong>BEAT UP</strong> - Hand-to-hand and close combat FOCUS (with some exceptions)<br/>
       - <strong>THEM</strong> - Multiple opponents (at least more than 1)<br/>
-      - <strong>8-directional movement or 3D (with some exceptions for 2D)</strong>
+      - <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
         - Variety matters (grabs!). More moves means more realistic combat. No grabs = mindless button masher. Actually variety can be applied to any genre.
         Just compare Nekketsu Kouha Kunio-kun (1986) and Toxic Crusaders (1992). The latter is just one punch (one broom hit) action which hardly can't be called a beat'em up.
         <br/>
 
-      Let't take a look at examples:<br/>
+      Let't take a look closer at examples:<br/>
       <br/>
       <strong>Is Golden Axe a beat'em up? They use swords!</strong>
       <p>Yes, it has punches (kind of - by grip of the sword), kicks, throws, dashing attacks are not always made with weapon, so it looks more like non-weapon combat.</p>
@@ -53,6 +60,13 @@ const AboutPage = () => {
       <strong>Is Comix Zone a beat'em up?</strong>
       <p>Yes but 50/50 - Action-Puzzle-Platformer-Beat'em Up (it's combat has enough variety - throws, block, weapons, but multiple enemies is a rare thing here).</p>
       <p>But at the same time Battletoads should be considered as more platformer than beat'em up.</p>
+
+      <strong>Is Battletoads a beat'em up?</strong>
+      Not really. It is focused on Action Platforming and contains only one stage and several sections to beat enemies.<br/>
+
+      <strong>So which games are beat'em up posers?</strong>
+      Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W. Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple combat, only enemy variety saves it. Even a little throw move added in TMNT 3 makes it a bit closer to beat'em ups.
+      The Adventures of Bayou Billy has simple but intense combat, you can't throw enemies but bosses can grab or throw you. The same story with Batman Returns (NES) etc.
 
       <h2>Why should we care about beat'em ups?</h2>
       <p>It is one of video game genres that fits the nature of every living being - competition, fight for resources, a place under the Sun.
@@ -63,7 +77,7 @@ const AboutPage = () => {
       <p>You may help fill information about missing games to PunchPedia. 
         Just GO! to <a href="https://github.com/s-pyadyshev/beat-em-ups-api" target="_blank" rel="noopener noreferrer">beat-em-ups-api</a>&nbsp;and add missing games into <strong>db.json</strong> and new parameters into <strong>filter.json</strong> as Pull Request.
         </p>
-    </div>
+    </article>
   );
 }
 
