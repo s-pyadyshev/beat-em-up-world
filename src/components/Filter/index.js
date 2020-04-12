@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import Select from "../Select";
-import Loading from "../Loading";
-import "./style.scss";
+import { useSelector, useDispatch } from 'react-redux';
+import Select from '../Select';
+import Loading from '../Loading';
+import './style.scss';
 
 const Filter = () => {
   const [filters, setFilters] = useState([]);
-  const loading = useSelector(state => state.gamesList.loading);
+  const loading = useSelector((state) => state.gamesList.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/filter.json")
-      .then(res => res.json())
-      .then(result => {
+    fetch('https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/filter.json')
+      .then((res) => res.json())
+      .then((result) => {
         setFilters(result);
       });
   }, [dispatch]);
 
   return (
     <ul className="filter">
-      {loading ? <Loading/> : null}
-      {filters.map((filter, index) => (
-        <li key={index}>
+      {loading ? <Loading /> : null}
+      {filters.map((filter) => (
+        <li>
           <Select
             filterName={filter.filterName}
             name={filter.name}
@@ -29,10 +29,9 @@ const Filter = () => {
             options={filter.options}
           />
         </li>
-        )
-      )}
+      ))}
     </ul>
   );
-}
+};
 
 export default Filter;

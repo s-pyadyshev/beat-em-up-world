@@ -1,7 +1,7 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import "./style.scss";
+import './style.scss';
 
 export const Slider = (props) => {
   const { children } = props;
@@ -9,20 +9,20 @@ export const Slider = (props) => {
     rebuildOnUpdate: true,
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      clickable: true
-    }
-  }
+      clickable: true,
+    },
+  };
 
   return (
     <Swiper {...params}>
       {children}
     </Swiper>
   );
-}
+};
 
 export default Slider;
