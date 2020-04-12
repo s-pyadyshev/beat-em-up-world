@@ -78,8 +78,7 @@
       "eslint . --fix"
     ],
     "src/**/*.scss": [
-      "stylelint --syntax scss --fix",
-      "git add"
+      "stylelint --syntax scss --fix"
     ]
   },
   "husky": {
