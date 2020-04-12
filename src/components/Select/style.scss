@@ -13,7 +13,7 @@
     height: 20px;
     margin-left: 8px;
     color: #fff;
-    transition-duration: 0.2s;
+    transition-duration: .2s;
     transition-property: color;
     color: #17a2b8;
 
@@ -21,7 +21,7 @@
     &:hover,
     &:active {
       color: #007bff;
-      transition-duration: 0.2s;
+      transition-duration: .2s;
       transition-property: color;
     }
   }
@@ -42,14 +42,14 @@
   &__name {
     display: inline-block;
     vertical-align: middle;
-    font-family: 'capture-it', serif;
+    font-family: "capture-it", serif;
     font-weight: 400;
     color: #fff;
   }
 }
 
 .is-selected {
-  background-color: green;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 255, .8) 0%,rgba(255,255,255,0) 15%,rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%), url(http://www.punchpedia.com/common/img/arcbg.png);
   color: white;
 }
 

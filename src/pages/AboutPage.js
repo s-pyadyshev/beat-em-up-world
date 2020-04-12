@@ -104,12 +104,14 @@ const AboutPage = () => (
     <p>But at the same time Battletoads should be considered as more platformer than beat&apos;em up.</p>
 
     <strong>Is Battletoads a beat&apos;em up?</strong>
-    Not really. It is focused on Action Platforming and contains only one stage and several sections to beat enemies.
+    <p>Not really. It is focused on Action Platforming and contains only one stage and several sections to beat enemies.</p>
     <br />
 
     <strong>So which games are beat&apos;em up posers?</strong>
-    Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W. Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple combat, only enemy variety saves it. Even a little throw move added in TMNT 3 makes it a bit closer to beat&apos;em ups.
-    The Adventures of Bayou Billy has simple but intense combat, you can&apos;t throw enemies but bosses can grab or throw you. The same story with Batman Returns (NES) etc.
+    <p>
+      Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W. Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple combat, only enemy variety saves it. Even a little throw move added in TMNT 3 makes it a bit closer to beat&apos;em ups.
+      The Adventures of Bayou Billy has simple but intense combat, you can&apos;t throw enemies but bosses can grab or throw you. The same story with Batman Returns (NES) etc.
+    </p>
 
     <h2>Why should we care about beat&apos;em ups?</h2>
     <p>

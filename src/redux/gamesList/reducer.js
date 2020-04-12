@@ -1,19 +1,21 @@
+import { filter, omit } from 'lodash';
 import {
   GET_GAMES_REQUEST,
   GET_GAMES_SUCCESS,
   GET_GAMES_ERROR,
   GET_GAME_CARD_REQUEST,
-  FILTER_GAMES
-} from "./constants";
-import { filter, omit } from "lodash";
+  FILTER_GAMES,
+} from './constants';
 
-const gamesList = (state = [], action) => {
-  switch(action.type) {
+export const gamesList = (state = [], action) => {
+  let filterOptions = { ...state.filterOptions };
+
+  switch (action.type) {
     case GET_GAMES_REQUEST:
       return {
         ...state,
         loading: true,
-        error: null
+        error: null,
       };
     case GET_GAMES_SUCCESS:
       return {
@@ -22,44 +24,42 @@ const gamesList = (state = [], action) => {
         filteredGames: action.gamesList,
         filterOptions: {},
         loading: false,
-        error: null
-      }
+        error: null,
+      };
     case GET_GAMES_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.error
-      }
+        error: action.error,
+      };
     case GET_GAME_CARD_REQUEST:
       return {
         ...state,
         loading: true,
-        error: null
-      }
+        error: null,
+      };
     case FILTER_GAMES:
-      if (action.option === "") {
-        state.filterOptions = omit(state.filterOptions, action.filterName);
-        const filteredList = filter(state.gamesList, state.filterOptions);
+      if (action.option === '') {
+        filterOptions = omit(state.filterOptions, action.filterName);
+        const filteredList = filter(state.gamesList, filterOptions);
 
         return {
           ...state,
-          filterOptions: state.filterOptions,
-          filteredGames: filteredList
+          filterOptions,
+          filteredGames: filteredList,
         };
       }
       // hardcode solution for array values
-      if (action.filterName === 'weapons' || action.filterName === 'variety' ||  action.filterName === 'gore') {
-        state.filterOptions[action.filterName] = [action.option];
+      if (action.filterName === 'weapons' || action.filterName === 'variety' || action.filterName === 'gore') {
+        filterOptions[action.filterName] = [action.option];
       } else {
-        state.filterOptions[action.filterName] = action.option;
+        filterOptions[action.filterName] = action.option;
       }
-      
-      const filteredList = filter(state.gamesList, state.filterOptions);
 
       return {
         ...state,
-        filterOptions: state.filterOptions,
-        filteredGames: filteredList
+        filterOptions,
+        filteredGames: filter(state.gamesList, filterOptions),
       };
     default:
       return state;

@@ -4,8 +4,6 @@ export const Games = {
   get: () => fetch(URL)
     .then((res) => res.json()),
   // .then(data => data)
-  // .catch(err => console.error(err));
-
 };
 
 export default Games;

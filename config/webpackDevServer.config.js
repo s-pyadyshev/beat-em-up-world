@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 
 const fs = require('fs');
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');

@@ -11,7 +11,7 @@ import LinksPage from './pages/LinksPage';
 import GameCard from './components/GameCard';
 import GameList from './components/GameList';
 import Filter from './components/Filter';
-import Sprite from './components/Sprite';
+import { Sprite } from './components/Sprite';
 
 function App() {
   return (

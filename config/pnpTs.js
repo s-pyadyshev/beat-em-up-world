@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 
 const { resolveModuleName } = require('ts-pnp');
 
