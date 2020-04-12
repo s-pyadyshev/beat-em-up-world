@@ -28,7 +28,7 @@ const GameCard = () => {
     trivia,
     developer,
     publisher,
-    releasedate,
+    releaseYear,
     otherPlatforms,
     series,
     players,
@@ -99,7 +99,7 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Publisher: </span><span>{publisher}</span>
         </li>
         <li>
-          <span className="game-card__parameter-name">Release Date: </span><span>{releasedate}</span>
+          <span className="game-card__parameter-name">Release Year: </span><span>{releaseYear}</span>
         </li>
         <li>
           <span className="game-card__parameter-name">Other Platforms: </span>

@@ -1,5 +1,11 @@
 .select {
 
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+  }
+
   &__icon-info {
     display: inline-block;
     vertical-align: middle;
@@ -9,25 +15,26 @@
     color: #fff;
     transition-duration: 0.2s;
     transition-property: color;
+    color: #17a2b8;
 
     &:focus,
     &:hover,
     &:active {
-      color: #17a2b8;
+      color: #007bff;
       transition-duration: 0.2s;
       transition-property: color;
     }
   }
 
   &__input {
-    width: 200px;
+    width: 210px;
   }
 
   &__label-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 200px;
+    max-width: 210px;
     padding-top: 2px;
     padding-bottom: 2px;
   }

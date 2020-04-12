@@ -29,7 +29,7 @@ Minor:<br>
 - Add new game params (filters), e.g. Breakable objects etc.
 - Update design
 - Add dark/light theme (change on system settings)
-- Search game by name?
+- Search / autocomplete?
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?
@@ -39,10 +39,12 @@ Minor:<br>
   - Die Hard Arcade
   - Dynamite Cop
   - Final Fight: Streetwise?
+  - Gekido - Urban Fighters (PS)
   - God Hand?
   - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
+  - Legend (PS)
   - Lugaru?
   - Mad Max
   - Middle Earth series?
