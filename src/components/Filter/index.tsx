@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Select from '../Select';
-import Loading from '../Loading';
-import './style.scss';
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Select from "../Select";
+import Loading from "../Loading";
+import "./style.scss";
 
 const Filter = () => {
   const [filters, setFilters] = useState([]);
-  const loading = useSelector((state) => state.gamesList.loading);
+  const loading = useSelector((state: any) => state.gamesList.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/filter.json')
+    fetch(
+      "https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/filter.json"
+    )
       .then((res) => res.json())
       .then((result) => {
         setFilters(result);
@@ -20,7 +22,7 @@ const Filter = () => {
   return (
     <ul className="filter">
       {loading ? <Loading /> : null}
-      {filters.map((filter) => (
+      {filters.map((filter: any) => (
         <li>
           <Select
             filterName={filter.filterName}

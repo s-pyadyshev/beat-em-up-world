@@ -1,32 +1,30 @@
-import React from 'react';
-import TooltipTrigger from 'react-popper-tooltip';
-import 'react-popper-tooltip/dist/styles.css';
-import './style.scss';
+import React from "react";
+import TooltipTrigger from "react-popper-tooltip";
+import "react-popper-tooltip/dist/styles.css";
+import "./style.scss";
 
-const Tooltip = ({
-  children, tooltip, hideArrow, ...props
-}) => (
+const Tooltip = ({ children, tooltip, hideArrow, ...props }: any) => (
   <TooltipTrigger
     {...props}
-    tooltip={({
-      arrowRef,
-      tooltipRef,
-      getArrowProps,
-      getTooltipProps,
-      placement,
-    }) => (
+      tooltip={({
+        arrowRef,
+        tooltipRef,
+        getArrowProps,
+        getTooltipProps,
+        placement,
+      }) => (
       <div
         {...getTooltipProps({
           ref: tooltipRef,
-          className: 'tooltip-container',
+          className: "tooltip-container",
         })}
       >
         {!hideArrow && (
           <div
             {...getArrowProps({
               ref: arrowRef,
-              className: 'tooltip-arrow',
-              'data-placement': placement,
+              className: "tooltip-arrow",
+              "data-placement": placement,
             })}
           />
         )}
@@ -38,7 +36,7 @@ const Tooltip = ({
       <span
         {...getTriggerProps({
           ref: triggerRef,
-          className: 'trigger',
+          className: "trigger",
         })}
       >
         {children}

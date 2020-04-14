@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import {
-  Link,
-  useParams,
-} from 'react-router-dom';
-import Bingo from '../Bingo';
-import { Slider } from '../Slider';
-import Tooltip from '../Tooltip';
-import './style.scss';
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import Bingo from "../Bingo";
+import { Slider } from "../Slider";
+import Tooltip from "../Tooltip";
+import "./style.scss";
 
 const GameCard = () => {
   const { id } = useParams();
   const [gameCardInfo, setGameCardInfo] = useState({});
-  const gamesList = useSelector((state) => state.gamesList.gamesList);
+  const gamesList = useSelector((state: any) => state.gamesList.gamesList);
 
   useEffect(() => {
     const filteredGameCard = gamesList
-      ? gamesList.filter((game) => (`${game.name}[${game.platform}]`).replace(/\s/g, '').toLowerCase() === id)[0]
+      ? gamesList.filter(
+          (game: any) =>
+            `${game.name}[${game.platform}]`
+              .replace(/\s/g, "")
+              .toLowerCase() === id
+        )[0]
       : null;
     setGameCardInfo({ ...filteredGameCard });
   }, [id, gamesList]);
@@ -72,14 +74,17 @@ const GameCard = () => {
     images,
     videos,
     beatemupBingo,
-  } = gameCardInfo;
+  }: any = gameCardInfo;
 
-  const bingoScoreTotal = gameCardInfo.beatemupBingo
-    ? Object.keys(gameCardInfo.beatemupBingo).length
+  const bingoScoreTotal = beatemupBingo
+    ? Object.keys(beatemupBingo).length
     : null;
-  const bingoScore = gameCardInfo.beatemupBingo && Object.values(gameCardInfo.beatemupBingo)
-    .filter((value) => value === true).length;
 
+  const bingoScore =
+    beatemupBingo &&
+    Object.values(beatemupBingo).filter((value) => value === true)
+      .length;
+  // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
       <h2 className="game-card__name">{name}</h2>
@@ -110,13 +115,20 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Other Platforms: </span>
           <ul className="game-card__values-list">
-            {otherPlatforms && otherPlatforms.map((platformName) => (
-              <li>
-                <Link to={`${name.replace(/\s/g, '').toLowerCase()}[${platformName.replace(/\s/g, '').toLowerCase()}]`}>
-                  <span>{platformName}</span>
-                </Link>
-              </li>
-            ))}
+            {otherPlatforms &&
+              otherPlatforms.map((platformName: any) => (
+                <li>
+                  <Link
+                    to={`${name
+                      .replace(/\s/g, "")
+                      .toLowerCase()}[${platformName
+                      .replace(/\s/g, "")
+                      .toLowerCase()}]`}
+                  >
+                    <span>{platformName}</span>
+                  </Link>
+                </li>
+              ))}
           </ul>
         </li>
         <li>
@@ -141,7 +153,9 @@ const GameCard = () => {
         </li>
         <li>
           <span className="game-card__parameter-name">Variety: </span>
-          <ul className="game-card__values-list">{variety && variety.map((varietyName) => <li>{varietyName}</li>)}</ul>
+          <ul className="game-card__values-list">
+            {variety && variety.map((varietyName: any) => <li>{varietyName}</li>)}
+          </ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Playtime: </span>
@@ -227,16 +241,16 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Tone: </span>
           <span>{tone}</span>
         </li>
-        {gore
-          ? (
-            <li>
-              <span className="game-card__parameter-name">Gore: </span>
-              <ul className="game-card__values-list">
-                {gore.map((item) => <li>{item}</li>)}
-              </ul>
-            </li>
-          )
-          : null}
+        {gore ? (
+          <li>
+            <span className="game-card__parameter-name">Gore: </span>
+            <ul className="game-card__values-list">
+              {gore.map((item: any) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </li>
+        ) : null}
         <li>
           <span className="game-card__parameter-name">Fighters: </span>
           <span>{fighters}</span>
@@ -255,7 +269,9 @@ const GameCard = () => {
         </li>
         <li>
           <span className="game-card__parameter-name">Weapons: </span>
-          <ul className="game-card__values-list">{weapons && weapons.map((weapon) => <li>{weapon}</li>)}</ul>
+          <ul className="game-card__values-list">
+            {weapons && weapons.map((weapon: any) => <li>{weapon}</li>)}
+          </ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Lives: </span>
@@ -270,14 +286,15 @@ const GameCard = () => {
           <span>{extend}</span>
         </li>
         <li>
-          <span className="game-card__parameter-name">Beat&apos;em Up Bingo: </span>
+          <span className="game-card__parameter-name">
+            Beat&apos;em Up Bingo:{" "}
+          </span>
           <span>
-            {bingoScore}
-            {' '}
-            of
-            {' '}
-            {bingoScoreTotal}
-            <Tooltip placement="bottom" tooltip={<Bingo beatemupBingo={beatemupBingo} />}>
+            {bingoScore} of {bingoScoreTotal}
+            <Tooltip
+              placement="bottom"
+              tooltip={<Bingo {...beatemupBingo} />}
+            >
               <span className="select__icon-info">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <circle cx="256" cy="378.5" r="25" />
@@ -294,30 +311,47 @@ const GameCard = () => {
         </li>
         <li>
           <span className="game-card__parameter-name">Links: </span>
-          <ul>{links && links.map((link) => <li><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>)}</ul>
+          <ul>
+            {links &&
+              links.map((link: string) => (
+                <li>
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    {link}
+                  </a>
+                </li>
+              ))}
+          </ul>
         </li>
         <li className="game-card__screenshots">
-          {images
-            ? (
-              <Slider>
-                {images.map((image) => <div><img src={image} alt="game screenshot" /></div>)}
-              </Slider>
-            )
-            : null}
+          {images ? (
+            <Slider>
+              {images.map((image: any) => (
+                <div>
+                  <img src={image} alt="game screenshot" />
+                </div>
+              ))}
+            </Slider>
+          ) : null}
         </li>
         <li className="game-card__videos">
-          {videos
-            ? (
-              <Slider>
-                {videos.map((video) => (
-                  <div>
-                    {/* iframes must have unique title */}
-                    <iframe title={video} width="100%" height="360" src={video} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                  </div>
-                ))}
-              </Slider>
-            )
-            : null}
+          {videos ? (
+            <Slider>
+              {videos.map((video: any) => (
+                <div>
+                  {/* iframes must have unique title */}
+                  <iframe
+                    title={video}
+                    width="100%"
+                    height="360"
+                    src={video}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ))}
+            </Slider>
+          ) : null}
         </li>
       </ul>
     </div>

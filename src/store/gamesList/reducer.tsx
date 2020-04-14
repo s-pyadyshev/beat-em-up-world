@@ -1,13 +1,13 @@
-import { filter, omit } from 'lodash';
+import { filter, omit } from "lodash";
 import {
   GET_GAMES_REQUEST,
   GET_GAMES_SUCCESS,
   GET_GAMES_ERROR,
   GET_GAME_CARD_REQUEST,
   FILTER_GAMES,
-} from './constants';
+} from "./constants";
 
-export const gamesList = (state = [], action) => {
+export const gamesList = (state: any = [], action: any) => {
   let filterOptions = { ...state.filterOptions };
 
   switch (action.type) {
@@ -39,7 +39,7 @@ export const gamesList = (state = [], action) => {
         error: null,
       };
     case FILTER_GAMES:
-      if (action.option === '') {
+      if (action.option === "") {
         filterOptions = omit(state.filterOptions, action.filterName);
         const filteredList = filter(state.gamesList, filterOptions);
 
@@ -50,7 +50,11 @@ export const gamesList = (state = [], action) => {
         };
       }
       // hardcode solution for array values
-      if (action.filterName === 'weapons' || action.filterName === 'variety' || action.filterName === 'gore') {
+      if (
+        action.filterName === "weapons" ||
+        action.filterName === "variety" ||
+        action.filterName === "gore"
+      ) {
         filterOptions[action.filterName] = [action.option];
       } else {
         filterOptions[action.filterName] = action.option;
