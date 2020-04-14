@@ -293,7 +293,7 @@ const GameCard = () => {
             {bingoScore} of {bingoScoreTotal}
             <Tooltip
               placement="bottom"
-              tooltip={<Bingo beatemupBingo={beatemupBingo} />}
+              tooltip={<Bingo {...beatemupBingo} />}
             >
               <span className="select__icon-info">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

@@ -6,13 +6,13 @@ import "./style.scss";
 const Tooltip = ({ children, tooltip, hideArrow, ...props }: any) => (
   <TooltipTrigger
     {...props}
-    tooltip={({
-      arrowRef,
-      tooltipRef,
-      getArrowProps,
-      getTooltipProps,
-      placement,
-    }) => (
+      tooltip={({
+        arrowRef,
+        tooltipRef,
+        getArrowProps,
+        getTooltipProps,
+        placement,
+      }) => (
       <div
         {...getTooltipProps({
           ref: tooltipRef,
