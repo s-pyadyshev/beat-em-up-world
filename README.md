@@ -1,44 +1,88 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://beat-em-up-world.herokuapp.com">https://beat-em-up-world.herokuapp.com</a>
+<br>
+Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
-## Available Scripts
+Stack: React, Redux, creat-react-app, Scss.
+<br>
+API (JSON)
+<a href="https://github.com/s-pyadyshev/beat-em-ups-api">https://github.com/s-pyadyshev/beat-em-ups-api</a>
+<br>
 
-In the project directory, you can run:
+Tasks<br>
+Major (MVP release):<br>
 
-### `yarn start`
+- Add svg-sprite-loader to add icons (at least for the most important filters)
+- Finish About page info
+- Finalize MVP design on desktop and tablet
+- Add responsive styles (toggle filters and list on mobiles or make it swipeable)
+- Add release year filter
+- Make gangsize param consistent?
+- Fill otherPlatforms and series data in JSON
+- Add summary info (total amount of games, missing games etc.)
+- Refactoring
+- Add linters
+- Add Typescript
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Minor:<br>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Add Travis CI / Github Actions?
+- Add SSR?
+- Change playtime select to range?
+- Add new game params (filters), e.g. Breakable objects etc.
+- Update design
+- Add dark/light theme (change on system settings)
+- Search / autocomplete?
+- Add possibility to select multiple choice in one filter
+- Add more games to JSON:
+  - Battletoads (Amiga)?
+  - Cowboy Bebop: Tsuioku no Serenade?
+  - Crimson Tears?
+  - Death by Degrees (PS2)?
+  - Die Hard Arcade
+  - Double Dragon (Atari ST)
+  - Dynamite Cop
+  - Final Fight (Sega CD)
+  - Final Fight: Streetwise?
+  - Gekido - Urban Fighters (PS)
+  - God Hand?
+  - Golden Axe (Atari ST)
+  - Golden Axe (PS2)
+  - Kenka Bancho: Badass Rumble (PSP)?
+  - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
+  - Legend (PS)
+  - Lugaru?
+  - Mad Max
+  - Middle Earth series?
+  - Mighty Morphin Power Rangers (SNES)?
+  - Overgrowth
+  - Saint Seiya: Sanctuary Battle (PS3)?
+  - Sleeping Dogs?
+  - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
+  - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
+  - Tomoyo Fighter Perfect
+  - The Bouncer
+  - Zombie Revenge?
+  - The best SORR mods, OpenBOR/MUGEN games?
 
-### `yarn test`
+CHANGE LOG:<br>
+0.3
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Added Links page, tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links, new header
+- Added some missing games
+- Added beat'em up bingo
+- Added Gore parameter to several games
+- Changed variety and weapons values from string to array
+- Added links (wikipedia, wikia etc.) and reviews array (do not include into filter)
 
-### `yarn build`
+  0.2
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Functional components, Redux, react-router, hooks
+- Games List, Filter, Select, Game Card
+- Fixed filter value names consistency and typos
+- Fixed some filters to filter by array.includes(value)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  0.1.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Class components, local state
+- Games List, Game Card (all data and cover), Random Card (Refresh), Error Boundary
+- Context Api to select Game Card from List by index
