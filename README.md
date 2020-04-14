@@ -10,7 +10,6 @@ API (JSON)
 
 Tasks<br>
 Major (MVP release):<br>
-
 - Add svg-sprite-loader to add icons (at least for the most important filters)
 - Finish About page info
 - Finalize MVP design on desktop and tablet
@@ -24,7 +23,6 @@ Major (MVP release):<br>
 - Add Typescript
 
 Minor:<br>
-
 - Add Travis CI / Github Actions?
 - Add SSR?
 - Change playtime select to range?
@@ -41,7 +39,6 @@ Minor:<br>
   - Die Hard Arcade
   - Double Dragon (Atari ST)
   - Dynamite Cop
-  - Final Fight (Sega CD)
   - Final Fight: Streetwise?
   - Gekido - Urban Fighters (PS)
   - God Hand?
@@ -64,9 +61,10 @@ Minor:<br>
   - Zombie Revenge?
   - The best SORR mods, OpenBOR/MUGEN games?
 
+
+
 CHANGE LOG:<br>
 0.3
-
 - Added Links page, tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links, new header
 - Added some missing games
 - Added beat'em up bingo
@@ -74,15 +72,13 @@ CHANGE LOG:<br>
 - Changed variety and weapons values from string to array
 - Added links (wikipedia, wikia etc.) and reviews array (do not include into filter)
 
-  0.2
-
+0.2
 - Functional components, Redux, react-router, hooks
 - Games List, Filter, Select, Game Card
 - Fixed filter value names consistency and typos
 - Fixed some filters to filter by array.includes(value)
 
-  0.1.
-
+0.1.
 - Class components, local state
 - Games List, Game Card (all data and cover), Random Card (Refresh), Error Boundary
 - Context Api to select Game Card from List by index

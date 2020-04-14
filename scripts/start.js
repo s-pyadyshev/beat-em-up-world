@@ -1,4 +1,4 @@
-'use strict';
+/* eslint-disable */
 
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'development';
@@ -148,15 +148,6 @@ checkBrowsers(paths.appPath, isInteractive)
         process.exit();
       });
     });
-
-    if (isInteractive || process.env.CI !== 'true') {
-      // Gracefully exit when stdin ends
-      process.stdin.on('end', function() {
-        devServer.close();
-        process.exit();
-      });
-      process.stdin.resume();
-    }
   })
   .catch(err => {
     if (err && err.message) {

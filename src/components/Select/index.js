@@ -1,17 +1,22 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { filterGames } from "../../store/gamesList/actions";
-import Tooltip from "../Tooltip";
-import "./style.scss";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { filterGames } from '../../redux/gamesList/actions';
+import Tooltip from '../Tooltip';
+import './style.scss';
 
-const Select = (props: any) => {
+const Select = (props) => {
   const dispatch = useDispatch();
   const [isSelected, setSelected] = useState(false);
 
-  const { description, name, filterName, options } = props;
+  const {
+    description,
+    name,
+    filterName,
+    options,
+  } = props;
 
-  const handleSelect = (event: any) => {
-    if (event.target.value === "") {
+  const handleSelect = (event) => {
+    if (event.target.value === '') {
       dispatch(filterGames(name, event.target.value));
       setSelected(false);
     } else if (event.target.value.match(/^[0-9]+$/)) {
@@ -24,7 +29,7 @@ const Select = (props: any) => {
   };
 
   return (
-    <div className={isSelected ? "select is-selected" : "select"}>
+    <div className={isSelected ? 'is-selected' : null}>
       <label>
         <div className="select__label-inner">
           <strong className="select__name">{filterName}</strong>
@@ -41,10 +46,16 @@ const Select = (props: any) => {
             </span>
           </Tooltip>
         </div>
-        <select className="select__input" name={name} onChange={handleSelect}>
+        <select
+          className="select__input"
+          name={name}
+          onChange={handleSelect}
+        >
           <option value="">--Choose an option--</option>
-          {options.map((value: any, index: any) => (
-            <option key={index} value={value}>
+          {options.map((value) => (
+            <option
+              value={value}
+            >
               {value}
             </option>
           ))}
