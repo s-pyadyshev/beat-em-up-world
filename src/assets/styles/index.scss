@@ -3,12 +3,12 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('../img/mff-bg.png');
+  background-image: url("../img/mff-bg.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-attachment: fixed;
@@ -58,3 +58,5 @@ svg {
   height: inherit;
   fill: currentColor;
 }
+
+// test
