@@ -43,8 +43,10 @@ const Select = (props: any) => {
         </div>
         <select className="select__input" name={name} onChange={handleSelect}>
           <option value="">--Choose an option--</option>
-          {options.map((value: any) => (
-            <option value={value}>{value}</option>
+          {options.map((value: any, index: any) => (
+            <option key={index} value={value}>
+              {value}
+            </option>
           ))}
         </select>
       </label>

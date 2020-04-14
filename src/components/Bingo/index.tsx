@@ -2,35 +2,33 @@ import React from "react";
 import BingoProps from "../../types/BingoProps";
 import "./style.scss";
 
-const Bingo:React.FC<BingoProps> = (
-  {
-    go,
-    sunsetEnding,
-    healthMeat,
-    sleevelessJacket,
-    bossWithGun,
-    fireBombs,
-    twowordTitle,
-    throwingKnife,
-    subwayStage,
-    exproWrestler,
-    steelPipe,
-    kindnappedFemale,
-    specialDrainsHealth,
-    oilDrums,
-    clowns,
-    yellowRedHealthBar,
-    dominatrix,
-    powerSpeedBalance,
-    elevatorScene,
-    mansionStage,
-    mohawks,
-    buildingSite,
-    fatCharginMen,
-    sharpSuits,
-    graffiti
-  }) => {
-
+const Bingo: React.FC<BingoProps> = ({
+  go,
+  sunsetEnding,
+  healthMeat,
+  sleevelessJacket,
+  bossWithGun,
+  fireBombs,
+  twowordTitle,
+  throwingKnife,
+  subwayStage,
+  exproWrestler,
+  steelPipe,
+  kindnappedFemale,
+  specialDrainsHealth,
+  oilDrums,
+  clowns,
+  yellowRedHealthBar,
+  dominatrix,
+  powerSpeedBalance,
+  elevatorScene,
+  mansionStage,
+  mohawks,
+  buildingSite,
+  fatCharginMen,
+  sharpSuits,
+  graffiti,
+}) => {
   const toggleActiveClass = (parameter: Boolean) => {
     if (parameter === true) {
       return "bingo__name is-active";
@@ -47,9 +45,7 @@ const Bingo:React.FC<BingoProps> = (
         GO!
       </div>
       <div
-        className={toggleActiveClass(
-          sunsetEnding
-        )}
+        className={toggleActiveClass(sunsetEnding)}
         title="An awful lot of beat-em-ups seem to end just as the day is done."
       >
         Sunset ending
@@ -61,17 +57,13 @@ const Bingo:React.FC<BingoProps> = (
         Health meat
       </div>
       <div
-        className={toggleActiveClass(
-          sleevelessJacket
-        )}
+        className={toggleActiveClass(sleevelessJacket)}
         title="Has someone removed the sleeves from their jacket? They are a bad guy, you should punch them."
       >
         Sleeveless jacket
       </div>
       <div
-        className={toggleActiveClass(
-          bossWithGun
-        )}
+        className={toggleActiveClass(bossWithGun)}
         title="Bosses are dishonourable pricks, and will sometimes shoot at you..."
       >
         Boss with gun
@@ -83,33 +75,25 @@ const Bingo:React.FC<BingoProps> = (
         Fire bombs
       </div>
       <div
-        className={toggleActiveClass(
-          twowordTitle
-        )}
+        className={toggleActiveClass(twowordTitle)}
         title="Like Final Fight or Violent Storm or Cooking Mama."
       >
         2-word title
       </div>
       <div
-        className={toggleActiveClass(
-          throwingKnife
-        )}
+        className={toggleActiveClass(throwingKnife)}
         title="Dont stab, throw, because that's much more effective."
       >
         Throwing knife
       </div>
       <div
-        className={toggleActiveClass(
-          subwayStage
-        )}
+        className={toggleActiveClass(subwayStage)}
         title="Because street punks are too poor to own cars, or sleeves for their jackets."
       >
         Subway stage
       </div>
       <div
-        className={toggleActiveClass(
-          exproWrestler
-        )}
+        className={toggleActiveClass(exproWrestler)}
         title="It's a short career, but it equips you with all the tools necessary to fight ruthless crime syndicates."
       >
         Ex-pro wrestler
@@ -121,17 +105,13 @@ const Bingo:React.FC<BingoProps> = (
         Steel pipe
       </div>
       <div
-        className={toggleActiveClass(
-          kindnappedFemale
-        )}
+        className={toggleActiveClass(kindnappedFemale)}
         title="Well, something has to get our heroes moving. It's usually a girlfriend, sometimes a daughter, almost always blonde."
       >
         Kindnapped female
       </div>
       <div
-        className={toggleActiveClass(
-          specialDrainsHealth
-        )}
+        className={toggleActiveClass(specialDrainsHealth)}
         title="Press attack and jump. Spin around and bash enemies. You look so awesome that it costs you some health."
       >
         Special drains health
@@ -149,9 +129,7 @@ const Bingo:React.FC<BingoProps> = (
         Clowns
       </div>
       <div
-        className={toggleActiveClass(
-          yellowRedHealthBar
-        )}
+        className={toggleActiveClass(yellowRedHealthBar)}
         title="Yellow is apparently the colour of strength and vigour. Red, not so much."
       >
         Yellow/Red health bar
@@ -163,25 +141,19 @@ const Bingo:React.FC<BingoProps> = (
         Dominatrix
       </div>
       <div
-        className={toggleActiveClass(
-          powerSpeedBalance
-        )}
+        className={toggleActiveClass(powerSpeedBalance)}
         title="You've got three characters. One of them is as average as a beige carpet. One is faster, but weaker. The other is strong, but slower. The holy trinity."
       >
         Power speed balance
       </div>
       <div
-        className={toggleActiveClass(
-          elevatorScene
-        )}
+        className={toggleActiveClass(elevatorScene)}
         title="Trapped inside a moving elevator as enemies jump in."
       >
         Elevator scene
       </div>
       <div
-        className={toggleActiveClass(
-          mansionStage
-        )}
+        className={toggleActiveClass(mansionStage)}
         title="Because what's the point of becoming the head of a vast criminal empire if you can't have a nice house?"
       >
         Mansion stage
@@ -193,17 +165,13 @@ const Bingo:React.FC<BingoProps> = (
         Mohawks
       </div>
       <div
-        className={toggleActiveClass(
-          buildingSite
-        )}
+        className={toggleActiveClass(buildingSite)}
         title="Well, you wouldn't want to be fighting in a newly-completed building, would you? You might get blood on the skirting boards."
       >
         Building site
       </div>
       <div
-        className={toggleActiveClass(
-          fatCharginMen
-        )}
+        className={toggleActiveClass(fatCharginMen)}
         title="A larger gentleman who, despite his portly stature, attacks by running into you like a hyperactive Labrador."
       >
         Fat chargin men

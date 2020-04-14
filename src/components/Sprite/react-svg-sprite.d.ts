@@ -1,1 +1,1 @@
-declare module 'react-svg-sprite';
+declare module "react-svg-sprite";

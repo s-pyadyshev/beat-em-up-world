@@ -82,8 +82,7 @@ const GameCard = () => {
 
   const bingoScore =
     beatemupBingo &&
-    Object.values(beatemupBingo).filter((value) => value === true)
-      .length;
+    Object.values(beatemupBingo).filter((value) => value === true).length;
   // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
@@ -116,8 +115,8 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Other Platforms: </span>
           <ul className="game-card__values-list">
             {otherPlatforms &&
-              otherPlatforms.map((platformName: any) => (
-                <li>
+              otherPlatforms.map((platformName: any, index: any) => (
+                <li key={index}>
                   <Link
                     to={`${name
                       .replace(/\s/g, "")
@@ -154,7 +153,10 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Variety: </span>
           <ul className="game-card__values-list">
-            {variety && variety.map((varietyName: any) => <li>{varietyName}</li>)}
+            {variety &&
+              variety.map((varietyName: any, index: any) => (
+                <li key={index}>{varietyName}</li>
+              ))}
           </ul>
         </li>
         <li>
@@ -245,8 +247,8 @@ const GameCard = () => {
           <li>
             <span className="game-card__parameter-name">Gore: </span>
             <ul className="game-card__values-list">
-              {gore.map((item: any) => (
-                <li>{item}</li>
+              {gore.map((item: any, index: any) => (
+                <li key={index}>{item}</li>
               ))}
             </ul>
           </li>
@@ -270,7 +272,10 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Weapons: </span>
           <ul className="game-card__values-list">
-            {weapons && weapons.map((weapon: any) => <li>{weapon}</li>)}
+            {weapons &&
+              weapons.map((weapon: any, index: any) => (
+                <li key={index}>{weapon}</li>
+              ))}
           </ul>
         </li>
         <li>
@@ -291,10 +296,7 @@ const GameCard = () => {
           </span>
           <span>
             {bingoScore} of {bingoScoreTotal}
-            <Tooltip
-              placement="bottom"
-              tooltip={<Bingo {...beatemupBingo} />}
-            >
+            <Tooltip placement="bottom" tooltip={<Bingo {...beatemupBingo} />}>
               <span className="select__icon-info">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <circle cx="256" cy="378.5" r="25" />
@@ -313,8 +315,8 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Links: </span>
           <ul>
             {links &&
-              links.map((link: string) => (
-                <li>
+              links.map((link: string, index: any) => (
+                <li key={index}>
                   <a href={link} target="_blank" rel="noopener noreferrer">
                     {link}
                   </a>
@@ -325,8 +327,8 @@ const GameCard = () => {
         <li className="game-card__screenshots">
           {images ? (
             <Slider>
-              {images.map((image: any) => (
-                <div>
+              {images.map((image: any, index: any) => (
+                <div key={index}>
                   <img src={image} alt="game screenshot" />
                 </div>
               ))}
@@ -336,8 +338,8 @@ const GameCard = () => {
         <li className="game-card__videos">
           {videos ? (
             <Slider>
-              {videos.map((video: any) => (
-                <div>
+              {videos.map((video: any, index: any) => (
+                <div key={index}>
                   {/* iframes must have unique title */}
                   <iframe
                     title={video}
