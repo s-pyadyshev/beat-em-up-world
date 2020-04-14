@@ -9,7 +9,7 @@ import GameList from "./components/GameList";
 import Filter from "./components/Filter";
 import { Sprite } from "./components/Sprite";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <div className="App">

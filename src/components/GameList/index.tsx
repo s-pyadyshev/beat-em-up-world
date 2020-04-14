@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   getGamesRequest,
   getGamesSuccess,
-} from "../../redux/gamesList/actions";
+} from "../../store/gamesList/actions";
 import GamesListItem from "../GameListItem";
 import { Games } from "../../services/api";
 import Loading from "../Loading";
@@ -11,9 +11,9 @@ import "./style.scss";
 
 const GamesList = () => {
   const filteredGamesList = useSelector(
-    (state) => state.gamesList.filteredGames
+    (state: any) => state.gamesList.filteredGames
   );
-  const loading = useSelector((state) => state.gamesList.loading);
+  const loading = useSelector((state: any) => state.gamesList.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const GamesList = () => {
         <h2>Games not found</h2>
       ) : null}
       {filteredGamesList &&
-        filteredGamesList.map((game) => (
+        filteredGamesList.map((game: any) => (
           <>
             {game.missing ? (
               <li className="missing">

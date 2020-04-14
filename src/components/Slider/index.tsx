@@ -3,7 +3,7 @@ import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
 import "./style.scss";
 
-export const Slider = (props) => {
+export const Slider = (props: any) => {
   const { children } = props;
   const params = {
     rebuildOnUpdate: true,

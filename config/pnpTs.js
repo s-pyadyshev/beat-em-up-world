@@ -1,6 +1,6 @@
-/* eslint-disable */
+'use strict';
 
-const { resolveModuleName } = require("ts-pnp");
+const { resolveModuleName } = require('ts-pnp');
 
 exports.resolveModuleName = (
   typescript,

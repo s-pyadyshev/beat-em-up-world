@@ -9,12 +9,12 @@ import "./style.scss";
 const GameCard = () => {
   const { id } = useParams();
   const [gameCardInfo, setGameCardInfo] = useState({});
-  const gamesList = useSelector((state) => state.gamesList.gamesList);
+  const gamesList = useSelector((state: any) => state.gamesList.gamesList);
 
   useEffect(() => {
     const filteredGameCard = gamesList
       ? gamesList.filter(
-          (game) =>
+          (game: any) =>
             `${game.name}[${game.platform}]`
               .replace(/\s/g, "")
               .toLowerCase() === id
@@ -74,16 +74,17 @@ const GameCard = () => {
     images,
     videos,
     beatemupBingo,
-  } = gameCardInfo;
+  }: any = gameCardInfo;
 
-  const bingoScoreTotal = gameCardInfo.beatemupBingo
-    ? Object.keys(gameCardInfo.beatemupBingo).length
+  const bingoScoreTotal = beatemupBingo
+    ? Object.keys(beatemupBingo).length
     : null;
-  const bingoScore =
-    gameCardInfo.beatemupBingo &&
-    Object.values(gameCardInfo.beatemupBingo).filter((value) => value === true)
-      .length;
 
+  const bingoScore =
+    beatemupBingo &&
+    Object.values(beatemupBingo).filter((value) => value === true)
+      .length;
+  // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
       <h2 className="game-card__name">{name}</h2>
@@ -115,7 +116,7 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Other Platforms: </span>
           <ul className="game-card__values-list">
             {otherPlatforms &&
-              otherPlatforms.map((platformName) => (
+              otherPlatforms.map((platformName: any) => (
                 <li>
                   <Link
                     to={`${name
@@ -153,7 +154,7 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Variety: </span>
           <ul className="game-card__values-list">
-            {variety && variety.map((varietyName) => <li>{varietyName}</li>)}
+            {variety && variety.map((varietyName: any) => <li>{varietyName}</li>)}
           </ul>
         </li>
         <li>
@@ -244,7 +245,7 @@ const GameCard = () => {
           <li>
             <span className="game-card__parameter-name">Gore: </span>
             <ul className="game-card__values-list">
-              {gore.map((item) => (
+              {gore.map((item: any) => (
                 <li>{item}</li>
               ))}
             </ul>
@@ -269,7 +270,7 @@ const GameCard = () => {
         <li>
           <span className="game-card__parameter-name">Weapons: </span>
           <ul className="game-card__values-list">
-            {weapons && weapons.map((weapon) => <li>{weapon}</li>)}
+            {weapons && weapons.map((weapon: any) => <li>{weapon}</li>)}
           </ul>
         </li>
         <li>
@@ -312,7 +313,7 @@ const GameCard = () => {
           <span className="game-card__parameter-name">Links: </span>
           <ul>
             {links &&
-              links.map((link) => (
+              links.map((link: string) => (
                 <li>
                   <a href={link} target="_blank" rel="noopener noreferrer">
                     {link}
@@ -324,7 +325,7 @@ const GameCard = () => {
         <li className="game-card__screenshots">
           {images ? (
             <Slider>
-              {images.map((image) => (
+              {images.map((image: any) => (
                 <div>
                   <img src={image} alt="game screenshot" />
                 </div>
@@ -335,7 +336,7 @@ const GameCard = () => {
         <li className="game-card__videos">
           {videos ? (
             <Slider>
-              {videos.map((video) => (
+              {videos.map((video: any) => (
                 <div>
                   {/* iframes must have unique title */}
                   <iframe

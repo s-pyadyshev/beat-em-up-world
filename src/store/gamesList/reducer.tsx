@@ -7,7 +7,7 @@ import {
   FILTER_GAMES,
 } from "./constants";
 
-export const gamesList = (state = [], action) => {
+export const gamesList = (state: any = [], action: any) => {
   let filterOptions = { ...state.filterOptions };
 
   switch (action.type) {

@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.scss";
 
-const Bingo = (props) => {
+const Bingo = (props: any) => {
   const { beatemupBingo } = props;
 
-  const toggleActiveClass = (parameter) => {
+  const toggleActiveClass = (parameter: any) => {
     if (beatemupBingo && parameter === true) {
       return "bingo__name is-active";
     }

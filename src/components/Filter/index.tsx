@@ -6,7 +6,7 @@ import "./style.scss";
 
 const Filter = () => {
   const [filters, setFilters] = useState([]);
-  const loading = useSelector((state) => state.gamesList.loading);
+  const loading = useSelector((state: any) => state.gamesList.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Filter = () => {
   return (
     <ul className="filter">
       {loading ? <Loading /> : null}
-      {filters.map((filter) => (
+      {filters.map((filter: any) => (
         <li>
           <Select
             filterName={filter.filterName}

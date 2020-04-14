@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { filterGames } from "../../redux/gamesList/actions";
+import { filterGames } from "../../store/gamesList/actions";
 import Tooltip from "../Tooltip";
 import "./style.scss";
 
-const Select = (props) => {
+const Select = (props: any) => {
   const dispatch = useDispatch();
   const [isSelected, setSelected] = useState(false);
 
   const { description, name, filterName, options } = props;
 
-  const handleSelect = (event) => {
+  const handleSelect = (event: any) => {
     if (event.target.value === "") {
       dispatch(filterGames(name, event.target.value));
       setSelected(false);
@@ -24,7 +24,7 @@ const Select = (props) => {
   };
 
   return (
-    <div className={isSelected ? "is-selected" : null}>
+    <div className={isSelected ? "select is-selected" : "select"}>
       <label>
         <div className="select__label-inner">
           <strong className="select__name">{filterName}</strong>
@@ -43,7 +43,7 @@ const Select = (props) => {
         </div>
         <select className="select__input" name={name} onChange={handleSelect}>
           <option value="">--Choose an option--</option>
-          {options.map((value) => (
+          {options.map((value: any) => (
             <option value={value}>{value}</option>
           ))}
         </select>

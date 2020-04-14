@@ -10,22 +10,22 @@ export const getGamesRequest = () => ({
   type: GET_GAMES_REQUEST,
 });
 
-export const getGamesSuccess = (gamesList) => ({
+export const getGamesSuccess = (gamesList: any) => ({
   type: GET_GAMES_SUCCESS,
   gamesList,
 });
 
-export const getGamesError = (error) => ({
+export const getGamesError = (error: any) => ({
   type: GET_GAMES_ERROR,
   error,
 });
 
-export const getGameCardRequest = (uniqGameName) => ({
+export const getGameCardRequest = (uniqGameName: any) => ({
   type: GET_GAME_CARD_REQUEST,
   uniqGameName,
 });
 
-export const filterGames = (filterName, option) => ({
+export const filterGames = (filterName: any, option: any) => ({
   type: FILTER_GAMES,
   filterName,
   option,
