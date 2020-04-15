@@ -1,3 +1,5 @@
+@import "./../../assets/styles/variables";
+
 .bingo {
   display: flex;
   flex-wrap: wrap;
@@ -13,11 +15,11 @@
     box-sizing: border-box;
     text-align: center;
     box-shadow: 0 0 0 1px;
-    background-color: #fff;
-    color: #000;
+    background-color: $color-white;
+    color: $color-black;
 
     &.is-active {
-      &:before {
+      &::before {
         content: "";
         position: absolute;
         top: 0;

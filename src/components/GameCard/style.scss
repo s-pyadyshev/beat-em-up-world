@@ -1,18 +1,20 @@
+@import "./../../assets/styles/variables";
+
 .game-card {
-  color: #fff;
-  
+  color: $color-white;
+
   h3 {
-    font-family: 'capture-it', serif;
+    font-family: "capture-it", serif;
     font-weight: 400;
   }
 
   &__about,
   &__trivia {
-    font-family: 'capture-it', serif;
+    font-family: "capture-it", serif;
   }
 
   &__name {
-    font-family: 'capture-it', serif;
+    font-family: "capture-it", serif;
     font-weight: 400;
     font-size: 2rem;
   }
@@ -21,15 +23,14 @@
     display: inline-flex;
 
     > li {
-
       &:not(:last-child) {
         margin-right: 8px;
 
-        &:after {
+        &::after {
           content: "/";
           margin-left: 8px;
           pointer-events: none;
-          color: #ff00ff;
+          color: $link-color-visited;
         }
       }
     }
@@ -38,7 +39,7 @@
   &__parameter-name {
     display: inline-block;
     min-width: 200px;
-    font-family: 'capture-it', serif;
+    font-family: "capture-it", serif;
   }
 
   &__screenshots,

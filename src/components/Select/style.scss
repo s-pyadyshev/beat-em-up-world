@@ -1,5 +1,6 @@
-.select {
+@import "./../../assets/styles/variables";
 
+.select {
   &__icon {
     width: 20px;
     height: 20px;
@@ -12,16 +13,15 @@
     width: 20px;
     height: 20px;
     margin-left: 8px;
-    color: #fff;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     transition-property: color;
-    color: #17a2b8;
+    color: $color-info;
 
     &:focus,
     &:hover,
     &:active {
-      color: #007bff;
-      transition-duration: .2s;
+      color: $color-info-active;
+      transition-duration: 0.2s;
       transition-property: color;
     }
   }
@@ -44,13 +44,21 @@
     vertical-align: middle;
     font-family: "capture-it", serif;
     font-weight: 400;
-    color: #fff;
+    color: $color-white;
   }
 }
 
 .is-selected {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 255, .8) 0%,rgba(255,255,255,0) 15%,rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%), url(http://www.punchpedia.com/common/img/arcbg.png);
-  color: white;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 15%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(http://www.punchpedia.com/common/img/arcbg.png);
+  color: $color-white;
 }
 
 .trigger {

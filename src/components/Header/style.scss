@@ -1,3 +1,4 @@
+@import "./../../assets/styles/variables";
 @import "../../assets/styles/media.scss";
 
 .header {
@@ -6,14 +7,14 @@
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 32px;
-  font-family: 'capture-it', serif;
+  font-family: "capture-it", serif;
   font-size: 2rem;
 
   @include desktop {
     font-size: 3rem;
   }
 
-  &:before {
+  &::before {
     content: "";
     z-index: -1;
     position: absolute;
@@ -22,26 +23,32 @@
     max-width: 100%;
     width: 100vw;
     height: 120px;
-    background-image: url('../../assets/img/sor-city.png');
+    background-image: url("../../assets/img/sor-city.png");
     background-position: 50% 50%;
     background-size: 50%;
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     top: 120px;
     left: 0;
     width: 100%;
     height: 32px;
-    background-image: linear-gradient(to bottom, #000000 0%, #000000 25%, transparent 100%);
+    background-image:
+      linear-gradient(
+        to bottom,
+        $color-black 0%,
+        $color-black 25%,
+        transparent 100%
+      );
   }
 
   &__link {
-    color: #fff;
+    color: $color-white;
 
     &:visited {
-      color: #fff;
+      color: $color-white;
     }
 
     &:not(:last-child) {
@@ -49,7 +56,7 @@
     }
 
     &.is-active {
-      color: #00ff00cc;
+      color: $link-color-active;
     }
   }
 }
