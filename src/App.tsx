@@ -35,6 +35,6 @@ const App: React.FC = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
