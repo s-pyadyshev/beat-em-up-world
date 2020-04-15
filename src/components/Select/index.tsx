@@ -44,7 +44,9 @@ const Select = (props: any) => {
         <select className="select__input" name={name} onChange={handleSelect}>
           <option value="">--Choose an option--</option>
           {options.map((value: any) => (
-            <option value={value}>{value}</option>
+            <option key={value} value={value}>
+              {value}
+            </option>
           ))}
         </select>
       </label>
