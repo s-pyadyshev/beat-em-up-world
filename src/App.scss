@@ -4,7 +4,7 @@
 
   &__body {
     display: flex;
-    
+
     @media (max-width: 767px) {
       flex-wrap: wrap;
     }
@@ -14,4 +14,3 @@
     max-width: 40%;
   }
 }
-
