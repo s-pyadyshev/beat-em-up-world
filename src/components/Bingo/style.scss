@@ -1,4 +1,5 @@
 @import "./../../assets/styles/variables";
+@import "./../../assets/styles/media";
 
 .bingo {
   display: flex;
@@ -12,11 +13,16 @@
     width: 20%;
     height: 112px;
     padding: 8px;
-    box-sizing: border-box;
+    font-size: 0.75rem;
+    word-break: break-word;
     text-align: center;
     box-shadow: 0 0 0 1px;
     background-color: $color-white;
     color: $color-black;
+
+    @include tablet {
+      font-size: 1rem;
+    }
 
     &.is-active {
       &::before {

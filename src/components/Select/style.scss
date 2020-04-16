@@ -1,6 +1,28 @@
 @import "./../../assets/styles/variables";
 
 .select {
+  &__control {
+    position: relative;
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 8px;
+      height: 8px;
+      top: 50%;
+      right: 10px;
+      margin-top: -3px;
+      border-bottom: 1px solid $color-black;
+      border-right: 1px solid $color-black;
+      transform: rotate(45deg) translateY(-50%);
+      transition: all 0.4s ease-in-out;
+      transform-origin: 50% 0;
+      pointer-events: none;
+    }
+  }
+
   &__icon {
     width: 20px;
     height: 20px;
@@ -27,14 +49,15 @@
   }
 
   &__input {
-    width: 210px;
+    width: 100%;
+    padding: 2px 8px;
   }
 
   &__label-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 210px;
+    max-width: 100%;
     padding-top: 2px;
     padding-bottom: 2px;
   }

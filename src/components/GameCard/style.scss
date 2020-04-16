@@ -1,4 +1,5 @@
 @import "./../../assets/styles/variables";
+@import "./../../assets/styles/media";
 
 .game-card {
   color: $color-white;
@@ -11,6 +12,17 @@
   &__about,
   &__trivia {
     font-family: "capture-it", serif;
+  }
+
+  &__cover {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include tablet {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
   &__name {

@@ -1,16 +1,9 @@
 .App {
-  max-width: 1400px;
-  margin: 0 auto;
-
   &__body {
     display: flex;
 
     @media (max-width: 767px) {
       flex-wrap: wrap;
     }
-  }
-
-  &__card {
-    max-width: 40%;
   }
 }

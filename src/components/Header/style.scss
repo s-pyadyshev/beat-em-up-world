@@ -64,15 +64,23 @@
 .dronami-logo {
   img {
     display: block;
-    width: 300px;
+    width: 160px;
     height: auto;
+
+    @include tablet {
+      width: 300px;
+    }
   }
 }
 
 .punchpedia-logo {
   img {
     display: block;
-    width: 120px;
+    width: 80px;
     height: auto;
+
+    @include tablet {
+      width: 120px;
+    }
   }
 }

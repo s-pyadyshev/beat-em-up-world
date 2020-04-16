@@ -43,6 +43,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
+    "react-grid-system": "^6.3.0",
     "react-id-swiper": "^3.0.0",
     "react-popper-tooltip": "^2.11.1",
     "react-redux": "^7.2.0",

@@ -41,14 +41,16 @@ const Select = (props: any) => {
             </span>
           </Tooltip>
         </div>
-        <select className="select__input" name={name} onChange={handleSelect}>
-          <option value="">--Choose an option--</option>
-          {options.map((value: any) => (
-            <option key={value} value={value}>
-              {value}
-            </option>
-          ))}
-        </select>
+        <div className="select__control">
+          <select className="select__input" name={name} onChange={handleSelect}>
+            <option value="">--Choose an option--</option>
+            {options.map((value: any) => (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+        </div>
       </label>
     </div>
   );

@@ -88,7 +88,7 @@ const GameCard = () => {
     <div className="game-card">
       <h2 className="game-card__name">{name}</h2>
       <h3>{platform}</h3>
-      <img src={cover} alt={name} />
+      <img src={cover} alt={name} className="game-card__cover" />
       <div>
         <span className="game-card__about">about: </span>
         <p>{about}</p>

@@ -1,11 +1,10 @@
 import React from "react";
-import "./style.scss";
 
 const AboutPage = () => (
   <article className="about">
     <h2>What is the purpose of this site?</h2>
     <p>
-      This site is a disciple of
+      This site is a disciple of&nbsp;
       <a
         href="http://www.punchpedia.com"
         target="_blank"
@@ -140,7 +139,7 @@ const AboutPage = () => (
     <h2>How can I help?</h2>
     <p>
       You may help fill information about missing games to PunchPedia. Just GO!
-      to
+      to&nbsp;
       <a
         href="https://github.com/s-pyadyshev/beat-em-ups-api"
         target="_blank"
