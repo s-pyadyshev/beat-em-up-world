@@ -41,23 +41,20 @@ Minor:<br>
   - Die Hard Arcade
   - Double Dragon (Atari ST)
   - Dynamite Cop
-  - Final Fight (Sega CD)
   - Final Fight: Streetwise?
   - Gekido - Urban Fighters (PS)
-  - God Hand?
+  - God Hand (PS2)?
   - Golden Axe (Atari ST)
   - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Legend (PS)
-  - Lugaru?
   - Mad Max
   - Middle Earth series?
   - Mighty Morphin Power Rangers (SNES)?
-  - Overgrowth
+  - Nekketsu kouha kunio-kun (SMS)
   - Saint Seiya: Sanctuary Battle (PS3)?
   - Sleeping Dogs?
-  - STAY COOL, KOBAYASHI-SAN!: A RIVER CITY RANSOM STORY
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
   - Tomoyo Fighter Perfect
   - The Bouncer

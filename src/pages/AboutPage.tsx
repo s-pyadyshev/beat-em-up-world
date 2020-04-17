@@ -15,8 +15,7 @@ const AboutPage = () => (
       and it is approved by its creator. The most crucial feature PunchPedia
       lacks is a complete filter by game parameters (you can filter by platform,
       players, difficulty, length, name) and it was the main reason why I wanted
-      to create this site - to add this feature. Lack of mobile view isn&apos;t
-      crucial here.
+      to create this site - to add this feature.
       <br />
       Everything now has it&apos;s own wikia (fandom) page but there is now such
       place for beat&apos;em ups. Even one small game has it&apos;s own wikia
@@ -32,9 +31,10 @@ const AboutPage = () => (
     <br />
     So here it is, Frontend-powered Beat&apos;em Up World:
     <br />
+    <br />
     <strong>Pros</strong>
-    : no need for hosting, easy to contribute via Pull Requests,
-    &quot;API&quot;.
+    : Filter by all parameters, no need for hosting, easy to contribute via Pull
+    Requests, &quot;API&quot;.
     <br />
     <strong>Cons</strong>
     : backend as JSON, no cool domain name.
@@ -88,6 +88,7 @@ const AboutPage = () => (
     some exceptions)
     <br />- <strong>THEM</strong> - Multiple opponents (at least more than 1)
     <br />- <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
+    <br />
     - Variety matters (grabs!). More moves means more realistic combat. No grabs
     = mindless button masher. Actually variety can be applied to any genre. Just
     compare Nekketsu Kouha Kunio-kun (1986) and Toxic Crusaders (1992). The
@@ -127,7 +128,8 @@ const AboutPage = () => (
       TMNT 3 makes it a bit closer to beat&apos;em ups. The Adventures of Bayou
       Billy has simple but intense combat, you can&apos;t throw enemies but
       bosses can grab or throw you. The same story with Batman Returns (NES)
-      etc.
+      etc. Okay, after a deep breath I can consider P.O.W. a beat'em up but not
+      Toxic Crusaders.
     </p>
     <h2>Why should we care about beat&apos;em ups?</h2>
     <p>

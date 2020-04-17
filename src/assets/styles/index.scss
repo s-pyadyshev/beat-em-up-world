@@ -80,6 +80,8 @@ img {
 
 select {
   appearance: none;
+  border-radius: 0;
+  background-color: $color-white;
 }
 
 svg {
