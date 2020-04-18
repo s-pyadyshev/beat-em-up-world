@@ -60,6 +60,8 @@ Minor:<br>
   - The Bouncer
   - Zombie Revenge?
   - The best SORR mods, OpenBOR/MUGEN games?
+  - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
+  - Missing covers: The Gladiator
 
 CHANGE LOG:<br>
 0.3
