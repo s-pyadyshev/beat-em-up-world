@@ -20,21 +20,23 @@ const AboutPage = () => (
       Everything now has it&apos;s own wikia (fandom) page but there is now such
       place for beat&apos;em ups. Even one small game has it&apos;s own wikia
       (e.g. Ballon Fight, 182 pages!). And every beat&apos;em up may have it as
-      well. So there is no reason to make it wikia-like. 100% completed pages
-      (fighters, enemies, stages, media) are super cool but this detailed
-      content better suits for wikias.
+      well. So there is no reason to make it wikia-like (at least because no one
+      would care). 100% completed pages (fighters, enemies, stages, media) are
+      super cool but this detailed content better suits for wikias.
     </p>
     My aim is to practice Frontend stuff currently and it keeps me motivated to
     go on. It&apos;s much more interesting than another ToDo List, isn&apos;t
     it? Unfortunately I&apos;m not fully interested in Backend currently so
-    I&apos;m not able to implement some features I really want to be.
+    I&apos;m not able to implement some features in PunchPedia I really want to
+    be. And I hope that this project will help to revive interest in Beat'em Up
+    genre and make the game database 100% completed.
     <br />
     So here it is, Frontend-powered Beat&apos;em Up World:
     <br />
     <br />
     <strong>Pros</strong>
     : Filter by all parameters, no need for hosting, easy to contribute via Pull
-    Requests, &quot;API&quot;.
+    Requests, Beat'em Ups &quot;API&quot;.
     <br />
     <strong>Cons</strong>
     : backend as JSON, no cool domain name.
@@ -43,13 +45,6 @@ const AboutPage = () => (
       Punchpedia is truly the #1 place on the internet for all information
       related to brawlers, so the aim of this site (the name sucks, you may
       offer another one) is to be like the aggregator.
-      <br />
-      - Gather complete info about ALL beat&apos;em ups.
-      <br />
-      - Let people contribute easier
-      <br />
-      - Get people more interested in the genre
-      <br />
     </p>
     <h2>
       What is a true beat&apos;em up / brawler? Therefore which games should be
@@ -101,8 +96,8 @@ const AboutPage = () => (
     <strong>Is Golden Axe a beat&apos;em up? They use swords!</strong>
     <p>
       Yes, it has punches (kind of - by grip of the sword), kicks, throws,
-      dashing attacks are not always made with weapon, so it looks more like
-      non-weapon combat.
+      dashing attacks are not always made with weapon, so it looks and feels
+      more like non-weapon combat.
     </p>
     <strong>Is Comix Zone a beat&apos;em up?</strong>
     <p>
@@ -125,18 +120,19 @@ const AboutPage = () => (
       Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W.
       Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple
       combat, only enemy variety saves it. Even a little throw move added in
-      TMNT 3 makes it a bit closer to beat&apos;em ups. The Adventures of Bayou
-      Billy has simple but intense combat, you can&apos;t throw enemies but
-      bosses can grab or throw you. The same story with Batman Returns (NES)
-      etc. Okay, after a deep breath I can consider P.O.W. a beat'em up but not
-      Toxic Crusaders.
+      TMNT 3 makes it a bit closer to beat&apos;em ups (and amazing enemy
+      variety is the main advantage here). The Adventures of Bayou Billy has
+      simple but intense combat, you can&apos;t throw enemies but bosses can
+      grab or throw you. The same story with Batman Returns (NES) etc. Okay,
+      after a deep breath I can consider P.O.W. a beat'em up but not Toxic
+      Crusaders.
     </p>
     <h2>Why should we care about beat&apos;em ups?</h2>
     <p>
       It is one of video game genres that fits the nature of every living being
       - competition, fight for resources, a place under the Sun. The
       fight/confrontation is a part of our life, we are programmed to punch and
-      kick and get satisfaction from it.
+      kick and get satisfaction from it. And throw others on wood boxes.
     </p>
     <h2>How can I help?</h2>
     <p>

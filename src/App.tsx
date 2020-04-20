@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,10 +9,22 @@ import GameList from "./components/GameList";
 import Filter from "./components/Filter";
 import { Sprite } from "./components/Sprite";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
+import { getGamesRequest, getGamesSuccess } from "./store/gamesList/actions";
+import { Games } from "./services/api";
+import { useDispatch } from "react-redux";
 
 setConfiguration({ containerWidths: [768, 960, 1140, 1400] });
 
 const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getGamesRequest());
+    Games.get().then((data: any) => {
+      dispatch(getGamesSuccess(data));
+    });
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -24,10 +36,7 @@ const App: React.FC = () => {
               <Col md={3}>
                 <Filter />
               </Col>
-              <Col md={5}>
-                <GameList />
-              </Col>
-              <Col md={4}>
+              <Col md={9}>
                 <Switch>
                   <Route path="/about">
                     <AboutPage />
@@ -39,6 +48,9 @@ const App: React.FC = () => {
                     <div>
                       <GameCard />
                     </div>
+                  </Route>
+                  <Route path="/">
+                    <GameList />
                   </Route>
                 </Switch>
               </Col>

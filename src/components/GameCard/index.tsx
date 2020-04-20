@@ -86,6 +86,9 @@ const GameCard = () => {
   // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
+      <Link to="/">
+        <span>Back to Games list</span>
+      </Link>
       <h2 className="game-card__name">{name}</h2>
       <h3>{platform}</h3>
       <img src={cover} alt={name} className="game-card__cover" />

@@ -1,11 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  getGamesRequest,
-  getGamesSuccess,
-} from "../../store/gamesList/actions";
+import React from "react";
+import { useSelector } from "react-redux";
 import GamesListItem from "../GameListItem";
-import { Games } from "../../services/api";
 import Loading from "../Loading";
 import "./style.scss";
 
@@ -14,12 +9,6 @@ const GamesList = () => {
     (state: any) => state.gamesList.filteredGames
   );
   const loading = useSelector((state: any) => state.gamesList.loading);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getGamesRequest());
-    Games.get().then((data) => dispatch(getGamesSuccess(data)));
-  }, [dispatch]);
 
   return (
     <ul className="gameslist">
@@ -28,8 +17,8 @@ const GamesList = () => {
         <h2>Games not found</h2>
       ) : null}
       {filteredGamesList &&
-        filteredGamesList.map((game: any) => (
-          <>
+        filteredGamesList.map((game: any, index: any) => (
+          <React.Fragment key={index}>
             {game.missing ? (
               <li className="missing">
                 <b>
@@ -43,7 +32,7 @@ const GamesList = () => {
             ) : (
               <GamesListItem name={game.name} platform={game.platform} />
             )}
-          </>
+          </React.Fragment>
         ))}
     </ul>
   );

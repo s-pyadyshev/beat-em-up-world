@@ -3,6 +3,7 @@ import {
   GET_GAMES_SUCCESS,
   GET_GAMES_ERROR,
   GET_GAME_CARD_REQUEST,
+  GET_GAME_CARD_SUCCESS,
   FILTER_GAMES,
 } from "./constants";
 
@@ -20,9 +21,14 @@ export const getGamesError = (error: any) => ({
   error,
 });
 
-export const getGameCardRequest = (uniqGameName: any) => ({
+export const getGameCardRequest = (id: any) => ({
   type: GET_GAME_CARD_REQUEST,
-  uniqGameName,
+  id,
+});
+
+export const getGameCardSuccess = (gameCardDetails: any) => ({
+  type: GET_GAME_CARD_SUCCESS,
+  gameCardDetails,
 });
 
 export const filterGames = (filterName: any, option: any) => ({

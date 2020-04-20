@@ -4,6 +4,8 @@ import {
   GET_GAMES_SUCCESS,
   GET_GAMES_ERROR,
   GET_GAME_CARD_REQUEST,
+  GET_GAME_CARD_SUCCESS,
+  GET_GAME_CARD_ERROR,
   FILTER_GAMES,
 } from "./constants";
 
@@ -22,7 +24,6 @@ export const gamesList = (state: any = [], action: any) => {
         ...state,
         gamesList: action.gamesList,
         filteredGames: action.gamesList,
-        filterOptions: {},
         loading: false,
         error: null,
       };
@@ -38,7 +39,21 @@ export const gamesList = (state: any = [], action: any) => {
         loading: true,
         error: null,
       };
+    case GET_GAME_CARD_SUCCESS:
+      return {
+        ...state,
+        gameCardDetails: action.gameCardDetails,
+        loading: false,
+        error: null,
+      };
+    case GET_GAME_CARD_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
     case FILTER_GAMES:
+      // if --Select an option--
       if (action.option === "") {
         filterOptions = omit(state.filterOptions, action.filterName);
         const filteredList = filter(state.gamesList, filterOptions);

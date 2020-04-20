@@ -2,7 +2,7 @@
 <br>
 Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
-Stack: React, Redux, creat-react-app, Scss.
+Stack: React, Redux, creat-react-app, react-router, stylelint, prettier, swiper, react-popper-tooltip, , Scss.
 <br>
 API (JSON)
 <a href="https://github.com/s-pyadyshev/beat-em-ups-api">https://github.com/s-pyadyshev/beat-em-ups-api</a>
@@ -12,16 +12,15 @@ Tasks<br>
 Major (MVP release):<br>
 
 - Add svg-sprite-loader to add icons (at least for the most important filters)
-- Finish About page info
+- Finish About page info with more examples
 - Finalize MVP design on desktop and tablet
 - Add responsive styles (toggle filters and list on mobiles or make it swipeable)
-- Add release year filter
+- Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
 - Make gangsize param consistent?
-- Fill otherPlatforms and series data in JSON
+- Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
 - Add summary info (total amount of games, missing games etc.)
 - Refactoring
-- Add linters
-- Add Typescript
+- Fix TS react/prop-types warnings
 
 Minor:<br>
 
@@ -35,14 +34,10 @@ Minor:<br>
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?
-  - Cowboy Bebop: Tsuioku no Serenade?
   - Crimson Tears?
-  - Death by Degrees (PS2)?
   - Die Hard Arcade
   - Double Dragon (Atari ST)
   - Dynamite Cop
-  - Final Fight: Streetwise?
-  - Gekido - Urban Fighters (PS)
   - God Hand (PS2)?
   - Golden Axe (Atari ST)
   - Golden Axe (PS2)
@@ -52,7 +47,6 @@ Minor:<br>
   - Mad Max
   - Middle Earth series?
   - Mighty Morphin Power Rangers (SNES)?
-  - Nekketsu kouha kunio-kun (SMS)
   - Saint Seiya: Sanctuary Battle (PS3)?
   - Sleeping Dogs?
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
@@ -63,7 +57,7 @@ Minor:<br>
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
   - Missing covers: The Gladiator
 
-CHANGE LOG:<br>
+CHANGE LOG (monthy summary):<br>
 0.3
 
 - Added Links page, tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links, new header
@@ -72,6 +66,10 @@ CHANGE LOG:<br>
 - Added Gore parameter to several games
 - Changed variety and weapons values from string to array
 - Added links (wikipedia, wikia etc.) and reviews array (do not include into filter)
+- Added release year filter
+- Added linters
+- Added TypeScript
+- Added mobile toggle for filters
 
   0.2
 

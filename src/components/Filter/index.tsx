@@ -28,8 +28,8 @@ const Filter = () => {
       </button>
       <ul className="filter">
         {loading ? <Loading /> : null}
-        {filters.map((filter: any) => (
-          <li key={filter}>
+        {filters.map((filter: any, index: any) => (
+          <li key={index}>
             <Select
               filterName={filter.filterName}
               name={filter.name}
