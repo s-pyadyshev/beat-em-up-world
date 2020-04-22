@@ -45,18 +45,14 @@
   }
 
   &__link {
-    color: $color-white;
-
-    &:visited {
-      color: $color-white;
-    }
+    color: $color-white !important;
 
     &:not(:last-child) {
       margin-right: 32px;
     }
 
     &.is-active {
-      color: $link-color-active;
+      color: $link-color-active !important;
     }
   }
 }
