@@ -6,6 +6,7 @@ import "./style.scss";
 
 const Header = () => (
   <header className="header">
+    <NavLink to="/">Home</NavLink>
     <NavLink to="/about" className="header__link" activeClassName="is-active">
       About
     </NavLink>

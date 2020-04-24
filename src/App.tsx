@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import AboutPage from "./pages/AboutPage";
@@ -12,6 +11,7 @@ import { Container, Row, Col, setConfiguration } from "react-grid-system";
 import { getGamesRequest, getGamesSuccess } from "./store/gamesList/actions";
 import { Games } from "./services/api";
 import { useDispatch } from "react-redux";
+import "./App.scss";
 
 setConfiguration({ containerWidths: [768, 960, 1140, 1400] });
 
