@@ -115,7 +115,7 @@ const AboutPage = () => (
       stage and several sections to beat enemies.
     </p>
     <br />
-    <strong>So which games are beat&apos;em up posers?</strong>
+    <h2>So which games are beat&apos;em up posers?</h2>
     <p>
       Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W.
       Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple

@@ -121,6 +121,15 @@ const LinksPage = () => (
           http://www.racketboy.com/retro/beatem-ups-101-all-you-need-to-know-about-brawlers
         </a>
       </li>
+      <li>
+        <a
+          href="https://www.neogeokult.com/articles-us/beat-them-up-through-ages/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://www.neogeokult.com/articles-us/beat-them-up-through-ages/
+        </a>
+      </li>
     </ul>
   </div>
 );
