@@ -21,30 +21,26 @@ const Filter = () => {
     setVisibility(!visible);
   };
 
-  try {
-    return (
-      <div className={!visible ? "filter-wrap" : "filter-wrap is-active"}>
-        <button onClick={toggleFilter} className="filter-toggle">
-          {!visible ? <span>Show filter</span> : <span>Hide filter</span>}
-        </button>
-        <ul className="filter">
-          {loading ? <Loading /> : null}
-          {filters.map((filter: any, index: any) => (
-            <li key={index}>
-              <Select
-                filterName={filter.filterName}
-                name={filter.name}
-                description={filter.description}
-                options={filter.options}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  } catch (error) {
-    return <div>Error</div>;
-  }
+  return (
+    <div className={!visible ? "filter-wrap" : "filter-wrap is-active"}>
+      <button onClick={toggleFilter} className="filter-toggle">
+        {!visible ? <span>Show filter</span> : <span>Hide filter</span>}
+      </button>
+      <ul className="filter">
+        {loading ? <Loading /> : null}
+        {filters.map((filter: any, index: any) => (
+          <li key={index}>
+            <Select
+              filterName={filter.filterName}
+              name={filter.name}
+              description={filter.description}
+              options={filter.options}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Filter;

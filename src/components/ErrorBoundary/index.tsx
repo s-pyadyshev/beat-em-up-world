@@ -1,13 +1,13 @@
-import * as React from "react";
+import React from "react";
 
-export interface ErrorBoundaryProps {}
-
-const ErrorBoundary: React.SFC<ErrorBoundaryProps> = ({ children }) => {
-  try {
-    return <>{children}</>;
-  } catch (error) {
-    return <div>Error</div>;
+class ErrorBoundary extends React.Component {
+  componentDidCatch(error: any, info: any) {
+    console.log(error);
   }
-};
+
+  render() {
+    return this.props.children;
+  }
+}
 
 export default ErrorBoundary;

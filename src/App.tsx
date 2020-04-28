@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 import AboutPage from "./pages/AboutPage";
 import LinksPage from "./pages/LinksPage";
@@ -34,7 +35,9 @@ const App: React.FC = () => {
           <Container style={{ width: "100%" }}>
             <Row>
               <Col md={3}>
-                <Filter />
+                <ErrorBoundary>
+                  <Filter />
+                </ErrorBoundary>
               </Col>
               <Col md={9}>
                 <Switch>
@@ -50,7 +53,9 @@ const App: React.FC = () => {
                     </div>
                   </Route>
                   <Route path="/">
-                    <GameList />
+                    <ErrorBoundary>
+                      <GameList />
+                    </ErrorBoundary>
                   </Route>
                 </Switch>
               </Col>
