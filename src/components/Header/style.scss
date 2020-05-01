@@ -46,6 +46,7 @@
 
   &__link {
     color: $color-white !important;
+    text-decoration: none;
 
     &:not(:last-child) {
       margin-right: 32px;

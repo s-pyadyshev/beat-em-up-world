@@ -1,12 +1,12 @@
 import React from "react";
 
 class ErrorBoundary extends React.Component {
-  componentDidCatch(error: any, info: any) {
-    console.log(error);
+  componentDidCatch(error: any) {
+    return error;
   }
 
-  render() {
-    return this.props.children;
+  render({ children } = this.props) {
+    return children;
   }
 }
 

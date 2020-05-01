@@ -16,7 +16,7 @@ export const Games = {
     fetch(URL)
       .then(handleErrors)
       .then((res) => res.json())
-      .catch((error) => console.log(error)),
+      .catch((error) => error),
   getById: (id: any) =>
     fetch(URL)
       .then(handleErrors)
@@ -30,7 +30,7 @@ export const Games = {
                 .toLowerCase() === id
           )[0]
       )
-      .catch((error) => console.log(error)),
+      .catch((error) => error),
 };
 
 export const Filters = {
@@ -38,7 +38,7 @@ export const Filters = {
     fetch(URL_FILTERS)
       .then(handleErrors)
       .then((res) => res.json())
-      .catch((error) => console.log(error)),
+      .catch((error) => error),
 };
 
 export default Games;

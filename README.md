@@ -20,6 +20,7 @@ Major (MVP release):<br>
 - Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
 - Add summary info (total amount of games, missing games etc.)
 - Refactoring
+- Add beated-up-list
 - Fix TS react/prop-types warnings
 
 Minor:<br>
@@ -34,16 +35,13 @@ Minor:<br>
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?
-  - Crimson Tears?
   - Die Hard Arcade
   - Double Dragon (Atari ST)
   - Dynamite Cop
-  - God Hand (PS2)?
   - Golden Axe (Atari ST)
   - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
-  - Legend (PS)
   - Mad Max
   - Middle Earth series?
   - Mighty Morphin Power Rangers (SNES)?

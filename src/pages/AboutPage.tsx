@@ -35,8 +35,9 @@ const AboutPage = () => (
     <br />
     <br />
     <strong>Pros</strong>
-    : Filter by all parameters, no need for hosting, easy to contribute via Pull
-    Requests, Beat'em Ups &quot;API&quot;.
+    : Filter by all parameters (most of them are not so useful but still that's
+    cool), no need for hosting, easy to contribute via Pull Requests, Beat'em
+    Ups &quot;API&quot;.
     <br />
     <strong>Cons</strong>
     : backend as JSON, no cool domain name.

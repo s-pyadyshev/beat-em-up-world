@@ -2,7 +2,7 @@ import React from "react";
 import BingoProps from "../../types/BingoProps";
 import "./style.scss";
 
-const Bingo: React.FC<BingoProps> = ({
+const Bingo = ({
   go,
   sunsetEnding,
   healthMeat,
@@ -28,7 +28,7 @@ const Bingo: React.FC<BingoProps> = ({
   fatCharginMen,
   sharpSuits,
   graffiti,
-}) => {
+}: BingoProps) => {
   const toggleActiveClass = (parameter: Boolean) => {
     if (parameter === true) {
       return "bingo__name is-active";

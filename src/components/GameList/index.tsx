@@ -17,8 +17,8 @@ const GamesList = () => {
         <h2>Games not found</h2>
       ) : null}
       {filteredGamesList &&
-        filteredGamesList.map((game: any, index: any) => (
-          <React.Fragment key={index}>
+        filteredGamesList.map((game: any) => (
+          <React.Fragment key={game.name + game.platform}>
             {game.missing ? (
               <li className="missing">
                 <b>

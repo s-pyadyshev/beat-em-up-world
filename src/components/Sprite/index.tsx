@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import SvgSprite from "react-svg-sprite";
 
 export const sprite = [

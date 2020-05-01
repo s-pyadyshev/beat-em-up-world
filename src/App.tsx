@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 import AboutPage from "./pages/AboutPage";
+import AuthPage from "./pages/AuthPage";
 import LinksPage from "./pages/LinksPage";
 import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
+import Stats from "./components/Stats";
 import { Sprite } from "./components/Sprite";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
 import { getGamesRequest, getGamesSuccess } from "./store/gamesList/actions";
@@ -41,6 +43,9 @@ const App: React.FC = () => {
               </Col>
               <Col md={9}>
                 <Switch>
+                  <Route path="/auth">
+                    <AuthPage />
+                  </Route>
                   <Route path="/about">
                     <AboutPage />
                   </Route>
@@ -54,6 +59,7 @@ const App: React.FC = () => {
                   </Route>
                   <Route path="/">
                     <ErrorBoundary>
+                      <Stats />
                       <GameList />
                     </ErrorBoundary>
                   </Route>
