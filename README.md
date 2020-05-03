@@ -35,9 +35,7 @@ Minor:<br>
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?
-  - Die Hard Arcade
   - Double Dragon (Atari ST)
-  - Dynamite Cop
   - Golden Axe (Atari ST)
   - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
@@ -48,8 +46,6 @@ Minor:<br>
   - Saint Seiya: Sanctuary Battle (PS3)?
   - Sleeping Dogs?
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
-  - Tomoyo Fighter Perfect
-  - The Bouncer
   - Zombie Revenge?
   - The best SORR mods, OpenBOR/MUGEN games?
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator

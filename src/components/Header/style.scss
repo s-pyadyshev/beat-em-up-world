@@ -2,10 +2,6 @@
 @import "../../assets/styles/media.scss";
 
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 32px;
   font-family: "capture-it", serif;
   font-size: 2rem;
@@ -42,6 +38,19 @@
         $color-black 25%,
         transparent 100%
       );
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: $container-width-lg;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
   &__link {
