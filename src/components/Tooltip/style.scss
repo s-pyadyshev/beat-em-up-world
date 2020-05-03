@@ -2,12 +2,12 @@
 @import "./../../assets/styles/media";
 
 .tooltip-container {
-  max-width: 320px;
   width: 100%;
+  max-width: 320px;
   padding: 16px;
   color: $color-black;
 
   @include tablet {
-    max-width: 420px;
+    max-width: 480px;
   }
 }

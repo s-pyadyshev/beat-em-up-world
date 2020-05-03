@@ -14,33 +14,35 @@ html {
 
 body {
   margin: 0;
+  color: $color-white;
+  font-size: 16px;
   font-family:
+    "Ubuntu",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     "Roboto",
     "Oxygen",
-    "Ubuntu",
     "Cantarell",
     "Fira Sans",
     "Droid Sans",
     "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
   background-image: url("../img/mff-bg.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-attachment: fixed;
   background-size: cover;
-  color: $color-white;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ul {
-  list-style-type: none;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  list-style-type: none;
 }
 
 a {
@@ -79,9 +81,9 @@ img {
 }
 
 select {
-  appearance: none;
-  border-radius: 0;
   background-color: $color-white;
+  border-radius: 0;
+  appearance: none;
 }
 
 svg {

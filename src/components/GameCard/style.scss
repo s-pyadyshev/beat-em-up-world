@@ -3,14 +3,17 @@
 
 .game-card {
   color: $color-white;
+  font-size: 18px;
 
   h3 {
-    font-family: "capture-it", serif;
     font-weight: 400;
+    font-size: 2rem;
+    font-family: "capture-it", serif;
   }
 
   &__about,
   &__trivia {
+    font-size: 2rem;
     font-family: "capture-it", serif;
   }
 
@@ -26,9 +29,9 @@
   }
 
   &__name {
-    font-family: "capture-it", serif;
     font-weight: 400;
     font-size: 2rem;
+    font-family: "capture-it", serif;
   }
 
   &__values-list {
@@ -39,10 +42,10 @@
         margin-right: 8px;
 
         &::after {
-          content: "/";
           margin-left: 8px;
-          pointer-events: none;
           color: $link-color-visited;
+          content: "/";
+          pointer-events: none;
         }
       }
     }
@@ -50,7 +53,7 @@
 
   &__parameter-name {
     display: inline-block;
-    min-width: 200px;
+    min-width: 240px;
     font-family: "capture-it", serif;
   }
 

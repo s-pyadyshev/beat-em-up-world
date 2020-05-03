@@ -2,11 +2,12 @@
 @import "../../assets/styles/media.scss";
 
 .header {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   font-size: 2rem;
   font-family: "capture-it", serif;
 
   @include desktop {
+    margin-bottom: 32px;
     font-size: 3rem;
   }
 
@@ -19,9 +20,15 @@
     max-width: 100%;
     height: 120px;
     background-image: url("../../assets/img/sor-city.png");
+    background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: 50%;
+    background-size: cover;
     content: "";
+
+    @include tablet {
+      background-repeat: repeat;
+      background-size: 50%;
+    }
   }
 
   &::after {
@@ -51,18 +58,44 @@
     margin-left: auto;
     padding-right: 15px;
     padding-left: 15px;
+
+    @include tablet {
+      height: 120px;
+    }
   }
 
   &__link {
-    color: $color-white !important;
+    margin-top: 16px;
+    color: $color-white;
+    font-size: 1rem;
     text-decoration: none;
 
-    &:not(:last-child) {
-      margin-right: 32px;
+    @include tablet {
+      margin-top: 0;
+      font-size: 2rem;
     }
 
-    &.is-active {
+    @include desktop {
+      font-size: 3rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 16px;
+
+      @include tablet {
+        margin-right: 32px;
+      }
+    }
+
+    &.is-active,
+    &:focus,
+    &:hover,
+    &:active {
       color: $link-color-active !important;
+    }
+
+    &:visited {
+      color: $color-white;
     }
   }
 }
@@ -74,6 +107,10 @@
     height: auto;
 
     @include tablet {
+      width: 240px;
+    }
+
+    @media (min-width: 1024px) {
       width: 300px;
     }
   }
@@ -82,10 +119,10 @@
 .punchpedia-logo {
   img {
     display: block;
-    width: 80px;
+    width: 60px;
     height: auto;
 
-    @include tablet {
+    @media (min-width: 1024px) {
       width: 120px;
     }
   }

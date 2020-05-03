@@ -90,8 +90,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
       <Link to="/">
         <span>Back to Games list</span>
       </Link>
-      <h2 className="game-card__name">{name}</h2>
-      <h3>{platform}</h3>
+      <h2 className="game-card__name">
+        {name} [{platform}]
+      </h2>
       <img src={cover} alt={name} className="game-card__cover" />
       <div>
         <span className="game-card__about">about: </span>

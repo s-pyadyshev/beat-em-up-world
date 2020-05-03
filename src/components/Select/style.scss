@@ -47,24 +47,24 @@
     }
   }
 
-  // &__icon-info {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  //   width: 20px;
-  //   height: 20px;
-  //   margin-left: 8px;
-  //   transition-duration: 0.2s;
-  //   transition-property: color;
-  //   color: $color-info;
+  &__icon-info {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    color: $color-info;
+    vertical-align: middle;
+    transition-duration: 0.2s;
+    transition-property: color;
 
-  //   &:focus,
-  //   &:hover,
-  //   &:active {
-  //     color: $color-info-active;
-  //     transition-duration: 0.2s;
-  //     transition-property: color;
-  //   }
-  // }
+    &:focus,
+    &:hover,
+    &:active {
+      color: $color-info-active;
+      transition-duration: 0.2s;
+      transition-property: color;
+    }
+  }
 
   &__input {
     width: 100%;

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import "./style.scss";
 
 const Stats: React.SFC = () => {
   const total = useSelector(

@@ -32,6 +32,7 @@ const AboutPage = () => (
     be. And I hope that this project will help to revive interest in Beat'em Up
     genre and make the game database 100% completed.
     <br />
+    <br />
     So here it is, Frontend-powered Beat&apos;em Up World:
     <br />
     <br />
@@ -46,7 +47,7 @@ const AboutPage = () => (
     <p>
       Punchpedia is truly the #1 place on the internet for all information
       related to brawlers, so the aim of this site (the name sucks, you may
-      offer another one) is to be like the aggregator.
+      offer another one) is to make the beat'em ups list completed.
     </p>
     <h2>
       What is a true beat&apos;em up / brawler? Therefore which games should be
@@ -59,30 +60,19 @@ const AboutPage = () => (
       Simple way:
       <br />
       Is this game a beat&apos;em up? Which perspective view does the game have?
-      2D - is this game similar to Comix Zone? - Yes 2D (4-way movement) - is
-      this game similar to Streets of Rage? - Yes 3D - Does the game look like
-      Fighting Force? - Yes
+      2D - is this game similar to Comix Zone? - Yes
+      <br />
+      2D (4-way movement) - is this game similar to Streets of Rage? - Yes
+      <br />
+      3D - Does the game look like Fighting Force? - Yes
     </p>
     Complex way:
     <br />
     <p>
-      <q>
-        You don&apos;t beat people up with swords, you hack and slash people up
-        with swords (Black_Knight_00)
-      </q>
-      <br />
-      Seems reasonable with few exceptions.
-      <br />
-      <q>
-        there is no real answer, it always depends on how the person you&apos;re
-        asking &quot;feels&quot; (SUPERAWESOMEULTRAMAN)
-      </q>
-      <br />
-      Seems reasonable but feeling is not scientific argument.
+      Minimum requirements for a video game to be considered a beat&apos;em up:
     </p>
-    Minimum requirements for a video game to be considered a beat&apos;em up:
-    <br />- <strong>BEAT UP</strong> - Hand-to-hand and close combat FOCUS (with
-    some exceptions)
+    - <strong>BEAT UP</strong> - Hand-to-hand and close combat FOCUS (with some
+    exceptions)
     <br />- <strong>THEM</strong> - Multiple opponents (at least more than 1)
     <br />- <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
     <br />
@@ -91,6 +81,7 @@ const AboutPage = () => (
     compare Nekketsu Kouha Kunio-kun (1986) and Toxic Crusaders (1992). The
     latter is just one punch (one broom hit) action which hardly can&apos;t be
     called a beat&apos;em up.
+    <br />
     <br />
     Let&apos;t take a look closer at examples:
     <br />
@@ -105,16 +96,9 @@ const AboutPage = () => (
     <p>
       Yes but 50/50 - Action-Puzzle-Platformer-Beat&apos;em Up (it&apos;s combat
       has enough variety - throws, block, weapons, but multiple enemies is a
-      rare thing here).
-    </p>
-    <p>
-      But at the same time Battletoads should be considered as more platformer
-      than beat&apos;em up.
-    </p>
-    <strong>Is Battletoads a beat&apos;em up?</strong>
-    <p>
-      Not really. It is focused on Action Platforming and contains only one
-      stage and several sections to beat enemies.
+      rare thing here). Thus Battletoads should be considered as more platformer
+      than beat&apos;em up (It is focused on Action Platforming and contains
+      only one stage and several sections to beat enemies.).
     </p>
     <br />
     <h2>So which games are beat&apos;em up posers?</h2>
@@ -148,8 +132,8 @@ const AboutPage = () => (
         beat-em-ups-api
       </a>
       &nbsp;and add missing games into
-      <strong>db.json</strong> and new parameters into
-      <strong>filter.json</strong> as Pull Request.
+      <strong> db.json</strong> and new parameters into
+      <strong> filter.json</strong> as Pull Request.
     </p>
   </article>
 );

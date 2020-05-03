@@ -2,7 +2,7 @@
 <br>
 Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
-Stack: React, Redux, creat-react-app, react-router, stylelint, prettier, swiper, react-popper-tooltip, , Scss.
+Stack: React, Redux, creat-react-app, react-router, stylelint, prettier, swiper, react-popper-tooltip, Disqus, Scss.
 <br>
 API (JSON)
 <a href="https://github.com/s-pyadyshev/beat-em-ups-api">https://github.com/s-pyadyshev/beat-em-ups-api</a>
@@ -18,10 +18,7 @@ Major (MVP release):<br>
 - Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
 - Make gangsize param consistent?
 - Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
-- Add summary info (total amount of games, missing games etc.)
 - Refactoring
-- Add beated-up-list
-- Fix TS react/prop-types warnings
 
 Minor:<br>
 
@@ -51,8 +48,15 @@ Minor:<br>
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
   - Missing covers: The Gladiator
 
-CHANGE LOG (monthy summary):<br>
-0.3
+CHANGE LOG (monthly summary):<br>
+
+0.4
+
+- Added Disqus comments
+- Fixed TS react/prop-types warnings
+- Added summary info (total amount of games, missing games etc.)
+
+  0.3
 
 - Added Links page, tooltip for filter details, Screenshots and Videos Slider (Swiper), otherPlatforms links, new header
 - Added some missing games
