@@ -1,43 +1,42 @@
 @import "./../../assets/styles/variables";
 
 .select {
+  display: flex;
+  align-items: flex-end;
+  padding-right: 16px;
+
   &__control {
     position: relative;
     width: 100%;
 
     &::after {
       position: absolute;
-      display: block;
-      content: "";
-      width: 8px;
-      height: 8px;
       top: 50%;
       right: 10px;
+      display: block;
+      width: 8px;
+      height: 8px;
       margin-top: -2px;
-      border-bottom: 1px solid $color-black;
       border-right: 1px solid $color-black;
+      border-bottom: 1px solid $color-black;
       transform: rotate(45deg) translateY(-50%);
-      transition: all 0.4s ease-in-out;
       transform-origin: 50% 0;
+      transition: all 0.4s ease-in-out;
+      content: "";
       pointer-events: none;
     }
   }
 
   &__icon {
-    width: 20px;
-    height: 20px;
-    margin-left: auto;
-  }
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
 
-  &__icon-info {
-    display: inline-block;
-    vertical-align: middle;
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-    transition-duration: 0.2s;
-    transition-property: color;
-    color: $color-info;
+    > * {
+      width: inherit;
+      height: inherit;
+    }
 
     &:focus,
     &:hover,
@@ -48,15 +47,38 @@
     }
   }
 
+  // &__icon-info {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  //   width: 20px;
+  //   height: 20px;
+  //   margin-left: 8px;
+  //   transition-duration: 0.2s;
+  //   transition-property: color;
+  //   color: $color-info;
+
+  //   &:focus,
+  //   &:hover,
+  //   &:active {
+  //     color: $color-info-active;
+  //     transition-duration: 0.2s;
+  //     transition-property: color;
+  //   }
+  // }
+
   &__input {
     width: 100%;
     padding: 2px 8px;
   }
 
+  &__label {
+    width: 100%;
+  }
+
   &__label-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     max-width: 100%;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -64,14 +86,15 @@
 
   &__name {
     display: inline-block;
-    vertical-align: middle;
-    font-family: "capture-it", serif;
-    font-weight: 400;
     color: $color-white;
+    font-weight: 400;
+    font-family: "capture-it", serif;
+    vertical-align: middle;
   }
 }
 
 .is-selected {
+  color: $color-white;
   background-image:
     linear-gradient(
       to bottom,
@@ -81,7 +104,6 @@
       rgba(0, 0, 0, 0.8) 100%
     ),
     url(http://www.punchpedia.com/common/img/arcbg.png);
-  color: $color-white;
 }
 
 .trigger {

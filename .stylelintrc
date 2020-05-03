@@ -1,5 +1,5 @@
 {
-  "extends": ["stylelint-config-recommended", "stylelint-config-standard"],
+  "extends": ["stylelint-config-recommended", "stylelint-config-standard", "stylelint-config-rational-order"],
   "rules": {
     "at-rule-no-unknown": [true, {
       "ignoreAtRules": ["function", "if", "each", "include", "mixin"]

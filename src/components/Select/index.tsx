@@ -25,21 +25,9 @@ const Select = (props: any) => {
 
   return (
     <div className={isSelected ? "select is-selected" : "select"}>
-      <label>
+      <label className="select__label">
         <div className="select__label-inner">
           <strong className="select__name">{filterName}</strong>
-          <div className="select__icon">
-            <svg>
-              <use xlinkHref={`#${name}`} />
-            </svg>
-          </div>
-          <Tooltip placement="right" tooltip={description}>
-            <span className="select__icon-info">
-              <svg>
-                <use xlinkHref="#info" />
-              </svg>
-            </span>
-          </Tooltip>
         </div>
         <div className="select__control">
           <select className="select__input" name={name} onChange={handleSelect}>
@@ -52,6 +40,13 @@ const Select = (props: any) => {
           </select>
         </div>
       </label>
+      <div className="select__icon">
+        <Tooltip placement="right" tooltip={description}>
+          <svg>
+            <use xlinkHref={`#${name}`} />
+          </svg>
+        </Tooltip>
+      </div>
     </div>
   );
 };

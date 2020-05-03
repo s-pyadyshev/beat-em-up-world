@@ -1,4 +1,5 @@
 import React from "react";
+import "./article.scss";
 
 const AboutPage = () => (
   <article className="about">

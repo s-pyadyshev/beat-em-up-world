@@ -3,29 +3,28 @@
 
 .header {
   margin-bottom: 32px;
-  font-family: "capture-it", serif;
   font-size: 2rem;
+  font-family: "capture-it", serif;
 
   @include desktop {
     font-size: 3rem;
   }
 
   &::before {
-    content: "";
-    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 100%;
+    z-index: -1;
     width: 100vw;
+    max-width: 100%;
     height: 120px;
     background-image: url("../../assets/img/sor-city.png");
     background-position: 50% 50%;
     background-size: 50%;
+    content: "";
   }
 
   &::after {
-    content: "";
     position: absolute;
     top: 120px;
     left: 0;
@@ -38,15 +37,16 @@
         $color-black 25%,
         transparent 100%
       );
+    content: "";
   }
 
   &__inner {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    max-width: $container-width-lg;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    max-width: $container-width-lg;
     margin-right: auto;
     margin-left: auto;
     padding-right: 15px;

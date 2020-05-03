@@ -8,7 +8,6 @@ declare global {
 
 const Comments = ({ fullUrl, id }: any) => {
   useEffect(() => {
-    const DISQUS = window.DISQUS;
     const DISQUS_SCRIPT = "disq_script";
     const sd = document.getElementById(DISQUS_SCRIPT);
     let disqus_config;
