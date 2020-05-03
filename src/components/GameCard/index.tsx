@@ -4,9 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import Bingo from "../Bingo";
 import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
+import Comments from "../Comments";
 import "./style.scss";
 
-const GameCard = () => {
+const GameCard = ({ commentsUrl, commentsId }: any) => {
   const { id } = useParams();
   const [gameCardInfo, setGameCardInfo] = useState({});
   const gamesList = useSelector((state: any) => state.gamesList.gamesList);
@@ -359,6 +360,9 @@ const GameCard = () => {
           ) : null}
         </li>
       </ul>
+      <div className="game-card__comments">
+        <Comments fullUrl={commentsUrl} id={commentsId} />
+      </div>
     </div>
   );
 };
