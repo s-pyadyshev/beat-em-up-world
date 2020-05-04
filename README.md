@@ -14,7 +14,6 @@ Major (MVP release):<br>
 - Add svg-sprite-loader to add icons (at least for the most important filters)
 - Finish About page info with more examples
 - Finalize MVP design on desktop and tablet
-- Add responsive styles (toggle filters and list on mobiles or make it swipeable)
 - Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
 - Make gangsize param consistent?
 - Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
@@ -55,6 +54,7 @@ CHANGE LOG (monthly summary):<br>
 - Added Disqus comments
 - Fixed TS react/prop-types warnings
 - Added summary info (total amount of games, missing games etc.)
+- Added responsive styles (toggle filters button on mobile)
 
   0.3
 

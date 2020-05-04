@@ -7,7 +7,24 @@ import "./style.scss";
 const Select = (props: any) => {
   const dispatch = useDispatch();
   const [isSelected, setSelected] = useState(false);
-
+  const spriteNames = [
+    "dashing",
+    "focus",
+    "grabs",
+    "info",
+    "lives",
+    "music",
+    "platform",
+    "players",
+    "playtime",
+    "releaseYear",
+    "restore",
+    "revive",
+    "series",
+    "structure",
+    "variety",
+    "weapons",
+  ];
   const { description, name, filterName, options } = props;
 
   const handleSelect = (event: any) => {
@@ -41,11 +58,19 @@ const Select = (props: any) => {
         </div>
       </label>
       <div className="select__icon">
-        <Tooltip placement="right" tooltip={description}>
-          <svg>
-            <use xlinkHref={`#${name}`} />
-          </svg>
-        </Tooltip>
+        {spriteNames.includes(name) ? (
+          <Tooltip placement="right" tooltip={description}>
+            <svg>
+              <use xlinkHref={`#${name}`} />
+            </svg>
+          </Tooltip>
+        ) : (
+          <Tooltip placement="right" tooltip={description}>
+            <svg>
+              <use xlinkHref="#info" />
+            </svg>
+          </Tooltip>
+        )}
       </div>
     </div>
   );
