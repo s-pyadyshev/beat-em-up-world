@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const GameListItem = (props: any) => {
   const { index, name, platform } = props;
-  const uniqGameName = `/${name}[${platform}]`;
+  const uniqGameName = `/${name}-${platform}`;
   const uniqGameNameId = uniqGameName.replace(/\s/g, "").toLowerCase();
 
   return (

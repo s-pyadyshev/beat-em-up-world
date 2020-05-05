@@ -16,9 +16,8 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     const filteredGameCard = gamesList
       ? gamesList.filter(
           (game: any) =>
-            `${game.name}[${game.platform}]`
-              .replace(/\s/g, "")
-              .toLowerCase() === id
+            `${game.name}-${game.platform}`.replace(/\s/g, "").toLowerCase() ===
+            id
         )[0]
       : null;
     setGameCardInfo({ ...filteredGameCard });
