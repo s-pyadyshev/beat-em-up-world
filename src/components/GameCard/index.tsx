@@ -124,10 +124,10 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 <li key={platformName}>
                   <Link
                     to={`${name
-                      .replace(/\s/g, "")
-                      .toLowerCase()}[${platformName
-                      .replace(/\s/g, "")
-                      .toLowerCase()}]`}
+                      .replace(/[\s:&'.!?]/g, "")
+                      .toLowerCase()}-${platformName
+                      .replace(/[\s:&'.!?]/g, "")
+                      .toLowerCase()}`}
                   >
                     <span>{platformName}</span>
                   </Link>
