@@ -72,7 +72,7 @@ const AboutPage = () => (
       Minimum requirements for a video game to be considered a beat&apos;em up:
     </p>
     - <strong>BEAT UP</strong> - Hand-to-hand and close combat FOCUS (with some
-    exceptions)
+    exceptions for weapon based (Hack'n'slash) games)
     <br />- <strong>THEM</strong> - Multiple opponents (at least more than 1)
     <br />- <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
     <br />
@@ -118,7 +118,7 @@ const AboutPage = () => (
       It is one of video game genres that fits the nature of every living being
       - competition, fight for resources, a place under the Sun. The
       fight/confrontation is a part of our life, we are programmed to punch and
-      kick and get satisfaction from it. And throw others on wood boxes.
+      kick and get satisfaction from it. And throw others through wooden boxes.
     </p>
     <h2>How can I help?</h2>
     <p>

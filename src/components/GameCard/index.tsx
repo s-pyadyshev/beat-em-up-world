@@ -66,9 +66,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     enemies,
     bosses,
     weapons,
-    lives,
+    // lives,
     continues,
-    extend,
+    // extend,
     overallReview,
     cover,
     links,
@@ -281,18 +281,18 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               weapons.map((weapon: any) => <li key={weapon}>{weapon}</li>)}
           </ul>
         </li>
-        <li>
+        {/* <li>
           <span className="game-card__parameter-name">Lives: </span>
           <span>{lives}</span>
-        </li>
+        </li> */}
         <li>
           <span className="game-card__parameter-name">Continues: </span>
           <span>{continues}</span>
         </li>
-        <li>
+        {/* <li>
           <span className="game-card__parameter-name">Extend: </span>
           <span>{extend}</span>
-        </li>
+        </li> */}
         <li>
           <span className="game-card__parameter-name">
             Beat&apos;em Up Bingo:{" "}
