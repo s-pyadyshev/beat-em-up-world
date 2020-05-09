@@ -94,7 +94,6 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
       <h2 className="game-card__name">
         {name} [{platform}]
       </h2>
-      perspective
       <img src={cover} alt={name} className="game-card__cover" />
       <div>
         <span className="game-card__about">about: </span>
