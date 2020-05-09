@@ -12,6 +12,9 @@ Tasks<br>
 Major (MVP release):<br>
 
 - Add svg-sprite-loader to add icons (at least for the most important filters)
+- Add "game of the day" and "random game" blocks
+- Add short questionnaire
+- Pagination or infinite scroll requires real backend to be implemented correctly
 - Make basic and advanced filter view list
 - Finalize MVP design on desktop and tablet
 - Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
