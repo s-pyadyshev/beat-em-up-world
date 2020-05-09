@@ -7,18 +7,46 @@ import "./style.scss";
 
 const Filter = () => {
   const [filters, setFilters] = useState([]);
+  const [fullFilters, setFullFilters] = useState([]);
   const [visible, setVisibility] = useState(false);
   const loading = useSelector((state: any) => state.gamesList.loading);
   const dispatch = useDispatch();
+  const basicFilters = [
+    "platform",
+    "series",
+    "players",
+    "releaseYear",
+    "structure",
+    "difficulty",
+    "variety",
+    "grabs",
+    "groundHit",
+    "artStyle",
+    "setting",
+    "focus",
+    "music",
+    "tone",
+    "gore",
+    "fighters",
+    "weapons",
+  ];
 
   useEffect(() => {
     Filters.get().then((result) => {
-      setFilters(result);
+      setFullFilters(result);
+      const basicFilterList = result.filter((item: any) =>
+        basicFilters.includes(item.name)
+      );
+      setFilters(basicFilterList);
     });
   }, [dispatch]);
 
   const toggleFilter = () => {
     setVisibility(!visible);
+  };
+
+  const showMore = () => {
+    setFilters(fullFilters);
   };
 
   return (
@@ -39,6 +67,9 @@ const Filter = () => {
           </li>
         ))}
       </ul>
+      <button onClick={showMore}>
+        <span>Show more filters</span>
+      </button>
     </div>
   );
 };

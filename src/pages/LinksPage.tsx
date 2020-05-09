@@ -130,6 +130,15 @@ const LinksPage = () => (
           https://www.neogeokult.com/articles-us/beat-them-up-through-ages/
         </a>
       </li>
+      <li>
+        <a
+          href="http://adb.arcadeitalia.net/lista_mame.php?category=15&arcade_only=0&current_version=0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          http://adb.arcadeitalia.net/lista_mame.php?category=15&arcade_only=0&current_version=0
+        </a>
+      </li>
     </ul>
   </div>
 );

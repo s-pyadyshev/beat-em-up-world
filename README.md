@@ -12,7 +12,7 @@ Tasks<br>
 Major (MVP release):<br>
 
 - Add svg-sprite-loader to add icons (at least for the most important filters)
-- Finish About page info with more examples
+- Make basic and advanced filter view list
 - Finalize MVP design on desktop and tablet
 - Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
 - Make gangsize param consistent?
@@ -31,6 +31,8 @@ Minor:<br>
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Battletoads (Amiga)?
+  - Black Touch '96
+  - Cross Blades!
   - Double Dragon (Atari ST)
   - Golden Axe (Atari ST)
   - Golden Axe (PS2)
@@ -55,6 +57,7 @@ CHANGE LOG (monthly summary):<br>
 - Fixed TS react/prop-types warnings
 - Added summary info (total amount of games, missing games etc.)
 - Added responsive styles (toggle filters button on mobile)
+- Finished About page info with more examples
 
   0.3
 
