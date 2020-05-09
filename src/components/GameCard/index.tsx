@@ -27,6 +27,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   const {
     name,
     platform,
+    perspective,
     about,
     trivia,
     developer,
@@ -93,6 +94,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
       <h2 className="game-card__name">
         {name} [{platform}]
       </h2>
+      perspective
       <img src={cover} alt={name} className="game-card__cover" />
       <div>
         <span className="game-card__about">about: </span>
@@ -102,8 +104,11 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
         <span className="game-card__trivia">trivia: </span>
         <p>{trivia}</p>
       </div>
-
       <ul className="game-card__detail">
+        <li>
+          <span className="game-card__parameter-name">Perspective: </span>
+          <span>{perspective}</span>
+        </li>
         <li>
           <span className="game-card__parameter-name">Developer: </span>
           <span>{developer}</span>

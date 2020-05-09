@@ -21,6 +21,14 @@ const LinksPage = () => (
         >
           Beat&apos;em ups on Wikipedia
         </a>
+        ,&nbsp;
+        <a
+          href="https://en.wikipedia.org/wiki/Category:Beat_%27em_ups"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Category:Beat 'em ups on Wikipedia
+        </a>
       </li>
       <li>
         <a
@@ -137,6 +145,15 @@ const LinksPage = () => (
           rel="noopener noreferrer"
         >
           http://adb.arcadeitalia.net/lista_mame.php?category=15&arcade_only=0&current_version=0
+        </a>
+      </li>
+      <li>
+        <a
+          href="http://lunaticobscurity.blogspot.com/search/label/beat%20em%20up"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          http://lunaticobscurity.blogspot.com/search/label/beat%20em%20up
         </a>
       </li>
     </ul>

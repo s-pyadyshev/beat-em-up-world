@@ -13,6 +13,7 @@ const Filter = () => {
   const dispatch = useDispatch();
   const basicFilters = [
     "platform",
+    "perspective",
     "series",
     "players",
     "releaseYear",
