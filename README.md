@@ -12,6 +12,7 @@ Tasks<br>
 Major (MVP release):<br>
 
 - Add svg-sprite-loader to add icons (at least for the most important filters)
+- Add country parameter
 - Add "game of the day" and "random game" blocks
 - Add short questionnaire
 - Pagination or infinite scroll requires real backend to be implemented correctly
@@ -42,8 +43,11 @@ Minor:<br>
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Middle Earth series?
   - Mighty Morphin Power Rangers (SNES)?
+  - Mighty Morphin Power Rangers - The Movie (SNES)?
+  - Ninja: Shadow of Darkness (PS) - probably no
   - Saint Seiya: Sanctuary Battle (PS3)?
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
+  - Two Crude Dudes? (Arcade, Genesis)
   - Zombie Revenge?
   - The best SORR mods, OpenBOR/MUGEN games?
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator

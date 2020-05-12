@@ -66,6 +66,7 @@ export const gamesList = (state: any = [], action: any) => {
       }
       // hardcode solution for array values
       if (
+        action.filterName === "music" ||
         action.filterName === "weapons" ||
         action.filterName === "variety" ||
         action.filterName === "gore"

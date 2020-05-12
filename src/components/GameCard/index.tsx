@@ -246,7 +246,11 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
         </li>
         <li>
           <span className="game-card__parameter-name">Music: </span>
-          <span>{music}</span>
+          <ul className="game-card__values-list">
+            {music.map((item: any) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </li>
         <li>
           <span className="game-card__parameter-name">Tone: </span>
@@ -344,8 +348,8 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             </Slider>
           ) : null}
         </li>
-        <li className="game-card__videos">
-          {videos ? (
+        {videos ? (
+          <li className="game-card__videos">
             <Slider>
               {videos.map((video: any) => (
                 <div key={video}>
@@ -362,8 +366,8 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 </div>
               ))}
             </Slider>
-          ) : null}
-        </li>
+          </li>
+        ) : null}
       </ul>
       <div className="game-card__comments">
         <Comments fullUrl={commentsUrl} id={commentsId} />
