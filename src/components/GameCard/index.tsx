@@ -246,11 +246,12 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
         </li>
         <li>
           <span className="game-card__parameter-name">Music: </span>
-          <ul className="game-card__values-list">
+          {music}
+          {/* <ul className="game-card__values-list">
             {music.map((item: any) => (
               <li key={item}>{item}</li>
             ))}
-          </ul>
+          </ul> */}
         </li>
         <li>
           <span className="game-card__parameter-name">Tone: </span>
