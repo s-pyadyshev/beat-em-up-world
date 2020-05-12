@@ -349,7 +349,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             </Slider>
           ) : null}
         </li>
-        {videos ? (
+        {videos && videos.length > 0 ? (
           <li className="game-card__videos">
             <Slider>
               {videos.map((video: any) => (
