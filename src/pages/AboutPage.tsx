@@ -76,11 +76,11 @@ const AboutPage = () => (
     <br />- <strong>THEM</strong> - Multiple opponents (at least more than 1)
     <br />- <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
     <br />
-    - Variety matters (grabs!). More moves means more realistic combat. No grabs
-    = mindless button masher. Actually variety can be applied to any genre. Just
-    compare Nekketsu Kouha Kunio-kun (1986) and Toxic Crusaders (1992). The
-    latter is just one punch (one broom hit) action which hardly can&apos;t be
-    called a beat&apos;em up.
+    - Variety matters (grabs!). More moves means more realistic combat. Actually
+    variety can be applied to any genre. Just compare Nekketsu Kouha Kunio-kun
+    (1986) and Toxic Crusaders (1992). The latter is just one punch (one broom
+    hit) action which hardly can&apos;t be called a beat&apos;em up - more like
+    a 2.5D platformer.
     <br />
     <br />
     Let&apos;t take a look closer at examples:
@@ -105,13 +105,13 @@ const AboutPage = () => (
     <p>
       Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W.
       Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple
-      combat, only enemy variety saves it. Even a little throw move added in
-      TMNT 3 makes it a bit closer to beat&apos;em ups (and amazing enemy
-      variety is the main advantage here). The Adventures of Bayou Billy has
-      simple but intense combat, you can&apos;t throw enemies but bosses can
-      grab or throw you. The same story with Batman Returns (NES) etc. Okay,
-      after a deep breath I can consider P.O.W. a beat'em up but not Toxic
-      Crusaders.
+      combat, only all other stuff (enemy variety, overall gameplay, music,
+      graphics) makes it nice. Even a little throw move added in TMNT 3 makes it
+      a bit closer to beat&apos;em ups (and amazing enemy variety totally
+      rocks). The Adventures of Bayou Billy has simple but intense combat, there
+      are some weapons, you can&apos;t throw enemies but bosses can grab or
+      throw you. The same story with Batman Returns (NES) etc. Okay, after a
+      deep breath I can consider P.O.W. a beat'em up but not Toxic Crusaders.
     </p>
     <h2>Why should we care about beat&apos;em ups?</h2>
     <p>
