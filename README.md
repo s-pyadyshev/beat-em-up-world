@@ -37,15 +37,21 @@ Minor:<br>
   - Battletoads (Amiga)?
   - Cross Blades!
   - Double Dragon (Atari ST)
+  - Fantastic Four (PS1)?
+  - Final Fight 3 (NES)?
   - Golden Axe (Atari ST)
   - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
+  - Lost Castle (PC)?
   - Middle Earth series?
   - Mighty Morphin Power Rangers (SNES)?
   - Mighty Morphin Power Rangers - The Movie (SNES)?
   - Ninja: Shadow of Darkness (PS) - probably no
+  - Rampage Knights (PC)?
+  - Redeemer (PC)?
   - Saint Seiya: Sanctuary Battle (PS3)?
+  - Street Boyz (PS2)?
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
   - Two Crude Dudes? (Arcade, Genesis)
   - Zombie Revenge?

@@ -11,25 +11,48 @@
     font-family: "capture-it", serif;
   }
 
-  &__about,
-  &__trivia {
-    font-size: 2rem;
-    font-family: "capture-it", serif;
+  &__about {
+    order: 1;
+    padding-right: 0;
+
+    @include desktop {
+      order: 0;
+      padding-right: 24px;
+    }
   }
 
   &__cover {
     display: block;
     margin-right: auto;
+    margin-bottom: 24px;
     margin-left: auto;
 
-    @include tablet {
+    @include desktop {
       margin-right: 0;
+      margin-bottom: 0;
       margin-left: 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+    @include desktop {
+      flex-wrap: nowrap;
     }
   }
 
   &__name {
     font-weight: 400;
+    font-size: 2rem;
+    font-family: "capture-it", serif;
+    text-align: center;
+  }
+
+  &__title {
     font-size: 2rem;
     font-family: "capture-it", serif;
   }

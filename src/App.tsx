@@ -36,12 +36,12 @@ const App: React.FC = () => {
         <div className="App__body">
           <Container style={{ width: "100%" }}>
             <Row>
-              <Col md={3}>
+              <Col md={4} lg={3}>
                 <ErrorBoundary>
                   <Filter />
                 </ErrorBoundary>
               </Col>
-              <Col md={9}>
+              <Col md={8} lg={9}>
                 <Switch>
                   <Route path="/auth">
                     <AuthPage />
