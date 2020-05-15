@@ -23,6 +23,7 @@
 
   &__cover {
     display: block;
+    max-width: 360px;
     margin-right: auto;
     margin-bottom: 24px;
     margin-left: auto;
@@ -38,6 +39,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: space-between;
     margin-bottom: 24px;
 
     @include desktop {
