@@ -61,6 +61,7 @@
 
   &__values-list {
     display: inline-flex;
+    flex-wrap: wrap;
 
     > li {
       &:not(:last-child) {

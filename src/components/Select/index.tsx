@@ -61,13 +61,13 @@ const Select = (props: any) => {
         {spriteNames.includes(name) ? (
           <Tooltip placement="right" tooltip={description}>
             <svg>
-              <use xlinkHref={`#${name}`} />
+              <use xlinkHref={`/images/sprite.svg#${name}`} />
             </svg>
           </Tooltip>
         ) : (
           <Tooltip placement="right" tooltip={description}>
             <svg>
-              <use xlinkHref="#info" />
+              <use xlinkHref="/images/sprite.svg#info" />
             </svg>
           </Tooltip>
         )}

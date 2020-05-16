@@ -9,7 +9,6 @@ import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
 import Stats from "./components/Stats";
-import { Sprite } from "./components/Sprite";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
 import { getGamesRequest, getGamesSuccess } from "./store/gamesList/actions";
 import { Games } from "./services/api";
@@ -31,7 +30,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
-        <Sprite />
         <Header />
         <div className="App__body">
           <Container style={{ width: "100%" }}>

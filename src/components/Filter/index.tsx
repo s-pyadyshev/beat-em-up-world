@@ -26,7 +26,6 @@ const Filter = () => {
     "setting",
     "focus",
     "music",
-    "tone",
     "gore",
     "fighters",
     "weapons",

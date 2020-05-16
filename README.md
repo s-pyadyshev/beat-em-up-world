@@ -11,8 +11,7 @@ API (JSON)
 Tasks<br>
 Major (MVP release):<br>
 
-- Add svg-sprite-loader to add icons (at least for the most important filters)
-- Add country parameter
+- Add team attack to variety?
 - Add "game of the day" and "random game" blocks
 - Add short questionnaire
 - Pagination or infinite scroll requires real backend to be implemented correctly
@@ -68,6 +67,9 @@ CHANGE LOG (monthly summary):<br>
 - Added summary info (total amount of games, missing games etc.)
 - Added responsive styles (toggle filters button on mobile)
 - Finished About page info with more examples
+- Added country parameter (blank)
+- Added Team Attack to variety
+- Added svg-sprite task to generate svg-sprite
 
   0.3
 
