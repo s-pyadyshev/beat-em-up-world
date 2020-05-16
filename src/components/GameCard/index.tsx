@@ -319,7 +319,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             >
               <span className="select__icon-info">
                 <svg>
-                  <use xlinkHref="#info" />
+                  <use xlinkHref="/images/sprite.svg#info" />
                 </svg>
               </span>
             </Tooltip>
