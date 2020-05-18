@@ -21,29 +21,58 @@
     }
   }
 
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include desktop {
+      flex-wrap: nowrap;
+    }
+  }
+
   &__cover {
     display: block;
-    max-width: 360px;
+    max-width: 290px;
     margin-right: auto;
     margin-bottom: 24px;
     margin-left: auto;
 
+    @include tablet {
+      max-width: 360px;
+    }
+
     @include desktop {
       margin-right: 0;
-      margin-bottom: 0;
       margin-left: 0;
     }
   }
 
+  &__detail {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 420px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include desktop {
+      margin-right: 0;
+    }
+
+    > ul,
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
+    width: 100%;
     margin-bottom: 24px;
 
     @include desktop {
-      flex-wrap: nowrap;
+      width: auto;
+      padding-right: 24px;
     }
   }
 
@@ -54,33 +83,20 @@
     text-align: center;
   }
 
-  &__title {
-    font-size: 2rem;
-    font-family: "capture-it", serif;
-  }
-
-  &__values-list {
-    display: inline-flex;
-    flex-wrap: wrap;
-
-    > li {
-      &:not(:last-child) {
-        margin-right: 8px;
-
-        &::after {
-          margin-left: 8px;
-          color: $link-color-visited;
-          content: "/";
-          pointer-events: none;
-        }
-      }
-    }
-  }
-
   &__parameter-name {
     display: inline-block;
-    min-width: 240px;
+    min-width: 180px;
     font-family: "capture-it", serif;
+    border-bottom: 1px solid $color-white;
+
+    + span {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      text-align: right;
+      border-bottom: 1px solid $color-white;
+    }
   }
 
   &__screenshots,
@@ -94,6 +110,32 @@
       img {
         max-width: 100%;
         height: auto;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-family: "capture-it", serif;
+  }
+
+  &__values-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+    border-bottom: 1px solid $color-white;
+
+    > li {
+      &:not(:last-child) {
+        margin-right: 8px;
+
+        &::after {
+          margin-left: 8px;
+          color: $link-color-visited;
+          content: "/";
+          pointer-events: none;
+        }
       }
     }
   }

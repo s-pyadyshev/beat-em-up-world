@@ -8,12 +8,17 @@ const Select = (props: any) => {
   const dispatch = useDispatch();
   const [isSelected, setSelected] = useState(false);
   const spriteNames = [
+    "artStyle",
     "dashing",
+    "difficulty",
+    "fighters",
     "focus",
+    "gore",
     "grabs",
     "info",
     "lives",
     "music",
+    "perspective",
     "platform",
     "players",
     "playtime",

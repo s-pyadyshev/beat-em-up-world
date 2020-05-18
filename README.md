@@ -11,11 +11,9 @@ API (JSON)
 Tasks<br>
 Major (MVP release):<br>
 
-- Add team attack to variety?
 - Add "game of the day" and "random game" blocks
 - Add short questionnaire
 - Pagination or infinite scroll requires real backend to be implemented correctly
-- Make basic and advanced filter view list
 - Finalize MVP design on desktop and tablet
 - Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
 - Make gangsize param consistent?
@@ -33,20 +31,14 @@ Minor:<br>
 - Search / autocomplete?
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
-  - Battletoads (Amiga)?
   - Cross Blades!
   - Double Dragon (Atari ST)
   - Fantastic Four (PS1)?
-  - Final Fight 3 (NES)?
-  - Golden Axe (Atari ST)
+  - Golden Axe (Atari ST)?
   - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Lost Castle (PC)?
-  - Middle Earth series?
-  - Mighty Morphin Power Rangers (SNES)?
-  - Mighty Morphin Power Rangers - The Movie (SNES)?
-  - Ninja: Shadow of Darkness (PS) - probably no
   - Rampage Knights (PC)?
   - Redeemer (PC)?
   - Saint Seiya: Sanctuary Battle (PS3)?
@@ -70,6 +62,7 @@ CHANGE LOG (monthly summary):<br>
 - Added country parameter (blank)
 - Added Team Attack to variety
 - Added svg-sprite task to generate svg-sprite
+- Added basic and advanced filter toggler
 
   0.3
 
