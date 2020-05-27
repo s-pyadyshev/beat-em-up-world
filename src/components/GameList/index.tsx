@@ -16,6 +16,7 @@ const GamesList = () => {
       {filteredGamesList && filteredGamesList.length === 0 ? (
         <h2>Games not found</h2>
       ) : null}
+
       {filteredGamesList &&
         filteredGamesList.map((game: any) => (
           <React.Fragment key={game.name + game.platform}>

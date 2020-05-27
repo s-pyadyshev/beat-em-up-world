@@ -9,22 +9,16 @@ import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
 import Stats from "./components/Stats";
+import TodayGame from "./components/TodayGame";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
-import { getGamesRequest, getGamesSuccess } from "./store/gamesList/actions";
-import { Games } from "./services/api";
-import { useDispatch } from "react-redux";
+import { getGames } from "./store/gamesList/actions";
 import "./App.scss";
 
 setConfiguration({ containerWidths: [768, 960, 1140, 1400] });
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(getGamesRequest());
-    Games.get().then((data: any) => {
-      dispatch(getGamesSuccess(data));
-    });
+    getGames();
   }, []);
 
   return (
@@ -58,6 +52,7 @@ const App: React.FC = () => {
                   <Route path="/">
                     <ErrorBoundary>
                       <Stats />
+                      <TodayGame />
                       <GameList />
                     </ErrorBoundary>
                   </Route>

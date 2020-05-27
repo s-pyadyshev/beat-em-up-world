@@ -1,9 +1,11 @@
 import { applyMiddleware, createStore, combineReducers } from "redux";
 import { gamesList } from "./gamesList/reducer";
+import { filters } from "./filters/reducer";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { logger } from "./middleware";
 
-const reducers = combineReducers({
+export const reducers: any = combineReducers({
+  filters,
   gamesList,
 });
 

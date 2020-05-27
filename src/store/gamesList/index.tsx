@@ -1,5 +1,7 @@
 export {
   getGamesRequest,
+  getGamesSuccess,
+  getGamesError,
   getGameCardRequest,
   getGameCardSuccess,
   filterGames,

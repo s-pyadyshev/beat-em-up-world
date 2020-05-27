@@ -6,6 +6,8 @@ import {
   GET_GAME_CARD_SUCCESS,
   FILTER_GAMES,
 } from "./constants";
+import { Games } from "../../services/api";
+import store from "../../store";
 
 export const getGamesRequest = () => ({
   type: GET_GAMES_REQUEST,
@@ -21,14 +23,24 @@ export const getGamesError = (error: any) => ({
   error,
 });
 
+export const getGames = () => {
+  store.dispatch(getGamesRequest());
+
+  Games.get()
+    .then((data) => {
+      store.dispatch(getGamesSuccess(data));
+    })
+    .catch((error) => store.dispatch(getGamesError(error)));
+};
+
 export const getGameCardRequest = (id: any) => ({
   type: GET_GAME_CARD_REQUEST,
   id,
 });
 
-export const getGameCardSuccess = (gameCardDetails: any) => ({
+export const getGameCardSuccess = (gameCardProps: any) => ({
   type: GET_GAME_CARD_SUCCESS,
-  gameCardDetails,
+  gameCardProps,
 });
 
 export const filterGames = (filterName: any, option: any) => ({

@@ -2,74 +2,68 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Select from "../Select";
 import Loading from "../Loading";
-import { Filters } from "../../services/api";
+import Button from "../../ui/Button";
+import {
+  getFilters,
+  showLessFilters,
+  toggleFiltersAll,
+} from "../../store/filters/actions";
+
 import "./style.scss";
+import store from "../../store";
 
 const Filter = () => {
-  const [filters, setFilters] = useState([]);
-  const [fullFilters, setFullFilters] = useState([]);
   const [visible, setVisibility] = useState(false);
   const loading = useSelector((state: any) => state.gamesList.loading);
-  const dispatch = useDispatch();
-  const basicFilters = [
-    "platform",
-    "perspective",
-    "series",
-    "players",
-    "releaseYear",
-    "structure",
-    "difficulty",
-    "variety",
-    "grabs",
-    "groundHit",
-    "artStyle",
-    "setting",
-    "focus",
-    "music",
-    "gore",
-    "fighters",
-    "weapons",
-  ];
+  const filters = useSelector((state: any) => state.filters.filtersToggled);
+  const basicView = useSelector((state: any) => state.filters.basicView);
 
   useEffect(() => {
-    Filters.get().then((result) => {
-      setFullFilters(result);
-      const basicFilterList = result.filter((item: any) =>
-        basicFilters.includes(item.name)
-      );
-      setFilters(basicFilterList);
-    });
-  }, [dispatch]);
+    getFilters();
+  }, []);
 
   const toggleFilter = () => {
     setVisibility(!visible);
   };
 
   const showMore = () => {
-    setFilters(fullFilters);
+    store.dispatch(toggleFiltersAll());
+  };
+
+  const showLess = () => {
+    store.dispatch(showLessFilters());
   };
 
   return (
     <div className={!visible ? "filter-wrap" : "filter-wrap is-active"}>
-      <button onClick={toggleFilter} className="filter-toggle">
-        {!visible ? <span>Show filter</span> : <span>Hide filter</span>}
-      </button>
-      <ul className="filter">
-        {loading ? <Loading /> : null}
-        {filters.map((filter: any) => (
-          <li key={filter.name}>
-            <Select
-              filterName={filter.filterName}
-              name={filter.name}
-              description={filter.description}
-              options={filter.options}
-            />
-          </li>
-        ))}
-      </ul>
-      <button onClick={showMore}>
-        <span>Show more filters</span>
-      </button>
+      <div className="filter-toggle">
+        <button onClick={toggleFilter}>
+          {!visible ? <span>Show filter</span> : <span>Hide filter</span>}
+        </button>
+      </div>
+
+      <div className="filter">
+        <ul className="filter-list">
+          {loading ? <Loading /> : null}
+          {filters &&
+            filters.map((filter: any) => (
+              <li key={filter.name}>
+                <Select
+                  filterName={filter.filterName}
+                  name={filter.name}
+                  description={filter.description}
+                  options={filter.options}
+                />
+              </li>
+            ))}
+        </ul>
+
+        {basicView ? (
+          <Button onClick={showMore}>Show more filters</Button>
+        ) : (
+          <Button onClick={showLess}>Show less filters</Button>
+        )}
+      </div>
     </div>
   );
 };

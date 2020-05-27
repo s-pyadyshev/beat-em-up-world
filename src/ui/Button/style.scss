@@ -1,0 +1,19 @@
+@import "./../../assets/styles/variables";
+
+.button {
+  padding: 8px 12px;
+  color: $color-white;
+  font-size: 20px;
+  font-family: $font-family-button;
+  background: none;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 15%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(http://www.punchpedia.com/common/img/arcbg.png);
+  border: 0;
+}
