@@ -5,6 +5,7 @@ import Bingo from "../Bingo";
 import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
 import Comments from "../Comments";
+import { convertGameId } from "../../utils/convertGameId";
 import "./style.scss";
 
 const GameCard = ({ commentsUrl, commentsId }: any) => {
@@ -15,14 +16,11 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   useEffect(() => {
     const filteredGameCard = gamesList
       ? gamesList.filter(
-          (game: any) =>
-            `${game.name}-${game.platform}`
-              .replace(/[\s:&'.!?]/g, "")
-              .toLowerCase() === id
+          (game: any) => convertGameId(game.name, game.platform) === id
         )[0]
       : null;
     setGameCardInfo({ ...filteredGameCard });
-  }, [gamesList]);
+  }, [gamesList, id]);
 
   const {
     name,
@@ -155,13 +153,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 {otherPlatforms &&
                   otherPlatforms.map((platformName: any) => (
                     <li key={platformName}>
-                      <Link
-                        to={`${name
-                          .replace(/[\s:&'.!?]/g, "")
-                          .toLowerCase()}-${platformName
-                          .replace(/[\s:&'.!?]/g, "")
-                          .toLowerCase()}`}
-                      >
+                      <Link to={convertGameId(name, platformName)}>
                         <span>{platformName}</span>
                       </Link>
                     </li>

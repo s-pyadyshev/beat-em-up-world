@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Select from "../Select";
 import Loading from "../Loading";
 import Button from "../../ui/Button";

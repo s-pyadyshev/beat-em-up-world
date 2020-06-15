@@ -56,6 +56,7 @@ CHANGE LOG (monthly summary):<br>
 - 0.5
 
   - Added TodayGame component (WIP)
+  - Refactoring
 
 - 0.4
 

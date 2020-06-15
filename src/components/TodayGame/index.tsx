@@ -1,37 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { convertGameId } from "../../utils/convertGameId";
 import "./style.scss";
 
 const TodayGame: React.SFC = () => {
   const gamesList = useSelector((state: any) => state.gamesList.gamesList);
-  const [todayGameId, setTodayGameId] = useState({});
-
-  const todayDate = () =>
-    new Date().getDay().toString() +
-    "." +
-    new Date().getMonth() +
-    "." +
-    new Date().getFullYear();
-
-  const todayGameName =
-    gamesList &&
-    gamesList.filter((game: any) => "13.09.2005" === game.releasedate)[0].name;
+  const [todayGameId, setTodayGameId] = useState("");
+  const [todayGameName, setTodayGameName] = useState(false);
 
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
-    console.log(todayDate());
-    const getTodayGame =
-      gamesList &&
-      gamesList.filter((game: any) => "13.09.2005" === game.releasedate)[0];
-    // TODO - utils function
-    const todayGameId = `${gamesList && getTodayGame.name}-${
-      gamesList && getTodayGame.platform
-    }`
-      .replace(/[\s:&'.!?]/g, "")
-      .toLowerCase();
-    setTodayGameId(todayGameId);
-  }, [gamesList]);
+    const todayDate =
+      new Date().getDay().toString() +
+      "." +
+      new Date().getMonth() +
+      "." +
+      new Date().getFullYear();
+
+    if (gamesList) {
+      const getTodayGame = gamesList.filter(
+        (game: any) => todayDate === game.releasedate
+      )[0];
+
+      if (getTodayGame !== undefined) {
+        const todayGameId = convertGameId(
+          getTodayGame.name,
+          getTodayGame.platform
+        );
+
+        setTodayGameId(todayGameId);
+        setTodayGameName(getTodayGame.name);
+      }
+    }
+  }, [gamesList, todayGameName, todayGameId]);
 
   return (
     <div className="today-game">
@@ -39,7 +41,7 @@ const TodayGame: React.SFC = () => {
         <>
           <span>
             On this day&nbsp;
-            <Link to={gamesList && todayGameId}>xxx</Link>
+            <Link to={gamesList && todayGameId}>{todayGameName}</Link>
             &nbsp;was released!
           </span>
           &nbsp;Try it now!
