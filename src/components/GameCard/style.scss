@@ -76,6 +76,10 @@
     }
   }
 
+  &__links {
+    word-break: break-all;
+  }
+
   &__name {
     font-weight: 400;
     font-size: 2rem;

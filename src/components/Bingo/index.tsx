@@ -29,12 +29,8 @@ const Bingo = ({
   sharpSuits,
   graffiti,
 }: BingoProps) => {
-  const toggleActiveClass = (parameter: Boolean) => {
-    if (parameter === true) {
-      return "bingo__name is-active";
-    }
-    return "bingo__name";
-  };
+  const toggleActiveClass = (parameter: Boolean) =>
+    parameter === true ? "bingo__name is-active" : "bingo__name";
 
   return (
     <div className="bingo">

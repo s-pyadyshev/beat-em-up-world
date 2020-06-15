@@ -2,8 +2,14 @@
 <br>
 Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
-Stack: React, Redux, creat-react-app, react-router, stylelint, prettier, swiper, react-popper-tooltip, Disqus, Scss.
-<br>
+Stack:<br>
+React, Redux<br>
+creat-react-app<br>
+react-router<br>
+Scss, stylelint, prettier<br>
+swiper, react-popper-tooltip<br>
+Disqus<br>
+
 API (JSON)
 <a href="https://github.com/s-pyadyshev/beat-em-ups-api">https://github.com/s-pyadyshev/beat-em-ups-api</a>
 <br>
@@ -31,18 +37,13 @@ Minor:<br>
 - Add possibility to select multiple choice in one filter
 - Add more games to JSON:
   - Cross Blades!
-  - Double Dragon (Atari ST)
   - Fantastic Four (PS1)?
   - Fist Of The North Star: Lost Paradise?
-  - Golden Axe (Atari ST)?
-  - Golden Axe (PS2)
   - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
-  - Lost Castle (PC)?
   - Rampage Knights (PC)?
   - Redeemer (PC)?
   - Saint Seiya: Sanctuary Battle (PS3)?
-  - Street Boyz (PS2)?
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
   - Two Crude Dudes? (Arcade, Genesis)
   - Zombie Revenge?
@@ -51,6 +52,10 @@ Minor:<br>
   - Missing covers: The Gladiator
 
 CHANGE LOG (monthly summary):<br>
+
+- 0.5
+
+  - Added TodayGame component (WIP)
 
 - 0.4
 

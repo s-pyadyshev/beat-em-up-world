@@ -1,0 +1,10 @@
+@import "./../../assets/styles/variables";
+
+.today-game {
+  font-size: 24px;
+
+  a {
+    color: $color-info-active;
+    font-weight: 700;
+  }
+}

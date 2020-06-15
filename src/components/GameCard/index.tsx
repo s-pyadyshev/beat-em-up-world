@@ -22,7 +22,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
         )[0]
       : null;
     setGameCardInfo({ ...filteredGameCard });
-  }, [id, gamesList]);
+  }, [gamesList]);
 
   const {
     name,
@@ -113,7 +113,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </div>
           <div>
             <span className="game-card__title">Links: </span>
-            <ul>
+            <ul className="game-card__links">
               {links &&
                 links.map((link: string) => (
                   <li key={link}>
@@ -280,15 +280,16 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span className="game-card__parameter-name">Focus: </span>
             <span>{focus}</span>
           </li>
-          <li>
-            <span className="game-card__parameter-name">Music: </span>
-            <span>{music}</span>
-            {/* <ul className="game-card__values-list">
-            {music.map((item: any) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul> */}
-          </li>
+          {music ? (
+            <li>
+              <span className="game-card__parameter-name">Music: </span>
+              <ul className="game-card__values-list">
+                {music.map((item: any) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">Tone: </span>
             <span>{tone}</span>

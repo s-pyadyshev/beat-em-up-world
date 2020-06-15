@@ -98,7 +98,7 @@ const AboutPage = () => (
       has enough variety - throws, block, weapons, but multiple enemies is a
       rare thing here). Thus Battletoads should be considered as more platformer
       than beat&apos;em up (It is focused on Action Platforming and contains
-      only one stage and several sections to beat enemies.).
+      only one stage and several sections to beat enemies).
     </p>
     <br />
     <h2>So which games are beat&apos;em up posers?</h2>
