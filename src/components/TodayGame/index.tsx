@@ -12,15 +12,11 @@ const TodayGame: React.SFC = () => {
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
     const todayDate =
-      new Date().getDay().toString() +
-      "." +
-      new Date().getMonth() +
-      "." +
-      new Date().getFullYear();
+      new Date().getDay().toString() + "." + new Date().getMonth() + ".";
 
     if (gamesList) {
       const getTodayGame = gamesList.filter(
-        (game: any) => todayDate === game.releasedate
+        (game: any) => todayDate === game.releasedate.slice(0, -5)
       )[0];
 
       if (getTodayGame !== undefined) {
