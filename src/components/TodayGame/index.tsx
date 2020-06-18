@@ -16,7 +16,7 @@ const TodayGame: React.SFC = () => {
 
     if (gamesList) {
       const getTodayGame = gamesList.filter(
-        (game: any) => todayDate === game.releasedate.slice(0, -5)
+        (game: any) => todayDate === gamesList && game.releasedate.slice(0, -5)
       )[0];
 
       if (getTodayGame !== undefined) {
@@ -42,7 +42,9 @@ const TodayGame: React.SFC = () => {
           </span>
           &nbsp;Try it now!
         </>
-      ) : null}
+      ) : (
+        "Nothing was released on this day, come back the next day!"
+      )}
     </div>
   );
 };
