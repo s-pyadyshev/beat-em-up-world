@@ -8,11 +8,12 @@ const TodayGame: React.SFC = () => {
   const gamesList = useSelector((state: any) => state.gamesList.gamesList);
   const [todayGameId, setTodayGameId] = useState("");
   const [todayGameName, setTodayGameName] = useState(false);
-
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
+    // TODO - new Date returns wrong date?
+    // Refactor in case of Today games > 1
     const todayDate =
-      new Date().getDay().toString() + "." + new Date().getMonth() + ".";
+      new Date().getDay().toString() + "." + new Date().getMonth();
 
     if (gamesList) {
       const getTodayGame = gamesList.filter(
@@ -24,7 +25,6 @@ const TodayGame: React.SFC = () => {
           getTodayGame.name,
           getTodayGame.platform
         );
-
         setTodayGameId(todayGameId);
         setTodayGameName(getTodayGame.name);
       }

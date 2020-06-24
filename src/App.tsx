@@ -51,12 +51,12 @@ const App: React.FC = () => {
                   </Route>
                   <Route path="/">
                     <Row>
-                      <Col md={4} lg={4}>
+                      <Col md={4} lg={5}>
                         <ErrorBoundary>
                           <Stats />
                         </ErrorBoundary>
                       </Col>
-                      <Col md={4} lg={8}>
+                      <Col md={4} lg={7}>
                         <ErrorBoundary>
                           <TodayGame />
                         </ErrorBoundary>

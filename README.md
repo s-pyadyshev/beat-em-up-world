@@ -38,16 +38,12 @@ Minor:<br>
 - Add more games to JSON:
   - Cross Blades!
   - Fantastic Four (PS1)?
-  - Fist Of The North Star: Lost Paradise?
-  - Kenka Bancho: Badass Rumble (PSP)?
   - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
   - Rampage Knights (PC)?
   - Redeemer (PC)?
-  - Saint Seiya: Sanctuary Battle (PS3)?
   - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
   - Two Crude Dudes? (Arcade, Genesis)
   - Zombie Revenge?
-  - The best SORR mods, OpenBOR/MUGEN games?
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
   - Missing covers: The Gladiator
 
