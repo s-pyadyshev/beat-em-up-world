@@ -7,7 +7,7 @@ React, Redux<br>
 create-react-app<br>
 react-router<br>
 Scss, stylelint, prettier<br>
-swiper, react-popper-tooltip<br>
+swiper, react-popper-tooltip, react-grid-system<br>
 Disqus<br>
 
 API (JSON)

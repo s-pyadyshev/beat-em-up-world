@@ -5,6 +5,7 @@ import {
   GET_GAME_CARD_REQUEST,
   GET_GAME_CARD_SUCCESS,
   FILTER_GAMES,
+  FILTER_BY_NAME,
 } from "./constants";
 import { Games } from "../../services/api";
 import store from "../../store";
@@ -47,4 +48,9 @@ export const filterGames = (filterName: any, option: any) => ({
   type: FILTER_GAMES,
   filterName,
   option,
+});
+
+export const filterByName = (input: any) => ({
+  type: FILTER_BY_NAME,
+  input,
 });

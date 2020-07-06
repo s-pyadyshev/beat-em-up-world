@@ -1,12 +1,12 @@
 import React from "react";
-import { debounce } from "lodash";
+import { filterByName } from "../../store/gamesList/actions";
+import store from "../../store";
+import "./style.scss";
 
+// TODO autofocus (useRef), debounce
 const Search: React.SFC = () => {
   const handleInput = (event: any) => {
-    // const make = () => {
-    console.log(event.target.value);
-    // };
-    // debounce(make, 500, { maxWait: 1000 });
+    store.dispatch(filterByName(event.target.value));
   };
 
   return (
@@ -14,6 +14,7 @@ const Search: React.SFC = () => {
       type="search"
       placeholder="Type game name here..."
       onChange={handleInput}
+      className="input"
     />
   );
 };

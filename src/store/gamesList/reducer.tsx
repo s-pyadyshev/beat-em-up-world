@@ -7,6 +7,7 @@ import {
   GET_GAME_CARD_SUCCESS,
   GET_GAME_CARD_ERROR,
   FILTER_GAMES,
+  FILTER_BY_NAME,
 } from "./constants";
 
 export const gamesList = (state: any = [], action: any) => {
@@ -80,6 +81,13 @@ export const gamesList = (state: any = [], action: any) => {
         ...state,
         filterOptions,
         filteredGames: filter(state.gamesList, filterOptions),
+      };
+    case FILTER_BY_NAME:
+      return {
+        ...state,
+        filteredGames: state.gamesList.filter((game: any) =>
+          game.name.toLowerCase().includes(action.input.toLowerCase())
+        ),
       };
     default:
       return state;
