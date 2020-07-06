@@ -13,7 +13,7 @@ const basicFilters = [
   "series",
   "players",
   "releaseYear",
-  "structure",
+  "multigenre",
   "difficulty",
   "variety",
   "grabs",

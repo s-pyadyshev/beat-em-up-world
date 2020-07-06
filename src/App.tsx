@@ -10,6 +10,7 @@ import GameList from "./components/GameList";
 import Filter from "./components/Filter";
 import Stats from "./components/Stats";
 import TodayGame from "./components/TodayGame";
+import Search from "./components/Search";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
 import { getGames } from "./store/gamesList/actions";
 import "./App.scss";
@@ -53,6 +54,7 @@ const App: React.FC = () => {
                     <Row>
                       <Col md={4} lg={5}>
                         <ErrorBoundary>
+                          <Search />
                           <Stats />
                         </ErrorBoundary>
                       </Col>

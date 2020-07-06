@@ -4,7 +4,7 @@ Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (
 
 Stack:<br>
 React, Redux<br>
-creat-react-app<br>
+create-react-app<br>
 react-router<br>
 Scss, stylelint, prettier<br>
 swiper, react-popper-tooltip<br>

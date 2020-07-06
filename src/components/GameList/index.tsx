@@ -31,7 +31,11 @@ const GamesList = () => {
                 </b>
               </li>
             ) : (
-              <GamesListItem name={game.name} platform={game.platform} />
+              <GamesListItem
+                name={game.name}
+                platform={game.platform}
+                multigenre={game.multigenre}
+              />
             )}
           </React.Fragment>
         ))}
