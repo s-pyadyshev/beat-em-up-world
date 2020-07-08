@@ -11,6 +11,7 @@ import Filter from "./components/Filter";
 import Stats from "./components/Stats";
 import TodayGame from "./components/TodayGame";
 import Search from "./components/Search";
+import AlphabetSorter from "./components/AlphabetSorter";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
 import { getGames } from "./store/gamesList/actions";
 import "./App.scss";
@@ -64,6 +65,7 @@ const App: React.FC = () => {
                         </ErrorBoundary>
                       </Col>
                     </Row>
+                    <AlphabetSorter />
                     <GameList />
                   </Route>
                 </Switch>

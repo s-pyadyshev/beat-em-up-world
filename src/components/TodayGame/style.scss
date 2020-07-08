@@ -1,7 +1,13 @@
 @import "./../../assets/styles/variables";
+@import "./../../assets/styles/media";
 
 .today-game {
+  margin-bottom: 24px;
   font-size: 22px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
 
   a {
     color: $color-info-active;

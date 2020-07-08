@@ -3,47 +3,28 @@
 Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
 Stack:<br>
-React, Redux<br>
-create-react-app<br>
-react-router<br>
+React, Redux, react-router, create-react-app<br>
+react-popper-tooltip, react-grid-system, swiper, Disqus comments<br>
 Scss, stylelint, prettier<br>
-swiper, react-popper-tooltip, react-grid-system<br>
-Disqus<br>
 
-API (JSON)
+"API" (JSON)
 <a href="https://github.com/s-pyadyshev/beat-em-ups-api">https://github.com/s-pyadyshev/beat-em-ups-api</a>
 <br>
 
 Tasks<br>
-Main:<br>
 
-- Refactoring
-- Add "game of the day" and "random game" blocks
-- Add short questionnaire
-- Pagination or infinite scroll requires real backend to be implemented correctly
-- Add icon for mixed-genre (not true beat'em up) games like Battletoads, Comix Zone, Mad Max, Sleeping Dogs etc.
-- Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
-
-Minor:<br>
-
-- Make gangsize param consistent?
+- Refactoring: best practices, TypeScript
 - Add Travis CI / Github Actions?
 - Add SSR?
 - Change playtime select to range?
-- Add new game params (filters), e.g. Breakable objects etc.
-- Update design
 - Add dark/light theme (change on system settings)
-- Search / autocomplete?
 - Add possibility to select multiple choice in one filter
+- Make gangsize param consistent?
+- Add "game of the day" and "random game" blocks
+- Add short questionnaire
+- Pagination or infinite scroll requires real backend to be implemented correctly
+- Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
 - Add more games to JSON:
-  - Cross Blades!
-  - Fantastic Four (PS1)?
-  - Kurohyō: Ryū ga Gotoku Shinshō (PSP)?
-  - Rampage Knights (PC)?
-  - Redeemer (PC)?
-  - Tekken 3-4 (Tekken Force mode) and any other games with similar modes
-  - Two Crude Dudes? (Arcade, Genesis)
-  - Zombie Revenge?
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
   - Missing covers: The Gladiator
 
@@ -51,7 +32,9 @@ CHANGE LOG (monthly summary):<br>
 
 - 0.5
 
+  - Added Search, Alphabet sorter
   - Added TodayGame component (WIP)
+  - Added mixed genre parameter and state
   - Refactoring
 
 - 0.4

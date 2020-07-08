@@ -1,0 +1,26 @@
+@import "../../assets/styles/variables";
+
+.alphabet-sorter {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+
+  &__button {
+    color: $color-white;
+    font-size: 24px;
+    font-family: "capture-it", serif;
+    background: none;
+    border: none;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $link-color-hover;
+      outline: none;
+    }
+
+    &.is-active {
+      color: $link-color-active;
+    }
+  }
+}

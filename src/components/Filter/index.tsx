@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Select from "../Select";
 import Loading from "../Loading";
-import Button from "../../ui/Button";
+import Button from "../Button";
 import {
   getFilters,
   showLessFilters,
