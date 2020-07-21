@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { filterByName } from "../../store/gamesList/actions";
 import store from "../../store";
 import "./style.scss";
 
-// TODO autofocus (useRef), debounce
+// TODO debounce
 const Search: React.SFC = () => {
+  const SearchRef: any = useRef<HTMLInputElement>(null);
+
   const handleInput = (event: any) => {
     store.dispatch(filterByName(event.target.value));
   };
+
+  useLayoutEffect(() => {
+    if (SearchRef.current !== null) {
+      SearchRef.current.focus();
+    }
+  }, []);
 
   return (
     <input
       type="search"
       placeholder="Type game name here..."
       onChange={handleInput}
+      ref={SearchRef}
       className="input"
     />
   );

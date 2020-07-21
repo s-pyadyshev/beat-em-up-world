@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
-import AboutPage from "./pages/AboutPage";
+// import AboutPage from "./pages/AboutPage";
 import AuthPage from "./pages/AuthPage";
-import LinksPage from "./pages/LinksPage";
+// import LinksPage from "./pages/LinksPage";
 import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
@@ -17,6 +17,9 @@ import { getGames } from "./store/gamesList/actions";
 import "./App.scss";
 
 setConfiguration({ containerWidths: [768, 960, 1140, 1400] });
+
+const About = lazy(() => import("./pages/AboutPage"));
+const Links = lazy(() => import("./pages/LinksPage"));
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -36,39 +39,43 @@ const App: React.FC = () => {
                 </ErrorBoundary>
               </Col>
               <Col md={8} lg={9}>
-                <Switch>
-                  <Route path="/auth">
-                    <AuthPage />
-                  </Route>
-                  <Route path="/about">
-                    <AboutPage />
-                  </Route>
-                  <Route path="/links">
-                    <LinksPage />
-                  </Route>
-                  <Route path="/:id">
-                    <div>
-                      <GameCard />
-                    </div>
-                  </Route>
-                  <Route path="/">
-                    <Row>
-                      <Col md={6} lg={5}>
-                        <ErrorBoundary>
-                          <Search />
-                          <Stats />
-                        </ErrorBoundary>
-                      </Col>
-                      <Col md={6} lg={7}>
-                        <ErrorBoundary>
-                          <TodayGame />
-                        </ErrorBoundary>
-                      </Col>
-                    </Row>
-                    <AlphabetSorter />
-                    <GameList />
-                  </Route>
-                </Switch>
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Switch>
+                    <Route exact path="/">
+                      <Row>
+                        <Col md={6} lg={5}>
+                          <ErrorBoundary>
+                            <Search />
+                            <Stats />
+                          </ErrorBoundary>
+                        </Col>
+                        <Col md={6} lg={7}>
+                          <ErrorBoundary>
+                            <TodayGame />
+                          </ErrorBoundary>
+                        </Col>
+                      </Row>
+                      <AlphabetSorter />
+                      <GameList />
+                    </Route>
+                    <Route path="/auth">
+                      <AuthPage />
+                    </Route>
+                    <Route path="/about">
+                      <About />
+                    </Route>
+                    <Route path="/links">
+                      <Links />
+                    </Route>
+                    <Route exact path="/:id">
+                      <div>
+                        <GameCard />
+                      </div>
+                    </Route>
+                    {/* TODO 404 along with dynamic id pages */}
+                    {/* <Route path="*">ERROR 404</Route> */}
+                  </Switch>
+                </Suspense>
               </Col>
             </Row>
           </Container>
