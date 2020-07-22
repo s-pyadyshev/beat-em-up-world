@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterGames } from "../../store/gamesList/actions";
 import Tooltip from "../Tooltip";
+import { FilterInterface } from "../../interfaces/Filter";
 import "./style.scss";
 
-const Select = (props: any) => {
+const Select = (props: FilterInterface) => {
   const dispatch = useDispatch();
   const [isSelected, setSelected] = useState(false);
   const spriteNames = [
@@ -32,7 +33,7 @@ const Select = (props: any) => {
   ];
   const { description, name, filterName, options } = props;
 
-  const handleSelect = (event: any) => {
+  const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value === "") {
       dispatch(filterGames(name, event.target.value));
       setSelected(false);

@@ -6,6 +6,7 @@ import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
 import Comments from "../Comments";
 import { convertGameId } from "../../utils/convertGameId";
+import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const GameCard = ({ commentsUrl, commentsId }: any) => {

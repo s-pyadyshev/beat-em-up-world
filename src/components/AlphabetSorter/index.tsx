@@ -42,7 +42,7 @@ const AlphabetSorter: React.SFC = () => {
 
   return (
     <ul className="alphabet-sorter">
-      {alphabet.map((letter: any) => (
+      {alphabet.map((letter: string) => (
         <li key={letter}>
           <button
             onClick={handleClickLetter}

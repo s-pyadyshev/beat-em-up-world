@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { GameListItemInterface } from "../../interfaces/GameListItem";
 import "./style.scss";
 
-const GameListItem = (props: any) => {
+const GameListItem = (props: GameListItemInterface) => {
   const { index, name, platform, multigenre } = props;
   const uniqGameName = `/${name}-${platform}`;
   const uniqGameNameId = uniqGameName.replace(/[\s:&'.!?]/g, "").toLowerCase();

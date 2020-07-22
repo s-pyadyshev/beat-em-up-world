@@ -1,5 +1,6 @@
 import React from "react";
-import BingoProps from "../../types/BingoProps";
+// import BingoProps from "../../types/BingoProps";
+import { BingoInterface } from "../../interfaces/Bingo";
 import "./style.scss";
 
 const Bingo = ({
@@ -28,7 +29,7 @@ const Bingo = ({
   fatCharginMen,
   sharpSuits,
   graffiti,
-}: BingoProps) => {
+}: BingoInterface) => {
   const toggleActiveClass = (parameter: Boolean) =>
     parameter === true ? "bingo__name is-active" : "bingo__name";
 

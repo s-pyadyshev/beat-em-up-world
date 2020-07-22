@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const Stats: React.SFC = () => {
@@ -10,8 +11,9 @@ const Stats: React.SFC = () => {
   const missing = useSelector(
     (state: any) =>
       state.gamesList.gamesList &&
-      state.gamesList.gamesList.filter((game: any) => game.missing === true)
-        .length
+      state.gamesList.gamesList.filter(
+        (game: GameCardInterface) => game.missing === true
+      ).length
   );
   const found = useSelector(
     (state: any) =>

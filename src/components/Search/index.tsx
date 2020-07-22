@@ -5,9 +5,9 @@ import "./style.scss";
 
 // TODO debounce
 const Search: React.SFC = () => {
-  const SearchRef: any = useRef<HTMLInputElement>(null);
+  const SearchRef = useRef<HTMLInputElement>(null);
 
-  const handleInput = (event: any) => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     store.dispatch(filterByName(event.target.value));
   };
 
