@@ -6,7 +6,7 @@ import "./style.scss";
 const GameListItem = (props: GameListItemInterface) => {
   const { index, name, platform, multigenre } = props;
   const uniqGameName = `/${name}-${platform}`;
-  const uniqGameNameId = uniqGameName.replace(/[\s:&'.!?]/g, "").toLowerCase();
+  const uniqGameNameId = uniqGameName.replace(/[\s:&'./!?]/g, "").toLowerCase();
 
   return (
     <li
