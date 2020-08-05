@@ -6,7 +6,7 @@ import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
 import Comments from "../Comments";
 import { convertGameId } from "../../utils/convertGameId";
-import { GameCardInterface } from "../../interfaces/GameCard";
+// import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const GameCard = ({ commentsUrl, commentsId }: any) => {
@@ -27,6 +27,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     name,
     platform,
     perspective,
+    country,
     about,
     trivia,
     developer,
@@ -84,6 +85,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   const bingoScore =
     beatemupBingo &&
     Object.values(beatemupBingo).filter((value) => value === true).length;
+
   // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
@@ -132,6 +134,10 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           <li>
             <span className="game-card__parameter-name">Perspective: </span>
             <span>{perspective}</span>
+          </li>
+          <li>
+            <span className="game-card__parameter-name">Country: </span>
+            <span>{country}</span>
           </li>
           <li>
             <span className="game-card__parameter-name">Developer: </span>

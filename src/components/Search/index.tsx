@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { filterByName } from "../../store/gamesList/actions";
 import store from "../../store";
 import "./style.scss";
@@ -11,7 +11,7 @@ const Search: React.SFC = () => {
     store.dispatch(filterByName(event.target.value));
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (SearchRef.current !== null) {
       SearchRef.current.focus();
     }

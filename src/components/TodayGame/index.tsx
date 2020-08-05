@@ -8,6 +8,7 @@ const TodayGame: React.SFC = () => {
   const gamesList = useSelector((state: any) => state.gamesList.gamesList);
   const [todayGameId, setTodayGameId] = useState("");
   const [todayGameName, setTodayGameName] = useState(false);
+
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
     // TODO - new Date returns wrong date?

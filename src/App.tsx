@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 // import AboutPage from "./pages/AboutPage";
-import AuthPage from "./pages/AuthPage";
+// import AuthPage from "./pages/AuthPage";
 // import LinksPage from "./pages/LinksPage";
 import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
@@ -20,6 +20,7 @@ setConfiguration({ containerWidths: [768, 960, 1140, 1400] });
 
 const About = lazy(() => import("./pages/AboutPage"));
 const Links = lazy(() => import("./pages/LinksPage"));
+const SecretPage = lazy(() => import("./pages/SecretPage"));
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -58,14 +59,17 @@ const App: React.FC = () => {
                       <AlphabetSorter />
                       <GameList />
                     </Route>
-                    <Route path="/auth">
+                    {/* <Route path="/auth">
                       <AuthPage />
-                    </Route>
+                    </Route> */}
                     <Route path="/about">
                       <About />
                     </Route>
                     <Route path="/links">
                       <Links />
+                    </Route>
+                    <Route path="/secret">
+                      <SecretPage />
                     </Route>
                     <Route exact path="/:id">
                       <div>

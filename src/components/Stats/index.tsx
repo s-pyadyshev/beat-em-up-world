@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
@@ -20,8 +20,6 @@ const Stats: React.SFC = () => {
       state.gamesList.gamesList && state.gamesList.filteredGames.length
   );
 
-  useEffect(() => {}, []);
-
   return (
     <div>
       <div>
@@ -33,11 +31,6 @@ const Stats: React.SFC = () => {
       <div>
         <b>Found:</b> {found}
       </div>
-      {/* <div>
-        <b>Recent new complete pages</b>: 99Vidas, Annet Futatabi, Batman:
-        Arkham Asylum, Charlie Murder, Dad 'n Me, Double Dragon IV, Nekketsu
-        Oyako, Oni, Urban Reign, World Heroes Supreme Justice Extra
-      </div> */}
       <br />
     </div>
   );

@@ -6,6 +6,13 @@ declare global {
   }
 }
 
+/**
+ * Represents a Disqus comments.
+ * @constructor
+ * @param {string} fullUrl - The full url of the game.
+ * @param {string} id - The id of the game.
+ */
+
 const Comments = ({ fullUrl, id }: any) => {
   useEffect(() => {
     const DISQUS_SCRIPT = "disq_script";
