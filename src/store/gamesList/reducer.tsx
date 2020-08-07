@@ -11,6 +11,8 @@ import {
   FILTER_BY_NAME,
 } from "./constants";
 
+const arrayOptions = ["music", "weapons", "variety", "gore"];
+
 export const gamesList = (state: any = [], action: any) => {
   let filterOptions = { ...state.filterOptions };
 
@@ -67,12 +69,7 @@ export const gamesList = (state: any = [], action: any) => {
         };
       }
       // hardcode solution for array values
-      if (
-        action.filterName === "music" ||
-        action.filterName === "weapons" ||
-        action.filterName === "variety" ||
-        action.filterName === "gore"
-      ) {
+      if (arrayOptions.includes(action.filterName)) {
         filterOptions[action.filterName] = [action.option];
       } else {
         filterOptions[action.filterName] = action.option;

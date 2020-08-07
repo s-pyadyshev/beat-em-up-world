@@ -44,17 +44,19 @@ const AlphabetSorter: React.SFC = () => {
     <ul className="alphabet-sorter">
       {alphabet.map((letter: string) => (
         <li key={letter}>
-          <button
-            onClick={handleClickLetter}
-            data-letter={letter}
-            className={
-              activeLetter === letter
-                ? "alphabet-sorter__button is-active"
-                : "alphabet-sorter__button"
-            }
-          >
-            {letter.toUpperCase()}
-          </button>
+          {activeLetter === letter ? (
+            <span className="alphabet-sorter__button is-active">
+              {letter.toUpperCase()}
+            </span>
+          ) : (
+            <button
+              onClick={handleClickLetter}
+              data-letter={letter}
+              className="alphabet-sorter__button"
+            >
+              {letter.toUpperCase()}
+            </button>
+          )}
         </li>
       ))}
     </ul>
