@@ -26,7 +26,20 @@ const basicFilters = [
   "fighters",
 ];
 
-export const filters = (state: any = [], action: any) => {
+// interface FiltersStateInteface {
+//   filters?: any;
+//   error?: any;
+//   loading: Boolean;
+// }
+
+interface FiltersActionInteface {
+  type: string;
+  filters?: any;
+  error?: any;
+  loading: Boolean;
+}
+
+export const filters = (state: any = {}, action: FiltersActionInteface) => {
   switch (action.type) {
     case GET_FILTERS_REQUEST:
       return {

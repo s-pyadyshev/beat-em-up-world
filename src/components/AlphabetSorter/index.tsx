@@ -34,6 +34,7 @@ const AlphabetSorter: React.SFC = () => {
     "z",
   ];
 
+  // TODO React.ChangeEvent<HTMLButtonElement> - event type issue
   const handleClickLetter = (event: any) => {
     const letter = event.target.getAttribute("data-letter");
     store.dispatch(filterByLetter(letter));

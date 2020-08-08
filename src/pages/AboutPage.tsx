@@ -1,8 +1,13 @@
 import React from "react";
 import "./article.scss";
+import { Helmet } from "react-helmet";
 
 const AboutPage = () => (
   <article className="about">
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>About</title>
+    </Helmet>
     <h2>What is the purpose of this site?</h2>
     <p>
       This site is a disciple of&nbsp;

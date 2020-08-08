@@ -1,5 +1,6 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 // import AboutPage from "./pages/AboutPage";
@@ -30,6 +31,10 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Beat'em Up World</title>
+        </Helmet>
         <Header />
         <div className="app__body">
           <Container style={{ width: "100%" }}>

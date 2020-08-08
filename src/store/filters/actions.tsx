@@ -7,13 +7,14 @@ import {
   SHOW_LESS_FILTERS,
 } from "./constants";
 import { Filters } from "../../services/api";
+import { FilterInterface } from "../../interfaces/Filter";
 import store from "..";
 
 export const getFiltersRequest = () => ({
   type: GET_FILTERS_REQUEST,
 });
 
-export const getFiltersSuccess = (filters: any) => ({
+export const getFiltersSuccess = (filters: FilterInterface) => ({
   type: GET_FILTERS_SUCCESS,
   filters,
 });
@@ -23,7 +24,7 @@ export const getFiltersError = (error: any) => ({
   error,
 });
 
-export const toggleFilters = (filters: any) => ({
+export const toggleFilters = (filters: FilterInterface) => ({
   type: TOGGLE_FILTERS,
   filters,
 });

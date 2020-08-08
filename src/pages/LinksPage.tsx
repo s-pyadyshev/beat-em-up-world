@@ -1,7 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const LinksPage = () => (
   <div className="stats">
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Links</title>
+    </Helmet>
     <h2>Links</h2>
     <ul>
       <li>

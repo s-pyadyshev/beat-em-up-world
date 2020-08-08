@@ -11,6 +11,7 @@ export interface GameCardInterface {
   trivia: string;
   developer: string;
   publisher: string;
+  releasedate: string;
   releaseYear: number;
   otherPlatforms: string[] | null;
   series: string | null;

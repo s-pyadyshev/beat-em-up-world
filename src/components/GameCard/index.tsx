@@ -6,18 +6,22 @@ import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
 import Comments from "../Comments";
 import { convertGameId } from "../../utils/convertGameId";
-// import { GameCardInterface } from "../../interfaces/GameCard";
+import { ApplicationState } from "../../interfaces/ApplicationState";
+import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const GameCard = ({ commentsUrl, commentsId }: any) => {
   const { id } = useParams();
   const [gameCardInfo, setGameCardInfo] = useState({});
-  const gamesList = useSelector((state: any) => state.gamesList.gamesList);
+  const gamesList = useSelector(
+    (state: ApplicationState) => state.gamesList.gamesList
+  );
 
   useEffect(() => {
     const filteredGameCard = gamesList
       ? gamesList.filter(
-          (game: any) => convertGameId(game.name, game.platform) === id
+          (game: GameCardInterface) =>
+            convertGameId(game.name, game.platform) === id
         )[0]
       : null;
     setGameCardInfo({ ...filteredGameCard });
@@ -158,7 +162,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </span>
               <ul className="game-card__values-list">
                 {otherPlatforms &&
-                  otherPlatforms.map((platformName: any) => (
+                  otherPlatforms.map((platformName: string) => (
                     <li key={platformName}>
                       <Link to={convertGameId(name, platformName)}>
                         <span>{platformName}</span>
@@ -194,7 +198,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span className="game-card__parameter-name">Variety: </span>
             <ul className="game-card__values-list">
               {variety &&
-                variety.map((varietyName: any) => (
+                variety.map((varietyName: string) => (
                   <li key={varietyName}>{varietyName}</li>
                 ))}
             </ul>
@@ -283,7 +287,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <li>
               <span className="game-card__parameter-name">Music: </span>
               <ul className="game-card__values-list">
-                {music.map((item: any) => (
+                {music.map((item: string) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -297,7 +301,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <li>
               <span className="game-card__parameter-name">Gore: </span>
               <ul className="game-card__values-list">
-                {gore.map((item: any) => (
+                {gore.map((item: string) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -323,7 +327,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span className="game-card__parameter-name">Weapons: </span>
             <ul className="game-card__values-list">
               {weapons &&
-                weapons.map((weapon: any) => <li key={weapon}>{weapon}</li>)}
+                weapons.map((weapon: string) => <li key={weapon}>{weapon}</li>)}
             </ul>
           </li>
           {/* <li>
@@ -363,7 +367,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
       {images ? (
         <div className="game-card__screenshots">
           <Slider>
-            {images.map((image: any) => (
+            {images.map((image: string) => (
               <div key={image}>
                 <img src={image} alt="game screenshot" />
               </div>
@@ -374,7 +378,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
       {videos && videos.length > 0 ? (
         <div className="game-card__videos">
           <Slider>
-            {videos.map((video: any) => (
+            {videos.map((video: string) => (
               <div key={video}>
                 {/* iframes must have unique title */}
                 <iframe

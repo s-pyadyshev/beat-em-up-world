@@ -9,18 +9,21 @@ import {
   FILTER_BY_NAME,
 } from "./constants";
 import { Games } from "../../services/api";
+import { ApplicationState } from "../../interfaces/ApplicationState";
+import { GameCardInterface } from "../../interfaces/GameCard";
+
 import store from "../../store";
 
 export const getGamesRequest = () => ({
   type: GET_GAMES_REQUEST,
 });
 
-export const getGamesSuccess = (gamesList: any) => ({
+export const getGamesSuccess = (gamesList: ApplicationState) => ({
   type: GET_GAMES_SUCCESS,
   gamesList,
 });
 
-export const getGamesError = (error: any) => ({
+export const getGamesError = (error: string) => ({
   type: GET_GAMES_ERROR,
   error,
 });
@@ -35,17 +38,17 @@ export const getGames = () => {
     .catch((error) => store.dispatch(getGamesError(error)));
 };
 
-export const getGameCardRequest = (id: any) => ({
+export const getGameCardRequest = (id: String) => ({
   type: GET_GAME_CARD_REQUEST,
   id,
 });
 
-export const getGameCardSuccess = (gameCardProps: any) => ({
+export const getGameCardSuccess = (gameCardDetails: GameCardInterface) => ({
   type: GET_GAME_CARD_SUCCESS,
-  gameCardProps,
+  gameCardDetails,
 });
 
-export const filterGames = (filterName: any, option: any) => ({
+export const filterGames = (filterName: String, option: any) => ({
   type: FILTER_GAMES,
   filterName,
   option,
@@ -56,7 +59,7 @@ export const filterByLetter = (letter: String) => ({
   letter,
 });
 
-export const filterByName = (input: any) => ({
+export const filterByName = (input: String | Number) => ({
   type: FILTER_BY_NAME,
   input,
 });

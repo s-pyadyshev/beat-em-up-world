@@ -2,13 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 import GamesListItem from "../GameListItem";
 import Loading from "../Loading";
+import { ApplicationState } from "../../interfaces/ApplicationState";
+import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const GamesList = () => {
   const filteredGamesList = useSelector(
-    (state: any) => state.gamesList.filteredGames
+    (state: ApplicationState) => state.gamesList.filteredGames
   );
-  const loading = useSelector((state: any) => state.gamesList.loading);
+  const loading = useSelector(
+    (state: ApplicationState) => state.gamesList.loading
+  );
 
   return (
     <ul className="gameslist">
@@ -18,7 +22,7 @@ const GamesList = () => {
       ) : null}
 
       {filteredGamesList &&
-        filteredGamesList.map((game: any) => (
+        filteredGamesList.map((game: GameCardInterface) => (
           <React.Fragment key={game.name + game.platform}>
             {game.missing ? (
               <li className="missing">

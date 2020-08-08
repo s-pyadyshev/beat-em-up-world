@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { convertGameId } from "../../utils/convertGameId";
+import { ApplicationState } from "../../interfaces/ApplicationState";
+import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const TodayGame: React.SFC = () => {
-  const gamesList = useSelector((state: any) => state.gamesList.gamesList);
+  const gamesList = useSelector(
+    (state: ApplicationState) => state.gamesList.gamesList
+  );
   const [todayGameId, setTodayGameId] = useState("");
   const [todayGameName, setTodayGameName] = useState(false);
 
@@ -18,7 +22,8 @@ const TodayGame: React.SFC = () => {
 
     if (gamesList) {
       const getTodayGame = gamesList.filter(
-        (game: any) => todayDate === gamesList && game.releasedate.slice(0, -5)
+        (game: GameCardInterface) =>
+          todayDate === gamesList && game.releasedate.slice(0, -5)
       )[0];
 
       if (getTodayGame !== undefined) {

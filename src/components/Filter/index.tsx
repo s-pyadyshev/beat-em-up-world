@@ -8,15 +8,23 @@ import {
   showLessFilters,
   toggleFiltersAll,
 } from "../../store/filters/actions";
+import { ApplicationState } from "../../interfaces/ApplicationState";
+import { FilterInterface } from "../../interfaces/Filter";
 
 import "./style.scss";
 import store from "../../store";
 
 const Filter = () => {
   const [visible, setVisibility] = useState(false);
-  const loading = useSelector((state: any) => state.gamesList.loading);
-  const filters = useSelector((state: any) => state.filters.filtersToggled);
-  const basicView = useSelector((state: any) => state.filters.basicView);
+  const loading = useSelector(
+    (state: ApplicationState) => state.gamesList.loading
+  );
+  const filters = useSelector(
+    (state: ApplicationState) => state.filters.filtersToggled
+  );
+  const basicView = useSelector(
+    (state: ApplicationState) => state.filters.basicView
+  );
 
   useEffect(() => {
     getFilters();
@@ -46,7 +54,7 @@ const Filter = () => {
         <ul className="filter-list">
           {loading ? <Loading /> : null}
           {filters &&
-            filters.map((filter: any) => (
+            filters.map((filter: FilterInterface) => (
               <li key={filter.name}>
                 <Select
                   filterName={filter.filterName}
