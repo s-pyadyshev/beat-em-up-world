@@ -13,8 +13,9 @@ Scss, stylelint, prettier<br>
 
 Tasks<br>
 
-- Refactoring: best practices, TypeScript
-- Add Travis CI / Github Actions?
+- Refactoring: best practices
+- Add redux-persist
+- Add reverse list view?, list with screenshots in slider + pagination
 - Add SSR?
 - Change playtime select to range?
 - Add dark/light theme (change on system settings)

@@ -49,7 +49,6 @@ const Filter = () => {
           {!visible ? <span>Show filter</span> : <span>Hide filter</span>}
         </button>
       </div>
-
       <div className="filter">
         <ul className="filter-list">
           {loading ? <Loading /> : null}
@@ -67,9 +66,13 @@ const Filter = () => {
         </ul>
 
         {basicView ? (
-          <Button onClick={showMore}>Show more filters</Button>
+          <div className="filter__show-more-btn">
+            <Button onClick={showMore}>Show more filters</Button>
+          </div>
         ) : (
-          <Button onClick={showLess}>Show less filters</Button>
+          <div className="filter__show-more-btn">
+            <Button onClick={showLess}>Show less filters</Button>
+          </div>
         )}
       </div>
     </div>

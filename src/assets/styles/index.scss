@@ -47,7 +47,7 @@ ul {
 
 a {
   color: $color-white;
-  transition-duration: 0.2s;
+  transition-duration: $transition-duration;
   transition-property: color;
 
   &:visited {
@@ -57,7 +57,7 @@ a {
   &:focus,
   &:hover {
     color: $link-color-hover;
-    transition-duration: 0.2s;
+    transition-duration: $transition-duration;
     transition-property: color;
   }
 
@@ -81,7 +81,12 @@ img {
 }
 
 button {
+  font-family: inherit;
+  line-height: inherit;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
+  appearance: none;
 }
 
 select {
