@@ -4,7 +4,7 @@ import { GameCardInterface } from "../../interfaces/GameCard";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import "./style.scss";
 
-const Stats: React.SFC = () => {
+const Stats: React.FC = () => {
   const total = useSelector(
     (state: ApplicationState) =>
       state.gamesList.gamesList && state.gamesList.gamesList.length
@@ -22,17 +22,19 @@ const Stats: React.SFC = () => {
   );
 
   return (
-    <div>
-      <div>
-        <b>Total:</b> {total}
+    <div className="stats">
+      <div className="stats__item">
+        <span className="stats__key">Total:</span>&nbsp;
+        <span className="stats__value state-info-color">{total}</span>
       </div>
-      <div>
-        <b>Missing:</b> {missing}
+      <div className="stats__item">
+        <span className="stats__key">Missing:</span>&nbsp;
+        <span className="stats__value state-error-color">{missing}</span>
       </div>
-      <div>
-        <b>Found:</b> {found}
+      <div className="stats__item">
+        <span className="stats__key">Found:</span>&nbsp;
+        <span className="stats__value state-active-color">{found}</span>
       </div>
-      <br />
     </div>
   );
 };

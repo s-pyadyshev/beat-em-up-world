@@ -34,6 +34,12 @@ const App: React.FC = () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Beat'em Up World</title>
+          <link
+            rel="icon"
+            type="image/png"
+            href="favicon1-16x16"
+            sizes="16x16"
+          />
         </Helmet>
         <Header />
         <div className="app__body">

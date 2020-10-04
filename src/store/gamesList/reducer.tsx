@@ -9,11 +9,13 @@ import {
   FILTER_GAMES,
   FILTER_BY_LETTER,
   FILTER_BY_NAME,
+  RESET_FILTER,
 } from "./constants";
 
 const arrayOptions = ["music", "weapons", "variety", "gore"];
+const initialState = { activeLetter: "", isFiltered: false };
 
-export const gamesList = (state: any = [], action: any) => {
+export const gamesList = (state: any = initialState, action: any) => {
   let filterOptions = { ...state.filterOptions };
 
   switch (action.type) {
@@ -86,6 +88,8 @@ export const gamesList = (state: any = [], action: any) => {
         filteredGames: state.gamesList.filter(
           (game: any) => game.name.toLowerCase()[0] === action.letter
         ),
+        isFiltered: true,
+        activeLetter: action.letter,
       };
     case FILTER_BY_NAME:
       return {
@@ -93,6 +97,13 @@ export const gamesList = (state: any = [], action: any) => {
         filteredGames: state.gamesList.filter((game: any) =>
           game.name.toLowerCase().includes(action.input.toLowerCase())
         ),
+      };
+    case RESET_FILTER:
+      return {
+        ...state,
+        filteredGames: state.gamesList,
+        isFiltered: false,
+        activeLetter: "",
       };
     default:
       return state;

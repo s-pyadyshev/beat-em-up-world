@@ -1,5 +1,4 @@
 import React from "react";
-// import BingoProps from "../../types/BingoProps";
 import { BingoInterface } from "../../interfaces/Bingo";
 import "./style.scss";
 

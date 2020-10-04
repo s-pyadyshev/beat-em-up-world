@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
 
-const SecretPage: React.SFC = () => {
+const SecretPage: React.FC = () => {
   const [data, setData] = useState("");
   const githubUser = "https://api.github.com/users/s-pyadyshev";
 

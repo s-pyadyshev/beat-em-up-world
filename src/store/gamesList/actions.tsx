@@ -7,6 +7,7 @@ import {
   FILTER_GAMES,
   FILTER_BY_LETTER,
   FILTER_BY_NAME,
+  RESET_FILTER,
 } from "./constants";
 import { Games } from "../../services/api";
 import { ApplicationState } from "../../interfaces/ApplicationState";
@@ -62,4 +63,8 @@ export const filterByLetter = (letter: String) => ({
 export const filterByName = (input: String | Number) => ({
   type: FILTER_BY_NAME,
   input,
+});
+
+export const resetFilter = () => ({
+  type: RESET_FILTER,
 });

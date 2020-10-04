@@ -3,8 +3,8 @@ import { filterByName } from "../../store/gamesList/actions";
 import store from "../../store";
 import "./style.scss";
 
-// TODO debounce
-const Search: React.SFC = () => {
+// TODO debounce/throttle
+const Search: React.FC = () => {
   const SearchRef = useRef<HTMLInputElement>(null);
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {

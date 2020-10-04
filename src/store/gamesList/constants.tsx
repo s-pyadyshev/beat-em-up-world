@@ -7,6 +7,7 @@ export const GET_GAME_CARD_ERROR = "GET_GAME_CARD_REQUEST";
 export const FILTER_GAMES = "FILTER_GAMES";
 export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_NAME = "FILTER_BY_NAME";
+export const RESET_FILTER = "RESET_FILTER";
 
 export default {
   GET_GAMES_REQUEST,
@@ -18,4 +19,5 @@ export default {
   FILTER_GAMES,
   FILTER_BY_LETTER,
   FILTER_BY_NAME,
+  RESET_FILTER,
 };

@@ -7,6 +7,7 @@ const AboutPage = () => (
     <Helmet>
       <meta charSet="utf-8" />
       <title>About</title>
+      <link rel="icon" type="image/png" href="favicon2.png" sizes="16x16" />
     </Helmet>
     <h2>What is the purpose of this site?</h2>
     <p>

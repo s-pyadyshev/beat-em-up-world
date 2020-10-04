@@ -1,9 +1,10 @@
 .app {
   &__body {
     display: flex;
+    flex-wrap: wrap;
 
-    @media (max-width: 767px) {
-      flex-wrap: wrap;
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
     }
   }
 }

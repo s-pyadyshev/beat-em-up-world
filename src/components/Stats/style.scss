@@ -1,3 +1,31 @@
+@import "./../../assets/styles/variables";
+@import "./../../assets/styles/helpers";
+
 .stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
   word-break: break-all;
+
+  &__item {
+    flex-basis: calc(100% / 3);
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &__key {
+    font-family: $font-family-secondary;
+  }
+
+  &__value {
+    display: inline-block;
+    min-width: 32px;
+    font-weight: 700;
+  }
 }

@@ -1,0 +1,13 @@
+@import "variables";
+
+.state-active-color {
+  color: $link-color-active;
+}
+
+.state-info-color {
+  color: $color-info;
+}
+
+.state-error-color {
+  color: $color-red;
+}

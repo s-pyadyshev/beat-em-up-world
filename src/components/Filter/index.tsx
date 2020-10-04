@@ -8,6 +8,7 @@ import {
   showLessFilters,
   toggleFiltersAll,
 } from "../../store/filters/actions";
+import { resetFilter } from "../../store/gamesList/actions";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
 
@@ -25,6 +26,9 @@ const Filter = () => {
   const basicView = useSelector(
     (state: ApplicationState) => state.filters.basicView
   );
+  const isFiltered = useSelector(
+    (state: ApplicationState) => state.gamesList.isFiltered
+  );
 
   useEffect(() => {
     getFilters();
@@ -40,6 +44,10 @@ const Filter = () => {
 
   const showLess = () => {
     store.dispatch(showLessFilters());
+  };
+
+  const onResetFilter = () => {
+    store.dispatch(resetFilter());
   };
 
   return (
@@ -74,6 +82,7 @@ const Filter = () => {
             <Button onClick={showLess}>Show less filters</Button>
           </div>
         )}
+        {isFiltered ? <Button onClick={onResetFilter}>Reset</Button> : null}
       </div>
     </div>
   );

@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { filterByLetter } from "../../store/gamesList/actions";
 import store from "../../store";
 import "./style.scss";
+import { useSelector } from "react-redux";
+import { ApplicationState } from "../../interfaces/ApplicationState";
 
-const AlphabetSorter: React.SFC = () => {
-  const [activeLetter, setActiveLetter] = useState("");
+const AlphabetSorter: React.FC = () => {
+  const activeLetter = useSelector(
+    (state: ApplicationState) => state.gamesList.activeLetter
+  );
+
   const alphabet = [
     "a",
     "b",
@@ -38,7 +43,6 @@ const AlphabetSorter: React.SFC = () => {
   const handleClickLetter = (event: any) => {
     const letter = event.target.getAttribute("data-letter");
     store.dispatch(filterByLetter(letter));
-    setActiveLetter(letter);
   };
 
   return (

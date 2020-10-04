@@ -39,7 +39,12 @@ interface FiltersActionInteface {
   loading: Boolean;
 }
 
-export const filters = (state: any = {}, action: FiltersActionInteface) => {
+const initialState = {};
+
+export const filters = (
+  state: any = initialState,
+  action: FiltersActionInteface
+) => {
   switch (action.type) {
     case GET_FILTERS_REQUEST:
       return {
@@ -83,6 +88,7 @@ export const filters = (state: any = {}, action: FiltersActionInteface) => {
         ),
         basicView: true,
       };
+
     default:
       return state;
   }

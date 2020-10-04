@@ -6,7 +6,7 @@ import { ApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
-const TodayGame: React.SFC = () => {
+const TodayGame: React.FC = () => {
   const gamesList = useSelector(
     (state: ApplicationState) => state.gamesList.gamesList
   );

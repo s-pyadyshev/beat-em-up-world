@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const AuthPage: React.SFC = () => {
+const AuthPage: React.FC = () => {
   return (
     <form>
       <label>
