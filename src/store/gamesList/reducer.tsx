@@ -81,6 +81,7 @@ export const gamesList = (state: any = initialState, action: any) => {
         ...state,
         filterOptions,
         filteredGames: filter(state.gamesList, filterOptions),
+        isFiltered: true,
       };
     case FILTER_BY_LETTER:
       return {
