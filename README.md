@@ -29,7 +29,15 @@ Tasks<br>
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
   - Missing covers: The Gladiator
 
+Bugs<br>
+
+- DIN-condensed font line-heigh issue on MacOS.<br>
+
 CHANGE LOG (monthly summary):<br>
+
+- 0.5
+
+  - Added Stats (total, missing, found), progress bar
 
 - 0.5
 

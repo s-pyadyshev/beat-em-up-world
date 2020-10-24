@@ -13,29 +13,26 @@ const TodayGame: React.FC = () => {
   const [todayGameId, setTodayGameId] = useState("");
   const [todayGameName, setTodayGameName] = useState(false);
 
+  const todayDate =
+    new Date().getUTCDate().toString() + "." + (new Date().getUTCMonth() + 1);
+
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
-    // TODO - new Date returns wrong date?
     // Refactor in case of Today games > 1
-    const todayDate =
-      new Date().getDay().toString() + "." + new Date().getMonth();
 
-    if (gamesList) {
-      const getTodayGame = gamesList.filter(
-        (game: GameCardInterface) =>
-          todayDate === gamesList && game.releasedate.slice(0, -5)
-      )[0];
+    const todayGameData = gamesList.filter(
+      (game: GameCardInterface) => game.releasedate === todayDate
+    )[0];
 
-      if (getTodayGame !== undefined) {
-        const todayGameId = convertGameId(
-          getTodayGame.name,
-          getTodayGame.platform
-        );
-        setTodayGameId(todayGameId);
-        setTodayGameName(getTodayGame.name);
-      }
+    if (todayGameData !== undefined) {
+      const todayGameId = convertGameId(
+        todayGameData.name,
+        todayGameData.platform
+      );
+      setTodayGameId(todayGameId);
+      setTodayGameName(todayGameData.name);
     }
-  }, [gamesList, todayGameName, todayGameId]);
+  }, [gamesList]);
 
   return (
     <div className="today-game">

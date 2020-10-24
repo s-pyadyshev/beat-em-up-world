@@ -13,7 +13,14 @@ import {
 } from "./constants";
 
 const arrayOptions = ["music", "weapons", "variety", "gore"];
-const initialState = { activeLetter: "", isFiltered: false };
+const initialState = {
+  activeLetter: "",
+  isFiltered: false,
+  loading: false,
+  error: null,
+  gamesList: [],
+  filteredGames: [],
+};
 
 export const gamesList = (state: any = initialState, action: any) => {
   let filterOptions = { ...state.filterOptions };
@@ -84,25 +91,52 @@ export const gamesList = (state: any = initialState, action: any) => {
         isFiltered: true,
       };
     case FILTER_BY_LETTER:
+      let filteredGamesByFirstLetter;
+
+      if (action.letter === "0-?") {
+        const notAlphabetLetters = [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "!",
+          "?",
+        ];
+
+        filteredGamesByFirstLetter = state.gamesList.filter((game: any) =>
+          notAlphabetLetters.includes(game.name.toLowerCase()[0])
+        );
+      } else {
+        filteredGamesByFirstLetter = state.gamesList.filter(
+          (game: any) => game.name.toLowerCase()[0] === action.letter
+        );
+      }
+
       return {
         ...state,
-        filteredGames: state.gamesList.filter(
-          (game: any) => game.name.toLowerCase()[0] === action.letter
-        ),
+        filteredGames: filteredGamesByFirstLetter,
         isFiltered: true,
         activeLetter: action.letter,
       };
     case FILTER_BY_NAME:
+      const filteredGamesByName = state.gamesList.filter((game: any) =>
+        game.name.toLowerCase().includes(action.input.toLowerCase())
+      );
       return {
         ...state,
-        filteredGames: state.gamesList.filter((game: any) =>
-          game.name.toLowerCase().includes(action.input.toLowerCase())
-        ),
+        filteredGames: filteredGamesByName,
       };
     case RESET_FILTER:
       return {
         ...state,
         filteredGames: state.gamesList,
+        filterOptions: "",
         isFiltered: false,
         activeLetter: "",
       };

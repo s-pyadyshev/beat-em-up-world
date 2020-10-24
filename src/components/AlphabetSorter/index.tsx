@@ -11,6 +11,7 @@ const AlphabetSorter: React.FC = () => {
   );
 
   const alphabet = [
+    "0-?",
     "a",
     "b",
     "c",
