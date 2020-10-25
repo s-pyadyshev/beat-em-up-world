@@ -3,6 +3,7 @@
 
 .stats {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   font-size: 18px;
   word-break: break-all;
@@ -10,7 +11,7 @@
   &__item {
     flex-basis: calc(100% / 3);
 
-    &:nth-child(2) {
+    &:nth-child(3) {
       text-align: center;
     }
 
@@ -21,6 +22,20 @@
 
   &__key {
     font-family: $font-family-secondary;
+  }
+
+  &__progress {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    progress {
+      flex-shrink: 0;
+    }
   }
 
   &__value {

@@ -5,15 +5,15 @@ import "./style.scss";
 
 // TODO debounce/throttle
 const Search: React.FC = () => {
-  const SearchRef = useRef<HTMLInputElement>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     store.dispatch(filterByName(event.target.value));
   };
 
   useEffect(() => {
-    if (SearchRef.current !== null) {
-      SearchRef.current.focus();
+    if (searchRef.current !== null) {
+      searchRef.current.focus();
     }
   }, []);
 
@@ -22,7 +22,7 @@ const Search: React.FC = () => {
       type="search"
       placeholder="Type game name here..."
       onChange={handleInput}
-      ref={SearchRef}
+      ref={searchRef}
       className="input"
     />
   );

@@ -7,51 +7,61 @@ import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
 
 const TodayGame: React.FC = () => {
+  const isLoading = useSelector((state: any) => state.gamesList.loading);
   const gamesList = useSelector(
     (state: ApplicationState) => state.gamesList.gamesList
   );
   const [todayGameId, setTodayGameId] = useState("");
-  const [todayGameName, setTodayGameName] = useState(false);
+  const [todayGameCover, setTodayGameCover] = useState("");
+  const [todayGameName, setTodayGameName] = useState("");
+
+  const todayDate =
+    new Date().getUTCDate().toString() + "." + (new Date().getUTCMonth() + 1);
 
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
-    // TODO - new Date returns wrong date?
     // Refactor in case of Today games > 1
-    const todayDate =
-      new Date().getDay().toString() + "." + new Date().getMonth();
 
-    if (gamesList) {
-      const getTodayGame = gamesList.filter(
-        (game: GameCardInterface) =>
-          todayDate === gamesList && game.releasedate.slice(0, -5)
-      )[0];
+    const todayGameData = gamesList.filter(
+      (game: GameCardInterface) =>
+        gamesList && game.releasedate.slice(0, -5) === todayDate
+    )[0];
 
-      if (getTodayGame !== undefined) {
-        const todayGameId = convertGameId(
-          getTodayGame.name,
-          getTodayGame.platform
-        );
-        setTodayGameId(todayGameId);
-        setTodayGameName(getTodayGame.name);
-      }
+    if (todayGameData !== undefined) {
+      const todayGameId = convertGameId(
+        todayGameData.name,
+        todayGameData.platform
+      );
+      setTodayGameId(todayGameId);
+      setTodayGameName(todayGameData.name);
+      setTodayGameCover(todayGameData.cover);
     }
-  }, [gamesList, todayGameName, todayGameId]);
+  }, [gamesList]);
 
   return (
-    <div className="today-game">
-      {todayGameName ? (
-        <>
-          <span>
-            On this day&nbsp;
-            <Link to={gamesList && todayGameId}>{todayGameName}</Link>
-            &nbsp;was released!
-          </span>
-          &nbsp;Try it now!
-        </>
+    <>
+      {isLoading ? (
+        "Loading..."
       ) : (
-        "Nothing was released on this day, come back the next day!"
+        <div className="today-game">
+          {todayGameName ? (
+            <>
+              <img src={todayGameCover} alt="today game cover" />
+              <div className="today-game__info">
+                On this day&nbsp; <br />
+                <Link to={gamesList && todayGameId}>{todayGameName}</Link>
+                <br />
+                &nbsp;was released!
+                <br />
+                Try it now!
+              </div>
+            </>
+          ) : (
+            "Nothing was released on this day, come back the next day!"
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

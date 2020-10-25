@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 const SecretPage: React.FC = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState<any>();
   const githubUser = "https://api.github.com/users/s-pyadyshev";
 
   useEffect(() => {
@@ -17,11 +17,11 @@ const SecretPage: React.FC = () => {
     // setData(response);
 
     fetch(githubUser)
-      .then((res) => res)
-      .then((data) => console.log(data));
-  }, [data]);
+      .then((res) => res.json())
+      .then((json) => setData(json));
+  }, []);
 
-  return <div>{data}</div>;
+  return <div>{data && data.blog}</div>;
 };
 
 export default SecretPage;

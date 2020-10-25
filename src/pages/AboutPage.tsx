@@ -18,7 +18,7 @@ const AboutPage = () => (
         rel="noopener noreferrer"
       >
         PunchPedia
-      </a>{" "}
+      </a>
       and it is approved by its creator. The most crucial feature PunchPedia
       lacks is a complete filter by game parameters (you can filter by platform,
       players, difficulty, length, name) and it was the main reason why I wanted
@@ -122,9 +122,9 @@ const AboutPage = () => (
     <h2>Why should we care about beat&apos;em ups?</h2>
     <p>
       It is one of video game genres that fits the nature of every living being
-      - competition, fight for resources, a place under the Sun. The
-      fight/confrontation is a part of our life, we are programmed to punch and
-      kick and get satisfaction from it. And throw others through wooden boxes.
+      - competition, fight for resources. The fight/confrontation is a part of
+      our life, we are programmed to punch and kick and get satisfaction from
+      it. And throw others on wooden boxes.
     </p>
     <h2>How can I help?</h2>
     <p>
