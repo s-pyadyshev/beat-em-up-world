@@ -27,7 +27,7 @@ const LinksPage = () => (
         >
           Beat&apos;em ups on Wikipedia
         </a>
-        ,&nbsp;
+        <br />
         <a
           href="https://en.wikipedia.org/wiki/Category:Beat_%27em_ups"
           target="_blank"
