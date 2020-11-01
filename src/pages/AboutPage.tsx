@@ -19,10 +19,7 @@ const AboutPage = () => (
       >
         PunchPedia
       </a>
-      and it is approved by its creator. The most crucial feature PunchPedia
-      lacks is a complete filter by game parameters (you can filter by platform,
-      players, difficulty, length, name) and it was the main reason why I wanted
-      to create this site - to add this feature.
+      &nbsp;and it is approved by its creator.
       <br />
       Everything now has it&apos;s own wikia (fandom) page but there is now such
       place for beat&apos;em ups. Even one small game has it&apos;s own wikia
