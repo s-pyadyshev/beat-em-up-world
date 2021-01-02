@@ -90,7 +90,7 @@ export const gamesList = (state: any = initialState, action: any) => {
         filteredGames: filter(state.gamesList, filterOptions),
         isFiltered: true,
       };
-    case FILTER_BY_LETTER:
+    case FILTER_BY_LETTER: {
       let filteredGamesByFirstLetter;
 
       if (action.letter === "0-?") {
@@ -124,7 +124,8 @@ export const gamesList = (state: any = initialState, action: any) => {
         isFiltered: true,
         activeLetter: action.letter,
       };
-    case FILTER_BY_NAME:
+    }
+    case FILTER_BY_NAME: {
       const filteredGamesByName = state.gamesList.filter((game: any) =>
         game.name.toLowerCase().includes(action.input.toLowerCase())
       );
@@ -132,6 +133,7 @@ export const gamesList = (state: any = initialState, action: any) => {
         ...state,
         filteredGames: filteredGamesByName,
       };
+    }
     case RESET_FILTER:
       return {
         ...state,

@@ -11,11 +11,12 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
     ecmaFeatures: {
-      jsx: true, // Allows for the parsing of JSX
+      jsx: true,
     },
   },
   plugins: ["react", "@typescript-eslint", "prettier", "react-hooks"],
   rules: {
+    "prettier/prettier": "error",
     "no-console": "warn",
     "no-param-reassign": "warn",
     "prefer-rest-params": "off",
