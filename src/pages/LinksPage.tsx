@@ -137,6 +137,15 @@ const LinksPage = () => (
       </li>
       <li>
         <a
+          href="http://www.racketboy.com/retro/the-best-undiscovered-beat-em-ups"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          http://www.racketboy.com/retro/the-best-undiscovered-beat-em-ups
+        </a>
+      </li>
+      <li>
+        <a
           href="https://www.neogeokult.com/articles-us/beat-them-up-through-ages/"
           target="_blank"
           rel="noopener noreferrer"
@@ -160,6 +169,15 @@ const LinksPage = () => (
           rel="noopener noreferrer"
         >
           http://lunaticobscurity.blogspot.com/search/label/beat%20em%20up
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://itch.io/games/tag-beat-em-up"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://itch.io/games/tag-beat-em-up
         </a>
       </li>
     </ul>

@@ -4,41 +4,12 @@ import store from "../../store";
 import "./style.scss";
 import { useSelector } from "react-redux";
 import { ApplicationState } from "../../interfaces/ApplicationState";
+import { alphabetEn } from "../../constants/alphabet";
 
 const AlphabetSorter: React.FC = () => {
   const activeLetter = useSelector(
     (state: ApplicationState) => state.gamesList.activeLetter
   );
-
-  const alphabet = [
-    "0-?",
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
 
   // TODO React.ChangeEvent<HTMLButtonElement> - event type issue
   const handleClickLetter = (event: any) => {
@@ -48,7 +19,7 @@ const AlphabetSorter: React.FC = () => {
 
   return (
     <ul className="alphabet-sorter">
-      {alphabet.map((letter: string) => (
+      {alphabetEn.map((letter: string) => (
         <li key={letter}>
           {activeLetter === letter ? (
             <span className="alphabet-sorter__button is-active">

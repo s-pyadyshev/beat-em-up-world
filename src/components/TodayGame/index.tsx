@@ -27,7 +27,7 @@ const TodayGame: React.FC = () => {
         gamesList && game.releasedate.slice(0, -5) === todayDate
     )[0];
 
-    if (todayGameData !== undefined) {
+    if (todayGameData !== undefined && !todayGameData.missing) {
       const todayGameId = convertGameId(
         todayGameData.name,
         todayGameData.platform
