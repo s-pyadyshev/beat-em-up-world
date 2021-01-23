@@ -132,6 +132,7 @@ export const gamesList = (state: any = initialState, action: any) => {
       return {
         ...state,
         filteredGames: filteredGamesByName,
+        isFiltered: true,
       };
     }
     case RESET_FILTER:

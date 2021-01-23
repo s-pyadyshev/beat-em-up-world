@@ -22,11 +22,11 @@ const AboutPage = () => (
       &nbsp;and it is approved by its creator.
       <br />
       Everything now has it&apos;s own wikia (fandom) page but there is now such
-      place for beat&apos;em ups. Even one small game has it&apos;s own wikia
-      (e.g. Ballon Fight, 182 pages!). And every beat&apos;em up may have it as
-      well. So there is no reason to make it wikia-like (at least because no one
-      would care). 100% completed pages (fighters, enemies, stages, media) are
-      super cool but this detailed content better suits for wikias.
+      place for beat&apos;em ups. Even one small game has it&apos;s own wikia.
+      And every beat&apos;em up may have it as well. So there is no reason to
+      make it wikia-like (at least because no one would care). 100% completed
+      pages (fighters, enemies, stages, media) are super cool but this detailed
+      content better suits for wikias.
     </p>
     My aim is to practice Frontend stuff currently and it keeps me motivated to
     go on. It&apos;s much more interesting than another ToDo List, isn&apos;t
@@ -48,9 +48,11 @@ const AboutPage = () => (
     : backend as JSON, no cool domain name.
     <br />
     <p>
-      Punchpedia is truly the #1 place on the internet for all information
-      related to brawlers, so the aim of this site (the name sucks, you may
-      offer another one) is to make the beat'em ups list completed.
+      Another major reason - THERE IS NO complete list anywhere for this genre
+      and I like to make something useful which that wasn't made yet. Punchpedia
+      is truly the #1 place on the internet for all information related to
+      brawlers, so the aim of this site (the name sucks, you may offer another
+      one) is to make the beat'em ups list completed.
     </p>
     <h2>
       What is a true beat&apos;em up / brawler? Therefore which games should be
@@ -76,14 +78,15 @@ const AboutPage = () => (
     </p>
     - <strong>BEAT UP</strong> - Hand-to-hand and close combat FOCUS (with some
     exceptions for weapon based (Hack'n'slash) games)
-    <br />- <strong>THEM</strong> - Multiple opponents (at least more than 1)
+    <br />- <strong>THEM</strong> - Multiple opponents (at least more than 1),
+    that come in unavoidable waves mostly.
+    <br />- <strong>Combo Attack</strong> - because one punch is not enough for
+    a brawl.
     <br />- <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
     <br />
-    - Variety matters (grabs!). More moves means more realistic combat. Actually
-    variety can be applied to any genre. Just compare Nekketsu Kouha Kunio-kun
-    (1986) and Toxic Crusaders (1992). The latter is just one punch (one broom
-    hit) action which hardly can&apos;t be called a beat&apos;em up - more like
-    a 2.5D platformer.
+    - Variety matters (we need more grabs!). Actually variety can be applied to
+    any genre. Just compare Nekketsu Kouha Kunio-kun (1986) and Toxic Crusaders
+    (1992). The latter is just one punch (one broom hit) action.
     <br />
     <br />
     Let&apos;t take a look closer at examples:
@@ -104,25 +107,6 @@ const AboutPage = () => (
       only one stage and several sections to beat enemies).
     </p>
     <br />
-    <h2>So which games are beat&apos;em up posers?</h2>
-    <p>
-      Any with very simplistic and brain-dead combat: Toxic Crusaders, P.O.W.
-      Prisoners of War etc. Even TMNT 2 (NES) looks lame because of super simple
-      combat, only all other stuff (enemy variety, overall gameplay, music,
-      graphics) makes it nice. Even a little throw move added in TMNT 3 makes it
-      a bit closer to beat&apos;em ups (and amazing enemy variety totally
-      rocks). The Adventures of Bayou Billy has simple but intense combat, there
-      are some weapons, you can&apos;t throw enemies but bosses can grab or
-      throw you. The same story with Batman Returns (NES) etc. Okay, after a
-      deep breath I can consider P.O.W. a beat'em up but not Toxic Crusaders.
-    </p>
-    <h2>Why should we care about beat&apos;em ups?</h2>
-    <p>
-      It is one of video game genres that fits the nature of every living being
-      - competition, fight for resources. The fight/confrontation is a part of
-      our life, we are programmed to punch and kick and get satisfaction from
-      it. And throw others on wooden boxes.
-    </p>
     <h2>How can I help?</h2>
     <p>
       You may help fill information about missing games to PunchPedia. Just GO!
@@ -132,7 +116,7 @@ const AboutPage = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        beat-em-ups-api
+        beat-em-upi
       </a>
       &nbsp;and add missing games into
       <strong> db.json</strong> and new parameters into
