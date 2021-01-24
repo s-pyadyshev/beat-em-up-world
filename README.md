@@ -1,6 +1,6 @@
 <a href="https://beat-em-up-world.now.sh">https://beat-em-up-world.now.sh</a>
 <br>
-Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (Punchpedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
+Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (PunchPedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
 Stack:<br>
 React, Redux, react-router, create-react-app<br>
@@ -14,35 +14,35 @@ Scss, stylelint, prettier<br>
 Tasks<br>
 
 - Refactoring: best practices
-- Add redux-persist
-- Add reverse list view?, list with screenshots in slider + pagination
+- Add debounce for Search
+- Add redux-persist?
+- Add reverse list view?, list with screenshots in slider + pagination?
+- Add chart
 - Add SSR?
-- Change playtime select to range?
 - Add dark/light theme (change on system settings)
-- Add possibility to select multiple choice in one filter
+- Add possibility to select multiple choice in one filter?
 - Make gangsize param consistent?
-- Add "game of the day" and "random game" blocks
+- Add "random game" block
 - Add short questionnaire
-- Pagination or infinite scroll requires real backend to be implemented correctly
 - Fill otherPlatforms and series data in JSON (fix this params to be able to set different link for a game, e.g. Battletoads on GB is actually called Battletoads in Ragnarok's World)
 - Add more games to JSON:
+
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
   - Missing covers: The Gladiator
-
-Bugs<br>
-
-- DIN-condensed font line-heigh issue on MacOS.<br>
-
-CHANGE LOG (monthly summary):<br>
+  - Make backend
+    <br>
+    CHANGE LOG:<br>
 
 - 0.5
 
+  - Added debounce to Search
+  - Added Reset button
+  - Added TodayGame block
   - Added Stats (total, missing, found), progress bar
 
 - 0.5
 
   - Added Search, Alphabet sorter
-  - Added TodayGame component (WIP)
   - Added mixed genre parameter and state
   - Refactoring
 

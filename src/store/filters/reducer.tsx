@@ -10,7 +10,6 @@ import {
 const basicFilters = [
   "platform",
   "perspective",
-  "series",
   "players",
   "releaseYear",
   "multigenre",

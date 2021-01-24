@@ -20,6 +20,7 @@ import "./App.scss";
 setConfiguration({ containerWidths: [768, 960, 1140, 1400] });
 
 const About = lazy(() => import("./pages/AboutPage"));
+const Charts = lazy(() => import("./pages/ChartsPage"));
 const Links = lazy(() => import("./pages/LinksPage"));
 const SecretPage = lazy(() => import("./pages/SecretPage"));
 
@@ -75,6 +76,9 @@ const App: React.FC = () => {
                     </Route> */}
                     <Route path="/about">
                       <About />
+                    </Route>
+                    <Route path="/charts">
+                      <Charts />
                     </Route>
                     <Route path="/links">
                       <Links />
