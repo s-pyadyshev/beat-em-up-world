@@ -1,3 +1,4 @@
+// TODO Warning: Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterGames } from "../../store/gamesList/actions";

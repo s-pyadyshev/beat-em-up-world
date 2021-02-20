@@ -15,8 +15,7 @@ const TodayGame: React.FC = () => {
   const [todayGameCover, setTodayGameCover] = useState("");
   const [todayGameName, setTodayGameName] = useState("");
 
-  const todayDate =
-    new Date().getUTCDate().toString() + "." + (new Date().getUTCMonth() + 1);
+  const todayDate = new Date().toISOString().slice(5, 10);
 
   useEffect(() => {
     // TODO - api GET TODAY GAME ID
@@ -24,7 +23,7 @@ const TodayGame: React.FC = () => {
 
     const todayGameData = gamesList.filter(
       (game: GameCardInterface) =>
-        gamesList && game.releasedate.slice(0, -5) === todayDate
+        gamesList && game.releasedate.slice(5, 10) === todayDate
     )[0];
 
     if (todayGameData !== undefined && !todayGameData.missing) {
