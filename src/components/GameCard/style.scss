@@ -89,7 +89,8 @@
 
   &__parameter-name {
     display: inline-block;
-    min-width: 180px;
+    min-width: 50%;
+    padding-right: 16px;
     color: $color-info;
     font-family: "capture-it", serif;
     border-bottom: 1px solid $color-white;
@@ -97,9 +98,9 @@
     + span {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
       width: 100%;
-      text-align: right;
+      text-align: left;
       border-bottom: 1px solid $color-white;
     }
   }
@@ -127,11 +128,13 @@
   &__values-list {
     display: inline-flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
     border-bottom: 1px solid $color-white;
 
     > li {
+      display: inline-block;
+
       &:not(:last-child) {
         margin-right: 8px;
 

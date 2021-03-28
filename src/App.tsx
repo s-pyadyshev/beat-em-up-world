@@ -5,7 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 // import AboutPage from "./pages/AboutPage";
 // import AuthPage from "./pages/AuthPage";
-import ChartsPage from "./pages/ChartsPage";
+// import ChartsPage from "./pages/ChartsPage";
 // import LinksPage from "./pages/LinksPage";
 import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
@@ -78,9 +78,9 @@ const App: React.FC = () => {
                     <Route path="/about">
                       <About />
                     </Route>
-                    <Route path="/charts">
+                    {/* <Route path="/charts">
                       <ChartsPage />
-                    </Route>
+                    </Route> */}
                     <Route path="/links">
                       <Links />
                     </Route>

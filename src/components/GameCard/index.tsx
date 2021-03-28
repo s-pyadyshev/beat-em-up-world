@@ -199,7 +199,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <ul className="game-card__values-list">
               {variety &&
                 variety.map((varietyName: string) => (
-                  <li key={varietyName}>{varietyName}</li>
+                  <li key={varietyName}>
+                    <span>{varietyName}</span>
+                  </li>
                 ))}
             </ul>
           </li>
@@ -288,7 +290,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <span className="game-card__parameter-name">Music: </span>
               <ul className="game-card__values-list">
                 {music.map((item: string) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </li>
@@ -302,7 +306,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <span className="game-card__parameter-name">Gore: </span>
               <ul className="game-card__values-list">
                 {gore.map((item: string) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </li>
@@ -327,7 +333,11 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span className="game-card__parameter-name">Weapons: </span>
             <ul className="game-card__values-list">
               {weapons &&
-                weapons.map((weapon: string) => <li key={weapon}>{weapon}</li>)}
+                weapons.map((weapon: string) => (
+                  <li key={weapon}>
+                    <span>{weapon}</span>
+                  </li>
+                ))}
             </ul>
           </li>
           {/* <li>

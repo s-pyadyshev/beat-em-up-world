@@ -13,8 +13,9 @@ Scss, stylelint, prettier<br>
 
 Tasks<br>
 
+- Add CI
+- Replace icons to colored
 - Refactoring: best practices
-- Add debounce for Search
 - Add redux-persist?
 - Add reverse list view?, list with screenshots in slider + pagination?
 - Add chart
@@ -28,7 +29,6 @@ Tasks<br>
 - Add more games to JSON:
 
   - Missing overall reviews: Silent Dragon, TMNT (GEN), Vendetta, Spider-man and Venom (SNES), The Gladiator
-  - Missing covers: The Gladiator
   - Make backend
     <br>
     CHANGE LOG:<br>
