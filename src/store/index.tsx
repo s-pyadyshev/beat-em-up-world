@@ -5,12 +5,12 @@ import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { logger } from "./middleware";
 import { ApplicationState } from "../interfaces/ApplicationState";
 
-export const reducers: Reducer<ApplicationState> = combineReducers<
-  ApplicationState
->({
-  filters,
-  gamesList,
-});
+export const reducers: Reducer<ApplicationState> = combineReducers<ApplicationState>(
+  {
+    filters,
+    gamesList,
+  }
+);
 
 export const store = createStore(
   reducers,
