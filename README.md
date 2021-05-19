@@ -1,4 +1,4 @@
-<a href="https://beat-em-up-world.now.sh">https://beat-em-up-world.now.sh</a>
+<a href="https://beat-em-up-world.vercel.app">https://beat-em-up-world.vercel.app</a>
 <br>
 Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (PunchPedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
 
