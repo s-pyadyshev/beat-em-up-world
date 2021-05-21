@@ -3,10 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
-// import AboutPage from "./pages/AboutPage";
-// import AuthPage from "./pages/AuthPage";
 // import ChartsPage from "./pages/ChartsPage";
-// import LinksPage from "./pages/LinksPage";
 import GameCard from "./components/GameCard";
 import GameList from "./components/GameList";
 import Filter from "./components/Filter";
@@ -72,9 +69,6 @@ const App: React.FC = () => {
                       <AlphabetSorter />
                       <GameList />
                     </Route>
-                    {/* <Route path="/auth">
-                      <AuthPage />
-                    </Route> */}
                     <Route path="/about">
                       <About />
                     </Route>

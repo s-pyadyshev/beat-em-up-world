@@ -71,9 +71,6 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     enemies,
     bosses,
     weapons,
-    // lives,
-    // continues,
-    // extend,
     overallReview,
     cover,
     links,
@@ -162,10 +159,18 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </span>
               <ul className="game-card__values-list">
                 {otherPlatforms &&
-                  otherPlatforms.map((platformName: string) => (
-                    <li key={platformName}>
-                      <Link to={convertGameId(name, platformName)}>
-                        <span>{platformName}</span>
+                  otherPlatforms.map((game: any) => (
+                    <li key={game}>
+                      <Link
+                        to={
+                          typeof game === "string"
+                            ? convertGameId(name, game)
+                            : convertGameId(game.name, game.platform)
+                        }
+                      >
+                        <span>
+                          {typeof game === "string" ? game : game.platform}
+                        </span>
                       </Link>
                     </li>
                   ))}
@@ -340,18 +345,6 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 ))}
             </ul>
           </li>
-          {/* <li>
-          <span className="game-card__parameter-name">Lives: </span>
-          <span>{lives}</span>
-        </li> */}
-          {/* <li>
-          <span className="game-card__parameter-name">Continues: </span>
-          <span>{continues}</span>
-        </li> */}
-          {/* <li>
-          <span className="game-card__parameter-name">Extend: </span>
-          <span>{extend}</span>
-        </li> */}
           <li>
             <span className="game-card__parameter-name">
               Beat&apos;em Up Bingo:{" "}

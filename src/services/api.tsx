@@ -24,3 +24,25 @@ export const Filters = {
       .then(handleErrors)
       .then((res) => res.json()),
 };
+
+export default class ApiService {
+  getGames = async (URL: any) => {
+    const res = await fetch(URL);
+
+    if (!res.ok) {
+      throw new Error(`Could not fetch ${URL}` + `, received ${res.status}`);
+    }
+    return await res.json();
+  };
+
+  getFilters = async (URL_FILTERS: any) => {
+    const res = await fetch(URL_FILTERS);
+
+    if (!res.ok) {
+      throw new Error(
+        `Could not fetch ${URL_FILTERS}` + `, received ${res.status}`
+      );
+    }
+    return await res.json();
+  };
+}
