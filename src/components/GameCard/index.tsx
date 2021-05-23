@@ -87,6 +87,15 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     beatemupBingo &&
     Object.values(beatemupBingo).filter((value) => value === true).length;
 
+  const makeOtherPlatformLink = (name: string, game: any) => {
+    return typeof game === "string"
+      ? convertGameId(name, game)
+      : convertGameId(game.name, game.platform);
+  };
+
+  const makeOtherPlatformName = (game: any) =>
+    typeof game === "string" ? game : game.platform;
+
   // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
@@ -159,18 +168,10 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </span>
               <ul className="game-card__values-list">
                 {otherPlatforms &&
-                  otherPlatforms.map((game: any) => (
-                    <li key={game}>
-                      <Link
-                        to={
-                          typeof game === "string"
-                            ? convertGameId(name, game)
-                            : convertGameId(game.name, game.platform)
-                        }
-                      >
-                        <span>
-                          {typeof game === "string" ? game : game.platform}
-                        </span>
+                  otherPlatforms.map((game: any, index: number) => (
+                    <li key={game + index}>
+                      <Link to={makeOtherPlatformLink(name, game)}>
+                        <span>{makeOtherPlatformName(game)}</span>
                       </Link>
                     </li>
                   ))}
