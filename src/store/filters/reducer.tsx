@@ -11,6 +11,7 @@ const basicFilters = [
   "platform",
   "perspective",
   "players",
+  "country",
   "releaseYear",
   "multigenre",
   "difficulty",
@@ -20,9 +21,6 @@ const basicFilters = [
   "artStyle",
   "setting",
   "focus",
-  "music",
-  "gore",
-  "fighters",
 ];
 
 // interface FiltersStateInteface {
