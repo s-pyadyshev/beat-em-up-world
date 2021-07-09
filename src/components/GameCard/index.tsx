@@ -17,6 +17,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     (state: ApplicationState) => state.gamesList.gamesList
   );
 
+  const negativeValues = ["No"];
+  const hasFeature = (value: string) => negativeValues.includes(value);
+
   useEffect(() => {
     const filteredGameCard = gamesList
       ? gamesList.filter(
@@ -36,6 +39,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     trivia,
     developer,
     publisher,
+    releasedate,
     releaseYear,
     otherPlatforms,
     series,
@@ -147,15 +151,25 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </li>
           <li>
             <span className="game-card__parameter-name">Country: </span>
-            <span>{country}</span>
+            <span className={developer ? "" : "danger"}>
+              {country ? country : "danger"}
+            </span>
           </li>
           <li>
             <span className="game-card__parameter-name">Developer: </span>
-            <span>{developer}</span>
+            <span className={developer ? "" : "danger"}>
+              {developer ? developer : "danger"}
+            </span>
           </li>
           <li>
             <span className="game-card__parameter-name">Publisher: </span>
             <span>{publisher}</span>
+          </li>
+          <li>
+            <span className="game-card__parameter-name">Release Date: </span>
+            <span className={releasedate ? "" : "danger"}>
+              {releasedate ? releasedate : "danger"}
+            </span>
           </li>
           <li>
             <span className="game-card__parameter-name">Release Year: </span>
@@ -225,11 +239,15 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </li>
           <li>
             <span className="game-card__parameter-name">Grabs: </span>
-            <span>{grabs}</span>
+            <span className={hasFeature(grabs) ? "danger" : "success"}>
+              {grabs}
+            </span>
           </li>
           <li>
             <span className="game-card__parameter-name">Dashing: </span>
-            <span>{dashing}</span>
+            <span className={hasFeature(dashing) ? "danger" : "success"}>
+              {dashing}
+            </span>
           </li>
           <li>
             <span className="game-card__parameter-name">
@@ -258,14 +276,14 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span>{friendlyFire}</span>
           </li>
           <li>
-            <span className="game-card__parameter-name">
-              Character Switch:{" "}
-            </span>
+            <span className="game-card__parameter-name">Character Switch:</span>
             <span>{charSwitch}</span>
           </li>
           <li>
             <span className="game-card__parameter-name">Ground Hit: </span>
-            <span>{groundHit}</span>
+            <span className={hasFeature(groundHit) ? "danger" : "success"}>
+              {groundHit}
+            </span>
           </li>
           <li>
             <span className="game-card__parameter-name">Revive: </span>
@@ -307,7 +325,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span className="game-card__parameter-name">Tone: </span>
             <span>{tone}</span>
           </li>
-          {gore ? (
+          {gore && gore[0] !== null ? (
             <li>
               <span className="game-card__parameter-name">Gore: </span>
               <ul className="game-card__values-list">

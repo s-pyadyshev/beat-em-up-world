@@ -23,7 +23,7 @@ const TodayGame: React.FC = () => {
 
     const todayGameData = gamesList.filter(
       (game: GameCardInterface) =>
-        gamesList ?? game.releasedate.slice(5, 10) === todayDate
+        gamesList && game.releasedate.slice(5, 10) === todayDate
     )[0];
 
     if (todayGameData !== undefined && !todayGameData.missing) {
