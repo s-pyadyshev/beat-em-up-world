@@ -152,13 +152,13 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           <li>
             <span className="game-card__parameter-name">Country: </span>
             <span className={developer ? "" : "danger"}>
-              {country ? country : "danger"}
+              {country ? country : "no info"}
             </span>
           </li>
           <li>
             <span className="game-card__parameter-name">Developer: </span>
             <span className={developer ? "" : "danger"}>
-              {developer ? developer : "danger"}
+              {developer ? developer : "no info"}
             </span>
           </li>
           <li>
@@ -168,7 +168,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           <li>
             <span className="game-card__parameter-name">Release Date: </span>
             <span className={releasedate ? "" : "danger"}>
-              {releasedate ? releasedate : "danger"}
+              {releasedate ? releasedate : "no info"}
             </span>
           </li>
           <li>
