@@ -81,6 +81,7 @@
   }
 
   &__name {
+    margin-top: 24px;
     font-weight: 400;
     font-size: 2rem;
     font-family: "capture-it", serif;
@@ -147,4 +148,12 @@
       }
     }
   }
+}
+
+.success {
+  color: $color-state-success;
+}
+
+.danger {
+  color: $color-state-danger;
 }
