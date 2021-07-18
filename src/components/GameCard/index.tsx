@@ -373,7 +373,8 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <Tooltip
                 trigger="click"
                 placement="bottom"
-                tooltip={<Bingo {...beatemupBingo} />}
+                // TODO can't use spread due to build error
+                tooltip={<Bingo beatemupBingo={beatemupBingo} />}
               >
                 <span className="select__icon-info">
                   <svg>
