@@ -170,6 +170,7 @@
     "@types/react-router-dom": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-typescript": "^7.2.1",
     "eslint-config-import": "^0.13.0",
