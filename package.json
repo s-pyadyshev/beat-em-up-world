@@ -155,6 +155,9 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      "transform-class-properties"
     ]
   },
   "devDependencies": {
