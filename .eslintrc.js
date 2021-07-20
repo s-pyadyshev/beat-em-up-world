@@ -1,8 +1,8 @@
 module.exports = {
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  parser: "@typescript-eslint/parser",
   extends: [
-    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
-    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
@@ -64,7 +64,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: "detect",
     },
   },
 };

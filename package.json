@@ -154,8 +154,6 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-env",
-      "@babel/preset-typescript",
       "react-app"
     ]
   },

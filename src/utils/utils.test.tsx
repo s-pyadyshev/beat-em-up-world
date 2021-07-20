@@ -1,9 +1,13 @@
-// import { strict as assert } from "assert"; // assert by default is considered legacy
-import capitalize from "./capitalize";
-// import assert from "power-assert";
+import { capitalize, convertGameId } from "./utils";
 
-describe("Test Capitalize", () => {
+describe("Test capitalize", () => {
   test("First letter is capitalized", () => {
     expect(capitalize("hello")).toEqual("Hello");
+  });
+});
+
+describe("Test convertGameId", () => {
+  test("id is generated correctly", () => {
+    expect(convertGameId("Vamf x1/2", "Arcade")).toEqual("vamfx12-arcade");
   });
 });

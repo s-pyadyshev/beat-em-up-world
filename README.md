@@ -24,6 +24,7 @@ Scss, stylelint, prettier<br>
 - Make gangsize param consistent?
 - Add "random game" block
 - Add 404 page
+- Add RSS
 
 ## :hammer_and_wrench: Installation
 

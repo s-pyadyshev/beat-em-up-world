@@ -5,7 +5,7 @@ import Bingo from "../Bingo";
 import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
 import Comments from "../Comments";
-import { convertGameId } from "../../utils/convertGameId";
+import { convertGameId } from "../../utils/utils";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
@@ -182,13 +182,17 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </span>
               <ul className="game-card__values-list">
                 {otherPlatforms &&
-                  otherPlatforms.map((game: any, index: number) => (
-                    <li key={game + index}>
-                      <Link to={makeOtherPlatformLink(name, game)}>
-                        <span>{makeOtherPlatformName(game)}</span>
-                      </Link>
-                    </li>
-                  ))}
+                  otherPlatforms.map((game: any, index: number) => {
+                    const id = game + index;
+
+                    return (
+                      <li key={id}>
+                        <Link to={makeOtherPlatformLink(name, game)}>
+                          <span>{makeOtherPlatformName(game)}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
               </ul>
             </li>
           ) : null}

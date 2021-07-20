@@ -122,6 +122,21 @@ const AboutPage = () => (
       <strong> db.json</strong> and new parameters into
       <strong> filter.json</strong> as Pull Request.
     </p>
+    <p>
+      Thanks a lot to the following guys for recommendation of games and
+      feedback:
+    </p>
+    <ul>
+      <li>A National Acrobat (https://www.old-games.ru/)</li>
+      <li>Adol (http://www.emu-land.net)</li>
+      <li>Altron320 (http://www.emu-land.net)</li>
+      <li>Gelior (http://www.emu-land.net)</li>
+      <li>Lee Pai-Long (http://www.emu-land.net)</li>
+      <li>perfect_genius (http://www.emu-land.net)</li>
+      <li>Smoke_John (http://www.emu-land.net)</li>
+      <li>Street Fighter (http://www.emu-land.net)</li>
+      <li>varezhkin (http://www.emu-land.net)</li>
+    </ul>
   </article>
 );
 

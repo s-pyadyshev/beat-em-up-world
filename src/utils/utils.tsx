@@ -7,4 +7,5 @@ export const capitalize = (text: string) => {
   return `${firstSymbol}${restSubstring}`;
 };
 
-export default capitalize;
+export const convertGameId = (name: string, platform: string) =>
+  `${name}-${platform}`.replace(/[\s:&'./!?]/g, "").toLowerCase();

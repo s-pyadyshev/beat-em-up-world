@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { convertGameId } from "../../utils/convertGameId";
+import { convertGameId } from "../../utils/utils";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardInterface } from "../../interfaces/GameCard";
 import "./style.scss";
