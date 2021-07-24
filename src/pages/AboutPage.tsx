@@ -122,20 +122,48 @@ const AboutPage = () => (
       <strong> db.json</strong> and new parameters into
       <strong> filter.json</strong> as Pull Request.
     </p>
-    <p>
+    <h2>
       Thanks a lot to the following guys for recommendation of games and
       feedback:
+    </h2>
+    <p>
+      <a href="http://dronami.com" target="_blank" rel="noopener noreferrer">
+        http://dronami.com
+      </a>
     </p>
     <ul>
-      <li>A National Acrobat (https://www.old-games.ru/)</li>
-      <li>Adol (http://www.emu-land.net)</li>
-      <li>Altron320 (http://www.emu-land.net)</li>
-      <li>Gelior (http://www.emu-land.net)</li>
-      <li>Lee Pai-Long (http://www.emu-land.net)</li>
-      <li>perfect_genius (http://www.emu-land.net)</li>
-      <li>Smoke_John (http://www.emu-land.net)</li>
-      <li>Street Fighter (http://www.emu-land.net)</li>
-      <li>varezhkin (http://www.emu-land.net)</li>
+      <li>Dronami, creator of PunchPedia</li>
+    </ul>
+    <p>
+      <a
+        href="http://www.emu-land.net"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        http://www.emu-land.net
+      </a>
+    </p>
+    <ul>
+      <li>Adol</li>
+      <li>Altron320</li>
+      <li>Gelior</li>
+      <li>Lee Pai-Long</li>
+      <li>perfect_genius</li>
+      <li>Smoke_John</li>
+      <li>Street Fighter</li>
+      <li>varezhkin</li>
+    </ul>
+    <p>
+      <a
+        href="https://www.old-games.ru"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://www.old-games.ru
+      </a>
+    </p>
+    <ul>
+      <li>A National Acrobat</li>
     </ul>
   </article>
 );

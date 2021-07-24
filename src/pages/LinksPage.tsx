@@ -27,7 +27,8 @@ const LinksPage = () => (
         >
           Beat&apos;em ups on Wikipedia
         </a>
-        <br />
+      </li>
+      <li>
         <a
           href="https://en.wikipedia.org/wiki/Category:Beat_%27em_ups"
           target="_blank"
@@ -79,6 +80,15 @@ const LinksPage = () => (
           rel="noopener noreferrer"
         >
           Beat&apos;em ups on Awesome Games Wiki
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://fighters-database.fandom.com/wiki/List_of_Beat_%27em_up_games"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://fighters-database.fandom.com/wiki/List_of_Beat_%27em_up_games
         </a>
       </li>
       <li>

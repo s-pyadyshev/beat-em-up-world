@@ -8,6 +8,7 @@
 - Added TodayGame block
 - Added Stats (total, missing, found), progress bar
 - Added debounce to Search
+- Added CI (build passed)
 
 # [0.5]
 

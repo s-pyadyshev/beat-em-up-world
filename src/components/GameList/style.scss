@@ -2,6 +2,8 @@
 @import "./../../assets/styles/media";
 
 .gameslist {
+  list-style-type: none;
+
   @include tablet {
     column-count: 2;
     column-gap: 32px;
