@@ -19,3 +19,12 @@
 .swiper-pagination-bullet-active {
   background: rgb(0, 122, 255);
 }
+
+.swiper-pagination-bullet:only-child {
+  visibility: hidden;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  display: none;
+}
