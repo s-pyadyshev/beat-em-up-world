@@ -86,6 +86,11 @@ const App: React.FC = () => {
                         </Col>
                       </Row>
                       <AlphabetSorter />
+                      <div style={{ marginBottom: 24 }}>
+                        <b style={{ color: "yellow" }}>Yellow color</b> - a game
+                        with partial beat'em up gameplay. Good choice to vary
+                        face punching routine.
+                      </div>
                       <GameList />
                     </Route>
                     <Route path="/about">

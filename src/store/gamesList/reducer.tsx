@@ -9,6 +9,7 @@ import {
   FILTER_GAMES,
   FILTER_BY_LETTER,
   FILTER_BY_NAME,
+  FILTER_BY_VALUE,
   RESET_FILTER,
 } from "./constants";
 
@@ -132,6 +133,16 @@ export const gamesList = (state: any = initialState, action: any) => {
       return {
         ...state,
         filteredGames: filteredGamesByName,
+        isFiltered: true,
+      };
+    }
+    case FILTER_BY_VALUE: {
+      const filteredGamesByValue = state.gamesList.filter(
+        (game: any) => game[action.input]
+      );
+      return {
+        ...state,
+        filteredGames: filteredGamesByValue,
         isFiltered: true,
       };
     }

@@ -4,12 +4,12 @@
 .header {
   min-height: 120px;
   margin-bottom: 16px;
-  font-size: 2rem;
+  font-size: 32px;
   font-family: "capture-it", serif;
 
   @include desktop {
     margin-bottom: 32px;
-    font-size: 3rem;
+    font-size: 48px;
   }
 
   &::before {
@@ -36,6 +36,7 @@
     position: absolute;
     top: 120px;
     left: 0;
+    z-index: -1;
     width: 100%;
     height: 32px;
     background-image:
@@ -68,16 +69,16 @@
   &__link {
     margin-top: 16px;
     color: $color-white;
-    font-size: 1rem;
+    font-size: 24px;
     text-decoration: none;
 
     @include tablet {
       margin-top: 0;
-      font-size: 2rem;
+      font-size: 32px;
     }
 
     @include desktop {
-      font-size: 3rem;
+      font-size: 48px;
     }
 
     &:not(:last-child) {
@@ -89,8 +90,8 @@
     }
 
     &.is-active,
-    &:focus,
     &:hover,
+    &:focus,
     &:active {
       color: $link-color-active !important;
     }
