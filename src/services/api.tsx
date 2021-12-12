@@ -4,6 +4,12 @@ export const URL =
 export const URL_FILTERS =
   "https://raw.githubusercontent.com/s-pyadyshev/beat-em-ups-api/master/filter.json";
 
+export const getResource = async (url: any) => {
+  const res = await fetch(url);
+  const body = await res.json();
+  return body;
+};
+
 function handleErrors(response: any) {
   if (!response.ok) {
     throw Error(`${response.status}: ${response.statusText}`);

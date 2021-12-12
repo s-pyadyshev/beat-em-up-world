@@ -167,7 +167,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </li>
           <li>
             <span className="game-card__parameter-name">Release Date: </span>
-            <span className={releasedate ? "" : "danger"}>
+            <span className={releasedate === "unknown" ? "danger" : ""}>
               {releasedate ? releasedate : "no info"}
             </span>
           </li>
@@ -206,18 +206,24 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <span className="game-card__parameter-name">Players: </span>
             <span>{players}</span>
           </li>
-          <li>
-            <span className="game-card__parameter-name">Structure: </span>
-            <span>{structure}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Difficulty: </span>
-            <span>{difficulty}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Gang Size: </span>
-            <span>{gangsize}</span>
-          </li>
+          {structure ? (
+            <li>
+              <span className="game-card__parameter-name">Structure: </span>
+              <span>{structure}</span>
+            </li>
+          ) : null}
+          {difficulty ? (
+            <li>
+              <span className="game-card__parameter-name">Difficulty: </span>
+              <span>{difficulty}</span>
+            </li>
+          ) : null}
+          {gangsize ? (
+            <li>
+              <span className="game-card__parameter-name">Gang Size: </span>
+              <span>{gangsize}</span>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">Variety: </span>
             <ul className="game-card__values-list">
@@ -229,18 +235,24 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 ))}
             </ul>
           </li>
-          <li>
-            <span className="game-card__parameter-name">Playtime: </span>
-            <span>{playtime}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Buttons: </span>
-            <span>{buttons}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Combos: </span>
-            <span>{combos}</span>
-          </li>
+          {gangsize ? (
+            <li>
+              <span className="game-card__parameter-name">Playtime: </span>
+              <span>{playtime}</span>
+            </li>
+          ) : null}
+          {buttons ? (
+            <li>
+              <span className="game-card__parameter-name">Buttons: </span>
+              <span>{buttons}</span>
+            </li>
+          ) : null}
+          {combos ? (
+            <li>
+              <span className="game-card__parameter-name">Combos: </span>
+              <span>{combos}</span>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">Grabs: </span>
             <span className={hasFeature(grabs) ? "danger" : "success"}>
@@ -253,58 +265,80 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               {dashing}
             </span>
           </li>
-          <li>
-            <span className="game-card__parameter-name">
-              Enemy Health Bars:{" "}
-            </span>
-            <span>{enemyHBars}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Item Pickup: </span>
-            <span>{itemPickup}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Item Stay: </span>
-            <span>{itemStay}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Weapons Stay: </span>
-            <span>{weaponsStay}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Death Blow: </span>
-            <span>{deathBlow}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Friendly Fire: </span>
-            <span>{friendlyFire}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Character Switch:</span>
-            <span>{charSwitch}</span>
-          </li>
+          {enemyHBars ? (
+            <li>
+              <span className="game-card__parameter-name">
+                Enemy Health Bars:{" "}
+              </span>
+              <span>{enemyHBars}</span>
+            </li>
+          ) : null}
+          {itemPickup ? (
+            <li>
+              <span className="game-card__parameter-name">Item Pickup: </span>
+              <span>{itemPickup}</span>
+            </li>
+          ) : null}
+          {itemStay ? (
+            <li>
+              <span className="game-card__parameter-name">Item Stay: </span>
+              <span>{itemStay}</span>
+            </li>
+          ) : null}
+          {weaponsStay ? (
+            <li>
+              <span className="game-card__parameter-name">Weapons Stay: </span>
+              <span>{weaponsStay}</span>
+            </li>
+          ) : null}
+          {deathBlow ? (
+            <li>
+              <span className="game-card__parameter-name">Death Blow: </span>
+              <span>{deathBlow}</span>
+            </li>
+          ) : null}
+          {friendlyFire ? (
+            <li>
+              <span className="game-card__parameter-name">Friendly Fire: </span>
+              <span>{friendlyFire}</span>
+            </li>
+          ) : null}
+          {charSwitch ? (
+            <li>
+              <span className="game-card__parameter-name">
+                Character Switch:
+              </span>
+              <span>{charSwitch}</span>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">Ground Hit: </span>
             <span className={hasFeature(groundHit) ? "danger" : "success"}>
               {groundHit}
             </span>
           </li>
-          <li>
-            <span className="game-card__parameter-name">Revive: </span>
-            <span>{revive}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Restore: </span>
-            <span>{restore}</span>
-          </li>
+          {revive ? (
+            <li>
+              <span className="game-card__parameter-name">Revive: </span>
+              <span>{revive}</span>
+            </li>
+          ) : null}
+          {restore ? (
+            <li>
+              <span className="game-card__parameter-name">Restore: </span>
+              <span>{restore}</span>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">Art Style: </span>
             <span>{artStyle}</span>
           </li>
-          <li>
-            <span className="game-card__parameter-name">Sprites: </span>
-            <span>{sprites}</span>
-          </li>
+          {sprites ? (
+            <li>
+              <span className="game-card__parameter-name">Sprites: </span>
+              <span>{sprites}</span>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">Setting: </span>
             <span>{setting}</span>
@@ -325,10 +359,12 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </ul>
             </li>
           ) : null}
-          <li>
-            <span className="game-card__parameter-name">Tone: </span>
-            <span>{tone}</span>
-          </li>
+          {tone ? (
+            <li>
+              <span className="game-card__parameter-name">Tone: </span>
+              <span>{tone}</span>
+            </li>
+          ) : null}
           {gore && gore[0] !== null ? (
             <li>
               <span className="game-card__parameter-name">Gore: </span>
@@ -341,33 +377,43 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </ul>
             </li>
           ) : null}
-          <li>
-            <span className="game-card__parameter-name">Fighters: </span>
-            <span>{fighters}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Stages: </span>
-            <span>{stages}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Enemies: </span>
-            <span>{enemies}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Bosses: </span>
-            <span>{bosses}</span>
-          </li>
-          <li>
-            <span className="game-card__parameter-name">Weapons: </span>
-            <ul className="game-card__values-list">
-              {weapons &&
-                weapons.map((weapon: string) => (
-                  <li key={weapon}>
-                    <span>{weapon}</span>
-                  </li>
-                ))}
-            </ul>
-          </li>
+          {fighters ? (
+            <li>
+              <span className="game-card__parameter-name">Fighters: </span>
+              <span>{fighters}</span>
+            </li>
+          ) : null}
+          {stages ? (
+            <li>
+              <span className="game-card__parameter-name">Stages: </span>
+              <span>{stages}</span>
+            </li>
+          ) : null}
+          {enemies ? (
+            <li>
+              <span className="game-card__parameter-name">Enemies: </span>
+              <span>{enemies}</span>
+            </li>
+          ) : null}
+          {bosses ? (
+            <li>
+              <span className="game-card__parameter-name">Bosses: </span>
+              <span>{bosses}</span>
+            </li>
+          ) : null}
+          {weapons && weapons[0] !== null ? (
+            <li>
+              <span className="game-card__parameter-name">Weapons: </span>
+              <ul className="game-card__values-list">
+                {weapons &&
+                  weapons.map((weapon: string) => (
+                    <li key={weapon}>
+                      <span>{weapon}</span>
+                    </li>
+                  ))}
+              </ul>
+            </li>
+          ) : null}
           <li>
             <span className="game-card__parameter-name">
               Beat&apos;em Up Bingo:{" "}

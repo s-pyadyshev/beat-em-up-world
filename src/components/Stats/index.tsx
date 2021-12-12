@@ -11,12 +11,7 @@ const Stats: React.FC = () => {
     (state: ApplicationState) => state.gamesList.gamesList.length
   );
 
-  // const totalUniq = useSelector(
-  //   (state: ApplicationState) =>
-  //     state.gamesList.gamesList.filter(
-  //       (game: GameCardInterface) => game.otherPlatforms === null
-  //     ).length
-  // );
+  // TODO add specific param to DB to calculate unique titles only
 
   const missing = useSelector(
     (state: ApplicationState) =>

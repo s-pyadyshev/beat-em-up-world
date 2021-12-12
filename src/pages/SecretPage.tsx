@@ -1,14 +1,19 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
+import { getResource } from "../services/api";
 
 const SecretPage: React.FC = () => {
   const [data, setData] = useState<any>();
-  const githubUser = "https://api.github.com/users/s-pyadyshev";
+  const githubUserUrl = "https://api.github.com/users/s-pyadyshev";
 
   useEffect(() => {
-    fetch(githubUser)
-      .then((res) => res.json())
-      .then((json) => setData(json));
+    getResource(githubUserUrl)
+      .then((body: any) => {
+        setData(body);
+      })
+      .catch((error) => {
+        console.error("Fetch error", error);
+      });
   }, []);
 
   return <div>{data && data.blog}</div>;

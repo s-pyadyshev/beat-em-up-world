@@ -14,14 +14,14 @@
     height: 112px;
     padding: 8px;
     color: $color-black;
-    font-size: 0.75rem;
+    font-size: 12px;
     text-align: center;
     word-break: break-word;
     background-color: $color-white;
     box-shadow: 0 0 0 1px;
 
     @include tablet {
-      font-size: 1rem;
+      font-size: 16px;
     }
 
     &.is-active {

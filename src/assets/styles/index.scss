@@ -54,8 +54,8 @@ a {
     color: $link-color-visited;
   }
 
-  &:focus,
-  &:hover {
+  &:hover,
+  &:focus {
     color: $link-color-hover;
     transition-duration: $transition-duration;
     transition-property: color;

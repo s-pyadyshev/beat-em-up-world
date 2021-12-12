@@ -1,5 +1,5 @@
 import React from "react";
-import { filterByLetter } from "../../store/gamesList/actions";
+import { filterByLetter, filterByValue } from "../../store/gamesList/actions";
 import store from "../../store";
 import "./style.scss";
 import { useSelector } from "react-redux";
@@ -15,6 +15,10 @@ const AlphabetSorter: React.FC = () => {
   const handleClickLetter = (event: any) => {
     const letter = event.target.getAttribute("data-letter");
     store.dispatch(filterByLetter(letter));
+  };
+
+  const handleMissingGamesClick = () => {
+    store.dispatch(filterByValue("missing"));
   };
 
   return (
@@ -36,6 +40,15 @@ const AlphabetSorter: React.FC = () => {
           )}
         </li>
       ))}
+      <li>
+        <button
+          onClick={handleMissingGamesClick}
+          className="alphabet-sorter__button"
+          style={{ color: "#f00" }}
+        >
+          missing
+        </button>
+      </li>
     </ul>
   );
 };
