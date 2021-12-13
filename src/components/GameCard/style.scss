@@ -21,6 +21,27 @@
     }
   }
 
+  &__author {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 24px;
+    font-family: "capture-it", serif;
+    text-align: right;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(122, 122, 122, 0.8) 0%,
+        rgba(255, 255, 255, 0) 15%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url(../../assets/img/vborder.png);
+
+    span {
+      color: $heading-color;
+    }
+  }
+
   &__body {
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +83,21 @@
     > ul,
     li {
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(122, 122, 122, 0.8) 0%,
+          rgba(255, 255, 255, 0) 15%,
+          rgba(0, 0, 0, 0) 10%,
+          rgba(0, 0, 0, 0.8) 100%
+        ),
+        url(../../assets/img/vborder.png);
+    }
+
+    li {
+      min-height: 30px;
     }
   }
 
@@ -78,6 +113,21 @@
 
   &__links {
     word-break: break-all;
+    list-style-type: none;
+
+    li {
+      display: flex;
+
+      &::before {
+        display: block;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURf////+SAP+2awAAAP//ALVtIWskAP8kAJQAAAAAADtPYQYAAAAKdFJOU////////////wCyzCzPAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAsUlEQVQ4T+WR2w3DMAwDVb+9/8IlKclIU6AdIPcRW9IlJhzbf3iSYIE6WXkhwV6JOrFXIcFKKRVw9SqoLlhrjfOqTVa+UsgObQ7wbQlaJYCYS+i9s8oVQjEkwJOUCIS+ckkYY0DAk+yNE51aJ79qttaiCok7dgTenzQsDzunM4nYk4Zl3IiP5gcQ/Eo83Nd8TlOqvI1oXqi86pPqBucUTqo7nPvvjga3Vzh34RePEPZ+A1XpGxXrVf7LAAAAAElFTkSuQmCC");
+        content: "";
+      }
+    }
   }
 
   &__name {
@@ -92,9 +142,9 @@
     display: inline-block;
     min-width: 50%;
     padding-right: 16px;
+    padding-left: 8px;
     color: $color-info;
     font-family: "capture-it", serif;
-    border-bottom: 1px solid $color-white;
 
     + span {
       display: flex;
@@ -102,7 +152,12 @@
       justify-content: flex-start;
       width: 100%;
       text-align: left;
-      border-bottom: 1px solid $color-white;
+    }
+  }
+
+  &__reviews {
+    p {
+      margin-top: 0;
     }
   }
 
@@ -121,9 +176,21 @@
     }
   }
 
-  &__title {
+  .game-card__section-title {
+    justify-content: flex-end;
+    padding-right: 8px;
     font-size: 32px;
     font-family: "capture-it", serif;
+    background-image: url("../../assets/img/game-card-header-bg.png");
+  }
+
+  &__title {
+    display: block;
+    padding-right: 8px;
+    font-size: 32px;
+    font-family: "capture-it", serif;
+    text-align: right;
+    background-image: url("../../assets/img/game-card-header-bg.png");
   }
 
   &__values-list {
@@ -131,7 +198,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
-    border-bottom: 1px solid $color-white;
 
     > li {
       display: inline-block;

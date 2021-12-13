@@ -10,7 +10,8 @@ const GameListItem = (props: GameListItemInterface) => {
 
   return (
     <li
-      className={multigenre ? "gamelist-item multigenre" : "gamelist-item"}
+      // TODO classnames
+      className={multigenre ? "gameslist-item multigenre" : "gameslist-item"}
       key={index}
     >
       <Link to={uniqGameNameId}>
