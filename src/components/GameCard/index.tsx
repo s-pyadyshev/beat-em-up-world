@@ -111,6 +111,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
       </h2>
       <div className="game-card__body">
         <div className="game-card__header">
+          <img src={cover} alt={name} className="game-card__cover" />
           <div className="game-card__about">
             <div>
               <span className="game-card__title">About</span>
@@ -121,9 +122,10 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <p>{trivia ? trivia : "Coming soon"}</p>
             </div>
           </div>
-          <img src={cover} alt={name} className="game-card__cover" />
           <div className="game-card__reviews">
-            <span className="game-card__title">Overall Review</span>
+            {overallReview && overallReview.length ? (
+              <span className="game-card__title">Overall Review</span>
+            ) : null}
             <div>
               {overallReview
                 ? overallReview.map((item: any) => (
