@@ -13,11 +13,9 @@
 
   &__about {
     order: 1;
-    padding-right: 0;
 
     @include desktop {
       order: 0;
-      padding-right: 24px;
     }
   }
 
@@ -82,7 +80,7 @@
     }
 
     > ul,
-    li {
+    > li {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -208,9 +206,11 @@
         margin-right: 8px;
 
         &::after {
+          display: inline-block;
           margin-left: 8px;
-          color: $link-color-visited;
-          content: "/";
+          color: $list-item-divider-color;
+          font-weight: 700;
+          content: "|";
           pointer-events: none;
         }
       }

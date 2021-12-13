@@ -1,7 +1,11 @@
 @import "./../../assets/styles/variables";
 
 .gameslist-item {
+  margin-bottom: 4px;
+
   a {
+    text-decoration: none;
+
     &:visited {
       color: $color-white;
     }
