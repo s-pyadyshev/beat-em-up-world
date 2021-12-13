@@ -113,18 +113,29 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
         <div className="game-card__header">
           <div className="game-card__about">
             <div>
-              <span className="game-card__title">about: </span>
-              <p>{about}</p>
+              <span className="game-card__title">About</span>
+              <p>{about ? about : "Coming soon"}</p>
             </div>
             <div>
-              <span className="game-card__title">trivia: </span>
-              <p>{trivia}</p>
+              <span className="game-card__title">Trivia</span>
+              <p>{trivia ? trivia : "Coming soon"}</p>
             </div>
           </div>
           <img src={cover} alt={name} className="game-card__cover" />
-          <div>
-            <span className="game-card__title">Overall Review: </span>
-            <p>{overallReview}</p>
+          <div className="game-card__reviews">
+            <span className="game-card__title">Overall Review</span>
+            <div>
+              {overallReview
+                ? overallReview.map((item: any) => (
+                    <>
+                      <h4 className="game-card__author">
+                        By <span>{item.author}</span>
+                      </h4>
+                      <p>{item.text}</p>
+                    </>
+                  ))
+                : "Coming soon"}
+            </div>
           </div>
           <div>
             <span className="game-card__title">Links: </span>
@@ -141,6 +152,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </div>
         </div>
         <ul className="game-card__detail">
+          <li className="game-card__section-title">Release Info</li>
           <li>
             <span className="game-card__parameter-name">Platform: </span>
             <span>{platform}</span>
@@ -202,6 +214,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <span>{series}</span>
             </li>
           ) : null}
+          <li className="game-card__section-title">Game</li>
           <li>
             <span className="game-card__parameter-name">Players: </span>
             <span>{players}</span>
@@ -241,6 +254,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <span>{playtime}</span>
             </li>
           ) : null}
+          <li className="game-card__section-title">Combat</li>
           {buttons ? (
             <li>
               <span className="game-card__parameter-name">Buttons: </span>
@@ -329,6 +343,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <span>{restore}</span>
             </li>
           ) : null}
+          <li className="game-card__section-title">Style</li>
           <li>
             <span className="game-card__parameter-name">Art Style: </span>
             <span>{artStyle}</span>
@@ -377,6 +392,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               </ul>
             </li>
           ) : null}
+          <li className="game-card__section-title">Numbers</li>
           {fighters ? (
             <li>
               <span className="game-card__parameter-name">Fighters: </span>
