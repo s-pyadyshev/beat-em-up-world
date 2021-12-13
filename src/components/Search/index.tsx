@@ -25,7 +25,7 @@ const Search: React.FC = () => {
   return (
     <input
       type="search"
-      placeholder="Type game name here..."
+      placeholder="Type game name here . . ."
       onChange={(event) => setSearchTerm(event.target.value)}
       ref={searchRef}
       className="input input--search"

@@ -19,8 +19,12 @@ const AboutPage = () => (
       >
         PunchPedia
       </a>
-      &nbsp;and it is approved by its creator.
-      <br />
+      &nbsp;and it is approved by its creator. I took all the games data from
+      PunchPedia and continued adding of missing titles. If you see review by
+      Slamson then that overall game info (about, trivia, etc) was made by him
+      as well. I just added minor corrections and links.
+    </p>
+    <p>
       Everything now has it&apos;s own wikia (fandom) page but there is now such
       place for beat&apos;em ups. Even one small game has it&apos;s own wikia.
       And every beat&apos;em up may have it as well. So there is no reason to
@@ -42,7 +46,7 @@ const AboutPage = () => (
     <strong>Pros</strong>
     : Filter by all parameters (most of them are not so useful but still that's
     cool), no need for hosting, easy to contribute via Pull Requests, Beat'em
-    Ups &quot;API&quot;.
+    Ups &quot;API&quot;. (Damn, I should call it BEATEM-UPI).
     <br />
     <strong>Cons</strong>
     : backend as JSON, no cool domain name.

@@ -4,22 +4,22 @@
   width: 100%;
   padding: 8px;
   font-size: 16px;
-  border: 1px solid $color-white;
+  border: none;
 
   &--search {
     color: $color-white;
     font-size: 24px;
     font-family: $font-family-secondary;
     text-transform: uppercase;
-    background-image:
+    background:
       linear-gradient(
         to bottom,
-        rgba(0, 0, 255, 0.8) 0%,
+        rgba(122, 122, 122, 0.8) 0%,
         rgba(255, 255, 255, 0) 15%,
         rgba(0, 0, 0, 0) 10%,
         rgba(0, 0, 0, 0.8) 100%
       ),
-      url("../../assets/img/arcbg.png");
+      url(../../assets/img/vborder.png);
 
     &::placeholder {
       color: rgba($color-white, 0.7);
