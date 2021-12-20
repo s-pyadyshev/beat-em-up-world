@@ -66,7 +66,7 @@ const LinksPage = () => (
       </li>
       <li>
         <a
-          href="https://crappygames.miraheze.org/wiki/Category:Beat%27em_Up_Games"
+          href="https://crappygames.miraheze.org/wiki/Category:Beat_%27em_up_games"
           target="_blank"
           rel="noopener noreferrer"
         >
