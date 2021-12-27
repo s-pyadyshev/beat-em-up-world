@@ -1,4 +1,4 @@
-<img src="https://github.com/s-pyadyshev/beat-em-up-world/workflows/CI/badge.svg"/>
+[![Node.js CI](https://github.com/s-pyadyshev/beat-em-up-world/actions/workflows/CI.yml/badge.svg)](https://github.com/s-pyadyshev/beat-em-up-world/actions/workflows/CI.yml)
 
 <a href="https://beat-em-up-world.vercel.app">https://beat-em-up-world.vercel.app</a>
 <br>
