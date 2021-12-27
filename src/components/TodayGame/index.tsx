@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import cn from "classnames";
 import { convertGameId } from "../../utils/utils";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardInterface } from "../../interfaces/GameCard";
@@ -13,7 +14,8 @@ const TodayGame: React.FC = () => {
   );
   const [todayGameId, setTodayGameId] = useState("");
   const [todayGameCover, setTodayGameCover] = useState("");
-  const [todayGameName, setTodayGameName] = useState("");
+  const [todayGameName, setTodayGameName] = useState(false);
+  const [todayGameDate, setTodayGameDate] = useState("");
 
   const todayDate = new Date().toISOString().slice(5, 10);
 
@@ -35,6 +37,13 @@ const TodayGame: React.FC = () => {
       setTodayGameName(todayGameData.name);
       setTodayGameCover(todayGameData.cover);
     }
+
+    const todayMonthDay: string = new Date().toLocaleString("en-us", {
+      month: "long",
+      day: "numeric",
+    });
+
+    setTodayGameDate(todayMonthDay);
   }, [gamesList]);
 
   return (
@@ -42,23 +51,26 @@ const TodayGame: React.FC = () => {
       {isLoading ? (
         "Loading..."
       ) : (
-        <div className="today-game">
+        <>
           {todayGameName ? (
-            <>
+            <Link
+              className={cn({
+                "today-game": true,
+                active: todayGameName,
+              })}
+              to={gamesList && todayGameId}
+            >
               <img src={todayGameCover} alt="today game cover" />
               <div className="today-game__info">
-                On this day&nbsp; <br />
-                <Link to={gamesList && todayGameId}>{todayGameName}</Link>
-                <br />
-                &nbsp;was released!
-                <br />
-                Try it now!
+                <div>On {todayGameDate}</div>
+                <div className="today-game__name">{todayGameName}</div>
+                <div>was released</div>
               </div>
-            </>
+            </Link>
           ) : (
             "Nothing was released on this day, come back the next day!"
           )}
-        </div>
+        </>
       )}
     </>
   );

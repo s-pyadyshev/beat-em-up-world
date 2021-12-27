@@ -2,7 +2,6 @@ plugins:
   - cleanupNumericValues: { floatPrecision: 1 }
   - cleanupIDs: true
   - collapseGroups: true
-  - removeAttrs: { attrs: "(class|id|data-name|fill|stroke)" }
   - removeDesc: true
   - removeDimensions: false
   - removeEmptyAttrs: true

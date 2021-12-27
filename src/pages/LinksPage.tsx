@@ -174,6 +174,15 @@ const LinksPage = () => (
       </li>
       <li>
         <a
+          href="http://www.hardcoregaming101.net/beat-em-up/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          http://www.hardcoregaming101.net/beat-em-up/
+        </a>
+      </li>
+      <li>
+        <a
           href="http://lunaticobscurity.blogspot.com/search/label/beat%20em%20up"
           target="_blank"
           rel="noopener noreferrer"

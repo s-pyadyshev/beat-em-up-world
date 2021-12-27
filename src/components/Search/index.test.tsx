@@ -1,13 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "@testing-library/react";
 import Search from "./index";
 
 it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Search />, div);
+  render(<Search />);
 });
-
-// it("Search typing works", () => {
-//   const div = document.createElement("div");
-//   ReactDOM.render(<Search />, div);
-// });
