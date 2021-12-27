@@ -13,9 +13,7 @@ const Bingo = (beatemupBingo: any) => {
         return (
           <div
             key={bingoItem.id}
-            className={toggleActiveClass(
-              beatemupBingo.beatemupBingo[bingoItem.id]
-            )}
+            className={toggleActiveClass(beatemupBingo[bingoItem.id])}
             title={bingoItem.detail}
           >
             {bingoItem.name}

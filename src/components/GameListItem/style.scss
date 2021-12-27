@@ -1,5 +1,7 @@
 @import "./../../assets/styles/variables";
 
+// TODO
+/* stylelint-disable no-descending-specificity */
 .gameslist-item {
   margin-bottom: 4px;
 
@@ -8,10 +10,16 @@
 
     &:visited {
       color: $color-white;
+
+      &:hover {
+        color: $link-color-hover;
+      }
     }
   }
 
-  &.multigenre a {
-    color: $link-color-multigenre;
+  &.multigenre {
+    a {
+      color: $link-color-multigenre;
+    }
   }
 }

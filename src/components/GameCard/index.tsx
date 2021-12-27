@@ -123,34 +123,35 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             </div>
           </div>
           <div className="game-card__reviews">
+            <span className="game-card__title">Overall Review</span>
             {overallReview && overallReview.length ? (
-              <span className="game-card__title">Overall Review</span>
-            ) : null}
-            <div>
-              {overallReview
-                ? overallReview.map((item: any) => (
-                    <>
-                      <h4 className="game-card__author">
-                        By <span>{item.author}</span>
-                      </h4>
-                      <p>{item.text}</p>
-                    </>
-                  ))
-                : "Coming soon"}
-            </div>
+              overallReview.map((item: any) => (
+                <div key={item.name}>
+                  <h4 className="game-card__author">
+                    By <span>{item.author}</span>
+                  </h4>
+                  <p>{item.text}</p>
+                </div>
+              ))
+            ) : (
+              <p>Coming soon</p>
+            )}
           </div>
           <div>
             <span className="game-card__title">Links: </span>
-            <ul className="game-card__links">
-              {links &&
-                links.map((link: string) => (
+            {links && links.length ? (
+              <ul className="game-card__links">
+                {links.map((link: string) => (
                   <li key={link}>
                     <a href={link} target="_blank" rel="noopener noreferrer">
                       {link}
                     </a>
                   </li>
                 ))}
-            </ul>
+              </ul>
+            ) : (
+              <p>Coming soon</p>
+            )}
           </div>
         </div>
         <ul className="game-card__detail">
@@ -441,8 +442,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <Tooltip
                 trigger="click"
                 placement="bottom"
-                // TODO can't use spread due to build error
-                tooltip={<Bingo beatemupBingo={beatemupBingo} />}
+                tooltip={<Bingo {...beatemupBingo} />}
               >
                 <span className="select__icon-info">
                   <svg>

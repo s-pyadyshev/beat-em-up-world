@@ -1,11 +1,13 @@
 @import "assets/styles/media";
 
-.app__body {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
+.app {
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
 
-  @include tablet {
-    flex-wrap: nowrap;
+    @include tablet {
+      flex-wrap: nowrap;
+    }
   }
 }

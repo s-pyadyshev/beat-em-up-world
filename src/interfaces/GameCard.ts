@@ -6,7 +6,7 @@ export interface GameCardInterface {
   name: string;
   platform: string;
   perspective: string;
-  country?: string;
+  country?: string | null;
   about: string;
   trivia: string;
   developer: string;
