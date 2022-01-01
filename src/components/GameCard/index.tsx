@@ -155,7 +155,9 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </div>
         </div>
         <ul className="game-card__detail">
-          <li className="game-card__section-title">Release Info</li>
+          <li className="game-card__section-title">
+            <span>Release Info</span>
+          </li>
           <li>
             <span className="game-card__parameter-name">Platform: </span>
             <span>{platform}</span>

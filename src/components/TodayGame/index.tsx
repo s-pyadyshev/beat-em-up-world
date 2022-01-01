@@ -13,6 +13,7 @@ const TodayGame: React.FC = () => {
     (state: ApplicationState) => state.gamesList.gamesList
   );
   const [todayGameId, setTodayGameId] = useState("");
+  const [todayGamePlatform, setTodayGamePlatform] = useState({});
   const [todayGameCover, setTodayGameCover] = useState("");
   const [todayGameName, setTodayGameName] = useState(false);
   const [todayGameDate, setTodayGameDate] = useState("");
@@ -33,6 +34,7 @@ const TodayGame: React.FC = () => {
         todayGameData.name,
         todayGameData.platform
       );
+      setTodayGamePlatform(todayGameData.platform);
       setTodayGameId(todayGameId);
       setTodayGameName(todayGameData.name);
       setTodayGameCover(todayGameData.cover);
@@ -63,7 +65,9 @@ const TodayGame: React.FC = () => {
               <img src={todayGameCover} alt="today game cover" />
               <div className="today-game__info">
                 <div>On {todayGameDate}</div>
-                <div className="today-game__name">{todayGameName}</div>
+                <div className="today-game__name">
+                  {todayGameName} [{todayGamePlatform}]
+                </div>
                 <div>was released</div>
               </div>
             </Link>
