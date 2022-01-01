@@ -170,11 +170,11 @@
   }
 
   &__section-title {
-    justify-content: flex-end;
+    justify-content: flex-end !important;
     padding-right: 8px;
     font-size: 32px;
     font-family: capture-it, serif;
-    background-image: url("../../assets/img/game-card-header-bg.png");
+    background-image: url("../../assets/img/game-card-header-bg.png") !important;
   }
 
   &__title {
