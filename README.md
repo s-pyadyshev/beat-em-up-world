@@ -16,7 +16,6 @@ Scss, stylelint, prettier<br>
 ## :construction_worker: To Do
 
 - Add CI
-- Replace icons to colored
 - Refactoring: best practices
 - Add redux-persist?
 - Add reverse list view?, list with screenshots in slider + pagination?
