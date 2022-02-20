@@ -8,7 +8,11 @@ import {
   showLessFilters,
   toggleFiltersAll,
 } from "../../store/filters/actions";
-import { resetFilter } from "../../store/gamesList/actions";
+import {
+  filterByOptions,
+  resetFilter,
+  toggleSaveFilters,
+} from "../../store/gamesList/actions";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
 
@@ -23,16 +27,34 @@ const Filter = () => {
   const filters = useSelector(
     (state: ApplicationState) => state.filters.filtersToggled
   );
+  const filterOptions = useSelector(
+    (state: ApplicationState) => state.gamesList.filterOptions
+  );
   const basicView = useSelector(
     (state: ApplicationState) => state.filters.basicView
   );
   const isFiltered = useSelector(
     (state: ApplicationState) => state.gamesList.isFiltered
   );
+  const gamesList = useSelector(
+    (state: ApplicationState) => state.gamesList.gamesList
+  );
+  const saveFilters = useSelector(
+    (state: ApplicationState) => state.gamesList.saveFilters
+  );
 
   useEffect(() => {
     getFilters();
   }, []);
+
+  useEffect(() => {
+    const filterOptionsLS: any = localStorage.getItem("filterOptions");
+
+    if (filterOptionsLS && gamesList.length) {
+      store.dispatch(filterByOptions(JSON.parse(filterOptionsLS)));
+      store.dispatch(toggleSaveFilters());
+    }
+  }, [gamesList]);
 
   const toggleFilter = () => {
     setVisibility(!visible);
@@ -50,6 +72,15 @@ const Filter = () => {
     store.dispatch(resetFilter());
   };
 
+  const handleSaveFilters = () => {
+    store.dispatch(toggleSaveFilters());
+    if (saveFilters) {
+      localStorage.removeItem("filterOptions");
+      return;
+    }
+    localStorage.setItem("filterOptions", JSON.stringify(filterOptions));
+  };
+
   return (
     <div className={!visible ? "filter-wrap" : "filter-wrap is-active"}>
       <div className="filter-toggle">
@@ -64,6 +95,12 @@ const Filter = () => {
             filters.map((filter: FilterInterface) => (
               <li key={filter.name}>
                 <Select
+                  savedOption={
+                    filterOptions &&
+                    (Array.isArray(filterOptions[filter.name])
+                      ? filterOptions[filter.name][0]
+                      : filterOptions[filter.name])
+                  }
                   filterName={filter.filterName}
                   name={filter.name}
                   description={filter.description}
@@ -83,6 +120,16 @@ const Filter = () => {
           </div>
         )}
         {isFiltered ? <Button onClick={onResetFilter}>Reset</Button> : null}
+        {filterOptions ? (
+          <label className="button-save">
+            <input
+              type="checkbox"
+              onChange={handleSaveFilters}
+              checked={saveFilters}
+            />
+            Save filter
+          </label>
+        ) : null}
       </div>
     </div>
   );

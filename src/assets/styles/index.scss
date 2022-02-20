@@ -89,7 +89,8 @@ button {
   appearance: none;
 }
 
-input {
+input[type="text"],
+input[type="search"] {
   appearance: none;
 }
 

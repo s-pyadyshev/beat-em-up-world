@@ -138,16 +138,8 @@ const AboutPage = () => (
     <ul>
       <li>Dronami, creator of PunchPedia</li>
     </ul>
-    <p>
-      <a
-        href="http://www.emu-land.net"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        http://www.emu-land.net
-      </a>
-    </p>
     <ul>
+      <li>A National Acrobat</li>
       <li>Adol</li>
       <li>Altron320</li>
       <li>Gelior</li>
@@ -156,18 +148,6 @@ const AboutPage = () => (
       <li>Smoke_John</li>
       <li>Street Fighter</li>
       <li>varezhkin</li>
-    </ul>
-    <p>
-      <a
-        href="https://www.old-games.ru"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        https://www.old-games.ru
-      </a>
-    </p>
-    <ul>
-      <li>A National Acrobat</li>
     </ul>
   </article>
 );
