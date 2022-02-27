@@ -36,7 +36,9 @@ interface FiltersActionInteface {
   loading: Boolean;
 }
 
-const initialState = {};
+const initialState = {
+  saveFilters: false,
+};
 
 export const filters = (
   state: any = initialState,
@@ -85,7 +87,6 @@ export const filters = (
         ),
         basicView: true,
       };
-
     default:
       return state;
   }

@@ -9,6 +9,8 @@ import {
   FILTER_BY_NAME,
   FILTER_BY_VALUE,
   RESET_FILTER,
+  FILTER_BY_OPTIONS,
+  TOGGLE_SAVE_FILTERS,
 } from "./constants";
 import { Games } from "../../services/api";
 import { ApplicationState } from "../../interfaces/ApplicationState";
@@ -73,4 +75,13 @@ export const filterByValue = (input: String | Number) => ({
 
 export const resetFilter = () => ({
   type: RESET_FILTER,
+});
+
+export const filterByOptions = (filterOptions: String) => ({
+  type: FILTER_BY_OPTIONS,
+  filterOptions,
+});
+
+export const toggleSaveFilters = () => ({
+  type: TOGGLE_SAVE_FILTERS,
 });

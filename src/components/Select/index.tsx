@@ -5,47 +5,20 @@ import { filterGames } from "../../store/gamesList/actions";
 import Tooltip from "../Tooltip";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
+import { spriteNames } from "../../constants/spriteNames";
 
 import "./style.scss";
 
 const Select = (props: FilterInterface) => {
   const dispatch = useDispatch();
   const [isSelected, setSelected] = useState(false);
-  const spriteNames = [
-    "artStyle",
-    "country",
-    "dashing",
-    "deathBlow",
-    "difficulty",
-    "enemyHBars",
-    "fighters",
-    "focus",
-    "gore",
-    "grabs",
-    "groundHit",
-    "info",
-    "lives",
-    "multigenre",
-    "music",
-    "perspective",
-    "platform",
-    "players",
-    "playtime",
-    "releaseYear",
-    "restore",
-    "revive",
-    "series",
-    "setting",
-    "sprites",
-    "structure",
-    "tone",
-    "variety",
-    "weapons",
-  ];
-  const { description, name, filterName, options } = props;
+
+  const { description, name, filterName, options, savedOption } = props;
+
   const filterOptions = useSelector(
     (state: ApplicationState) => state.gamesList.filterOptions
   );
+
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value === "") {
       dispatch(filterGames(name, event.target.value));
@@ -58,6 +31,10 @@ const Select = (props: FilterInterface) => {
       setSelected(true);
     }
   };
+
+  useEffect(() => {
+    setSelected(savedOption);
+  }, [savedOption]);
 
   useEffect(() => {
     if (filterOptions === "") {
@@ -77,7 +54,11 @@ const Select = (props: FilterInterface) => {
               --Choose an option--
             </option>
             {options.map((value: any) => (
-              <option key={value} value={value}>
+              <option
+                key={value}
+                value={value}
+                selected={value === savedOption}
+              >
                 {value}
               </option>
             ))}

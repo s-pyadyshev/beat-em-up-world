@@ -11,7 +11,11 @@ import {
   FILTER_BY_NAME,
   FILTER_BY_VALUE,
   RESET_FILTER,
+  FILTER_BY_OPTIONS,
+  TOGGLE_SAVE_FILTERS,
 } from "./constants";
+
+import { notAlphabetLetters } from "../../constants/alphabet";
 
 const arrayOptions = ["music", "weapons", "variety", "gore"];
 const initialState = {
@@ -78,7 +82,7 @@ export const gamesList = (state: any = initialState, action: any) => {
           filteredGames: filteredList,
         };
       }
-      // hardcode solution for array values
+      // TODO hardcode solution for array values
       if (arrayOptions.includes(action.filterName)) {
         filterOptions[action.filterName] = [action.option];
       } else {
@@ -95,21 +99,6 @@ export const gamesList = (state: any = initialState, action: any) => {
       let filteredGamesByFirstLetter;
 
       if (action.letter === "0-?") {
-        const notAlphabetLetters = [
-          "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9",
-          "!",
-          "?",
-        ];
-
         filteredGamesByFirstLetter = state.gamesList.filter((game: any) =>
           notAlphabetLetters.includes(game.name.toLowerCase()[0])
         );
@@ -153,6 +142,19 @@ export const gamesList = (state: any = initialState, action: any) => {
         filterOptions: "",
         isFiltered: false,
         activeLetter: "",
+      };
+    case FILTER_BY_OPTIONS: {
+      return {
+        ...state,
+        filterOptions: action.filterOptions,
+        filteredGames: filter(state.gamesList, action.filterOptions),
+        isFiltered: true,
+      };
+    }
+    case TOGGLE_SAVE_FILTERS:
+      return {
+        ...state,
+        saveFilters: !state.saveFilters,
       };
     default:
       return state;
