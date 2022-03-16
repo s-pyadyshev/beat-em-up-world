@@ -5,7 +5,7 @@ export interface BingoInterface {
   sleevelessJacket: Boolean;
   bossWithGun: Boolean;
   fireBombs: Boolean;
-  twowordTitle: Boolean;
+  twoWordTitle: Boolean;
   throwingKnife: Boolean;
   subwayStage: Boolean;
   exproWrestler: Boolean;

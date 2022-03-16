@@ -70,6 +70,8 @@ const App: React.FC = () => {
                               }}
                               href="https://www.patreon.com/bePatron?u=58353569"
                               data-patreon-widget-type="become-patron-button"
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
                               Become a Patron
                             </a>
