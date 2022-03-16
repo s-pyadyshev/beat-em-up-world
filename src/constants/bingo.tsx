@@ -33,7 +33,7 @@ export const bingo = [
     detail: "...or they'll get their goons to throw Molotov cocktails.",
   },
   {
-    id: "twowordTitle",
+    id: "twoWordTitle",
     name: "2-word title",
     detail: "Like Final Fight or Violent Storm or Cooking Mama.",
   },
