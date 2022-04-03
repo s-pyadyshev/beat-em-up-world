@@ -71,9 +71,7 @@ const TodayGame: React.FC = () => {
                 <div>was released</div>
               </div>
             </Link>
-          ) : (
-            "Nothing was released on this day, come back the next day!"
-          )}
+          ) : null}
         </>
       )}
     </>
