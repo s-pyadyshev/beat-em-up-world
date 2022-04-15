@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { getResource } from "../services/api";
 
 const SecretPage: React.FC = () => {
   const [data, setData] = useState<any>();
@@ -12,22 +11,15 @@ const SecretPage: React.FC = () => {
     // Promise {<pending>}
     catFactPromise
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data.fact);
-        return data.fact;
-      });
+      .then((data) => data.fact);
 
     const githubPromise = fetch(githubUserUrl); // returns Promise
     // Promise {<pending>}
-    githubPromise
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.blog);
-        return data.blog;
-      });
+    githubPromise.then((response) => response.json()).then((data) => data.blog);
 
-    Promise.all([catFactPromise, githubPromise]).then(([catfact, github]) =>
-      console.log(catfact, github)
+    Promise.all([catFactPromise, githubPromise]).then(
+      (data) => console.log(data[0], data[1]),
+      (error) => console.log(error)
     );
   }, []);
 
