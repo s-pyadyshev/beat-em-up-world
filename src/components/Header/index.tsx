@@ -7,18 +7,13 @@ import "./style.scss";
 const Header = () => (
   <header className="header">
     <div className="header__inner">
-      <NavLink
-        to="/"
-        exact
-        className="header__link"
-        activeClassName="is-active"
-      >
+      <NavLink to="/" className="header__link">
         Home
       </NavLink>
-      <NavLink to="/about" className="header__link" activeClassName="is-active">
+      <NavLink to="/about" className="header__link">
         About
       </NavLink>
-      <NavLink to="/links" className="header__link" activeClassName="is-active">
+      <NavLink to="/links" className="header__link">
         Links
       </NavLink>
       <div className="header__link">
