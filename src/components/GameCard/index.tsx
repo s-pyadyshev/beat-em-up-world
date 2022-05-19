@@ -21,6 +21,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   const hasFeature = (value: string) => negativeValues.includes(value);
 
   useEffect(() => {
+    // TODO make backend instead of this bad way to find game by id
     const filteredGameCard = gamesList
       ? gamesList.filter(
           (game: GameCardInterface) =>
@@ -93,8 +94,8 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
 
   const makeOtherPlatformLink = (name: string, game: any) => {
     return typeof game === "string"
-      ? convertGameId(name, game)
-      : convertGameId(game.name, game.platform);
+      ? convertGameId(name, game) // if various platform names are the same
+      : convertGameId(game.name, game.platform); // if they are different (handled as objects)
   };
 
   const makeOtherPlatformName = (game: any) =>
@@ -204,7 +205,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
 
                     return (
                       <li key={id}>
-                        <Link to={makeOtherPlatformLink(name, game)}>
+                        <Link to={`/${makeOtherPlatformLink(name, game)}`}>
                           <span>{makeOtherPlatformName(game)}</span>
                         </Link>
                       </li>
