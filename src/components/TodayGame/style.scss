@@ -1,6 +1,11 @@
 @import "./../../assets/styles/variables";
 @import "./../../assets/styles/media";
 
+.today-games-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .today-game {
   position: relative;
   display: flex;

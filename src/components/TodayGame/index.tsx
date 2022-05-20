@@ -12,40 +12,17 @@ const TodayGame: React.FC = () => {
   const gamesList = useSelector(
     (state: ApplicationState) => state.gamesList.gamesList
   );
-  const [todayGameId, setTodayGameId] = useState("");
-  const [todayGamePlatform, setTodayGamePlatform] = useState({});
-  const [todayGameCover, setTodayGameCover] = useState("");
-  const [todayGameName, setTodayGameName] = useState(false);
-  const [todayGameDate, setTodayGameDate] = useState("");
+  const [todayGames, setTodayGames] = useState([]);
 
   const todayDate = new Date().toISOString().slice(5, 10);
 
   useEffect(() => {
-    // TODO - api GET TODAY GAME ID
-    // Refactor in case of Today games > 1
-
-    const todayGameData = gamesList.filter(
+    // TODO - make backend to get game by id
+    const todayGamesData = gamesList.filter(
       (game: GameCardInterface) =>
         gamesList && game.releasedate.slice(5, 10) === todayDate
-    )[0];
-
-    if (todayGameData !== undefined && !todayGameData.missing) {
-      const todayGameId = convertGameId(
-        todayGameData.name,
-        todayGameData.platform
-      );
-      setTodayGamePlatform(todayGameData.platform);
-      setTodayGameId(todayGameId);
-      setTodayGameName(todayGameData.name);
-      setTodayGameCover(todayGameData.cover);
-    }
-
-    const todayMonthDay: string = new Date().toLocaleString("en-us", {
-      month: "long",
-      day: "numeric",
-    });
-
-    setTodayGameDate(todayMonthDay);
+    );
+    setTodayGames(todayGamesData);
   }, [gamesList]);
 
   return (
@@ -53,26 +30,27 @@ const TodayGame: React.FC = () => {
       {isLoading ? (
         "Loading..."
       ) : (
-        <>
-          {todayGameName ? (
+        <div className="today-games-list">
+          {todayGames.map((game: any) => (
             <Link
+              key={convertGameId(game.name, game.platform)}
               className={cn({
                 "today-game": true,
-                active: todayGameName,
+                active: game.name,
               })}
-              to={gamesList && todayGameId}
+              to={convertGameId(game.name, game.platform)}
             >
-              <img src={todayGameCover} alt="today game cover" />
+              <img src={game.cover} alt="today game cover" />
               <div className="today-game__info">
-                <div>On {todayGameDate}</div>
+                <div>On {game.releasedate}</div>
                 <div className="today-game__name">
-                  {todayGameName} [{todayGamePlatform}]
+                  {game.name} [{game.platform}]
                 </div>
                 <div>was released</div>
               </div>
             </Link>
-          ) : null}
-        </>
+          ))}
+        </div>
       )}
     </>
   );
