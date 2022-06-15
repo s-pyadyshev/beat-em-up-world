@@ -2,6 +2,7 @@ import {
   GET_FILTERS_REQUEST,
   GET_FILTERS_SUCCESS,
   GET_FILTERS_ERROR,
+  TOGGLE_FILTER,
   TOGGLE_FILTERS,
   TOGGLE_FILTERS_ALL,
   SHOW_LESS_FILTERS,
@@ -22,6 +23,10 @@ export const getFiltersSuccess = (filters: FilterInterface) => ({
 export const getFiltersError = (error: any) => ({
   type: GET_FILTERS_ERROR,
   error,
+});
+
+export const toggleFilter = () => ({
+  type: TOGGLE_FILTER,
 });
 
 export const toggleFilters = (filters: FilterInterface) => ({

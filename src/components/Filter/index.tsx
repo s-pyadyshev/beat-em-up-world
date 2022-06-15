@@ -21,6 +21,7 @@ import store from "../../store";
 
 const Filter = () => {
   const [visible, setVisibility] = useState(false);
+
   const loading = useSelector(
     (state: ApplicationState) => state.gamesList.loading
   );
