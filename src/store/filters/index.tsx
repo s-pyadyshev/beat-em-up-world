@@ -2,6 +2,7 @@ export {
   getFiltersRequest,
   getFiltersSuccess,
   getFiltersError,
+  toggleFilter,
   toggleFilters,
   toggleFiltersAll,
   showLessFilters,

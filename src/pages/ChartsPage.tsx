@@ -9,16 +9,37 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { countBy } from "lodash";
+import { toggleFilter } from "../store/filters/actions";
+
+interface IChartData {
+  data: any;
+  name: any;
+}
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    payload[0].chartType = "AreaChart";
+    return (
+      <div className="custom-tooltip">
+        <span className="time">{label}</span> -{" "}
+        <span className="label">{payload[0].value}</span>
+      </div>
+    );
+  }
+
+  return null;
+};
 
 const ChartsPage = () => {
-  const [filteredCharts, setFilteredCharts] = useState([
-    {
-      key: "1986",
-      value: 3,
-    },
-  ]);
+  const dispatch = useDispatch();
+
+  const [filteredChart, setFilteredChart] = useState<IChartData>({
+    data: [],
+    name: "name",
+  });
+  // const [filterChartOptions, setFilterChartOptions] = useState({});
   // automatically subscribes to the Redux store
   const gamesList = useSelector((state: any) => state.gamesList.gamesList);
 
@@ -28,55 +49,111 @@ const ChartsPage = () => {
   //   return state.todos.map((todo) => todo.text);
   // };
 
-  const filterCharts = (name: String) => {
-    const counted = countBy(gamesList, name);
+  const filterCharts = (value: any, name: String) => {
+    const counted = countBy(gamesList, value);
     const arr = Object.keys(counted).map((key) => ({
-      key,
+      key: key,
       value: counted[key],
     }));
-    const filteredArr: any = arr.filter((item) => item !== null);
-    setFilteredCharts(filteredArr);
+    // TODO filter first
+    const filteredArr: any = arr.filter((item) => item.key !== "null");
+    setFilteredChart({
+      data: filteredArr,
+      name,
+    });
   };
 
-  const handleFilter = () => {
-    filterCharts("releaseYear");
+  const handleFilter = (event: any) => {
+    filterCharts(
+      event.target.getAttribute("data-value"),
+      event.target.getAttribute("data-name")
+    );
   };
 
   useEffect(() => {
-    console.log("render");
-  }, [filteredCharts]);
+    dispatch(toggleFilter());
+  }, []);
+
+  useEffect(() => {
+    filterCharts("releaseYear", "Release year");
+  }, []);
 
   return (
     <div>
       <div>
-        <button onClick={handleFilter}>test</button>
-      </div>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={500}
-          data={filteredCharts}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
+        <button
+          onClick={handleFilter}
+          data-value="releaseYear"
+          data-name="Release year"
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="key" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            name="year"
-            type="monotone"
-            dataKey="value"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+          Release Year
+        </button>{" "}
+        <button
+          onClick={handleFilter}
+          data-value="perspective"
+          data-name="Perspective"
+        >
+          Perspective
+        </button>{" "}
+        <button
+          onClick={handleFilter}
+          data-value="platform"
+          data-name="Platform"
+        >
+          Platform
+        </button>{" "}
+        <button onClick={handleFilter} data-value="country" data-name="Country">
+          Country
+        </button>{" "}
+        <button onClick={handleFilter} data-value="dashing" data-name="Dashing">
+          Dashing
+        </button>{" "}
+        <button onClick={handleFilter} data-value="grabs" data-name="Grabs">
+          Grabs
+        </button>{" "}
+        <button
+          onClick={handleFilter}
+          data-value="groundHit"
+          data-name="Ground hit"
+        >
+          Ground hit
+        </button>{" "}
+        <button
+          onClick={handleFilter}
+          data-value="deathBlow"
+          data-name="Death blow"
+        >
+          Death blow
+        </button>
+      </div>
+      <div style={{ width: "100%", height: 500 }}>
+        <ResponsiveContainer>
+          <LineChart
+            width={500}
+            height={500}
+            data={filteredChart.data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="key" tick={{ fontSize: 12 }} />
+            <YAxis dataKey="value" />
+            <Tooltip content={<CustomTooltip />} />
+            <Legend />
+            <Line
+              name={filteredChart.name}
+              type="monotone"
+              dataKey="value"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

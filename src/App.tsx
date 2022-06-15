@@ -1,5 +1,6 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
@@ -70,6 +71,8 @@ const Main = () => {
 };
 
 const App: React.FC = () => {
+  const isFiltersVisible = useSelector((state: any) => state.filters.isVisible);
+
   useEffect(() => {
     getGames();
   }, []);
@@ -91,12 +94,17 @@ const App: React.FC = () => {
         <div className="app__body">
           <Container style={{ width: "100%" }}>
             <Row>
-              <Col md={4} lg={3}>
-                <ErrorBoundary>
-                  <Filter />
-                </ErrorBoundary>
-              </Col>
-              <Col md={8} lg={9}>
+              {isFiltersVisible ? (
+                <Col md={4} lg={3}>
+                  <ErrorBoundary>
+                    <Filter />
+                  </ErrorBoundary>
+                </Col>
+              ) : null}
+              <Col
+                md={isFiltersVisible ? 8 : 12}
+                lg={isFiltersVisible ? 9 : 12}
+              >
                 <Suspense fallback={<div>Loading...</div>}>
                   <Routes>
                     <Route path="/" element={<Main />} />

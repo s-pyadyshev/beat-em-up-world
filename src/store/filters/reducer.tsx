@@ -2,6 +2,7 @@ import {
   GET_FILTERS_REQUEST,
   GET_FILTERS_SUCCESS,
   GET_FILTERS_ERROR,
+  TOGGLE_FILTER,
   TOGGLE_FILTERS,
   TOGGLE_FILTERS_ALL,
   SHOW_LESS_FILTERS,
@@ -34,10 +35,12 @@ interface FiltersActionInteface {
   filters?: any;
   error?: any;
   loading: Boolean;
+  isVisible: Boolean;
 }
 
 const initialState = {
   saveFilters: false,
+  isVisible: true,
 };
 
 export const filters = (
@@ -54,7 +57,9 @@ export const filters = (
     case GET_FILTERS_SUCCESS:
       return {
         ...state,
-        filters: action.filters,
+        filters: action.filters.filter(
+          (filter: any) => filter.name !== "buttons" // TODO after backend is done
+        ),
         filtersToggled: action.filters,
         loading: false,
         error: null,
@@ -64,6 +69,11 @@ export const filters = (
         ...state,
         loading: false,
         error: action.error,
+      };
+    case TOGGLE_FILTER:
+      return {
+        ...state,
+        isVisible: !state.isVisible,
       };
     case TOGGLE_FILTERS:
       return {

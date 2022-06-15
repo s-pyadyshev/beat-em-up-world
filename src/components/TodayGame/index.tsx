@@ -18,10 +18,12 @@ const TodayGame: React.FC = () => {
 
   useEffect(() => {
     // TODO - make backend to get game by id
-    const todayGamesData = gamesList.filter(
-      (game: GameCardInterface) =>
-        gamesList && game.releasedate.slice(5, 10) === todayDate
-    );
+    const todayGamesData = gamesList
+      .filter((game: GameCardInterface) => game.missing !== true)
+      .filter(
+        (game: GameCardInterface) =>
+          gamesList && game.releasedate.slice(5, 10) === todayDate
+      );
     setTodayGames(todayGamesData);
   }, [gamesList]);
 
