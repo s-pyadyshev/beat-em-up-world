@@ -10,13 +10,14 @@ const Bingo = (beatemupBingo: any) => {
   return (
     <div className="bingo">
       {bingo.map((bingoItem) => {
+        const { id, detail, name } = bingoItem;
         return (
           <div
-            key={bingoItem.id}
-            className={toggleActiveClass(beatemupBingo[bingoItem.id])}
-            title={bingoItem.detail}
+            key={id}
+            className={toggleActiveClass(beatemupBingo[id])}
+            title={detail}
           >
-            {bingoItem.name}
+            {name}
           </div>
         );
       })}

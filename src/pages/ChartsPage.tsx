@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useDispatch, useSelector } from "react-redux";
-import { countBy } from "lodash";
+import { countBy, flatten, isNumber } from "lodash";
 import { toggleFilter } from "../store/filters/actions";
 
 interface IChartData {
@@ -50,17 +50,35 @@ const ChartsPage = () => {
   // };
 
   const filterCharts = (value: any, name: String) => {
-    const counted = countBy(gamesList, value);
-    const arr = Object.keys(counted).map((key) => ({
-      key: key,
-      value: counted[key],
-    }));
-    // TODO filter first
-    const filteredArr: any = arr.filter((item) => item.key !== "null");
-    setFilteredChart({
-      data: filteredArr,
-      name,
-    });
+    if (value === "weapons") {
+      const weaponsArr = gamesList.map((item: any) => item.weapons);
+      const weaponsSorted = flatten(weaponsArr).filter(
+        (item: any) => item !== null && !isNumber(item)
+      );
+      const counted = countBy(weaponsSorted);
+      const arr = Object.keys(counted).map((key) => ({
+        key,
+        value: counted[key],
+      }));
+      setFilteredChart({
+        data: arr,
+        name,
+      });
+    } else {
+      const counted = countBy(gamesList, value);
+      const arr = Object.keys(counted).map((key) => ({
+        key,
+        value: counted[key],
+      }));
+      // TODO filter first
+      const filteredArr: any = arr.filter(
+        (item) => item.key !== "null" && item.key !== "undefined"
+      );
+      setFilteredChart({
+        data: filteredArr,
+        name,
+      });
+    }
   };
 
   const handleFilter = (event: any) => {
@@ -124,6 +142,9 @@ const ChartsPage = () => {
           data-name="Death blow"
         >
           Death blow
+        </button>{" "}
+        <button onClick={handleFilter} data-value="weapons" data-name="Weapons">
+          Weapons
         </button>
       </div>
       <div style={{ width: "100%", height: 500 }}>
