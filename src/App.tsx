@@ -31,27 +31,6 @@ const Main = () => {
           <ErrorBoundary>
             <Search />
             <Stats />
-            <a
-              style={{
-                display: "inline-block",
-                marginTop: 32,
-                padding: "4px 16px",
-                backgroundColor: "rgb(255, 66, 77)",
-                borderRadius: 10,
-                color: "#fff",
-                textDecoration: "none",
-              }}
-              href="https://www.patreon.com/bePatron?u=58353569"
-              data-patreon-widget-type="become-patron-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Become a Patron
-            </a>
-            <script
-              async
-              src="https://c6.patreon.com/becomePatronButton.bundle.js"
-            ></script>
           </ErrorBoundary>
         </Col>
         <Col md={6} lg={7}>
