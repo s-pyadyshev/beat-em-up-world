@@ -25,8 +25,9 @@ export const getFiltersError = (error: any) => ({
   error,
 });
 
-export const toggleFilter = () => ({
+export const toggleFilter = (isVisible: Boolean) => ({
   type: TOGGLE_FILTER,
+  isVisible,
 });
 
 export const toggleFilters = (filters: FilterInterface) => ({

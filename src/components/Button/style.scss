@@ -1,13 +1,12 @@
 @import "./../../assets/styles/variables";
-
+/* stylelint-disable */
 .button {
   padding: 8px 12px;
   color: $color-white;
   font-size: 20px;
   font-family: $font-family-button;
   background: none;
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       to bottom,
       rgb(0 0 255 / 80%) 0%,
       rgb(255 255 255 / 0%) 15%,
@@ -16,4 +15,26 @@
     ),
     url("../../assets/img/arcbg.png");
   border: 0;
+
+  &--active,
+  &:hover,
+  &:focus,
+  &:active {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.8) 0%,
+        rgba(255, 255, 255, 0) 15%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../../assets/img/genbg.png");
+  }
+}
+
+.button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  margin-left: 12px;
 }

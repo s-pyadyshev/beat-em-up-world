@@ -10,11 +10,14 @@ const Header = () => (
       <NavLink to="/" className="header__link">
         Home
       </NavLink>
-      <NavLink to="/about" className="header__link">
-        About
-      </NavLink>
       <NavLink to="/links" className="header__link">
         Links
+      </NavLink>
+      {/* <NavLink to="/charts" className="header__link">
+        Charts
+      </NavLink> */}
+      <NavLink to="/about" className="header__link">
+        About
       </NavLink>
       <div className="header__link">
         <a

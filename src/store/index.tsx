@@ -14,6 +14,7 @@ export const reducers: Reducer<ApplicationState> =
 export const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(logger))
+  // {trace: true, traceLimit: 25}
 );
 
 export default store;

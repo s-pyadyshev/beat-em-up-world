@@ -1,0 +1,33 @@
+@import "./../assets/styles/variables";
+/* stylelint-disable */
+article {
+  font-size: 18px;
+
+  h2 {
+    color: $h2-color;
+  }
+}
+
+.charts__buttons {
+  padding-right: 75px;
+  padding-left: 75px;
+  text-align: center;
+
+  > button {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.custom-tooltip {
+  background-color: $color-white;
+  padding: 16px;
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  color: $color-black;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}

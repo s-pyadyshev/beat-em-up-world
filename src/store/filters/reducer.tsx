@@ -73,7 +73,7 @@ export const filters = (
     case TOGGLE_FILTER:
       return {
         ...state,
-        isVisible: !state.isVisible,
+        isVisible: action.isVisible,
       };
     case TOGGLE_FILTERS:
       return {

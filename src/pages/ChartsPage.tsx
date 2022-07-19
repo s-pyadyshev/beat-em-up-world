@@ -9,22 +9,60 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { countBy, flatten, isNumber } from "lodash";
-import { toggleFilter } from "../store/filters/actions";
+import Button from "../components/Button";
+import "./Pages.scss";
 
 interface IChartData {
   data: any;
   name: any;
+  activeChart: any;
 }
+
+const buttons = [
+  {
+    value: "releaseYear",
+    name: "Release year",
+  },
+  {
+    value: "platform",
+    name: "Platform",
+    icon: "platform",
+  },
+  {
+    value: "country",
+    name: "Country",
+  },
+  {
+    value: "dashing",
+    name: "Dashing",
+  },
+  {
+    value: "grabs",
+    name: "Grabs",
+  },
+  {
+    value: "groundHit",
+    name: "Ground hit",
+  },
+  {
+    value: "deathBlow",
+    name: "Death blow",
+  },
+  {
+    value: "weapons",
+    name: "Weapons",
+  },
+];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     payload[0].chartType = "AreaChart";
     return (
       <div className="custom-tooltip">
-        <span className="time">{label}</span> -{" "}
-        <span className="label">{payload[0].value}</span>
+        <h3 className="time">{label}</h3>
+        <div className="label">{payload[0].value}</div>
       </div>
     );
   }
@@ -33,11 +71,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 const ChartsPage = () => {
-  const dispatch = useDispatch();
-
   const [filteredChart, setFilteredChart] = useState<IChartData>({
     data: [],
     name: "name",
+    activeChart: "releaseYear",
   });
   // const [filterChartOptions, setFilterChartOptions] = useState({});
   // automatically subscribes to the Redux store
@@ -63,89 +100,57 @@ const ChartsPage = () => {
       setFilteredChart({
         data: arr,
         name,
+        activeChart: name,
       });
     } else {
-      const counted = countBy(gamesList, value);
-      const arr = Object.keys(counted).map((key) => ({
+      const uniqueGamesList = gamesList.filter(
+        (game: any) => !game.hasOwnProperty("unalteredPort")
+      );
+      const counted = countBy(uniqueGamesList, value); // {1988: 30}
+      const countedArray = Object.keys(counted).map((key) => ({
         key,
         value: counted[key],
-      }));
-      // TODO filter first
-      const filteredArr: any = arr.filter(
+      })); // {key: '1986', value: 3}
+
+      // TODO filter first?
+      const filteredArr: any = countedArray.filter(
         (item) => item.key !== "null" && item.key !== "undefined"
       );
+
       setFilteredChart({
         data: filteredArr,
         name,
+        activeChart: name,
       });
     }
   };
 
   const handleFilter = (event: any) => {
     filterCharts(
-      event.target.getAttribute("data-value"),
-      event.target.getAttribute("data-name")
+      event.currentTarget.getAttribute("data-value"),
+      event.currentTarget.getAttribute("data-name")
     );
   };
 
   useEffect(() => {
-    dispatch(toggleFilter());
-  }, []);
-
-  useEffect(() => {
     filterCharts("releaseYear", "Release year");
-  }, []);
+  }, [gamesList]);
 
   return (
-    <div>
-      <div>
-        <button
-          onClick={handleFilter}
-          data-value="releaseYear"
-          data-name="Release year"
-        >
-          Release Year
-        </button>{" "}
-        <button
-          onClick={handleFilter}
-          data-value="perspective"
-          data-name="Perspective"
-        >
-          Perspective
-        </button>{" "}
-        <button
-          onClick={handleFilter}
-          data-value="platform"
-          data-name="Platform"
-        >
-          Platform
-        </button>{" "}
-        <button onClick={handleFilter} data-value="country" data-name="Country">
-          Country
-        </button>{" "}
-        <button onClick={handleFilter} data-value="dashing" data-name="Dashing">
-          Dashing
-        </button>{" "}
-        <button onClick={handleFilter} data-value="grabs" data-name="Grabs">
-          Grabs
-        </button>{" "}
-        <button
-          onClick={handleFilter}
-          data-value="groundHit"
-          data-name="Ground hit"
-        >
-          Ground hit
-        </button>{" "}
-        <button
-          onClick={handleFilter}
-          data-value="deathBlow"
-          data-name="Death blow"
-        >
-          Death blow
-        </button>{" "}
-        <button onClick={handleFilter} data-value="weapons" data-name="Weapons">
-          Weapons
-        </button>
+    <div className="charts">
+      <div className="charts__buttons">
+        {buttons.map((button) => (
+          <Button
+            active={filteredChart.activeChart === button.name}
+            key={button.value}
+            data-value={button.value}
+            data-name={button.name}
+            onClick={handleFilter}
+            icon={button.value}
+          >
+            {button.name}
+          </Button>
+        ))}
       </div>
       <div style={{ width: "100%", height: 500 }}>
         <ResponsiveContainer>

@@ -1,6 +1,6 @@
 import React from "react";
-import "./article.scss";
 import { Helmet } from "react-helmet";
+import "./Pages.scss";
 
 const AboutPage = () => (
   <article className="about">
@@ -130,11 +130,6 @@ const AboutPage = () => (
       Thanks a lot to the following guys for recommendation of games and
       feedback:
     </h2>
-    <p>
-      <a href="http://dronami.com" target="_blank" rel="noopener noreferrer">
-        http://dronami.com
-      </a>
-    </p>
     <ul>
       <li>Dronami, creator of PunchPedia</li>
     </ul>

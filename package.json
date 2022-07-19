@@ -46,7 +46,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
-    "react-grid-system": "^6.3.0",
+    "react-grid-system": "^8.1.5",
     "react-helmet": "^6.1.0",
     "react-id-swiper": "^3.0.0",
     "react-popper-tooltip": "^2.11.1",
