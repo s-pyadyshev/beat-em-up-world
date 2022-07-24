@@ -28,7 +28,6 @@ const buttons = [
   {
     value: "platform",
     name: "Platform",
-    icon: "platform",
   },
   {
     value: "country",
@@ -103,9 +102,16 @@ const ChartsPage = () => {
         activeChart: name,
       });
     } else {
-      const uniqueGamesList = gamesList.filter(
-        (game: any) => !game.hasOwnProperty("unalteredPort")
-      );
+      let uniqueGamesList = gamesList;
+      if (
+        value !== "releaseYear" &&
+        value !== "platform" &&
+        value !== "weapons"
+      ) {
+        uniqueGamesList = gamesList.filter(
+          (game: any) => !game.hasOwnProperty("unalteredPort")
+        );
+      }
       const counted = countBy(uniqueGamesList, value); // {1988: 30}
       const countedArray = Object.keys(counted).map((key) => ({
         key,
