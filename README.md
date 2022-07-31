@@ -6,7 +6,7 @@ Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (
 
 Stack:<br>
 React, Redux, react-router, create-react-app<br>
-react-popper-tooltip, react-grid-system, swiper, Disqus comments<br>
+react-popper-tooltip, react-grid-system, swiper, Disqus comments, Recharts<br>
 Scss, stylelint, prettier<br>
 
 "API" (JSON)
@@ -19,13 +19,11 @@ Scss, stylelint, prettier<br>
 - Refactoring: best practices
 - Add redux-persist?
 - Add reverse list view?, list with screenshots in slider + pagination?
-- Add chart
 - Add SSR?
 - Add dark/light theme (change on system settings)
-- Make gangsize param consistent?
-- Add "random game" block
 - Add 404 page
 - Add RSS
+- Fix bug - redirect from Home to About and click on About link - input cursor line appears on About link
 
 ## :hammer_and_wrench: Installation
 

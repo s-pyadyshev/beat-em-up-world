@@ -5,7 +5,9 @@ import { ApplicationState } from "../../interfaces/ApplicationState";
 import "./style.scss";
 
 const Stats: React.FC = () => {
-  const isLoading = useSelector((state: any) => state.gamesList.loading);
+  const isLoading = useSelector(
+    (state: ApplicationState) => state.gamesList.loading
+  );
 
   const total = useSelector(
     (state: ApplicationState) => state.gamesList.gamesList.length
@@ -19,6 +21,7 @@ const Stats: React.FC = () => {
         (game: GameCardInterface) => game.missing === true
       ).length
   );
+
   const found = useSelector(
     (state: ApplicationState) => state.gamesList.filteredGames.length
   );

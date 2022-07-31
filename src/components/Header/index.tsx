@@ -10,12 +10,12 @@ const Header = () => (
       <NavLink to="/" className="header__link">
         Home
       </NavLink>
+      <NavLink to="/charts" className="header__link">
+        Charts
+      </NavLink>
       <NavLink to="/links" className="header__link">
         Links
       </NavLink>
-      {/* <NavLink to="/charts" className="header__link">
-        Charts
-      </NavLink> */}
       <NavLink to="/about" className="header__link">
         About
       </NavLink>
@@ -26,7 +26,7 @@ const Header = () => (
           rel="noopener noreferrer"
           className="dronami-logo"
         >
-          <img src={Dronami} alt="DRONAMI" width="640" height="128" />
+          <img src={Dronami} alt="DRONAMI." width="640" height="128" />
         </a>
       </div>
       <div className="header__link">
@@ -36,7 +36,7 @@ const Header = () => (
           rel="noopener noreferrer"
           className="punchpedia-logo"
         >
-          <img src={PunchPedia} alt="PunchPedia" width="260" height="260" />
+          <img src={PunchPedia} alt="PunchPedia." width="260" height="260" />
         </a>
       </div>
     </div>

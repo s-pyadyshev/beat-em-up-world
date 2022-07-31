@@ -66,6 +66,7 @@ const AboutPage = () => (
       It&apos;s another endless holywar question - beat&apos;em up VS
       hack&apos;n&apos;slash.
       <br />
+      <br />
       Simple way:
       <br />
       Is this game a beat&apos;em up? Which perspective view does the game have?
@@ -89,8 +90,8 @@ const AboutPage = () => (
     <br />- <strong>4-way movement or 3D (with some exceptions for 2D)</strong>
     <br />
     - Variety matters (we need more grabs!). Actually variety can be applied to
-    any genre. Just compare Nekketsu Kouha Kunio-kun (1986) and Toxic Crusaders
-    (1992). The latter is just one punch (one broom hit) action.
+    any genre. Just compare Nekketsu Kouha Kunio-kun (1986) and any modern
+    beat'em up with shallow combat mechanics.
     <br />
     <br />
     Let&apos;t take a look closer at examples:
@@ -132,17 +133,26 @@ const AboutPage = () => (
     </h2>
     <ul>
       <li>Dronami, creator of PunchPedia</li>
-    </ul>
-    <ul>
       <li>A National Acrobat</li>
       <li>Adol</li>
       <li>Altron320</li>
       <li>Gelior</li>
       <li>Lee Pai-Long</li>
+      <li>O Ilusionista</li>
       <li>perfect_genius</li>
       <li>Smoke_John</li>
       <li>Street Fighter</li>
       <li>varezhkin</li>
+      <li>
+        VGJunk, author of{" "}
+        <a
+          href="http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Beat'em up Bingo
+        </a>
+      </li>
     </ul>
   </article>
 );

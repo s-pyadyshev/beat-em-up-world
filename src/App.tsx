@@ -77,10 +77,7 @@ const App: React.FC = () => {
       </Helmet>
       <Header />
       <div className="app__body">
-        <Container
-          style={{ width: "100%" }}
-          fluid={!isFiltersVisible ? true : false}
-        >
+        <Container style={{ width: "100%" }} fluid={!isFiltersVisible || false}>
           <Row>
             {isFiltersVisible ? (
               <Col md={4} lg={3}>

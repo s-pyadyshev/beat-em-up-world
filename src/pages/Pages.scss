@@ -3,6 +3,10 @@
 article {
   font-size: 18px;
 
+  a {
+    color: $link-color-active;
+  }
+
   h2 {
     color: $h2-color;
   }

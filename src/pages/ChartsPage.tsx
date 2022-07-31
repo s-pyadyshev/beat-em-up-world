@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { useSelector } from "react-redux";
 import { countBy, flatten, isNumber } from "lodash";
+import { Container } from "react-grid-system";
 import Button from "../components/Button";
 import "./Pages.scss";
 
@@ -85,6 +86,9 @@ const ChartsPage = () => {
   //   return state.todos.map((todo) => todo.text);
   // };
 
+  const total = useSelector((state: any) => state.gamesList.total);
+  const missing = useSelector((state: any) => state.gamesList.missing);
+
   const filterCharts = (value: any, name: String) => {
     if (value === "weapons") {
       const weaponsArr = gamesList.map((item: any) => item.weapons);
@@ -103,20 +107,16 @@ const ChartsPage = () => {
       });
     } else {
       let uniqueGamesList = gamesList;
-      if (
-        value !== "releaseYear" &&
-        value !== "platform" &&
-        value !== "weapons"
-      ) {
+      if (value !== "releaseYear" && value !== "platform") {
         uniqueGamesList = gamesList.filter(
           (game: any) => !game.hasOwnProperty("unalteredPort")
         );
       }
-      const counted = countBy(uniqueGamesList, value); // {1988: 30}
+      const counted = countBy(uniqueGamesList, value); // {1988: 9}
       const countedArray = Object.keys(counted).map((key) => ({
         key,
         value: counted[key],
-      })); // {key: '1986', value: 3}
+      })); // {key: '1986', value: 9} convert data for charts
 
       // TODO filter first?
       const filteredArr: any = countedArray.filter(
@@ -175,7 +175,6 @@ const ChartsPage = () => {
             <XAxis dataKey="key" tick={{ fontSize: 12 }} />
             <YAxis dataKey="value" />
             <Tooltip content={<CustomTooltip />} />
-            <Legend />
             <Line
               name={filteredChart.name}
               type="monotone"
@@ -183,9 +182,16 @@ const ChartsPage = () => {
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
+            <Legend wrapperStyle={{ fontSize: "20px" }} />
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <Container>
+        <p>
+          The stats are based on data from {total - missing} games. Unaltered
+          ports were excluded except for release year and platform.
+        </p>
+      </Container>
     </div>
   );
 };

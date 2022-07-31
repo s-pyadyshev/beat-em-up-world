@@ -25,6 +25,7 @@ const initialState = {
   error: null,
   gamesList: [],
   filteredGames: [],
+  total: 0,
 };
 
 export const gamesList = (state: any = initialState, action: any) => {
@@ -44,6 +45,8 @@ export const gamesList = (state: any = initialState, action: any) => {
         filteredGames: action.gamesList,
         loading: false,
         error: null,
+        total: action.gamesList.length,
+        missing: action.gamesList.filter((game: any) => game.missing).length,
       };
     case GET_GAMES_ERROR:
       return {

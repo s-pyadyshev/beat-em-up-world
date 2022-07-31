@@ -18,6 +18,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   );
 
   const negativeValues = ["No"];
+  const neutralValues = ["N/A"];
   const hasFeature = (value: string) => negativeValues.includes(value);
 
   useEffect(() => {
