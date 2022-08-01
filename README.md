@@ -23,7 +23,6 @@ Scss, stylelint, prettier<br>
 - Add dark/light theme (change on system settings)
 - Add 404 page
 - Add RSS
-- Fix bug - redirect from Home to About and click on About link - input cursor line appears on About link
 
 ## :hammer_and_wrench: Installation
 
