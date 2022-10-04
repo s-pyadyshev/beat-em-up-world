@@ -7,16 +7,37 @@ import "./style.scss";
 const Header = () => (
   <header className="header">
     <div className="header__inner">
-      <NavLink to="/" className="header__link">
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) =>
+          isActive ? "header__link is-active" : "header__link"
+        }
+      >
         Home
       </NavLink>
-      <NavLink to="/charts" className="header__link">
+      <NavLink
+        to="/charts"
+        className={({ isActive }) =>
+          isActive ? "header__link is-active" : "header__link"
+        }
+      >
         Charts
       </NavLink>
-      <NavLink to="/links" className="header__link">
+      <NavLink
+        to="/links"
+        className={({ isActive }) =>
+          isActive ? "header__link is-active" : "header__link"
+        }
+      >
         Links
       </NavLink>
-      <NavLink to="/about" className="header__link">
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive ? "header__link is-active" : "header__link"
+        }
+      >
         About
       </NavLink>
       <div className="header__link">
