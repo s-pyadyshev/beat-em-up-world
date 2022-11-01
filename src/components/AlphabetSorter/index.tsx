@@ -12,8 +12,8 @@ const AlphabetSorter: React.FC = () => {
   );
 
   // TODO React.ChangeEvent<HTMLButtonElement> - event type issue
-  const handleClickLetter = (event: any) => {
-    const letter = event.target.getAttribute("data-letter");
+  const handleClickLetter = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const letter = event.currentTarget.getAttribute("data-letter") as string;
     store.dispatch(filterByLetter(letter));
   };
 
@@ -23,7 +23,7 @@ const AlphabetSorter: React.FC = () => {
 
   return (
     <ul className="alphabet-sorter">
-      {alphabetEn.map((letter: string) => (
+      {alphabetEn.map((letter) => (
         <li key={letter}>
           {activeLetter === letter ? (
             <span className="alphabet-sorter__button is-active">

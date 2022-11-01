@@ -51,8 +51,16 @@ const Main = () => {
   );
 };
 
+interface filtersInterface {
+  filters: {
+    isVisible: boolean;
+  };
+}
+
 const App: React.FC = () => {
-  const isFiltersVisible = useSelector((state: any) => state.filters.isVisible);
+  const isFiltersVisible = useSelector(
+    (state: filtersInterface) => state.filters.isVisible
+  );
   const location = useLocation().pathname;
   const dispatch = useDispatch();
 

@@ -12,6 +12,7 @@ const Bingo = (beatemupBingo: any) => {
       {bingo.map((bingoItem) => {
         const { id, detail, name } = bingoItem;
         const beatemupBingoId = beatemupBingo[id];
+
         return (
           <div
             key={id}

@@ -199,6 +199,16 @@ const LinksPage = () => (
           https://itch.io/games/tag-beat-em-up
         </a>
       </li>
+      <li>
+        <a
+          href="https://www.brawlersalley.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Brawler's Alley: The First Ever Beat'Em Up Magazine, bringing you the
+          latest news, previews and reviews of this old timer genre
+        </a>
+      </li>
     </ul>
   </div>
 );

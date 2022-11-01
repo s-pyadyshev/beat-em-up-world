@@ -24,11 +24,15 @@ const basicFilters = [
   "focus",
 ];
 
-// interface FiltersStateInteface {
-//   filters?: any;
-//   error?: any;
-//   loading: Boolean;
-// }
+interface FiltersInteface {
+  saveFilters: boolean;
+  isVisible: boolean;
+  loading: Boolean;
+  error?: null | string;
+  filters: object[];
+  filtersToggled: object[];
+  basicView: boolean;
+}
 
 interface FiltersActionInteface {
   type: string;
@@ -41,10 +45,15 @@ interface FiltersActionInteface {
 const initialState = {
   saveFilters: false,
   isVisible: true,
+  loading: false,
+  error: null,
+  filters: [],
+  filtersToggled: [],
+  basicView: true,
 };
 
 export const filters = (
-  state: any = initialState,
+  state: FiltersInteface = initialState,
   action: FiltersActionInteface
 ) => {
   switch (action.type) {

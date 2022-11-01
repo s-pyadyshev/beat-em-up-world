@@ -15,7 +15,7 @@ import {
 } from "../../store/gamesList/actions";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
-import { Scrollbars } from "react-custom-scrollbars-2";
+// import { Scrollbars } from "react-custom-scrollbars-2";
 
 import "./style.scss";
 import store from "../../store";

@@ -6,3 +6,6 @@ test:
 
 lint:
 	npm run lint:js
+
+start:
+	npm run start
