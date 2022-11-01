@@ -132,16 +132,17 @@ const AboutPage = () => (
       feedback:
     </h2>
     <ul>
-      <li>Dronami, creator of PunchPedia</li>
       <li>A National Acrobat</li>
       <li>Adol</li>
       <li>Altron320</li>
+      <li>Dronami, creator of PunchPedia</li>
       <li>Gelior</li>
       <li>Lee Pai-Long</li>
       <li>O Ilusionista</li>
       <li>perfect_genius</li>
       <li>Smoke_John</li>
       <li>Street Fighter</li>
+      <li>The Flying Kick</li>
       <li>varezhkin</li>
       <li>
         VGJunk, author of{" "}
