@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import cn from "classnames";
 import { convertGameId } from "../../utils/utils";
 import { ApplicationState } from "../../interfaces/ApplicationState";
-import { GameCardInterface } from "../../interfaces/GameCard";
+import { GameCardType } from "../../types/GameCard";
 import "./style.scss";
 
 const TodayGame: React.FC = () => {
@@ -19,9 +19,9 @@ const TodayGame: React.FC = () => {
   useEffect(() => {
     // TODO - make backend to get game by id
     const todayGamesData = gamesList
-      .filter((game: GameCardInterface) => game.missing !== true)
+      .filter((game: GameCardType) => game.missing !== true)
       .filter(
-        (game: GameCardInterface) =>
+        (game: GameCardType) =>
           gamesList && game.releasedate.slice(5, 10) === todayDate
       );
     setTodayGames(todayGamesData);

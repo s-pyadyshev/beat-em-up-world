@@ -5,9 +5,13 @@ import Bingo from "../Bingo";
 import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
 import Comments from "../Comments";
-import { convertGameId } from "../../utils/utils";
+import {
+  convertGameId,
+  makeOtherPlatformLink,
+  makeOtherPlatformName,
+} from "../../utils/utils";
 import { ApplicationState } from "../../interfaces/ApplicationState";
-import { GameCardInterface } from "../../interfaces/GameCard";
+import { GameCardType } from "../../types/GameCard";
 import "./style.scss";
 
 const GameCard = ({ commentsUrl, commentsId }: any) => {
@@ -25,8 +29,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     // TODO make backend instead of this bad way to find game by id
     const filteredGameCard = gamesList
       ? gamesList.filter(
-          (game: GameCardInterface) =>
-            convertGameId(game.name, game.platform) === id
+          (game: GameCardType) => convertGameId(game.name, game.platform) === id
         )[0]
       : null;
     setGameCardInfo({ ...filteredGameCard });
@@ -93,15 +96,6 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     beatemupBingo &&
     Object.values(beatemupBingo).filter((value) => value === true).length;
 
-  const makeOtherPlatformLink = (name: string, game: any) => {
-    return typeof game === "string"
-      ? convertGameId(name, game) // if various platform names are the same
-      : convertGameId(game.name, game.platform); // if they are different (handled as objects)
-  };
-
-  const makeOtherPlatformName = (game: any) =>
-    typeof game === "string" ? game : game.platform;
-
   // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
@@ -127,14 +121,16 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           <div className="game-card__reviews">
             <span className="game-card__title">Overall Review</span>
             {overallReview && overallReview.length ? (
-              overallReview.map((item: any) => (
-                <div key={item.name}>
-                  <h4 className="game-card__author">
-                    By <span>{item.author}</span>
-                  </h4>
-                  <p>{item.text}</p>
-                </div>
-              ))
+              overallReview.map(
+                (item: { name: string; author: string; text: string }) => (
+                  <div key={item.name}>
+                    <h4 className="game-card__author">
+                      By <span>{item.author}</span>
+                    </h4>
+                    <p>{item.text}</p>
+                  </div>
+                )
+              )
             ) : (
               <p>Coming soon</p>
             )}

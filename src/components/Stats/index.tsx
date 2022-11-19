@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { GameCardInterface } from "../../interfaces/GameCard";
+import { GameCardType } from "../../types/GameCard";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import "./style.scss";
 
@@ -13,12 +13,12 @@ const Stats: React.FC = () => {
     (state: ApplicationState) => state.gamesList.gamesList.length
   );
 
-  // TODO add specific param to DB to calculate unique titles only
+  // TODO add specific param to DB to calculate unique titles only?
 
   const missing = useSelector(
     (state: ApplicationState) =>
       state.gamesList.gamesList.filter(
-        (game: GameCardInterface) => game.missing === true
+        (game: GameCardType) => game.missing === true
       ).length
   );
 

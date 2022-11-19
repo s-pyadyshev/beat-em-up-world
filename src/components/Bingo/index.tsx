@@ -1,5 +1,5 @@
 import React from "react";
-// import { BingoInterface } from "../../interfaces/Bingo";
+// import { BingoType } from "../../types/Bingo";
 import { bingo } from "../../constants/bingo";
 import "./style.scss";
 
@@ -9,9 +9,9 @@ const Bingo = (beatemupBingo: any) => {
 
   return (
     <div className="bingo">
-      {bingo.map((bingoItem) => {
+      {bingo.map((bingoItem: { id: string; name: string; detail: string }) => {
         const { id, detail, name } = bingoItem;
-        const beatemupBingoId = beatemupBingo[id];
+        const beatemupBingoId = beatemupBingo[id]; // FIXME Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'BingoType'
 
         return (
           <div

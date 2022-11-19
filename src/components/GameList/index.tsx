@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import GamesListItem from "../GameListItem";
 import Loading from "../Loading";
 import { ApplicationState } from "../../interfaces/ApplicationState";
-import { GameCardInterface } from "../../interfaces/GameCard";
+import { GameCardType } from "../../types/GameCard";
 import "./style.scss";
 
 const GamesList = () => {
@@ -22,7 +22,7 @@ const GamesList = () => {
       ) : null}
 
       {filteredGamesList &&
-        filteredGamesList.map((game: GameCardInterface) => (
+        filteredGamesList.map((game: GameCardType) => (
           <React.Fragment key={game.name + game.platform}>
             {game.missing ? (
               <li className="missing">

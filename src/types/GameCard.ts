@@ -1,6 +1,6 @@
-import { BingoInterface } from "./Bingo";
+import { BingoType } from "./Bingo";
 
-export interface GameCardInterface {
+export type GameCardType = {
   missing?: Boolean;
   multigenre?: string;
   name: string;
@@ -55,5 +55,5 @@ export interface GameCardInterface {
   links: string[];
   images: string[];
   videos: string[];
-  beatemupBingo: BingoInterface;
-}
+  beatemupBingo: BingoType;
+};
