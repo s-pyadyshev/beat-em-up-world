@@ -22,7 +22,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   );
 
   const negativeValues = ["No"];
-  // const neutralValues = ["N/A"];
+  // const neutralValues = ["N/A"]; // TODO add neutral colors
   const hasFeature = (value: string) => negativeValues.includes(value);
 
   useEffect(() => {

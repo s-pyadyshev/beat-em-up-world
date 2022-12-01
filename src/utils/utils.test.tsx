@@ -16,6 +16,7 @@ describe("Test makeOtherPlatformLink", () => {
       makeOtherPlatformLink("Double Dragon III: The Rosetta Stone", "Arcade")
     ).toEqual("doubledragoniiitherosettastone-arcade");
   });
+
   test("id is generated correctly if game === object", () => {
     expect(
       makeOtherPlatformLink("Double Dragon III: The Rosetta Stone", {
