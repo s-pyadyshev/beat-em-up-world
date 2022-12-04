@@ -44,7 +44,7 @@ interface FiltersActionInteface {
 
 const initialState = {
   saveFilters: false,
-  isVisible: true,
+  isVisible: false,
   loading: false,
   error: null,
   filters: [],

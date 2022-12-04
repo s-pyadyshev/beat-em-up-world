@@ -1,8 +1,10 @@
 @import "../../assets/styles/variables";
+@import "../../assets/styles/media";
 
 .alphabet-sorter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   margin-top: 24px;
   margin-bottom: 24px;

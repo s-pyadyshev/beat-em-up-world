@@ -1,6 +1,6 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
@@ -15,6 +15,7 @@ import AlphabetSorter from "./components/AlphabetSorter";
 import { Container, Row, Col, setConfiguration } from "react-grid-system";
 import { getGames } from "./store/gamesList/actions";
 import { toggleFilter } from "./store/filters/actions";
+import store from "./store";
 import "./App.scss";
 
 setConfiguration({
@@ -25,17 +26,39 @@ const About = lazy(() => import("./pages/AboutPage"));
 const Links = lazy(() => import("./pages/LinksPage"));
 const SecretPage = lazy(() => import("./pages/SecretPage"));
 
+interface filtersInterface {
+  filters: {
+    isVisible: boolean;
+  };
+}
+
 const Main = () => {
+  const isFiltersVisible = useSelector(
+    (state: filtersInterface) => state.filters.isVisible
+  );
+  const handleToggleFilter = () => {
+    store.dispatch(toggleFilter(!isFiltersVisible));
+  };
+
   return (
     <>
       <Row>
         <Col md={6} lg={5}>
           <ErrorBoundary>
+            <div className="filter-toggle">
+              <button onClick={handleToggleFilter}>
+                {/* {!visible ? <span>Show filter</span> : <span>Hide filter</span>} */}
+                Toggle Filter
+              </button>
+            </div>
             <Search />
             <Stats />
           </ErrorBoundary>
         </Col>
-        <Col md={6} lg={7}>
+        <Col md={6} lg={7}></Col>
+      </Row>
+      <Row>
+        <Col>
           <ErrorBoundary>
             <TodayGame />
           </ErrorBoundary>
@@ -51,18 +74,11 @@ const Main = () => {
   );
 };
 
-interface filtersInterface {
-  filters: {
-    isVisible: boolean;
-  };
-}
-
 const App: React.FC = () => {
   const isFiltersVisible = useSelector(
     (state: filtersInterface) => state.filters.isVisible
   );
   const location = useLocation().pathname;
-  const dispatch = useDispatch();
 
   useEffect(() => {
     getGames();
@@ -70,9 +86,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (location === "/charts") {
-      dispatch(toggleFilter(false));
-    } else {
-      dispatch(toggleFilter(true));
+      store.dispatch(toggleFilter(false));
     }
   }, [location]);
 
@@ -85,7 +99,7 @@ const App: React.FC = () => {
       </Helmet>
       <Header />
       <div className="app__body">
-        <Container style={{ width: "100%" }} fluid={!isFiltersVisible || false}>
+        <Container style={{ width: "100%" }} fluid={location === "/charts"}>
           <Row>
             {isFiltersVisible ? (
               <Col md={4} lg={3}>
