@@ -1,4 +1,5 @@
 @import "./../assets/styles/variables";
+@import "./../assets/styles/media";
 /* stylelint-disable */
 article {
   font-size: 18px;
@@ -13,9 +14,12 @@ article {
 }
 
 .charts__buttons {
-  padding-right: 75px;
-  padding-left: 75px;
   text-align: center;
+
+  @include tablet {
+    padding-right: 75px;
+    padding-left: 75px;
+  }
 
   > button {
     margin-right: 16px;

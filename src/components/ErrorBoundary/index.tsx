@@ -1,6 +1,6 @@
 import React from "react";
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends React.Component<any> {
   componentDidCatch(error: any) {
     return error;
   }

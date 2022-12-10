@@ -13,6 +13,9 @@ import {
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardType } from "../../types/GameCard";
 import "./style.scss";
+import { SwiperSlide } from "swiper/react";
+import store from "../../store";
+import { toggleFilter } from "../../store/filters/actions";
 
 const GameCard = ({ commentsUrl, commentsId }: any) => {
   const { id } = useParams();
@@ -24,6 +27,10 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
   const negativeValues = ["No"];
   // const neutralValues = ["N/A"]; // TODO add neutral colors
   const hasFeature = (value: string) => negativeValues.includes(value);
+
+  useEffect(() => {
+    store.dispatch(toggleFilter(false));
+  }, []);
 
   useEffect(() => {
     // TODO make backend instead of this bad way to find game by id
@@ -106,16 +113,18 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
         {name} [{platform}]
       </h2>
       <div className="game-card__body">
-        <div className="game-card__header">
-          <img src={cover} alt={name} className="game-card__cover" />
-          <div className="game-card__about">
-            <div>
-              <span className="game-card__title">About</span>
-              <p>{about ? about : "Coming soon"}</p>
-            </div>
-            <div>
-              <span className="game-card__title">Trivia</span>
-              <p>{trivia ? trivia : "Coming soon"}</p>
+        <div className="game-card__left">
+          <div className="game-card__header">
+            <img src={cover} alt={name} className="game-card__cover" />
+            <div className="game-card__about">
+              <div>
+                <span className="game-card__title">About</span>
+                <p>{about ? about : "Coming soon"}</p>
+              </div>
+              <div>
+                <span className="game-card__title">Trivia</span>
+                <p>{trivia ? trivia : "Coming soon"}</p>
+              </div>
             </div>
           </div>
           <div className="game-card__reviews">
@@ -135,7 +144,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <p>Coming soon</p>
             )}
           </div>
-          <div>
+          <div className="game-card__links">
             <span className="game-card__title">Links: </span>
             {links && links.length ? (
               <ul className="game-card__links">
@@ -150,6 +159,40 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : (
               <p>Coming soon</p>
             )}
+          </div>
+
+          <div>
+            {images ? (
+              <div className="game-card__screenshots">
+                <Slider>
+                  {images.map((image: string) => (
+                    <SwiperSlide key={image}>
+                      <img src={image} alt="game screenshot" />
+                    </SwiperSlide>
+                  ))}
+                </Slider>
+              </div>
+            ) : null}
+            {videos && videos.length > 0 ? (
+              <div className="game-card__videos">
+                <Slider>
+                  {videos.map((video: string) => (
+                    <div key={video}>
+                      {/* iframes must have unique title */}
+                      <iframe
+                        title={video}
+                        width="100%"
+                        height="360"
+                        src={video}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            ) : null}
           </div>
         </div>
         <ul className="game-card__detail">
@@ -454,38 +497,6 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
           </li>
         </ul>
       </div>
-
-      {images ? (
-        <div className="game-card__screenshots">
-          <Slider>
-            {images.map((image: string) => (
-              <div key={image}>
-                <img src={image} alt="game screenshot" />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      ) : null}
-      {videos && videos.length > 0 ? (
-        <div className="game-card__videos">
-          <Slider>
-            {videos.map((video: string) => (
-              <div key={video}>
-                {/* iframes must have unique title */}
-                <iframe
-                  title={video}
-                  width="100%"
-                  height="360"
-                  src={video}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      ) : null}
       <div className="game-card__comments">
         <Comments fullUrl={commentsUrl} id={commentsId} />
       </div>

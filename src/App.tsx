@@ -19,7 +19,7 @@ import store from "./store";
 import "./App.scss";
 
 setConfiguration({
-  containerWidths: [768, 960, 1024, 1200, 1400, 1920, 2560],
+  containerWidths: [640, 768, 960, 1024, 1200, 1920],
 });
 
 const About = lazy(() => import("./pages/AboutPage"));
@@ -45,31 +45,38 @@ const Main = () => {
       <Row>
         <Col md={6} lg={5}>
           <ErrorBoundary>
+            <Search />
             <div className="filter-toggle">
-              <button onClick={handleToggleFilter}>
-                {/* {!visible ? <span>Show filter</span> : <span>Hide filter</span>} */}
-                Toggle Filter
+              <button onClick={handleToggleFilter} className="button">
+                {!isFiltersVisible ? (
+                  <span>Show filter</span>
+                ) : (
+                  <span>Hide filter</span>
+                )}
               </button>
             </div>
-            <Search />
-            <Stats />
           </ErrorBoundary>
         </Col>
         <Col md={6} lg={7}></Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col>
           <ErrorBoundary>
             <TodayGame />
           </ErrorBoundary>
         </Col>
-      </Row>
+      </Row> */}
       <AlphabetSorter />
       <div style={{ marginBottom: 24 }}>
         <b style={{ color: "yellow" }}>Yellow color</b> - a game with partial
         beat'em up gameplay. Good choice to vary face punching routine.
       </div>
       <GameList />
+      <Row style={{ marginTop: 64 }}>
+        <Col md={4} offset={{ md: 4 }}>
+          <Stats />
+        </Col>
+      </Row>
     </>
   );
 };

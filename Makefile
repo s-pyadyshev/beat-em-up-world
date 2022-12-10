@@ -12,3 +12,6 @@ start:
 
 build:
 	npm run build
+
+icons:
+	npm run icons

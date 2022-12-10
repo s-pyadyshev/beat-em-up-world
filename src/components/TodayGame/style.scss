@@ -4,6 +4,7 @@
 .today-games-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 32px;
 }
 
 .today-game {
@@ -54,7 +55,7 @@
     padding: 8px 16px;
     text-align: center;
     text-shadow: 1px 1px 20px $color-black;
-    background-color: rgb(0 0 0 / 70%);
+    background-color: rgb(0 0 0 / 50%);
   }
 
   &__name {

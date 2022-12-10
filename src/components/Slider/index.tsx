@@ -1,24 +1,27 @@
 import * as React from "react";
-import Swiper from "react-id-swiper";
-import "swiper/css/swiper.css";
+import { Swiper } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
+import "swiper/swiper.scss";
+import "swiper/modules/navigation/navigation.scss";
+import "swiper/modules/pagination/pagination.scss";
 import "./style.scss";
 
-export const Slider = (props: any) => {
-  const { children } = props;
-  const params = {
-    rebuildOnUpdate: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  };
+type Props = {
+  children: JSX.Element | JSX.Element[];
+};
 
-  return <Swiper {...params}>{children}</Swiper>;
+export const Slider = ({ children }: Props) => {
+  return (
+    <Swiper
+      modules={[Navigation, Pagination]}
+      navigation
+      pagination={{
+        clickable: true,
+      }}
+    >
+      {children}
+    </Swiper>
+  );
 };
 
 export default Slider;
