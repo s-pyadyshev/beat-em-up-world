@@ -117,11 +117,12 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <HelmetWithChildren>
+      {/* @ts-ignore */}
+      <Helmet>
         <meta charSet="utf-8" />
         <title>Beat'em Up World</title>
         <link rel="icon" type="image/png" href="favicon1-16x16" sizes="16x16" />
-      </HelmetWithChildren>
+      </Helmet>
       <Header />
       <div className="app__body">
         <Container style={{ width: "100%" }} fluid={location === "/charts"}>
