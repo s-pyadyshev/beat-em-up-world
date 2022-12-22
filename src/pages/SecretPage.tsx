@@ -18,12 +18,12 @@ const SecretPage: React.FC = () => {
     githubPromise.then((response) => response.json()).then((data) => data.blog);
 
     Promise.all([catFactPromise, githubPromise]).then(
-      (data) => console.log(data[0], data[1]),
+      (data) => console.log("2 promises done"),
       (error) => console.log(error)
     );
   }, []);
 
-  return <div>{data && data.blog}</div>;
+  return <div></div>;
 };
 
 export default SecretPage;

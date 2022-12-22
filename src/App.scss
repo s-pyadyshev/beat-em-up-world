@@ -1,3 +1,4 @@
+@import "assets/styles/variables";
 @import "assets/styles/media";
 
 .app {
@@ -8,6 +9,25 @@
 
     @include tablet {
       flex-wrap: nowrap;
+    }
+  }
+}
+
+.brawlers-alley-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+
+  p {
+    margin: 0;
+    color: $color-white;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    p {
+      color: $link-color-hover;
     }
   }
 }

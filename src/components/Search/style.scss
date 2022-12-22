@@ -5,24 +5,25 @@
   padding: 8px;
   font-size: 16px;
   border: none;
+}
 
-  &--search {
-    color: $color-white;
-    font-size: 24px;
-    font-family: $font-family-secondary;
-    text-transform: uppercase;
-    background:
-      linear-gradient(
-        to bottom,
-        rgb(122 122 122 / 80%) 0%,
-        rgb(255 255 255 / 0%) 15%,
-        rgb(0 0 0 / 0%) 10%,
-        rgb(0 0 0 / 80%) 100%
-      ),
-      url("../../assets/img/vborder.png");
+.input-search {
+  margin-bottom: 16px;
+  color: $color-white;
+  font-size: 24px;
+  font-family: $font-family-secondary;
+  text-transform: uppercase;
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(122 122 122 / 80%) 0%,
+      rgb(255 255 255 / 0%) 15%,
+      rgb(0 0 0 / 0%) 10%,
+      rgb(0 0 0 / 80%) 100%
+    ),
+    url("../../assets/img/vborder.png");
 
-    &::placeholder {
-      color: rgba($color-white, 0.7);
-    }
+  &::placeholder {
+    color: rgba($color-white, 0.7);
   }
 }

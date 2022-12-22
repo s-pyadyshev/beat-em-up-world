@@ -5,7 +5,7 @@
   min-height: 120px;
   margin-bottom: 16px;
   font-size: 32px;
-  font-family: capture-it, serif;
+  font-family: $font-family-secondary;
 
   @include desktop {
     margin-bottom: 32px;

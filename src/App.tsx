@@ -17,6 +17,7 @@ import { getGames } from "./store/gamesList/actions";
 import { toggleFilter } from "./store/filters/actions";
 import store from "./store";
 import "./App.scss";
+import BrawlersAlleyLogo from "../src/assets/img/logo-brawlers-alley.png";
 
 setConfiguration({
   containerWidths: [640, 768, 960, 1024, 1200, 1920],
@@ -43,7 +44,7 @@ const Main = () => {
   return (
     <>
       <Row>
-        <Col md={6} lg={5}>
+        <Col md={12} xl={6}>
           <ErrorBoundary>
             <Search />
             <div className="filter-toggle">
@@ -57,15 +58,26 @@ const Main = () => {
             </div>
           </ErrorBoundary>
         </Col>
-        <Col md={6} lg={7}></Col>
-      </Row>
-      {/* <Row>
-        <Col>
+        <Col md={6} xl={3}>
+          <a
+            className="brawlers-alley-link"
+            href="https://www.brawlersalley.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={BrawlersAlleyLogo} alt="Brawler's Alley Logo." />
+            <p>
+              The First Ever Beat'Em Up Magazine, bringing you the latest news,
+              previews and reviews of this old timer genre
+            </p>
+          </a>
+        </Col>
+        <Col md={6} xl={3}>
           <ErrorBoundary>
             <TodayGame />
           </ErrorBoundary>
         </Col>
-      </Row> */}
+      </Row>
       <AlphabetSorter />
       <div style={{ marginBottom: 24 }}>
         <b style={{ color: "yellow" }}>Yellow color</b> - a game with partial
