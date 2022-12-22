@@ -117,6 +117,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
       <Helmet>
         <meta charSet="utf-8" />
