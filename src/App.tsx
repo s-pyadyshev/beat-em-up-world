@@ -33,6 +33,12 @@ interface filtersInterface {
   };
 }
 
+type HelmetProps = React.ComponentProps<typeof Helmet>;
+
+const HelmetWithChildren: React.FC<
+  HelmetProps & { children?: React.ReactNode }
+> = ({ children, ...rest }) => <Helmet {...rest}>{children}</Helmet>;
+
 const Main = () => {
   const isFiltersVisible = useSelector(
     (state: filtersInterface) => state.filters.isVisible
@@ -111,11 +117,11 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <Helmet>
+      <HelmetWithChildren>
         <meta charSet="utf-8" />
         <title>Beat'em Up World</title>
         <link rel="icon" type="image/png" href="favicon1-16x16" sizes="16x16" />
-      </Helmet>
+      </HelmetWithChildren>
       <Header />
       <div className="app__body">
         <Container style={{ width: "100%" }} fluid={location === "/charts"}>
