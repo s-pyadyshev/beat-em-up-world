@@ -8,11 +8,12 @@
   h3 {
     font-weight: 400;
     font-size: 32px;
-    font-family: capture-it, serif;
+    font-family: $font-family-secondary;
   }
 
   &__about {
     order: 1;
+    width: 100%;
 
     @include desktop {
       order: 0;
@@ -24,7 +25,7 @@
     padding-right: 8px;
     font-weight: 400;
     font-size: 24px;
-    font-family: capture-it, serif;
+    font-family: $font-family-secondary;
     text-align: right;
     background:
       linear-gradient(
@@ -51,34 +52,31 @@
     }
   }
 
+  &__cover-wrap {
+    background:
+      linear-gradient(
+        to bottom,
+        rgb(122 122 122 / 10%) 0%,
+        rgb(255 255 255 / 0%) 10%,
+        rgb(0 0 0 / 0%) 10%,
+        rgb(0 0 0 / 80%) 100%
+      ),
+      url("../../assets/img/vborder.png");
+  }
+
   &__cover {
     display: block;
     max-width: 290px;
+    width: 100%;
     margin-right: auto;
-    margin-bottom: 24px;
     margin-left: auto;
 
     @include tablet {
       max-width: 360px;
     }
-
-    @include desktop {
-      margin-right: 0;
-      margin-left: 0;
-    }
   }
 
   &__detail {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 420px;
-    margin-right: auto;
-    margin-left: auto;
-
-    @include desktop {
-      margin-right: 0;
-    }
-
     > ul,
     > li {
       display: flex;
@@ -101,11 +99,29 @@
   }
 
   &__header {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__left {
     width: 100%;
     margin-bottom: 24px;
 
     @include desktop {
+      width: 60%;
       padding-right: 24px;
+    }
+  }
+
+  &__right {
+    flex-shrink: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include desktop {
+      width: 40%;
+      margin-right: 0;
     }
   }
 
@@ -132,8 +148,8 @@
   &__name {
     margin-top: 24px;
     font-weight: 400;
-    font-size: 32px;
-    font-family: capture-it, serif;
+    font-size: 40px;
+    font-family: $font-family-secondary;
     text-align: center;
   }
 
@@ -143,7 +159,7 @@
     padding-right: 16px;
     padding-left: 8px;
     color: $color-info;
-    font-family: capture-it, serif;
+    font-family: $font-family-secondary;
 
     + span {
       display: flex;
@@ -173,7 +189,7 @@
     justify-content: flex-end !important;
     padding-right: 8px;
     font-size: 32px;
-    font-family: capture-it, serif;
+    font-family: $font-family-secondary;
     background-image: url("../../assets/img/game-card-header-bg.png") !important;
   }
 
@@ -181,7 +197,7 @@
     display: block;
     padding-right: 8px;
     font-size: 32px;
-    font-family: capture-it, serif;
+    font-family: $font-family-secondary;
     text-align: right;
     background-image: url("../../assets/img/game-card-header-bg.png");
   }

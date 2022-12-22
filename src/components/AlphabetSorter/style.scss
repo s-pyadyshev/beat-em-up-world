@@ -1,8 +1,10 @@
 @import "../../assets/styles/variables";
+@import "../../assets/styles/media";
 
 .alphabet-sorter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -12,7 +14,7 @@
     padding: 1px 6px;
     color: $color-white;
     font-size: 32px;
-    font-family: capture-it, serif;
+    font-family: $font-family-secondary;
     background: none;
     border: none;
     transition-duration: $transition-duration;

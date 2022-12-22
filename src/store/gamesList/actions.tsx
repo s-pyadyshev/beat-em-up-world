@@ -14,7 +14,7 @@ import {
 } from "./constants";
 import { Games } from "../../services/api";
 import { ApplicationState } from "../../interfaces/ApplicationState";
-import { GameCardInterface } from "../../interfaces/GameCard";
+import { GameCardType } from "../../types/GameCard";
 
 import store from "../../store";
 
@@ -47,7 +47,7 @@ export const getGameCardRequest = (id: String) => ({
   id,
 });
 
-export const getGameCardSuccess = (gameCardDetails: GameCardInterface) => ({
+export const getGameCardSuccess = (gameCardDetails: GameCardType) => ({
   type: GET_GAME_CARD_SUCCESS,
   gameCardDetails,
 });

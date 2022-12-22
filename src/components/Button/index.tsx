@@ -2,7 +2,15 @@ import React from "react";
 import cn from "classnames";
 import "./style.scss";
 
-const Button = ({ active, children, onClick, icon, ...props }: any) => {
+type ButtonType = {
+  active?: boolean;
+  children?: JSX.Element | string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  icon?: string;
+  props?: any;
+};
+
+const Button = ({ active, children, onClick, icon, ...props }: ButtonType) => {
   return (
     <button
       onClick={onClick}

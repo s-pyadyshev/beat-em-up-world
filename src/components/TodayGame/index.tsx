@@ -4,7 +4,9 @@ import { useSelector } from "react-redux";
 import cn from "classnames";
 import { convertGameId } from "../../utils/utils";
 import { ApplicationState } from "../../interfaces/ApplicationState";
-import { GameCardInterface } from "../../interfaces/GameCard";
+import { GameCardType } from "../../types/GameCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 import "./style.scss";
 
 const TodayGame: React.FC = () => {
@@ -19,9 +21,9 @@ const TodayGame: React.FC = () => {
   useEffect(() => {
     // TODO - make backend to get game by id
     const todayGamesData = gamesList
-      .filter((game: GameCardInterface) => game.missing !== true)
+      .filter((game: GameCardType) => game.missing !== true)
       .filter(
-        (game: GameCardInterface) =>
+        (game: GameCardType) =>
           gamesList && game.releasedate.slice(5, 10) === todayDate
       );
     setTodayGames(todayGamesData);
@@ -33,25 +35,28 @@ const TodayGame: React.FC = () => {
         "Loading..."
       ) : (
         <div className="today-games-list">
-          {todayGames.map((game: any) => (
-            <Link
-              key={convertGameId(game.name, game.platform)}
-              className={cn({
-                "today-game": true,
-                active: game.name,
-              })}
-              to={convertGameId(game.name, game.platform)}
-            >
-              <img src={game.cover} alt="today game cover" />
-              <div className="today-game__info">
-                <div>On {game.releasedate}</div>
-                <div className="today-game__name">
-                  {game.name} [{game.platform}]
-                </div>
-                <div>was released</div>
-              </div>
-            </Link>
-          ))}
+          <Swiper modules={[Navigation]} navigation>
+            {todayGames.map((game: any) => (
+              <SwiperSlide key={convertGameId(game.name, game.platform)}>
+                <Link
+                  className={cn({
+                    "today-game": true,
+                    active: game.name,
+                  })}
+                  to={convertGameId(game.name, game.platform)}
+                >
+                  <img src={game.cover} alt="today game cover" />
+                  <div className="today-game__info">
+                    <div>On {game.releasedate}</div>
+                    <div className="today-game__name">
+                      {game.name} [{game.platform}]
+                    </div>
+                    <div>was released</div>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       )}
     </>

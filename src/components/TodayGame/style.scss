@@ -2,11 +2,21 @@
 @import "./../../assets/styles/media";
 
 .today-games-list {
-  display: flex;
-  flex-wrap: wrap;
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    margin-right: 0;
+  }
+
+  .swiper-pagination {
+    margin-top: 20px;
+  }
 }
 
 .today-game {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -22,13 +32,13 @@
     color: $color-white;
   }
 
-  &:hover,
-  &:focus {
+  &:focus,
+  &:hover {
     color: $link-color-hover;
   }
 
   @include tablet {
-    margin: 0;
+    margin: 0 auto;
   }
 
   &.active {
@@ -54,7 +64,7 @@
     padding: 8px 16px;
     text-align: center;
     text-shadow: 1px 1px 20px $color-black;
-    background-color: rgb(0 0 0 / 70%);
+    background-color: rgb(0 0 0 / 50%);
   }
 
   &__name {

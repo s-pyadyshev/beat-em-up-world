@@ -28,7 +28,7 @@ const Search: React.FC = () => {
       placeholder="Type game name here . . ."
       onChange={(event) => setSearchTerm(event.target.value)}
       ref={searchRef}
-      className="input input--search"
+      className="input input-search"
     />
   );
 };

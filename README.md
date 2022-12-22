@@ -26,6 +26,6 @@ Scss, stylelint, prettier<br>
 
 ## :hammer_and_wrench: Installation
 
-- \$ yarn
-- \$ yarn start - dev
-- \$ yarn build - prod
+- \$ make install
+- \$ make start - dev
+- \$ make build - prod

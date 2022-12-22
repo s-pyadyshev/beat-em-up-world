@@ -2,12 +2,7 @@
 @import "./../../assets/styles/variables";
 
 .filter {
-  display: none;
   position: relative;
-
-  @include tablet {
-    display: block;
-  }
 
   > li {
     &:not(:last-child) {
@@ -60,10 +55,6 @@
 
 .filter-toggle {
   margin-bottom: 16px;
-
-  @include tablet {
-    display: none;
-  }
 }
 
 .button-save {

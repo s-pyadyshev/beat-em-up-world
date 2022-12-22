@@ -9,3 +9,9 @@ lint:
 
 start:
 	npm run start
+
+build:
+	npm run build
+
+icons:
+	npm run icons

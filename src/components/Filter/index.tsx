@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Select from "../Select";
 import Loading from "../Loading";
@@ -15,17 +15,17 @@ import {
 } from "../../store/gamesList/actions";
 import { ApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
+
 // import { Scrollbars } from "react-custom-scrollbars-2";
 
 import "./style.scss";
 import store from "../../store";
 
 const Filter = () => {
-  const [visible, setVisibility] = useState(false);
-
   const loading = useSelector(
     (state: ApplicationState) => state.gamesList.loading
   );
+
   const filters = useSelector(
     (state: ApplicationState) => state.filters.filtersToggled
   );
@@ -58,10 +58,6 @@ const Filter = () => {
     }
   }, [gamesList]);
 
-  const toggleFilter = () => {
-    setVisibility(!visible);
-  };
-
   const showMore = () => {
     store.dispatch(toggleFiltersAll());
   };
@@ -84,12 +80,12 @@ const Filter = () => {
   };
 
   return (
-    <div className={!visible ? "filter-wrap" : "filter-wrap is-active"}>
-      <div className="filter-toggle">
+    <div className="filter-wrap">
+      {/* <div className="filter-toggle">
         <button onClick={toggleFilter}>
           {!visible ? <span>Show filter</span> : <span>Hide filter</span>}
         </button>
-      </div>
+      </div> */}
       <div className="filter">
         <ul className="filter-list">
           {loading ? <Loading /> : null}

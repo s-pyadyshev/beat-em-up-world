@@ -1,4 +1,4 @@
-export const alphabetEn = [
+export const alphabet = [
   "0-?",
   "a",
   "b",
