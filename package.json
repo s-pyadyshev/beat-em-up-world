@@ -48,7 +48,7 @@
     "react-dom": "^16.13.1",
     "react-grid-system": "^8.1.5",
     "react-popper-tooltip": "^2.11.1",
-    "react-redux": "^7.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "react-svg-sprite": "^1.0.8",
     "redux-devtools-extension": "^2.13.8",
