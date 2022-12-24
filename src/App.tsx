@@ -1,7 +1,6 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 import ChartsPage from "./pages/ChartsPage";
@@ -110,51 +109,36 @@ const App: React.FC = () => {
   }, [location]);
 
   return (
-    <HelmetProvider>
-      <div className="app">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>Beat'em Up World</title>
-          <link
-            rel="icon"
-            type="image/png"
-            href="favicon1-16x16"
-            sizes="16x16"
-          />
-        </Helmet>
-        <Header />
-        <div className="app__body">
-          <Container style={{ width: "100%" }} fluid={location === "/charts"}>
-            <Row>
-              {isFiltersVisible ? (
-                <Col md={4} lg={3}>
-                  <ErrorBoundary>
-                    <Filter />
-                  </ErrorBoundary>
-                </Col>
-              ) : null}
-              <Col
-                md={isFiltersVisible ? 8 : 12}
-                lg={isFiltersVisible ? 9 : 12}
-              >
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/charts" element={<ChartsPage />} />
-                    <Route path="/links" element={<Links />} />
-                    <Route path="/secret" element={<SecretPage />} />
-                    <Route path="/:id" element={<GameCard />} />
-                    {/* TODO 404 along with dynamic id pages */}
-                    {/* <Route path="*">ERROR 404</Route> */}
-                  </Routes>
-                </Suspense>
+    <div className="app">
+      <Header />
+      <div className="app__body">
+        <Container style={{ width: "100%" }} fluid={location === "/charts"}>
+          <Row>
+            {isFiltersVisible ? (
+              <Col md={4} lg={3}>
+                <ErrorBoundary>
+                  <Filter />
+                </ErrorBoundary>
               </Col>
-            </Row>
-          </Container>
-        </div>
+            ) : null}
+            <Col md={isFiltersVisible ? 8 : 12} lg={isFiltersVisible ? 9 : 12}>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                  <Route path="/" element={<Main />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/charts" element={<ChartsPage />} />
+                  <Route path="/links" element={<Links />} />
+                  <Route path="/secret" element={<SecretPage />} />
+                  <Route path="/:id" element={<GameCard />} />
+                  {/* TODO 404 along with dynamic id pages */}
+                  {/* <Route path="*">ERROR 404</Route> */}
+                </Routes>
+              </Suspense>
+            </Col>
+          </Row>
+        </Container>
       </div>
-    </HelmetProvider>
+    </div>
   );
 };
 

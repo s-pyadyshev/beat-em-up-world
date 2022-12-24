@@ -1,13 +1,7 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 
 const LinksPage = () => (
   <div>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>Links</title>
-      <link rel="icon" type="image/png" href="favicon3.png" sizes="16x16" />
-    </Helmet>
     <h2>Links</h2>
     <ul>
       <li>
