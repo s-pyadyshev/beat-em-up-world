@@ -58,6 +58,11 @@ const Main = () => {
           </ErrorBoundary>
         </Col>
         <Col md={6} xl={3}>
+          <ErrorBoundary>
+            <TodayGame />
+          </ErrorBoundary>
+        </Col>
+        <Col md={6} xl={3}>
           <a
             className="brawlers-alley-link"
             href="https://www.brawlersalley.com/"
@@ -70,11 +75,6 @@ const Main = () => {
               previews and reviews of this old timer genre
             </p>
           </a>
-        </Col>
-        <Col md={6} xl={3}>
-          <ErrorBoundary>
-            <TodayGame />
-          </ErrorBoundary>
         </Col>
       </Row>
       <AlphabetSorter />
