@@ -21,7 +21,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 240px;
+  max-width: 240px;
+  width: 100%;
   margin-top: 32px;
   margin-right: auto;
   margin-left: auto;
@@ -46,7 +47,8 @@
   }
 
   img {
-    width: 240px;
+    max-width: inherit;
+    width: inherit;
     height: 100%;
     object-fit: cover;
     object-position: top;

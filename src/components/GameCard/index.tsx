@@ -24,9 +24,17 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     (state: ApplicationState) => state.gamesList.gamesList
   );
 
+  const neutralValues = ["N/A"];
   const negativeValues = ["No"];
-  // const neutralValues = ["N/A"]; // TODO add neutral colors
-  const hasFeature = (value: string) => negativeValues.includes(value);
+
+  const applyValueClass = (value: any) => {
+    if (neutralValues.includes(value)) {
+      return "state-muted-color";
+    }
+    if (negativeValues.includes(value)) {
+      return "state-error-color";
+    }
+  };
 
   useEffect(() => {
     store.dispatch(toggleFilter(false));
@@ -212,7 +220,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             </li>
             <li>
               <span className="game-card__parameter-name">Country:</span>
-              <span className={developer ? "" : "danger"}>
+              <span>
                 {country ? (
                   country
                 ) : (
@@ -222,7 +230,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             </li>
             <li>
               <span className="game-card__parameter-name">Developer:</span>
-              <span className={developer ? "" : "danger"}>
+              <span>
                 {developer ? (
                   developer
                 ) : (
@@ -237,7 +245,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <li>
               <span className="game-card__parameter-name">Release Date:</span>
               <span>
-                {releasedate ? (
+                {releasedate !== "unknown" ? (
                   releasedate
                 ) : (
                   <span className="state-muted-color">unknown</span>
@@ -336,13 +344,13 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : null}
             <li>
               <span className="game-card__parameter-name">Grabs:</span>
-              <span className={hasFeature(grabs) ? "danger" : "success"}>
+              <span className={applyValueClass(grabs) ? "danger" : "success"}>
                 {grabs}
               </span>
             </li>
             <li>
               <span className="game-card__parameter-name">Dashing:</span>
-              <span className={hasFeature(dashing) ? "danger" : "success"}>
+              <span className={applyValueClass(dashing) ? "danger" : "success"}>
                 {dashing}
               </span>
             </li>
@@ -371,13 +379,15 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Weapons Stay:{" "}
                 </span>
-                <span>{weaponsStay}</span>
+                <span className={applyValueClass(weaponsStay)}>
+                  {weaponsStay}
+                </span>
               </li>
             ) : null}
             {deathBlow ? (
               <li>
                 <span className="game-card__parameter-name">Death Blow:</span>
-                <span>{deathBlow}</span>
+                <span className={applyValueClass(deathBlow)}>{deathBlow}</span>
               </li>
             ) : null}
             {friendlyFire ? (
@@ -393,12 +403,16 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Character Switch:
                 </span>
-                <span>{charSwitch}</span>
+                <span className={applyValueClass(charSwitch)}>
+                  {charSwitch}
+                </span>
               </li>
             ) : null}
             <li>
               <span className="game-card__parameter-name">Ground Hit:</span>
-              <span className={hasFeature(groundHit) ? "danger" : "success"}>
+              <span
+                className={applyValueClass(groundHit) ? "danger" : "success"}
+              >
                 {groundHit}
               </span>
             </li>
@@ -503,7 +517,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : null}
             <li>
               <span className="game-card__parameter-name">
-                Beat&apos;em Up Bingo:{" "}
+                Beat&apos;em Up Bingo:
               </span>
               <span>
                 {bingoScore} of {bingoScoreTotal}
