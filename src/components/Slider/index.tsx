@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import "swiper/swiper.scss";

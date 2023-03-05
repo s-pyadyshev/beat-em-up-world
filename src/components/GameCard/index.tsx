@@ -24,9 +24,17 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
     (state: ApplicationState) => state.gamesList.gamesList
   );
 
+  const neutralValues = ["N/A"];
   const negativeValues = ["No"];
-  // const neutralValues = ["N/A"]; // TODO add neutral colors
-  const hasFeature = (value: string) => negativeValues.includes(value);
+
+  const applyValueClass = (value: any) => {
+    if (neutralValues.includes(value)) {
+      return "state-muted-color";
+    }
+    if (negativeValues.includes(value)) {
+      return "state-error-color";
+    }
+  };
 
   useEffect(() => {
     store.dispatch(toggleFilter(false));
@@ -203,37 +211,49 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
               <span>Release Info</span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Platform: </span>
+              <span className="game-card__parameter-name">Platform:</span>
               <span>{platform}</span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Perspective: </span>
+              <span className="game-card__parameter-name">Perspective:</span>
               <span>{perspective}</span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Country: </span>
-              <span className={developer ? "" : "danger"}>
-                {country ? country : "no info"}
+              <span className="game-card__parameter-name">Country:</span>
+              <span>
+                {country ? (
+                  country
+                ) : (
+                  <span className="state-muted-color">unknown</span>
+                )}
               </span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Developer: </span>
-              <span className={developer ? "" : "danger"}>
-                {developer ? developer : "no info"}
+              <span className="game-card__parameter-name">Developer:</span>
+              <span>
+                {developer ? (
+                  developer
+                ) : (
+                  <span className="state-muted-color">unknown</span>
+                )}
               </span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Publisher: </span>
+              <span className="game-card__parameter-name">Publisher:</span>
               <span>{publisher}</span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Release Date: </span>
-              <span className={releasedate === "unknown" ? "danger" : ""}>
-                {releasedate ? releasedate : "no info"}
+              <span className="game-card__parameter-name">Release Date:</span>
+              <span>
+                {releasedate !== "unknown" ? (
+                  releasedate
+                ) : (
+                  <span className="state-muted-color">unknown</span>
+                )}
               </span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Release Year: </span>
+              <span className="game-card__parameter-name">Release Year:</span>
               <span>{releaseYear}</span>
             </li>
             {otherPlatforms ? (
@@ -259,35 +279,35 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : null}
             {series ? (
               <li>
-                <span className="game-card__parameter-name">Series: </span>
+                <span className="game-card__parameter-name">Series:</span>
                 <span>{series}</span>
               </li>
             ) : null}
             <li className="game-card__section-title">Game</li>
             <li>
-              <span className="game-card__parameter-name">Players: </span>
+              <span className="game-card__parameter-name">Players:</span>
               <span>{players}</span>
             </li>
             {structure ? (
               <li>
-                <span className="game-card__parameter-name">Structure: </span>
+                <span className="game-card__parameter-name">Structure:</span>
                 <span>{structure}</span>
               </li>
             ) : null}
             {difficulty ? (
               <li>
-                <span className="game-card__parameter-name">Difficulty: </span>
+                <span className="game-card__parameter-name">Difficulty:</span>
                 <span>{difficulty}</span>
               </li>
             ) : null}
             {gangsize ? (
               <li>
-                <span className="game-card__parameter-name">Gang Size: </span>
+                <span className="game-card__parameter-name">Gang Size:</span>
                 <span>{gangsize}</span>
               </li>
             ) : null}
             <li>
-              <span className="game-card__parameter-name">Variety: </span>
+              <span className="game-card__parameter-name">Variety:</span>
               <ul className="game-card__values-list">
                 {variety &&
                   variety.map((varietyName: string) => (
@@ -299,32 +319,38 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             </li>
             {gangsize ? (
               <li>
-                <span className="game-card__parameter-name">Playtime: </span>
-                <span>{playtime}</span>
+                <span className="game-card__parameter-name">Playtime:</span>
+                <span>
+                  {playtime ? (
+                    playtime
+                  ) : (
+                    <span className="state-muted-color">unknown</span>
+                  )}
+                </span>
               </li>
             ) : null}
             <li className="game-card__section-title">Combat</li>
             {buttons ? (
               <li>
-                <span className="game-card__parameter-name">Buttons: </span>
+                <span className="game-card__parameter-name">Buttons:</span>
                 <span>{buttons}</span>
               </li>
             ) : null}
             {combos ? (
               <li>
-                <span className="game-card__parameter-name">Combos: </span>
+                <span className="game-card__parameter-name">Combos:</span>
                 <span>{combos}</span>
               </li>
             ) : null}
             <li>
-              <span className="game-card__parameter-name">Grabs: </span>
-              <span className={hasFeature(grabs) ? "danger" : "success"}>
+              <span className="game-card__parameter-name">Grabs:</span>
+              <span className={applyValueClass(grabs) ? "danger" : "success"}>
                 {grabs}
               </span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Dashing: </span>
-              <span className={hasFeature(dashing) ? "danger" : "success"}>
+              <span className="game-card__parameter-name">Dashing:</span>
+              <span className={applyValueClass(dashing) ? "danger" : "success"}>
                 {dashing}
               </span>
             </li>
@@ -338,13 +364,13 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : null}
             {itemPickup ? (
               <li>
-                <span className="game-card__parameter-name">Item Pickup: </span>
+                <span className="game-card__parameter-name">Item Pickup:</span>
                 <span>{itemPickup}</span>
               </li>
             ) : null}
             {itemStay ? (
               <li>
-                <span className="game-card__parameter-name">Item Stay: </span>
+                <span className="game-card__parameter-name">Item Stay:</span>
                 <span>{itemStay}</span>
               </li>
             ) : null}
@@ -353,13 +379,15 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Weapons Stay:{" "}
                 </span>
-                <span>{weaponsStay}</span>
+                <span className={applyValueClass(weaponsStay)}>
+                  {weaponsStay}
+                </span>
               </li>
             ) : null}
             {deathBlow ? (
               <li>
-                <span className="game-card__parameter-name">Death Blow: </span>
-                <span>{deathBlow}</span>
+                <span className="game-card__parameter-name">Death Blow:</span>
+                <span className={applyValueClass(deathBlow)}>{deathBlow}</span>
               </li>
             ) : null}
             {friendlyFire ? (
@@ -375,49 +403,53 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Character Switch:
                 </span>
-                <span>{charSwitch}</span>
+                <span className={applyValueClass(charSwitch)}>
+                  {charSwitch}
+                </span>
               </li>
             ) : null}
             <li>
-              <span className="game-card__parameter-name">Ground Hit: </span>
-              <span className={hasFeature(groundHit) ? "danger" : "success"}>
+              <span className="game-card__parameter-name">Ground Hit:</span>
+              <span
+                className={applyValueClass(groundHit) ? "danger" : "success"}
+              >
                 {groundHit}
               </span>
             </li>
             {revive ? (
               <li>
-                <span className="game-card__parameter-name">Revive: </span>
+                <span className="game-card__parameter-name">Revive:</span>
                 <span>{revive}</span>
               </li>
             ) : null}
             {restore ? (
               <li>
-                <span className="game-card__parameter-name">Restore: </span>
+                <span className="game-card__parameter-name">Restore:</span>
                 <span>{restore}</span>
               </li>
             ) : null}
             <li className="game-card__section-title">Style</li>
             <li>
-              <span className="game-card__parameter-name">Art Style: </span>
+              <span className="game-card__parameter-name">Art Style:</span>
               <span>{artStyle}</span>
             </li>
             {sprites ? (
               <li>
-                <span className="game-card__parameter-name">Sprites: </span>
+                <span className="game-card__parameter-name">Sprites:</span>
                 <span>{sprites}</span>
               </li>
             ) : null}
             <li>
-              <span className="game-card__parameter-name">Setting: </span>
+              <span className="game-card__parameter-name">Setting:</span>
               <span>{setting}</span>
             </li>
             <li>
-              <span className="game-card__parameter-name">Focus: </span>
+              <span className="game-card__parameter-name">Focus:</span>
               <span>{focus}</span>
             </li>
             {music ? (
               <li>
-                <span className="game-card__parameter-name">Music: </span>
+                <span className="game-card__parameter-name">Music:</span>
                 <ul className="game-card__values-list">
                   {music.map((item: string) => (
                     <li key={item}>
@@ -429,13 +461,13 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : null}
             {tone ? (
               <li>
-                <span className="game-card__parameter-name">Tone: </span>
+                <span className="game-card__parameter-name">Tone:</span>
                 <span>{tone}</span>
               </li>
             ) : null}
             {gore && gore[0] !== null ? (
               <li>
-                <span className="game-card__parameter-name">Gore: </span>
+                <span className="game-card__parameter-name">Gore:</span>
                 <ul className="game-card__values-list">
                   {gore.map((item: string) => (
                     <li key={item}>
@@ -448,31 +480,31 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             <li className="game-card__section-title">Numbers</li>
             {fighters ? (
               <li>
-                <span className="game-card__parameter-name">Fighters: </span>
+                <span className="game-card__parameter-name">Fighters:</span>
                 <span>{fighters}</span>
               </li>
             ) : null}
             {stages ? (
               <li>
-                <span className="game-card__parameter-name">Stages: </span>
+                <span className="game-card__parameter-name">Stages:</span>
                 <span>{stages}</span>
               </li>
             ) : null}
             {enemies ? (
               <li>
-                <span className="game-card__parameter-name">Enemies: </span>
+                <span className="game-card__parameter-name">Enemies:</span>
                 <span>{enemies}</span>
               </li>
             ) : null}
             {bosses ? (
               <li>
-                <span className="game-card__parameter-name">Bosses: </span>
+                <span className="game-card__parameter-name">Bosses:</span>
                 <span>{bosses}</span>
               </li>
             ) : null}
             {weapons && weapons[0] !== null ? (
               <li>
-                <span className="game-card__parameter-name">Weapons: </span>
+                <span className="game-card__parameter-name">Weapons:</span>
                 <ul className="game-card__values-list">
                   {weapons &&
                     weapons.map((weapon: string) => (
@@ -485,7 +517,7 @@ const GameCard = ({ commentsUrl, commentsId }: any) => {
             ) : null}
             <li>
               <span className="game-card__parameter-name">
-                Beat&apos;em Up Bingo:{" "}
+                Beat&apos;em Up Bingo:
               </span>
               <span>
                 {bingoScore} of {bingoScoreTotal}
