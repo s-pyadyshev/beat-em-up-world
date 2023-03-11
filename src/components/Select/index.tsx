@@ -26,6 +26,9 @@ const Select = (props: FilterInterface) => {
     } else if (event.target.value.match(/^[0-9]+$/)) {
       dispatch(filterGames(name, +event.target.value));
       setSelected(true);
+    } else if (name === "multigenre") {
+      dispatch(filterGames(name, true));
+      setSelected(true);
     } else {
       dispatch(filterGames(name, event.target.value));
       setSelected(true);

@@ -2,10 +2,10 @@
 
 <a href="https://beat-em-up-world.vercel.app">https://beat-em-up-world.vercel.app</a>
 <br>
-Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (PunchPedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>. Check out his site NOW!
+Inspired by <a href="http://www.punchpedia.com">PunchPedia</a>. All copyrights (PunchPedia game reviews, descriptions end everything what was taken from it) are belong to <a href="http://www.dronami.com/">Dronami Games</a>.
 
-Stack:<br>
-React, Redux, react-router, create-react-app<br>
+<b>Stack:</b><br>
+TypeScript, React, Redux, Jest, react-router, create-react-app<br>
 react-popper-tooltip, react-grid-system, swiper, Disqus comments, Recharts<br>
 Scss, stylelint, prettier<br>
 
@@ -20,7 +20,6 @@ Scss, stylelint, prettier<br>
 - Add redux-persist?
 - Add reverse list view?, list with screenshots in slider + pagination?
 - Add SSR?
-- Add dark/light theme (change on system settings)
 - Add 404 page
 - Add RSS
 

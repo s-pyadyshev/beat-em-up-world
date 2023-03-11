@@ -1,6 +1,7 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AnniversaryNote from "./components/AnniversaryNote";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 import ChartsPage from "./pages/ChartsPage";
@@ -55,6 +56,7 @@ const Main = () => {
                 )}
               </button>
             </div>
+            <AnniversaryNote />
           </ErrorBoundary>
         </Col>
         <Col md={6} xl={3}>
