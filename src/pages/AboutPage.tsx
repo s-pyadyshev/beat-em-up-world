@@ -136,10 +136,10 @@ const AboutPage = () => (
       <li>perfect_genius</li>
       <li>Smoke_John</li>
       <li>Street Fighter</li>
-      <li>The Flying Kick</li>
+      <li>The Flying Kick, creator of Brawler's Alley Magazine</li>
       <li>varezhkin</li>
       <li>
-        VGJunk, author of{" "}
+        VGJunk, creator of{" "}
         <a
           href="http://retrovania-vgjunk.blogspot.com/2012/01/beat-em-up-bingo.html"
           target="_blank"
