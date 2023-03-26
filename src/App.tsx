@@ -18,6 +18,8 @@ import { toggleFilter } from "./store/filters/actions";
 import store from "./store";
 import "./App.scss";
 import BrawlersAlleyLogo from "../src/assets/img/logo-brawlers-alley.png";
+import { createSelector } from "reselect";
+import { selectFilters } from "./selectors";
 
 setConfiguration({
   containerWidths: [640, 768, 960, 1024, 1200, 1920],
@@ -27,16 +29,14 @@ const About = lazy(() => import("./pages/AboutPage"));
 const Links = lazy(() => import("./pages/LinksPage"));
 const SecretPage = lazy(() => import("./pages/SecretPage"));
 
-interface filtersInterface {
-  filters: {
-    isVisible: boolean;
-  };
-}
+const filtersVisibleSelector = createSelector(
+  selectFilters,
+  (filters) => filters.isVisible
+);
 
 const Main = () => {
-  const isFiltersVisible = useSelector(
-    (state: filtersInterface) => state.filters.isVisible
-  );
+  const isFiltersVisible = useSelector(filtersVisibleSelector);
+
   const handleToggleFilter = () => {
     store.dispatch(toggleFilter(!isFiltersVisible));
   };
@@ -95,9 +95,7 @@ const Main = () => {
 };
 
 const App: React.FC = () => {
-  const isFiltersVisible = useSelector(
-    (state: filtersInterface) => state.filters.isVisible
-  );
+  const isFiltersVisible = useSelector(filtersVisibleSelector);
   const location = useLocation().pathname;
 
   useEffect(() => {
