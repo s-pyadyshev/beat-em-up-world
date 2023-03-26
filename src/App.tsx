@@ -94,8 +94,37 @@ const Main = () => {
   );
 };
 
-const App: React.FC = () => {
+const AppContent = () => {
   const isFiltersVisible = useSelector(filtersVisibleSelector);
+
+  return (
+    <Row>
+      {isFiltersVisible ? (
+        <Col md={4} lg={3}>
+          <ErrorBoundary>
+            <Filter />
+          </ErrorBoundary>
+        </Col>
+      ) : null}
+      <Col md={isFiltersVisible ? 8 : 12} lg={isFiltersVisible ? 9 : 12}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/charts" element={<ChartsPage />} />
+            <Route path="/links" element={<Links />} />
+            <Route path="/secret" element={<SecretPage />} />
+            <Route path="/:id" element={<GameCard />} />
+            {/* TODO 404 along with dynamic id pages */}
+            {/* <Route path="*">ERROR 404</Route> */}
+          </Routes>
+        </Suspense>
+      </Col>
+    </Row>
+  );
+};
+
+const App: React.FC = () => {
   const location = useLocation().pathname;
 
   useEffect(() => {
@@ -113,29 +142,7 @@ const App: React.FC = () => {
       <Header />
       <div className="app__body">
         <Container style={{ width: "100%" }} fluid={location === "/charts"}>
-          <Row>
-            {isFiltersVisible ? (
-              <Col md={4} lg={3}>
-                <ErrorBoundary>
-                  <Filter />
-                </ErrorBoundary>
-              </Col>
-            ) : null}
-            <Col md={isFiltersVisible ? 8 : 12} lg={isFiltersVisible ? 9 : 12}>
-              <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                  <Route path="/" element={<Main />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/charts" element={<ChartsPage />} />
-                  <Route path="/links" element={<Links />} />
-                  <Route path="/secret" element={<SecretPage />} />
-                  <Route path="/:id" element={<GameCard />} />
-                  {/* TODO 404 along with dynamic id pages */}
-                  {/* <Route path="*">ERROR 404</Route> */}
-                </Routes>
-              </Suspense>
-            </Col>
-          </Row>
+          <AppContent />
         </Container>
       </div>
     </div>
