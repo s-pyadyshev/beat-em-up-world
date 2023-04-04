@@ -18,6 +18,8 @@ import { toggleFilter } from "./store/filters/actions";
 import store from "./store";
 import "./App.scss";
 import BrawlersAlleyLogo from "../src/assets/img/logo-brawlers-alley.png";
+import { createSelector } from "reselect";
+import { selectFilters } from "./selectors";
 
 setConfiguration({
   containerWidths: [640, 768, 960, 1024, 1200, 1920],
@@ -27,16 +29,14 @@ const About = lazy(() => import("./pages/AboutPage"));
 const Links = lazy(() => import("./pages/LinksPage"));
 const SecretPage = lazy(() => import("./pages/SecretPage"));
 
-interface filtersInterface {
-  filters: {
-    isVisible: boolean;
-  };
-}
+const filtersVisibleSelector = createSelector(
+  selectFilters,
+  (filters) => filters.isVisible
+);
 
 const Main = () => {
-  const isFiltersVisible = useSelector(
-    (state: filtersInterface) => state.filters.isVisible
-  );
+  const isFiltersVisible = useSelector(filtersVisibleSelector);
+
   const handleToggleFilter = () => {
     store.dispatch(toggleFilter(!isFiltersVisible));
   };
@@ -94,10 +94,37 @@ const Main = () => {
   );
 };
 
-const App: React.FC = () => {
-  const isFiltersVisible = useSelector(
-    (state: filtersInterface) => state.filters.isVisible
+const AppContent = () => {
+  const isFiltersVisible = useSelector(filtersVisibleSelector);
+
+  return (
+    <Row>
+      {isFiltersVisible ? (
+        <Col md={4} lg={3}>
+          <ErrorBoundary>
+            <Filter />
+          </ErrorBoundary>
+        </Col>
+      ) : null}
+      <Col md={isFiltersVisible ? 8 : 12} lg={isFiltersVisible ? 9 : 12}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/charts" element={<ChartsPage />} />
+            <Route path="/links" element={<Links />} />
+            <Route path="/secret" element={<SecretPage />} />
+            <Route path="/:id" element={<GameCard />} />
+            {/* TODO 404 along with dynamic id pages */}
+            {/* <Route path="*">ERROR 404</Route> */}
+          </Routes>
+        </Suspense>
+      </Col>
+    </Row>
   );
+};
+
+const App: React.FC = () => {
   const location = useLocation().pathname;
 
   useEffect(() => {
@@ -115,29 +142,7 @@ const App: React.FC = () => {
       <Header />
       <div className="app__body">
         <Container style={{ width: "100%" }} fluid={location === "/charts"}>
-          <Row>
-            {isFiltersVisible ? (
-              <Col md={4} lg={3}>
-                <ErrorBoundary>
-                  <Filter />
-                </ErrorBoundary>
-              </Col>
-            ) : null}
-            <Col md={isFiltersVisible ? 8 : 12} lg={isFiltersVisible ? 9 : 12}>
-              <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                  <Route path="/" element={<Main />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/charts" element={<ChartsPage />} />
-                  <Route path="/links" element={<Links />} />
-                  <Route path="/secret" element={<SecretPage />} />
-                  <Route path="/:id" element={<GameCard />} />
-                  {/* TODO 404 along with dynamic id pages */}
-                  {/* <Route path="*">ERROR 404</Route> */}
-                </Routes>
-              </Suspense>
-            </Col>
-          </Row>
+          <AppContent />
         </Container>
       </div>
     </div>

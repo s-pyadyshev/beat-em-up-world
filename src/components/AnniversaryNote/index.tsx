@@ -1,21 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { ApplicationState } from "../../interfaces/ApplicationState";
 import { Link } from "react-router-dom";
 import { addWeeks, eachDayOfInterval } from "date-fns";
 import { GameCardType } from "../../types/GameCard";
+import { createSelector } from "reselect";
+import { selectGamesList } from "../../selectors";
+
+export const selectGamesByRelease = createSelector(selectGamesList, (games) =>
+  games.map((game: GameCardType) => {
+    return {
+      releasedate: game.releasedate,
+      releaseYear: game.releaseYear,
+      name: game.name,
+      platform: game.platform,
+    };
+  })
+);
 
 const AnniversaryNote = () => {
-  const gamesList = useSelector((state: ApplicationState) =>
-    state.gamesList.gamesList.map((game: GameCardType) => {
-      return {
-        releasedate: game.releasedate,
-        releaseYear: game.releaseYear,
-        name: game.name,
-        platform: game.platform,
-      };
-    })
-  );
+  const gamesListByRelease = useSelector(selectGamesByRelease);
+
   const todayDate: string = new Date().toISOString().slice(0, -14);
   const currentYear = new Date().getFullYear();
   const todayDateSplit: string[] = todayDate.split("-");
@@ -40,7 +44,7 @@ const AnniversaryNote = () => {
     ),
   }).map((date: Date) => date.toISOString().slice(5, -14));
 
-  const gamesInRange: string[] = gamesList.filter(
+  const gamesInRange: string[] = gamesListByRelease.filter(
     ({ releasedate, releaseYear }: any) =>
       anniversaryRange.includes(releasedate.slice(5)) &&
       (currentYear - releaseYear) % 10 === 0
