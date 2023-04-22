@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/recharts": "^1.8.23",
+    "@vercel/analytics": "^1.0.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "8.1.0",

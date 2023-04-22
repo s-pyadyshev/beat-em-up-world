@@ -20,6 +20,9 @@ import "./App.scss";
 import BrawlersAlleyLogo from "../src/assets/img/logo-brawlers-alley.png";
 import { createSelector } from "reselect";
 import { selectFilters } from "./selectors";
+import { inject } from "@vercel/analytics";
+
+inject();
 
 setConfiguration({
   containerWidths: [640, 768, 960, 1024, 1200, 1920],
