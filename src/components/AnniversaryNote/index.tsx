@@ -47,6 +47,7 @@ const AnniversaryNote = () => {
   const gamesInRange: string[] = gamesListByRelease.filter(
     ({ releasedate, releaseYear }: any) =>
       anniversaryRange.includes(releasedate.slice(5)) &&
+      currentYear - releaseYear !== 0 &&
       (currentYear - releaseYear) % 10 === 0
   );
 
