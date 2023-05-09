@@ -7,7 +7,7 @@ type ButtonType = {
   children?: JSX.Element | string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   icon?: string;
-  props?: any;
+  props?: React.PropsWithChildren;
 };
 
 const Button = ({ active, children, onClick, icon, ...props }: ButtonType) => {
