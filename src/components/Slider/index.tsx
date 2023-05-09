@@ -6,6 +6,7 @@ import "swiper/swiper.scss";
 import "swiper/modules/navigation/navigation.scss";
 import "swiper/modules/pagination/pagination.scss";
 import "./style.scss";
+import { Swiper as SwiperClass } from "swiper/types";
 
 type Props = {
   children: JSX.Element | JSX.Element[];
@@ -27,7 +28,7 @@ export const Slider = ({ children }: Props) => {
       pagination={{
         clickable: true,
       }}
-      onSwiper={(swiper: any) => setSwiperInstance(swiper)}
+      onSwiper={(swiper: SwiperClass) => setSwiperInstance(swiper)}
     >
       {children}
     </Swiper>
