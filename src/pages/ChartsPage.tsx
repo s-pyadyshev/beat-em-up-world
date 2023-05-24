@@ -187,7 +187,7 @@ const ChartsPage = () => {
         </ResponsiveContainer>
       </div>
       <Container>
-        <p>
+        <p className="charts__note">
           The stats are based on data from {total - missing} games. Unaltered
           ports were excluded except for release year and platform.
         </p>

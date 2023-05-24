@@ -14,7 +14,7 @@ const Header = () => (
           isActive ? "header__link is-active" : "header__link"
         }
       >
-        Home
+        HOME
       </NavLink>
       <NavLink
         to="/charts"
@@ -22,7 +22,7 @@ const Header = () => (
           isActive ? "header__link is-active" : "header__link"
         }
       >
-        Charts
+        CHARTS
       </NavLink>
       <NavLink
         to="/links"
@@ -30,7 +30,7 @@ const Header = () => (
           isActive ? "header__link is-active" : "header__link"
         }
       >
-        Links
+        LINKS
       </NavLink>
       <NavLink
         to="/about"
@@ -38,7 +38,7 @@ const Header = () => (
           isActive ? "header__link is-active" : "header__link"
         }
       >
-        About
+        ABOUT
       </NavLink>
       <div className="header__link">
         <a

@@ -4,3 +4,11 @@
   font-style: normal;
   src: url("../fonts/capture-it.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Baloo2";
+  src: url("../fonts/baloo2.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

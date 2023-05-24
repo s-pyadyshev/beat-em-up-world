@@ -1,7 +1,7 @@
 import React from "react";
 
 const LinksPage = () => (
-  <div>
+  <div className="page-links">
     <h2>Links</h2>
     <ul>
       <li>
