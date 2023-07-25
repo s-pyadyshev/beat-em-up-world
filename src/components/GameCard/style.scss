@@ -151,6 +151,7 @@
     font-size: 40px;
     font-family: $font-family-secondary;
     text-align: center;
+    text-transform: uppercase;
   }
 
   &__parameter-name {
@@ -191,6 +192,7 @@
     font-size: 32px;
     font-family: $font-family-secondary;
     background-image: url("../../assets/img/game-card-header-bg.png") !important;
+    text-transform: uppercase;
   }
 
   &__title {
@@ -200,6 +202,7 @@
     font-family: $font-family-secondary;
     text-align: right;
     background-image: url("../../assets/img/game-card-header-bg.png");
+    text-transform: uppercase;
   }
 
   &__values-list {

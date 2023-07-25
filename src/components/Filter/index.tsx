@@ -50,7 +50,9 @@ const Filter = () => {
   }, []);
 
   useEffect(() => {
-    const filterOptionsLS: any = localStorage.getItem("filterOptions");
+    const filterOptionsLS: string | null =
+      localStorage.getItem("filterOptions");
+    console.log(typeof filterOptionsLS);
 
     if (filterOptionsLS && gamesList.length) {
       store.dispatch(filterByOptions(JSON.parse(filterOptionsLS)));

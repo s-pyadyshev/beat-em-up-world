@@ -6,6 +6,11 @@ import { GameCardType } from "../../types/GameCard";
 import { createSelector } from "reselect";
 import { selectGamesList } from "../../selectors";
 
+interface GameData {
+  releasedate: string;
+  releaseYear: number;
+}
+
 export const selectGamesByRelease = createSelector(selectGamesList, (games) =>
   games.map((game: GameCardType) => {
     return {
@@ -45,16 +50,15 @@ const AnniversaryNote = () => {
   }).map((date: Date) => date.toISOString().slice(5, -14));
 
   const gamesInRange: string[] = gamesListByRelease.filter(
-    ({ releasedate, releaseYear }: any) =>
+    ({ releasedate, releaseYear }: GameData) =>
       anniversaryRange.includes(releasedate.slice(5)) &&
       currentYear - releaseYear !== 0 &&
       (currentYear - releaseYear) % 10 === 0
   );
 
-  return !gamesInRange.length ? null : (
-    <div>
-      <b>Upcoming anniversaries</b>
-      {gamesInRange.map(({ releasedate, releaseYear, name, platform }: any) => (
+  const renderGamesInRange = () => {
+    return gamesInRange.map(
+      ({ releasedate, releaseYear, name, platform }: any) => (
         <div key={name + releasedate}>
           <span>{currentYear - releaseYear}th anniversary of </span>
           <Link
@@ -66,7 +70,14 @@ const AnniversaryNote = () => {
           </Link>
           <span> ({releasedate})</span>
         </div>
-      ))}
+      )
+    );
+  };
+
+  return !gamesInRange.length ? null : (
+    <div>
+      <b>Upcoming anniversaries</b>
+      {renderGamesInRange()}
     </div>
   );
 };

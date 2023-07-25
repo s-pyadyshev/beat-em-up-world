@@ -17,8 +17,7 @@ import { SwiperSlide } from "swiper/react";
 import store from "../../store";
 import { toggleFilter } from "../../store/filters/actions";
 
-const GameCard = ({ commentsUrl, commentsId }: any) => {
-  const { id } = useParams();
+const GameCard = ({ id, commentsUrl, commentsId }: any) => {
   const [gameCardInfo, setGameCardInfo] = useState({});
   const gamesList = useSelector(
     (state: ApplicationState) => state.gamesList.gamesList
