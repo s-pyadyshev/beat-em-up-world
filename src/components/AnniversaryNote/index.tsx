@@ -6,18 +6,22 @@ import { GameCardType } from "../../types/GameCard";
 import { createSelector } from "reselect";
 import { selectGamesList } from "../../selectors";
 
+// TODO Refactor when backend is done
+
 interface GameData {
   releasedate: string;
   releaseYear: number;
+  name?: string;
+  platform?: string;
 }
 
 export const selectGamesByRelease = createSelector(selectGamesList, (games) =>
-  games.map((game: GameCardType) => {
+  games.map(({ releasedate, releaseYear, name, platform }: GameCardType) => {
     return {
-      releasedate: game.releasedate,
-      releaseYear: game.releaseYear,
-      name: game.name,
-      platform: game.platform,
+      releasedate: releasedate,
+      releaseYear: releaseYear,
+      name: name,
+      platform: platform,
     };
   })
 );

@@ -3,7 +3,7 @@ import { filterByLetter, filterByValue } from "../../store/gamesList/actions";
 import store from "../../store";
 import "./style.scss";
 import { useSelector } from "react-redux";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import { alphabet } from "../../constants/alphabet";
 
 const handleMissingGamesClick = () => {
@@ -18,7 +18,7 @@ const handleClickLetter = (event: React.MouseEvent<HTMLButtonElement>) => {
 
 const AlphabetSorter: React.FC = () => {
   const activeLetter = useSelector(
-    (state: ApplicationState) => state.gamesList.activeLetter
+    (state: IApplicationState) => state.gamesList.activeLetter
   );
 
   return (

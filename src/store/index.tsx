@@ -3,10 +3,10 @@ import { gamesList } from "./gamesList/reducer";
 import { filters } from "./filters/reducer";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { logger } from "./middleware";
-import { ApplicationState } from "../interfaces/ApplicationState";
+import { IApplicationState } from "../interfaces/ApplicationState";
 
-export const reducers: Reducer<ApplicationState> =
-  combineReducers<ApplicationState>({
+export const reducers: Reducer<IApplicationState> =
+  combineReducers<IApplicationState>({
     filters,
     gamesList,
   });

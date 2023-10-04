@@ -13,7 +13,7 @@ import {
   resetFilter,
   toggleSaveFilters,
 } from "../../store/gamesList/actions";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
 
 // import { Scrollbars } from "react-custom-scrollbars-2";
@@ -23,26 +23,26 @@ import store from "../../store";
 
 const Filter = () => {
   const loading = useSelector(
-    (state: ApplicationState) => state.gamesList.loading
+    (state: IApplicationState) => state.gamesList.loading
   );
 
   const filters = useSelector(
-    (state: ApplicationState) => state.filters.filtersToggled
+    (state: IApplicationState) => state.filters.filtersToggled
   );
   const filterOptions = useSelector(
-    (state: ApplicationState) => state.gamesList.filterOptions
+    (state: IApplicationState) => state.gamesList.filterOptions
   );
   const basicView = useSelector(
-    (state: ApplicationState) => state.filters.basicView
+    (state: IApplicationState) => state.filters.basicView
   );
   const isFiltered = useSelector(
-    (state: ApplicationState) => state.gamesList.isFiltered
+    (state: IApplicationState) => state.gamesList.isFiltered
   );
   const gamesList = useSelector(
-    (state: ApplicationState) => state.gamesList.gamesList
+    (state: IApplicationState) => state.gamesList.gamesList
   );
   const saveFilters = useSelector(
-    (state: ApplicationState) => state.gamesList.saveFilters
+    (state: IApplicationState) => state.gamesList.saveFilters
   );
 
   useEffect(() => {

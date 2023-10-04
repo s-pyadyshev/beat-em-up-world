@@ -1,7 +1,9 @@
-export interface GameList {
+import { IGameCard } from "./GameCard";
+
+export interface IGameList {
   loading: any;
   error: any;
-  gamesList: any[];
+  gamesList: IGameCard[];
   filteredGames: any[];
   filteredOptions: {};
 }

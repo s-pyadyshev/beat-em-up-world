@@ -1,4 +1,4 @@
-export interface GameListItemInterface {
+export interface IGameListItem {
   name: string;
   platform: string;
   index?: string;

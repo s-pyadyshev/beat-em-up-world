@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterGames } from "../../store/gamesList/actions";
 import Tooltip from "../Tooltip";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
 import { spriteNames } from "../../constants/spriteNames";
 
@@ -16,7 +16,7 @@ const Select = (props: FilterInterface) => {
   const { description, name, filterName, options, savedOption } = props;
 
   const filterOptions = useSelector(
-    (state: ApplicationState) => state.gamesList.filterOptions
+    (state: IApplicationState) => state.gamesList.filterOptions
   );
 
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {

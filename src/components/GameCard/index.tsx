@@ -10,7 +10,7 @@ import {
   makeOtherPlatformLink,
   makeOtherPlatformName,
 } from "../../utils/utils";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardType } from "../../types/GameCard";
 import "./style.scss";
 import { SwiperSlide } from "swiper/react";
@@ -20,7 +20,7 @@ import { toggleFilter } from "../../store/filters/actions";
 const GameCard = ({ id, commentsUrl, commentsId }: any) => {
   const [gameCardInfo, setGameCardInfo] = useState({});
   const gamesList = useSelector(
-    (state: ApplicationState) => state.gamesList.gamesList
+    (state: IApplicationState) => state.gamesList.gamesList
   );
 
   const neutralValues = ["N/A"];
@@ -262,7 +262,7 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
                 </span>
                 <ul className="game-card__values-list">
                   {otherPlatforms &&
-                    otherPlatforms.map((game: any, index: number) => {
+                    otherPlatforms.map((game: string, index: number) => {
                       const id = game + index;
 
                       return (
