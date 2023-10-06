@@ -1,29 +1,29 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { GameCardType } from "../../types/GameCard";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import "./style.scss";
 
 const Stats: React.FC = () => {
   const isLoading = useSelector(
-    (state: ApplicationState) => state.gamesList.loading
+    (state: IApplicationState) => state.gamesList.loading
   );
 
   const total = useSelector(
-    (state: ApplicationState) => state.gamesList.gamesList.length
+    (state: IApplicationState) => state.gamesList.gamesList.length
   );
 
   // TODO add specific param to DB to calculate unique titles only?
 
   const missing = useSelector(
-    (state: ApplicationState) =>
+    (state: IApplicationState) =>
       state.gamesList.gamesList.filter(
         (game: GameCardType) => game.missing === true
       ).length
   );
 
   const found = useSelector(
-    (state: ApplicationState) => state.gamesList.filteredGames.length
+    (state: IApplicationState) => state.gamesList.filteredGames.length
   );
 
   const currentProgress = 100 - Math.floor(missing / (total / 100));

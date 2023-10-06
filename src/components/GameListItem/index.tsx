@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GameListItemInterface } from "../../interfaces/GameListItem";
+import { IGameListItem } from "../../interfaces/GameListItem";
 import "./style.scss";
 
-const GameListItem = (props: GameListItemInterface) => {
+const GameListItem = (props: IGameListItem) => {
   const { index, name, platform, multigenre } = props;
   const uniqGameName = `/${name}-${platform}`;
   const uniqGameNameId = uniqGameName.replace(/[\s:&'./!?]/g, "").toLowerCase();
@@ -14,7 +14,7 @@ const GameListItem = (props: GameListItemInterface) => {
       className={multigenre ? "gameslist-item multigenre" : "gameslist-item"}
       key={index}
     >
-      <Link to={uniqGameNameId}>
+      <Link to={`games/${uniqGameNameId}`}>
         {name} <span> [{platform}]</span>
       </Link>
     </li>

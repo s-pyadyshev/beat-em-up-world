@@ -2,22 +2,22 @@ import React from "react";
 import { useSelector } from "react-redux";
 import GamesListItem from "../GameListItem";
 import Loading from "../Loading";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardType } from "../../types/GameCard";
 import "./style.scss";
 
 const GamesList = () => {
   const filteredGamesList = useSelector(
-    (state: ApplicationState) => state.gamesList.filteredGames
+    (state: IApplicationState) => state.gamesList.filteredGames
   );
   const loading = useSelector(
-    (state: ApplicationState) => state.gamesList.loading
+    (state: IApplicationState) => state.gamesList.loading
   );
 
   return (
     <ul className="gameslist">
       {loading ? <Loading /> : null}
-      {filteredGamesList && filteredGamesList.length === 0 ? (
+      {!loading && filteredGamesList && filteredGamesList.length === 0 ? (
         <h2>Games not found</h2>
       ) : null}
 

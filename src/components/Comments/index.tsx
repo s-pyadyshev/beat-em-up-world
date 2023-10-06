@@ -13,7 +13,12 @@ declare global {
  * @param {string} id - The id of the game.
  */
 
-const Comments = ({ fullUrl, id }: any) => {
+interface ICommentsProps {
+  fullUrl: string | undefined;
+  id: string | undefined;
+}
+
+const Comments = ({ fullUrl, id }: ICommentsProps) => {
   useEffect(() => {
     const DISQUS_SCRIPT = "disq_script";
     const sd = document.getElementById(DISQUS_SCRIPT);

@@ -1,4 +1,4 @@
-export interface ApplicationState {
+export interface IApplicationState {
   filters: any;
   gamesList: any;
 }

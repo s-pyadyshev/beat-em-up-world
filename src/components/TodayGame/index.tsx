@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import cn from "classnames";
 import { convertGameId } from "../../utils/utils";
-import { ApplicationState } from "../../interfaces/ApplicationState";
+import { IApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardType } from "../../types/GameCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "./style.scss";
 
 const TodayGame: React.FC = () => {
-  const isLoading = useSelector((state: any) => state.gamesList.loading);
+  const isLoading = useSelector(
+    (state: IApplicationState) => state.gamesList.loading
+  );
   const gamesList = useSelector(
-    (state: ApplicationState) => state.gamesList.gamesList
+    (state: IApplicationState) => state.gamesList.gamesList
   );
   const [todayGames, setTodayGames] = useState([]);
 
