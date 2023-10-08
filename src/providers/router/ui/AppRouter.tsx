@@ -1,8 +1,5 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import ChartsPage from "../../../pages/ChartsPage";
-import GameCard from "../../../components/GameCard";
-import { MainPage } from "../../../pages/MainPage";
 import { routeConfig } from "../../../shared/config/routeConfig/routeConfig";
 
 export const AppRouter = () => {
