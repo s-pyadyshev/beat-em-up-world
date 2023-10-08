@@ -45,7 +45,7 @@ const TodayGame: React.FC = () => {
                     "today-game": true,
                     active: game.name,
                   })}
-                  to={convertGameId(game.name, game.platform)}
+                  to={`games/${convertGameId(game.name, game.platform)}`}
                 >
                   <img src={game.cover} alt="today game cover" />
                   <div className="today-game__info">

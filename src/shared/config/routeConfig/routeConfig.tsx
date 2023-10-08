@@ -7,6 +7,7 @@ import AboutPage from "../../../pages/AboutPage";
 import { NotFoundPage } from "../../../pages/NotFoundPage";
 import { getRouteGameDetails } from "./const/router";
 import GameDetailsPage from "../../../pages/GameDetailsPage";
+import SecretPage from "../../../pages/SecretPage";
 
 export enum AppRoutes {
   MAIN = "main",
@@ -15,6 +16,7 @@ export enum AppRoutes {
   ABOUT = "about",
   GAME_DETAILS = "games",
   NOT_FOUND = "not_found",
+  SECRET = "secret",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -24,6 +26,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ABOUT]: "/about",
   [AppRoutes.GAME_DETAILS]: "/games/:id",
   [AppRoutes.NOT_FOUND]: "*",
+  [AppRoutes.SECRET]: "/secret",
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -50,5 +53,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,
     element: <NotFoundPage />,
+  },
+  [AppRoutes.SECRET]: {
+    path: RoutePath.secret,
+    element: <SecretPage />,
   },
 };
