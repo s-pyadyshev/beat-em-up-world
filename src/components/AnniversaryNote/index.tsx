@@ -66,7 +66,7 @@ const AnniversaryNote = () => {
         <div key={name + releasedate}>
           <span>{currentYear - releaseYear}th anniversary of </span>
           <Link
-            to={`/${name}-${platform}`
+            to={`games/${name}-${platform}`
               .replace(/[\s:&'./!?]/g, "")
               .toLowerCase()}
           >
