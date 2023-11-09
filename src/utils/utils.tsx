@@ -11,10 +11,5 @@ export const makeOtherPlatformLink = (
 };
 
 export const makeOtherPlatformName = (
-  game:
-    | {
-        name: string;
-        platform: string;
-      }
-    | string
-) => (typeof game === "string" ? game : game.platform);
+  game: { name: string; platform: string } | string
+): string => (typeof game === "string" ? game : game.platform);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Bingo from "../Bingo";
 import { Slider } from "../Slider";
 import Tooltip from "../Tooltip";
@@ -267,7 +267,9 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
 
                       return (
                         <li key={id}>
-                          <Link to={`/${makeOtherPlatformLink(name, game)}`}>
+                          <Link
+                            to={`/games/${makeOtherPlatformLink(name, game)}`}
+                          >
                             <span>{makeOtherPlatformName(game)}</span>
                           </Link>
                         </li>
