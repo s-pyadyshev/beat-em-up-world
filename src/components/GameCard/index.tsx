@@ -206,6 +206,7 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
             <img src={cover} alt={name} className="game-card__cover" />
           </div>
           <ul className="game-card__detail">
+            {/* TODO Refactor conditions for null values */}
             <li className="game-card__section-title">
               <span>Release Info</span>
             </li>
@@ -430,10 +431,12 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
               </li>
             ) : null}
             <li className="game-card__section-title">Style</li>
-            <li>
-              <span className="game-card__parameter-name">Art Style:</span>
-              <span>{artStyle}</span>
-            </li>
+            {artStyle ? (
+              <li>
+                <span className="game-card__parameter-name">Art Style:</span>
+                <span>{artStyle}</span>
+              </li>
+            ) : null}
             {sprites ? (
               <li>
                 <span className="game-card__parameter-name">Sprites:</span>
