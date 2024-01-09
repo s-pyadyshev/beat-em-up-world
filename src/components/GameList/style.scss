@@ -2,8 +2,10 @@
 @import "./../../assets/styles/media";
 
 .gameslist {
+  font-family: $font-family-secondary;
   font-size: 20px;
   list-style-type: none;
+  text-transform: uppercase;
 
   @include tablet {
     column-count: 3;

@@ -113,8 +113,21 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
   // eslint-disable-next-line no-restricted-globals
   return (
     <div className="game-card">
-      <Link to="/">
-        <span>Back to Games list</span>
+      <Link to="/" className="game-card__back">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            viewBox="0 0 401.949 401.949"
+          >
+            <path
+              d="M401.947 159.301c0-8.583-6.949-15.742-15.497-15.889H197.515c-7.021-1.589-12.309-7.886-12.309-15.369V78.976c0-8.675-5.397-11.163-11.993-5.535L4.948 190.735c-6.598 5.634-6.598 14.847 0 20.479l168.262 117.29c6.599 5.632 11.996 3.146 11.996-5.528v-49.067c0-8.673 7.097-15.771 15.771-15.771l185.201-.276c8.676-.004 15.771-7.101 15.771-15.771l-.002-82.79z"
+              fill="#f0f"
+            />
+          </svg>{" "}
+          Back to Games list
+        </span>
       </Link>
       <h2 className="game-card__name">
         {name} [{platform}]

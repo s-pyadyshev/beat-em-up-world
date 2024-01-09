@@ -65,9 +65,14 @@ export const MainPage = () => {
         </Col>
       </Row>
       <AlphabetSorter />
-      <div style={{ marginBottom: 24 }}>
+      <div
+        style={{
+          marginBottom: 24,
+          fontFamily: "capture-it",
+        }}
+      >
         <b style={{ color: "yellow" }}>Yellow color</b> - a game with partial
-        beat'em up gameplay. Good choice to vary face punching routine.
+        Beat'em up gameplay. Good choice to vary face punching routine.
       </div>
       <GameList />
       <Row style={{ marginTop: 64 }}>
