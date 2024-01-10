@@ -26,13 +26,7 @@ const GamesList = () => {
           <React.Fragment key={game.name + game.platform}>
             {game.missing ? (
               <li className="missing">
-                <b>
-                  {game.name} [{game.platform}] (MISSING -{" "}
-                  <a href="https://github.com/s-pyadyshev/beat-em-ups-api/blob/master/db.json">
-                    ADD THE GAME HERE
-                  </a>
-                  )
-                </b>
+                {game.name} [{game.platform}]
               </li>
             ) : (
               <GamesListItem
