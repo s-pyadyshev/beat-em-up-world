@@ -7,8 +7,8 @@ const SecretPage: React.FC = () => {
     blog: "",
     done: false,
   });
-  const githubUserUrl = "https://api.github.com/users/s-pyadyshev";
-  const catFactsUrl = "https://catfact.ninja/fact";
+  // const githubUserUrl = "https://api.github.com/users/s-pyadyshev";
+  // const catFactsUrl = "https://catfact.ninja/fact";
 
   useEffect(() => {
     // const catFactPromise = fetch(catFactsUrl);
@@ -44,8 +44,8 @@ const SecretPage: React.FC = () => {
 
     const fetchData = async () => {
       try {
-        const catFactPromise = await fetch(catFactsUrl);
-        const githubPromise = await fetch(githubUserUrl);
+        // const catFactPromise = await fetch(catFactsUrl);
+        // const githubPromise = await fetch(githubUserUrl);
       } catch (error) {
         console.log(error);
       }

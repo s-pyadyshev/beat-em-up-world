@@ -2,19 +2,15 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Select from "../Select";
 import Loading from "../Loading";
-import Button from "../Button";
 import {
   getFilters,
 } from "../../store/filters/actions";
 import {
   filterByOptions,
-  resetFilter,
   toggleSaveFilters,
 } from "../../store/gamesList/actions";
 import { IApplicationState } from "../../interfaces/ApplicationState";
 import { FilterInterface } from "../../interfaces/Filter";
-
-// import { Scrollbars } from "react-custom-scrollbars-2";
 
 import "./style.scss";
 import store from "../../store";
@@ -32,9 +28,6 @@ const Filter = () => {
   );
   const gamesList = useSelector(
     (state: IApplicationState) => state.gamesList.gamesList
-  );
-  const saveFilters = useSelector(
-    (state: IApplicationState) => state.gamesList.saveFilters
   );
 
   useEffect(() => {

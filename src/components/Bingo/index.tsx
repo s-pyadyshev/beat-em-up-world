@@ -1,4 +1,3 @@
-import React from "react";
 import { BingoType } from "../../types/Bingo";
 import { bingo } from "../../constants/bingo";
 import "./style.scss";
