@@ -1,5 +1,3 @@
-import React from "react";
-
 const LinksPage = () => (
   <div className="page-links">
     <h2>Links</h2>
