@@ -400,7 +400,7 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Friendly Fire:{" "}
                 </span>
-                <span className={applyValueClass(charSwitch)}>
+                <span>
                   {friendlyFire}
                 </span>
               </li>
