@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Bingo from "../Bingo";
@@ -400,7 +400,9 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Friendly Fire:{" "}
                 </span>
-                <span>{friendlyFire}</span>
+                <span className={applyValueClass(charSwitch)}>
+                  {friendlyFire}
+                </span>
               </li>
             ) : null}
             {charSwitch ? (
@@ -408,7 +410,7 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Character Switch:
                 </span>
-                <span className={applyValueClass(charSwitch)}>
+                <span>
                   {charSwitch}
                 </span>
               </li>

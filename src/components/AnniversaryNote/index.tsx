@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addWeeks, eachDayOfInterval } from "date-fns";
@@ -16,7 +15,7 @@ interface GameData {
 }
 
 export const selectGamesByRelease = createSelector(selectGamesList, (games) =>
-  games.map(({ releasedate, releaseYear, name, platform }: GameCardType) => {
+  games && games.map(({ releasedate, releaseYear, name, platform }: GameCardType) => {
     return {
       releasedate: releasedate,
       releaseYear: releaseYear,

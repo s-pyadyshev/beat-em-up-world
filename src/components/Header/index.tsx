@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import Dronami from "../../assets/img/dronami.png";
 import PunchPedia from "../../assets/img/punchpedia.png";

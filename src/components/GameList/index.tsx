@@ -18,7 +18,7 @@ const GamesList = () => {
     <ul className="gameslist">
       {loading ? <Loading /> : null}
       {!loading && filteredGamesList && filteredGamesList.length === 0 ? (
-        <h2>Games not found</h2>
+        <p>Games not found</p>
       ) : null}
 
       {filteredGamesList &&

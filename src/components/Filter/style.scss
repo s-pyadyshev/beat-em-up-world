@@ -9,16 +9,6 @@
       margin-bottom: 4px;
     }
   }
-
-  &__show-more-btn {
-    position: absolute;
-    bottom: -64px;
-    left: 0;
-
-    > * {
-      min-width: 220px;
-    }
-  }
 }
 
 .filter-list {
@@ -54,7 +44,8 @@
 }
 
 .filter-toggle {
-  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
 }
 
 .button-save {

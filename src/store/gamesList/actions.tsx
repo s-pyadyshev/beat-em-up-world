@@ -39,6 +39,9 @@ export const getGames = () => {
     .then((data) => {
       store.dispatch(getGamesSuccess(data));
     })
+    // .then(() => {
+    //   store.dispatch(filterByLetter("a"));
+    // })
     .catch((error) => store.dispatch(getGamesError(error)));
 };
 

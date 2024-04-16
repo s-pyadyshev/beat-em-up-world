@@ -38,7 +38,7 @@ const Comments = ({ fullUrl, id }: ICommentsProps) => {
 
       d.body.appendChild(s);
     } else {
-      window.DISQUS.reset({
+      window?.DISQUS?.reset({
         reload: true,
         // eslint-disable-next-line
         config: disqus_config,

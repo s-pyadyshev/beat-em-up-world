@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, useSwiper } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 import { useLocation } from "react-router-dom";
-import "swiper/swiper.scss";
-import "swiper/modules/navigation/navigation.scss";
-import "swiper/modules/pagination/pagination.scss";
+import "swiper/css";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import "./style.scss";
 import { Swiper as SwiperClass } from "swiper/types";
 

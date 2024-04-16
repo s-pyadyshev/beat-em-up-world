@@ -8,7 +8,7 @@ lint:
 	npm run lint:js
 
 start:
-	npm run start
+	npm run dev
 
 build:
 	npm run build
