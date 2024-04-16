@@ -2,7 +2,7 @@ import { usePopperTooltip } from "react-popper-tooltip";
 import "react-popper-tooltip/dist/styles.css";
 import "./style.scss";
 
-const Tooltip = ({ children, tooltip, hideArrow, ...props }: any) => {
+const Tooltip = ({ children, tooltip }: any) => {
   const {
     getArrowProps,
     getTooltipProps,
