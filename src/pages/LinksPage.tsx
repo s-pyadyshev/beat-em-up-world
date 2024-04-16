@@ -33,6 +33,16 @@ const LinksPage = () => (
       </li>
       <li>
         <a
+          href="https://www.brawlersalley.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Brawler's Alley: The First Ever Beat'Em Up Magazine, bringing you the
+          latest news, previews and reviews of this old timer genre
+        </a>
+      </li>
+      <li>
+        <a
           href="https://www.mobygames.com/genre/sheet/beatemup-brawler/"
           target="_blank"
           rel="noopener noreferrer"
@@ -56,24 +66,6 @@ const LinksPage = () => (
           rel="noopener noreferrer"
         >
           Beat&apos;em ups on TV Tropes
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://crappygames.miraheze.org/wiki/Category:Beat_%27em_up_games"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Beat&apos;em ups on Crappy Games Wiki
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://awesomegames.miraheze.org/wiki/Category:Beat%27em_up_Games"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Beat&apos;em ups on Awesome Games Wiki
         </a>
       </li>
       <li>
@@ -204,12 +196,11 @@ const LinksPage = () => (
       </li>
       <li>
         <a
-          href="https://www.brawlersalley.com"
+          href="https://www.indieretronews.com/search?q=beat%27em+up"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Brawler's Alley: The First Ever Beat'Em Up Magazine, bringing you the
-          latest news, previews and reviews of this old timer genre
+          Indie Retro News
         </a>
       </li>
     </ul>

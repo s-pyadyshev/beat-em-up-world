@@ -6,7 +6,7 @@ import { convertGameId } from "../../utils/utils";
 import { IApplicationState } from "../../interfaces/ApplicationState";
 import { GameCardType } from "../../types/GameCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation } from "swiper/modules";
 import "./style.scss";
 
 const TodayGame: React.FC = () => {
