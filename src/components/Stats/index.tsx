@@ -18,7 +18,7 @@ const Stats: React.FC = () => {
   const missing = useSelector(
     (state: IApplicationState) =>
       state.gamesList.gamesList.filter(
-        (game: GameCardType) => game.missing === true
+        (game: GameCardType) => game.missing === true || game.undev === true
       ).length
   );
 

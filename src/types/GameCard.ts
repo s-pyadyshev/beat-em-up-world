@@ -1,7 +1,8 @@
 import { BingoType } from "./Bingo";
 
 export type GameCardType = {
-  missing?: Boolean;
+  missing?: boolean;
+  undev?: boolean;
   multigenre?: string;
   name: string;
   platform: string;
