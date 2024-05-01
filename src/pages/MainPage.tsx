@@ -70,36 +70,38 @@ export const MainPage = () => {
       <Row>
         <Col md={12} xl={6}>
           <ErrorBoundary>
-            <Search />
-            <div className="filter-toggle">
-              <Button onClick={handleToggleFilter}>
-                {!isFiltersVisible ? (
-                  <span>Show filter</span>
-                ) : (
-                  <span>Hide filter</span>
-                )}
-              </Button>
-              {isFiltersVisible ? (
-                <div>{basicView ? (
-                  <Button onClick={showMore}>Show more filters</Button>
-                ) : (
-                  <Button onClick={showLess}>Show less filters</Button>
-                )}</div>)
-                : null}
+            <div className="form-search">
+              <Search />
+              <div className="filter-toggle">
+                <Button onClick={handleToggleFilter}>
+                  {!isFiltersVisible ? (
+                    <span>Show filter</span>
+                  ) : (
+                    <span>Hide filter</span>
+                  )}
+                </Button>
+                {isFiltersVisible ? (
+                  <div>{basicView ? (
+                    <Button onClick={showMore}>Show more filters</Button>
+                  ) : (
+                    <Button onClick={showLess}>Show less filters</Button>
+                  )}</div>)
+                  : null}
 
-              {isFiltered ? <Button onClick={onResetFilter}>Reset</Button> : null}
-              {filterOptions ? (
-                <label className="button-save">
-                  <input
-                    type="checkbox"
-                    onChange={handleSaveFilters}
-                    checked={saveFilters}
-                  />
-                  Save filter
-                </label>
-              ) : null}
+                {isFiltered ? <Button onClick={onResetFilter}>Reset</Button> : null}
+                {filterOptions ? (
+                  <label className="button-save">
+                    <input
+                      type="checkbox"
+                      onChange={handleSaveFilters}
+                      checked={saveFilters}
+                    />
+                    Save filter
+                  </label>
+                ) : null}
+              </div>
+              <AnniversaryNote />
             </div>
-            <AnniversaryNote />
           </ErrorBoundary>
         </Col>
         <Col md={6} xl={3}>
@@ -129,12 +131,13 @@ export const MainPage = () => {
           fontFamily: "capture-it",
         }}
       >
-        <b style={{ color: "yellow" }}>Yellow color</b> - a game with partial
-        Beat'em up gameplay. Good choice to vary face punching routine.
+        <span style={{ color: "yellow" }}>Yellow color</span> - Partial
+        Beat'em up gameplay. Good choice to vary face punching routine.<br></br>
+        <span style={{ color: "grey" }}>Grey color</span> - Under development.
       </div>
       <GameList />
       <Row style={{ marginTop: 64 }}>
-        <Col md={4} offset={{ md: 4 }}>
+        <Col md={6} offset={{ md: 3 }}>
           <Stats />
         </Col>
       </Row>

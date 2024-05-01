@@ -49,3 +49,11 @@ article {
     margin-bottom: 0;
   }
 }
+
+.form-search {
+  margin-bottom: 32px;
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+}

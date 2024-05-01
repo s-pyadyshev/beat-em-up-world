@@ -22,4 +22,12 @@
       color: $link-color-multigenre;
     }
   }
+
+  &.missing {
+    color: $color-red;
+  }
+
+  &.undev {
+    color: $color-muted;
+  }
 }

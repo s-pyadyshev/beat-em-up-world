@@ -24,17 +24,13 @@ const GamesList = () => {
       {filteredGamesList &&
         filteredGamesList.map((game: GameCardType) => (
           <React.Fragment key={game.name + game.platform}>
-            {game.missing ? (
-              <li className="gameslist-item missing">
-                {game.name} [{game.platform}]
-              </li>
-            ) : (
-              <GamesListItem
-                name={game.name}
-                platform={game.platform}
-                multigenre={game.multigenre}
-              />
-            )}
+            <GamesListItem
+              missing={game.missing}
+              undev={game.undev}
+              name={game.name}
+              platform={game.platform}
+              multigenre={game.multigenre}
+            />
           </React.Fragment>
         ))}
     </ul>
