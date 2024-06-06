@@ -384,7 +384,7 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
                 <span className="game-card__parameter-name">
                   Weapons Stay:{" "}
                 </span>
-                <span className={applyValueClass(weaponsStay)}>
+                <span className="game-card__parameter-name">
                   {weaponsStay}
                 </span>
               </li>
@@ -392,7 +392,7 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
             {deathBlow ? (
               <li>
                 <span className="game-card__parameter-name">Death Blow:</span>
-                <span className={applyValueClass(deathBlow)}>{deathBlow}</span>
+                <span className="game-card__parameter-name">{deathBlow}</span>
               </li>
             ) : null}
             {friendlyFire ? (
