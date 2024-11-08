@@ -105,21 +105,6 @@ const AboutPage = () => (
       only one stage and several sections to beat enemies).
     </p>
     <br />
-    <h2>How can I help?</h2>
-    <p>
-      You may help fill information about missing games to PunchPedia. Just GO!
-      to&nbsp;
-      <a
-        href="https://github.com/s-pyadyshev/beat-em-ups-api"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        beat-em-upi
-      </a>
-      &nbsp;and add missing games into
-      <strong> db.json</strong> and new parameters into
-      <strong> filter.json</strong> as Pull Request.
-    </p>
     <h2>
       Thanks a lot to the following guys for recommendation of games and
       feedback:
