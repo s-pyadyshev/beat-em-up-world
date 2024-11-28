@@ -420,7 +420,11 @@ const GameCard = ({ id, commentsUrl, commentsId }: any) => {
               <span
                 className={applyValueClass(groundHit) ? "danger" : "success"}
               >
-                {groundHit}
+                {groundHit ? (
+                  groundHit
+                ) : (
+                  <span className="state-muted-color">unknown</span>
+                )}
               </span>
             </li>
             {revive ? (
