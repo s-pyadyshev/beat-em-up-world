@@ -129,6 +129,7 @@ export const MainPage = () => {
         style={{
           marginBottom: 24,
           fontFamily: "capture-it",
+          textTransform: "uppercase"
         }}
       >
         <span style={{ color: "yellow" }}>Yellow color</span> - Partial
