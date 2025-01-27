@@ -27,8 +27,7 @@
     font-size: 24px;
     font-family: $font-family-secondary;
     text-align: right;
-    background:
-      linear-gradient(
+    background: linear-gradient(
         to bottom,
         rgb(122 122 122 / 80%) 0%,
         rgb(255 255 255 / 0%) 15%,
@@ -66,8 +65,7 @@
   }
 
   &__cover-wrap {
-    background:
-      linear-gradient(
+    background: linear-gradient(
         to bottom,
         rgb(122 122 122 / 10%) 0%,
         rgb(255 255 255 / 0%) 10%,
@@ -95,8 +93,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background:
-        linear-gradient(
+      background: linear-gradient(
           to bottom,
           rgb(122 122 122 / 80%) 0%,
           rgb(255 255 255 / 0%) 15%,
@@ -171,7 +168,7 @@
     display: inline-block;
     min-width: 50%;
     padding-right: 16px;
-    padding-left: 8px;
+    padding-left: 16px;
     color: $color-info;
     font-family: $font-family-secondary;
 
@@ -204,7 +201,7 @@
 
   &__section-title {
     justify-content: flex-end !important;
-    padding-right: 8px;
+    padding-right: 16px;
     font-size: 32px;
     font-family: $font-family-secondary;
     background-image: url("../../assets/img/game-card-header-bg.png") !important;
@@ -225,6 +222,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding: 0 16px 0 0;
     width: 100%;
 
     > li {
